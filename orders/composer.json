@@ -1,0 +1,11 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Avaks\\": "src/",
+      "Avaks\\Cainiao\\": "src/Cainiao/"
+    }
+  },
+  "require": {
+    "php" : "^7.0"
+  }
+}

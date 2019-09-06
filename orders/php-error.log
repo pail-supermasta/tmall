@@ -1,0 +1,85 @@
+[04-Sep-2019 09:41:49 UTC] PHP Notice:  Undefined property: stdClass::$aeop_order_item_dto in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 106
+[04-Sep-2019 09:41:50 UTC] PHP Notice:  Undefined property: stdClass::$aeop_order_item_dto in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 106
+[04-Sep-2019 09:41:50 UTC] PHP Notice:  Undefined property: stdClass::$aeop_order_item_dto in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 106
+[04-Sep-2019 09:41:51 UTC] PHP Notice:  Undefined property: stdClass::$aeop_order_item_dto in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 106
+[04-Sep-2019 09:41:52 UTC] PHP Notice:  Undefined property: stdClass::$aeop_order_item_dto in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 106
+[04-Sep-2019 09:42:15 UTC] PHP Notice:  Undefined property: stdClass::$aeop_order_item_dto in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 107
+[04-Sep-2019 09:42:16 UTC] PHP Notice:  Undefined property: stdClass::$aeop_order_item_dto in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 107
+[04-Sep-2019 09:42:17 UTC] PHP Notice:  Undefined property: stdClass::$aeop_order_item_dto in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 107
+[04-Sep-2019 09:42:17 UTC] PHP Notice:  Undefined property: stdClass::$aeop_order_item_dto in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 107
+[04-Sep-2019 09:42:18 UTC] PHP Notice:  Undefined property: stdClass::$aeop_order_item_dto in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 107
+[04-Sep-2019 09:43:18 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:18 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:18 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:18 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:18 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 119
+[04-Sep-2019 09:43:18 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 119
+[04-Sep-2019 09:43:19 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:19 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:19 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:19 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:19 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 119
+[04-Sep-2019 09:43:19 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 119
+[04-Sep-2019 09:43:20 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:20 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:20 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:20 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:20 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 119
+[04-Sep-2019 09:43:20 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 119
+[04-Sep-2019 09:43:21 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:21 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:21 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:21 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:21 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 119
+[04-Sep-2019 09:43:21 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 119
+[04-Sep-2019 09:43:21 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:21 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:21 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:21 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:43:21 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 119
+[04-Sep-2019 09:43:21 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 119
+[04-Sep-2019 09:44:14 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:44:14 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:44:14 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:44:14 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:44:14 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 119
+[04-Sep-2019 09:44:14 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 119
+[04-Sep-2019 09:44:15 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:44:15 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:44:15 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:44:15 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:44:15 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 119
+[04-Sep-2019 09:44:15 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 119
+[04-Sep-2019 09:44:16 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:44:16 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:44:16 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:44:16 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:44:16 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 119
+[04-Sep-2019 09:44:16 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 119
+[04-Sep-2019 09:44:16 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:44:16 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:44:16 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:44:16 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 09:44:16 UTC] PHP Warning:  Illegal string offset 'order_status' in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 119
+[04-Sep-2019 09:44:16 UTC] PHP Notice:  Uninitialized string offset: 0 in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 119
+[04-Sep-2019 09:57:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 115
+[04-Sep-2019 10:01:05 UTC] PHP Warning:  Use of undefined constant MS_PATH - assumed 'MS_PATH' (this will throw an Error in a future version of PHP) in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 196
+[04-Sep-2019 10:01:05 UTC] PHP Warning:  Use of undefined constant MS_USERNAME - assumed 'MS_USERNAME' (this will throw an Error in a future version of PHP) in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 197
+[04-Sep-2019 10:01:05 UTC] PHP Warning:  Use of undefined constant MS_PASSWORD - assumed 'MS_PASSWORD' (this will throw an Error in a future version of PHP) in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 153
+[04-Sep-2019 10:01:53 UTC] PHP Warning:  Use of undefined constant MS_PATH - assumed 'MS_PATH' (this will throw an Error in a future version of PHP) in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 196
+[04-Sep-2019 10:01:53 UTC] PHP Warning:  Use of undefined constant MS_USERNAME - assumed 'MS_USERNAME' (this will throw an Error in a future version of PHP) in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 197
+[04-Sep-2019 10:01:53 UTC] PHP Warning:  Use of undefined constant MS_PASSWORD - assumed 'MS_PASSWORD' (this will throw an Error in a future version of PHP) in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 153
+[04-Sep-2019 10:02:49 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_finished.php on line 186
+[04-Sep-2019 10:53:43 UTC] PHP Fatal error:  Uncaught Error: Class 'TopClient' not found in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_paid.php:169
+Stack trace:
+#0 C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_paid.php(213): formMasterList(Array)
+#1 {main}
+  thrown in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_paid.php on line 169
+[04-Sep-2019 10:59:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getOrderTrack() in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_paid.php:101
+Stack trace:
+#0 C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_paid.php(166): checkTimeFromPaid(5000255804268898, '2019-09-03 21:2...', Array)
+#1 C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_paid.php(176): formMasterList(Array)
+#2 {main}
+  thrown in C:\Users\User\Documents\AliA\orders\ali_express\ali_order_list_paid.php on line 101
+[04-Sep-2019 10:59:52 UTC] PHP Notice:  Undefined offset: 0 in C:\Users\User\Documents\AliA\orders\moi_sklad\sql_requests\get_order_track.php on line 20
+[04-Sep-2019 11:02:06 UTC] PHP Notice:  Undefined offset: 0 in C:\Users\User\Documents\AliA\orders\moi_sklad\sql_requests\get_order_track.php on line 20
