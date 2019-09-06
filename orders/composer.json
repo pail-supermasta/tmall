@@ -2,7 +2,8 @@
   "autoload": {
     "psr-4": {
       "Avaks\\": "src/",
-      "Avaks\\Cainiao\\": "src/Cainiao/"
+      "Avaks\\Cainiao\\": "src/Cainiao/",
+      "Avaks\\MS\\": "src/MS/"
     }
   },
   "require": {

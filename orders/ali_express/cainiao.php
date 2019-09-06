@@ -206,7 +206,9 @@ function deliverCainiao($order, $sessionKey)
 
     /*CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN*/
 
-    $resp = $curlCai->CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN($content);
+//    $resp = $curlCai->CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN($content);
+    $message = "Заказ №$order - создается в Цайняо метод CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN";
+            telegram($message, '-278688533');
 
 
     /*{"DistributionConsignResponse":{"logisticsOrderId":"147002440549","tradeLogisticsOrderId":"5137660691","tradeOrderId":"5000269028796387","tradeOrderFrom":"AE","logisticsOrderCode":"LP00147002440549"},"success":"true"}*/
@@ -223,12 +225,18 @@ function deliverCainiao($order, $sessionKey)
     $content = json_encode($sourceArray, JSON_UNESCAPED_UNICODE);
 
     /*MAILNO_QUERY_SERVICE*/
-    $res = $curlCai->MAILNO_QUERY_SERVICE($content);
+//    $res = $curlCai->MAILNO_QUERY_SERVICE($content);
+
 
     /*EXAMPLE RESPONSE string(47) "{"mailNo":"AEWH0000708100RU4","success":"true"}"*/
 
     $mailNoResponse = json_decode($res, true);
     $mailNo = $mailNoResponse['mailNo'];
+
+    $message = "Заказ №$order - получен трек номер $mailNo из Цайняо метод MAILNO_QUERY_SERVICE. Заказ не будет доставлен";
+    telegram($message, '-278688533');
+    $message = "ВНИМАНИЕ Обработать заказ $order ВРУЧНУЮ";
+    telegram($message, '-278688533');
 
 
     /*AliexpressLogisticsGetpdfsbycloudprintRequest*/
@@ -236,9 +244,9 @@ function deliverCainiao($order, $sessionKey)
     /*add ticket to order MS*/
 
     /*AliexpressLogisticsSellershipmentfortopRequest*/
+    return array('mailNo' => $mailNo, 'result_success' => true);
 
-
-    return sellerShipmentForTop($order, $mailNo, $sessionKey);
+//    return sellerShipmentForTop($order, $mailNo, $sessionKey);
 }
 
 function sellerShipmentForTop($order, $logisticsNo, $sessionKey)
@@ -268,10 +276,6 @@ function sellerShipmentForTop($order, $logisticsNo, $sessionKey)
     return array('mailNo' => $logisticsNo, 'result_success' => $result_success);
 }
 
-define('APPKEY', '27862248');
-define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
-$order = '5000269028796387';
-$result = deliverCainiao($order, $sessionKey);
-var_dump($result);
+
 
 

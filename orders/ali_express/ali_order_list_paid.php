@@ -50,6 +50,8 @@ define('LOGINS', array(
     )
 ));
 
+define('ID_REGEXP', '/[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}/'); // Регулярка для UUID
+
 /*  INCLUDES    */
 
 // Error handlers
@@ -62,6 +64,11 @@ define('LOGINS', array(
 require_once '../moi_sklad/sql_requests/OrderDetails.php';
 
 require_once 'taobao/TopSdk.php';
+require_once '../vendor/autoload.php';
+
+
+use Avaks\MS\OrderMS;
+
 
 /*Search for an error*/
 function strpos_recursive($haystack, $needle, $offset = 0, &$results = array())
@@ -105,9 +112,31 @@ function checkTimeFromPaid($order, $payTime, $credential)
             $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
 //            telegram($message, '-278688533');
 
+            $orderMS = new OrderMS('',$order,'');
+            $orderMSDetails = $orderMS->getByName();
+            $orderMS->id = $orderMSDetails['id'];
+
+            /*get order state in MS*/
+            preg_match(ID_REGEXP, $orderMSDetails['state']['meta']['href'], $matches);
+            $state_id = $matches[0];
+            $orderMS->state = $state_id;
+
+//            $orderMS->setTrackNum($result['mailNo']);
+            $message = "Для заказа №$order будет установлен трек ".$result['mailNo']." в МС";
+            telegram($message, '-278688533');
+            /*if В работе  - set Отгрузить */
+            if ($this->state == 'ecf45f89-f518-11e6-7a69-9711000ff0c4') {
+                $message = "Для заказа №$order будет установлен трек ".$result['mailNo']." в МС";
+                telegram($message, '-278688533');
+//                $orderMS->setToPack();
+            } else{
+                $message = "ВНИМАНИЕ! Заказ №$order - не может быть отправлен Отгрузку. Статус не В работе.";
+                telegram($message, '-278688533');
+            }
+
         } else {
             $message = "CAINIAO ОШИБКА $order";
-//            telegram($message, '-320614744');
+            telegram($message, '-320614744');
         }
           echo $message;
 
