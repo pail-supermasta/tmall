@@ -186,7 +186,7 @@ function formMasterList($credential)
 
 
     /*additional - 3 hours for RU shift*/
-    $offset = 45 * 60 * 60;
+    $offset = 72 * 60 * 60;
     $create_day = date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) - $offset);
 
     $c = new TopClient;

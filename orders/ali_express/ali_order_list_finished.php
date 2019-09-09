@@ -88,7 +88,7 @@ function formMasterList($credential)
     $sessionKey = $credential['sessionKey'];
 
     /*catch all for previous 24 hours*/
-    $offset = 24 * 60 * 60;
+    $offset = 72 * 60 * 60;
     $create_day = date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) - $offset);
 
 
