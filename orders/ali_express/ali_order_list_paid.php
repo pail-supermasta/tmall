@@ -55,15 +55,16 @@ define('ID_REGEXP', '/[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{1
 /*  INCLUDES    */
 
 // Error handlers
-//require_once '../class/error.php';
+require_once '../class/error.php';
 
 // Telegram err logs integration
-//require_once '../class/telegram.php';
+require_once '../class/telegram.php';
 
 // SQL get track number for orden name from MS
 require_once '../moi_sklad/sql_requests/OrderDetails.php';
 
 require_once 'taobao/TopSdk.php';
+require_once 'cainiao.php';
 require_once '../vendor/autoload.php';
 
 
@@ -120,13 +121,14 @@ function checkTimeFromPaid($order, $payTime, $credential)
             preg_match(ID_REGEXP, $orderMSDetails['state']['meta']['href'], $matches);
             $state_id = $matches[0];
             $orderMS->state = $state_id;
+            $result['mailNo'] = str_replace(['AEWH', 'RU4'],"",$result['mailNo']);
 
-//            $orderMS->setTrackNum($result['mailNo']);
+            $orderMS->setTrackNum($result['mailNo']);
             $message = "Для заказа №$order будет установлен трек ".$result['mailNo']." в МС";
             telegram($message, '-278688533');
             /*if В работе  - set Отгрузить */
-            if ($this->state == 'ecf45f89-f518-11e6-7a69-9711000ff0c4') {
-                $message = "Для заказа №$order будет установлен трек ".$result['mailNo']." в МС";
+            if ($orderMS->state == 'ecf45f89-f518-11e6-7a69-9711000ff0c4') {
+                $message = "Статус заказа №$order будет установлен с В работе на ОТГРУЗИТЬ в МС";
                 telegram($message, '-278688533');
 //                $orderMS->setToPack();
             } else{
@@ -138,7 +140,6 @@ function checkTimeFromPaid($order, $payTime, $credential)
             $message = "CAINIAO ОШИБКА $order";
             telegram($message, '-320614744');
         }
-          echo $message;
 
 
     } else {

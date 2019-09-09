@@ -67,26 +67,31 @@ function deliverCainiao($order, $sessionKey)
     $orderDetails = findorderbyid($order, $sessionKey);
 
 
-
     $zip = $orderDetails['receipt_address']['zip'];
     $address = $orderDetails['receipt_address']['address2'];
-    $province =$orderDetails['receipt_address']['province'];
+    $province = $orderDetails['receipt_address']['province'];
     $city = $orderDetails['receipt_address']['city'];
     $street = $orderDetails['receipt_address']['detail_address'];
     $name = $orderDetails['receipt_address']['contact_person'];
-    $mobile = '7'.$orderDetails['receipt_address']['mobile_no'];
-
+    $mobile = '7' . $orderDetails['receipt_address']['mobile_no'];
 
 
     $products = $orderDetails['child_order_list']['global_aeop_tp_child_order_dto'];
+
     $c = new TopClient;
     $aliexpressSolutionProductInfoGetRequest = new AliexpressSolutionProductInfoGetRequest;
+    /*0 lvl list of products*/
     $packageList = array();
+    /*1 lvl product size*/
+    $packageDTO = array();
+    /*2 lvl - product*/
     $goodsList = array();
+
     foreach ((array)$products as $product) {
 
         $c->appkey = APPKEY;
         $c->secretKey = SECRET;
+
         $aliexpressSolutionProductInfoGetRequest->setProductId($product['product_id']);
         $resp = $c->execute($aliexpressSolutionProductInfoGetRequest, $sessionKey);
         $res = json_encode((array)$resp);
@@ -100,10 +105,10 @@ function deliverCainiao($order, $sessionKey)
 
         $itemId = $shortener['result']['product_id'];
         $goodsNameCn = $shortener['result']['product_unit'];
-        $quantity = $product['quantity'] ?? 1;
+        $quantity = $product['product_count'] ?? 1;
         $goodsNameEn = $shortener['result']['subject'];
-        $price = $shortener['result']['product_price'];
-        $weight = $shortener['result']['gross_weight'];
+        $price = (int)$shortener['result']['product_price'];
+        $weight = (int)$shortener['result']['gross_weight'];
 
         $goodsList[0] = array('isContainsBattery' => false,
             'itemId' => $itemId,
@@ -115,15 +120,14 @@ function deliverCainiao($order, $sessionKey)
             'weight' => $weight,
             'isAneroidMarkup' => false);
 
-        $packageList[0] = array('length' => $length,
+        $packageList[] = array('length' => $length,
             'width' => $width,
             'height' => $height,
             'goodsList' => $goodsList
         );
 
-
-
     }
+
 
 
     $sourceArray = array(
@@ -137,7 +141,7 @@ function deliverCainiao($order, $sessionKey)
                 'receiver' =>
                     array(
                         'zip' => $zip,
-                        'address' => $address,
+                        'address' => $address.$street,
                         'province' => $province,
                         'city' => $city,
                         'countryCode' => 'RU',
@@ -204,18 +208,18 @@ function deliverCainiao($order, $sessionKey)
 
     $content = json_encode($sourceArray, JSON_UNESCAPED_UNICODE);
 
+
     /*CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN*/
 
-//    $resp = $curlCai->CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN($content);
-    $message = "Заказ №$order - создается в Цайняо метод CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN";
-            telegram($message, '-278688533');
+    $resp = $curlCai->CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN($content);
+    $message = "Заказ №$order - создан в Цайняо метод CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN";
+    telegram($message, '-278688533');
 
 
     /*{"DistributionConsignResponse":{"logisticsOrderId":"147002440549","tradeLogisticsOrderId":"5137660691","tradeOrderId":"5000269028796387","tradeOrderFrom":"AE","logisticsOrderCode":"LP00147002440549"},"success":"true"}*/
 
-    $distributionConsignResponse = json_decode($resp, true);
+    $distributionConsignResponse = json_decode($resp, true)['DistributionConsignResponse'];
     /*get LP*/
-
 
     $sourceArray = array(
         'orderId' => $distributionConsignResponse['logisticsOrderId'], //Digits that follow the LP# (received in the response to DISTRIBUTION_CONSIGN)
@@ -225,13 +229,14 @@ function deliverCainiao($order, $sessionKey)
     $content = json_encode($sourceArray, JSON_UNESCAPED_UNICODE);
 
     /*MAILNO_QUERY_SERVICE*/
-//    $res = $curlCai->MAILNO_QUERY_SERVICE($content);
+    $res = $curlCai->MAILNO_QUERY_SERVICE($content);
 
 
     /*EXAMPLE RESPONSE string(47) "{"mailNo":"AEWH0000708100RU4","success":"true"}"*/
 
     $mailNoResponse = json_decode($res, true);
     $mailNo = $mailNoResponse['mailNo'];
+    var_dump($mailNoResponse);
 
     $message = "Заказ №$order - получен трек номер $mailNo из Цайняо метод MAILNO_QUERY_SERVICE. Заказ не будет доставлен";
     telegram($message, '-278688533');
@@ -241,7 +246,7 @@ function deliverCainiao($order, $sessionKey)
 
     /*AliexpressLogisticsGetpdfsbycloudprintRequest*/
 
-    /*add ticket to order MS*/
+    /*add pdf to order MS*/
 
     /*AliexpressLogisticsSellershipmentfortopRequest*/
     return array('mailNo' => $mailNo, 'result_success' => true);
@@ -277,5 +282,6 @@ function sellerShipmentForTop($order, $logisticsNo, $sessionKey)
 }
 
 
-
-
+/*define('APPKEY', '27862248');
+define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
+deliverCainiao('5000281306086387', $sessionKey);*/
