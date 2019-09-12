@@ -11,6 +11,7 @@ class ComposerStaticInitc7799539a453f51306b49a2d19fb7976
         array (
             'Avaks\\MS\\' => 9,
             'Avaks\\Cainiao\\' => 14,
+            'Avaks\\AE\\' => 9,
             'Avaks\\' => 6,
         ),
     );
@@ -23,6 +24,10 @@ class ComposerStaticInitc7799539a453f51306b49a2d19fb7976
         'Avaks\\Cainiao\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/Cainiao',
+        ),
+        'Avaks\\AE\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/AE',
         ),
         'Avaks\\' => 
         array (

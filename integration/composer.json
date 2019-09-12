@@ -3,7 +3,8 @@
     "psr-4": {
       "Avaks\\": "src/",
       "Avaks\\Cainiao\\": "src/Cainiao/",
-      "Avaks\\MS\\": "src/MS/"
+      "Avaks\\MS\\": "src/MS/",
+      "Avaks\\AE\\": "src/AE/"
     }
   },
   "require": {

@@ -15,7 +15,7 @@ class Products
 {
     public $orderPositionsRaw;
 
-    public function __construct($orderPositions)
+    public function __construct($orderPositions = false)
     {
         $this->orderPositionsRaw = $orderPositions;
     }
@@ -34,5 +34,14 @@ class Products
             $products[] = AvaksSQL::selectProductById($position);
         }
         return $products;
+    }
+
+    public function getTmallProducts($field_id)
+    {
+
+        $query = "SELECT * FROM `ms_product` WHERE `attributes` LIKE '%{$field_id}%'";
+        $products = AvaksSQL::selectProductsArray($query);
+        return $products;
+
     }
 }
