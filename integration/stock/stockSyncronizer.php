@@ -10,7 +10,6 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 
-
 // Список складов для расчёта остатков
 
 define('APPKEY', '27862248');
@@ -50,33 +49,29 @@ define('LOGINS', array(
 ));
 
 
-define('WHs', array(
+$stores = array(
     // 'f80cdf08-29a0-11e6-7a69-971100124ae8', // Склад-РЦ3
     // 'f257b41d-c2d9-11e7-6b01-4b1d00131678', // СКЛАД ХД
     '48de3b8e-8b84-11e9-9ff4-34e8001a4ea1',  // MP_NFF
-));
+);
 
 
 /*  INCLUDES    */
 
 // Error handlers
-require_once '../class/error.php';
+//require_once '../class/error.php';
 
 // Telegram err logs integration
-require_once '../class/telegram.php';
-
-// Cancel order in MS
-require_once '../moi_sklad/ms_change_order_dynamic.php';
+//require_once '../class/telegram.php';
 
 require_once '../ali_express/taobao/TopSdk.php';
 
 require_once '../vendor/autoload.php';
 
 
-
-
 use Avaks\MS\Products;
-$products = new Products();
+
+$productsMS = new Products();
 
 
 foreach (LOGINS as $login) {
@@ -84,9 +79,7 @@ foreach (LOGINS as $login) {
 
     // Получаем из БД все товары, у которых поле TMall ID не пустое
 
-    $products = $products->getTmallProducts($login['field_id']);
-    var_dump(sizeof($products));
-    die();
+    $products = $productsMS->getTmallProducts($login['field_id']);
 
     foreach ($products as $key => $product) {
 
@@ -97,26 +90,31 @@ foreach (LOGINS as $login) {
         $product['ali_product_id'] = $product['attributes'][$login['field_id']];
         if ($product['ali_product_id'] == '') continue;
 
+        $skuCode = $product['code'];
+
         // Получаем сток из БД
-        $product['stock'] = getMsStock($product['id'], $stores);
+        $product['stock'] = $productsMS->getMsStock($product['id'], $stores);
+
         $product['ali_stock'] = $product['stock'];
-        // Ограничиваем максимальный сток 5 штуками
-//		if ($product['ali_stock'] > 5) $product['ali_stock'] = 5;
+
+
         if ($product['ali_stock'] < 0) $product['ali_stock'] = 0;
 
-        $arr = ali_setProductStock($product['ali_product_id'], $product['ali_stock'], $login);
+        $aliProduct = new \Avaks\AE\Product($product['ali_product_id'], $skuCode);
+        $arr = $aliProduct->setStock($product['ali_stock'], $login);
+
 
         if (!$arr) {
-            var_dump($product['name'] . ' неверный ID aliexpress для ' . $login['name']);
+            var_dump($product['name'] . ' неверный ID aliexpress для ' . $login['login']);
             continue;
         }
 
         $product = array_merge($product, $arr);
 
         if ($product['new_stock'] === false) {
-            var_dump($product['ali_product_id'] . ' ' . $product['code'] . ' ' . round(100 * ($key / count($products))) . '% ' . $product['name'] . ' ' . $product['old_stock'] . ' без изменений');
+            var_dump($product['ali_product_id'] . ' ' . $product['code'] . ' ' . round(100 * ($key / count($products))) . '% ' . $product['name'] . ' ' . $product['old_stock'] . ' без изменений'.PHP_EOL);
         } else {
-            var_dump($product['ali_product_id'] . ' ' . $product['code'] . ' ' . round(100 * ($key / count($products))) . '% ' . $product['name'] . ' ' . $product['old_stock'] . ' ' . $product['new_stock']);
+            var_dump($product['ali_product_id'] . ' ' . $product['code'] . ' ' . round(100 * ($key / count($products))) . '% ' . $product['name'] . ' ' . $product['old_stock'] . ' ' . $product['new_stock'].PHP_EOL);
         }
 
         $products[$key] = $product;
@@ -139,7 +137,7 @@ foreach (LOGINS as $login) {
         $message .= " без изменений<br>";
     }
 
-    var_dump(telegram($message));
+    //var_dump(telegram($message));
 
     echo $message;
 }

@@ -40,8 +40,25 @@ class Products
     {
 
         $query = "SELECT * FROM `ms_product` WHERE `attributes` LIKE '%{$field_id}%'";
-        $products = AvaksSQL::selectProductsArray($query);
+        $products = AvaksSQL::selectAllAssoc($query);
         return $products;
 
+    }
+
+    public function getMsStock($product_id, $stores = array())
+    {
+
+
+        $avaliable_stock = 0;
+
+        foreach ($stores as $key => $store) {
+            $query = "SELECT (`stock` - `reserve`) as `avaliable_stock` FROM `ms_stock` WHERE `product_id` = '$product_id' AND `store_id` = '" . $store . "' ORDER BY `datetime` DESC LIMIT 1";
+
+            $row = AvaksSQL::selectAllAssoc($query);
+            $avaliable_stock = $avaliable_stock + ($row[0]['avaliable_stock'] ?? 0);
+        }
+
+
+        return $avaliable_stock;
     }
 }

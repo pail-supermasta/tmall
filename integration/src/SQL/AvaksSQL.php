@@ -34,7 +34,7 @@ class AvaksSQL
             $sql->close();
             $ordersAssoc = array();
             while ($row = $result->fetch_assoc()) {
-                $ordersAssoc[]= $row;
+                $ordersAssoc[] = $row;
             }
             return $ordersAssoc;
         } else {
@@ -66,7 +66,7 @@ class AvaksSQL
         }
     }
 
-    public static function selectProductsArray($selectQuery)
+    public static function selectAllAssoc($selectQuery)
     {
 
         $sql = new \mysqli(MS_HOST, MS_USER, MS_PASS, MS_DB);
@@ -74,7 +74,7 @@ class AvaksSQL
         $query = $selectQuery;
 
         $result = $sql->query($query);
-        $rows = mysqli_fetch_all($result);
+        $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
         if ($result->num_rows > 0) {
 
@@ -85,4 +85,5 @@ class AvaksSQL
             return false;
         }
     }
+
 }
