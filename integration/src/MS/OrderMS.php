@@ -77,19 +77,3 @@ class OrderMS
         return $res;
     }
 }
-
-//require_once '../../vendor/autoload.php';
-//$orderMS = new OrderMS('f861e845-d076-11e9-0a80-025b000db720');
-///*$res = $orderMS->setTrackNum('1234545');
-//var_dump($res);*/
-//
-//define('ID_REGEXP', '/[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}/'); // Регулярка для UUID
-//
-//$orderMSDetails = $orderMS->getById();
-//
-///*получить Статус заказа в МС*/
-//preg_match(ID_REGEXP, $orderMSDetails['state']['meta']['href'], $matches);
-//$state_id = $matches[0];
-//$orderMS->state = $state_id;
-//var_dump($orderMS->state);
-////$orderMS->setToPack();

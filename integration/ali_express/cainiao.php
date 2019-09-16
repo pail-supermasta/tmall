@@ -23,24 +23,8 @@ use Avaks\Cainiao\Cainiao;
 // Get order details from Ali by ID
 require_once 'ali_order_details_dynamic.php';
 
-$buyer_login_id = 'NezabudkaMR@yandex.ru';
-$sessionKey = '50002500500V1acb5e0esBdqLFskhnQwtwheYk1CiSexTFfFAv6nWUefGArBboUuh8F';
-
-//$buyer_login_id = 'bestgoodsstore@yandex.ru';
-
-//$sessionKey = '50002301103yrRc163e29d7ZzgUiKwh0xhbCbrgNTyjFHJHwjSsCd5lSPWxJBdCZLQ5';
-
-//$buyer_login_id = 'novinkiooo@yandex.ru';
-
-//$sessionKey = '50002500737cfRNerkKCo3qqiYbivGmqfVSjYiCsiryXdglSI1e4adc70E1lvJFkJus';
-
-//$buyer_login_id = 'NezabudkaiRobot@yandex.ru';
-
-//$sessionKey = '50002500703cfRN14e0f429er9JHvWsscC4j2hLvisve7cDy7nRylIluKtZQNPQCxQu';
-
-//$buyer_login_id = 'NezabudkaND@yandex.ru';
-
-//$sessionKey = '50002700532VsBdqLktCoFvXnxeB4JxEjRbWTD7DDviK14d17745W1DmhKcqJnlQq9B';
+//$buyer_login_id = 'NezabudkaMR@yandex.ru';
+//$sessionKey = '50002500500V1acb5e0esBdqLFskhnQwtwheYk1CiSexTFfFAv6nWUefGArBboUuh8F';
 
 
 function deliverCainiao($order, $sessionKey)
@@ -48,21 +32,6 @@ function deliverCainiao($order, $sessionKey)
     $curlCai = new Cainiao();
 
     /*get order details from MS*/
-
-    /* $link = MS_PATH . "/entity/customerorder/?filter=name=" . $order;
-     $res = curlMS($link, false, MS_USERNAME);
-     if (isset($res)) {
-         $orderMS = json_decode($res, true);
-         $orderID = $orderMS['rows'][0]['id'];
-         $link = MS_PATH . "/entity/customerorder/$orderID/positions";
-         $resS = curlMS($link, false, MS_USERNAME);
-         if (isset($resS)) {
-             $positionsMS = json_decode($resS, true);
-             var_dump($positionsMS['rows']);
-             die();
-         }
-
-     }*/
 
     $orderDetails = findorderbyid($order, $sessionKey);
 
@@ -249,9 +218,9 @@ function deliverCainiao($order, $sessionKey)
     /*add pdf to order MS*/
 
     /*AliexpressLogisticsSellershipmentfortopRequest*/
-    return array('mailNo' => $mailNo, 'result_success' => true);
+//    return array('mailNo' => $mailNo, 'result_success' => true);
 
-//    return sellerShipmentForTop($order, $mailNo, $sessionKey);
+    return sellerShipmentForTop($order, $mailNo, $sessionKey);
 }
 
 function sellerShipmentForTop($order, $logisticsNo, $sessionKey)

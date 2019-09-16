@@ -111,7 +111,7 @@ function checkTimeFromPaid($order, $payTime, $credential)
 
         if ($result['result_success'] == true) {
             $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
-//            telegram($message, '-278688533');
+            telegram($message, '-278688533');
 
             $orderMS = new OrderMS('',$order,'');
             $orderMSDetails = $orderMS->getByName();
@@ -130,7 +130,7 @@ function checkTimeFromPaid($order, $payTime, $credential)
             if ($orderMS->state == 'ecf45f89-f518-11e6-7a69-9711000ff0c4') {
                 $message = "Статус заказа №$order будет установлен с В работе на ОТГРУЗИТЬ в МС";
                 telegram($message, '-278688533');
-//                $orderMS->setToPack();
+                $orderMS->setToPack();
             } else{
                 $message = "ВНИМАНИЕ! Заказ №$order - не может быть отправлен Отгрузку. Статус не В работе.";
                 telegram($message, '-278688533');
@@ -153,7 +153,7 @@ function checkTimeFromPaid($order, $payTime, $credential)
 
             /*has no track*/
             if ($trackId == false) {
-                var_dump($timeFromPayment . PHP_EOL);
+//                var_dump($timeFromPayment . PHP_EOL);
                 telegram("По заказу Tmall номер $order не заполнен номер трека! Необходимо срочно заполнить.", '-278688533');
             } else {
                 /*set track number in Tmall*/
