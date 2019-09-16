@@ -9,6 +9,7 @@
 
 ini_set('display_errors', 1);
 
+
 header('Content-Type: application/json');
 
 
@@ -27,9 +28,9 @@ require_once 'ali_order_details_dynamic.php';
 //$sessionKey = '50002500500V1acb5e0esBdqLFskhnQwtwheYk1CiSexTFfFAv6nWUefGArBboUuh8F';
 
 
-function deliverCainiao($order, $sessionKey)
+function deliverCainiao($order,$cnId, $cpCode, $sessionKey)
 {
-    $curlCai = new Cainiao();
+    $curlCai = new Cainiao($cpCode);
 
     /*get order details from MS*/
 
@@ -77,7 +78,10 @@ function deliverCainiao($order, $sessionKey)
         $quantity = $product['product_count'] ?? 1;
         $goodsNameEn = $shortener['result']['subject'];
         $price = (int)$shortener['result']['product_price'];
-        $weight = (int)$shortener['result']['gross_weight'];
+        $weight = (int)$shortener['result']['gross_weight'] == 0 ? 1 : (int)$shortener['result']['gross_weight'];
+
+
+//        $weight = $shortener['result']['gross_weight'];
 
         $goodsList[0] = array('isContainsBattery' => false,
             'itemId' => $itemId,
@@ -98,7 +102,6 @@ function deliverCainiao($order, $sessionKey)
     }
 
 
-
     $sourceArray = array(
         'DistributionConsignRequest' =>
             array(
@@ -110,7 +113,7 @@ function deliverCainiao($order, $sessionKey)
                 'receiver' =>
                     array(
                         'zip' => $zip,
-                        'address' => $address.$street,
+                        'address' => $address . $street,
                         'province' => $province,
                         'city' => $city,
                         'countryCode' => 'RU',
@@ -174,13 +177,13 @@ function deliverCainiao($order, $sessionKey)
     );
 
 
-
     $content = json_encode($sourceArray, JSON_UNESCAPED_UNICODE);
 
 
     /*CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN*/
 
     $resp = $curlCai->CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN($content);
+    var_dump($resp);
     $message = "Заказ №$order - создан в Цайняо метод CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN";
     telegram($message, '-278688533');
 
@@ -192,7 +195,7 @@ function deliverCainiao($order, $sessionKey)
 
     $sourceArray = array(
         'orderId' => $distributionConsignResponse['logisticsOrderId'], //Digits that follow the LP# (received in the response to DISTRIBUTION_CONSIGN)
-        'cnId' => '4398983084403' //Cainiao user ID of the store
+        'cnId' => $cnId //Cainiao user ID of the store
     );
 
     $content = json_encode($sourceArray, JSON_UNESCAPED_UNICODE);
