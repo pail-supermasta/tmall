@@ -9,7 +9,7 @@
 
 ini_set('display_errors', 1);
 
-
+ini_set("error_log", "../php-error.log");
 header('Content-Type: application/json');
 
 
@@ -28,7 +28,7 @@ require_once 'ali_order_details_dynamic.php';
 //$sessionKey = '50002500500V1acb5e0esBdqLFskhnQwtwheYk1CiSexTFfFAv6nWUefGArBboUuh8F';
 
 
-function deliverCainiao($order,$cnId, $cpCode, $sessionKey)
+function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
 {
     $curlCai = new Cainiao($cpCode);
 
@@ -66,6 +66,8 @@ function deliverCainiao($order,$cnId, $cpCode, $sessionKey)
         $resp = $c->execute($aliexpressSolutionProductInfoGetRequest, $sessionKey);
         $res = json_encode((array)$resp);
         $shortener = json_decode($res, true);
+        var_dump($shortener);
+        die();
 
 
         $length = $shortener['result']['package_length'];
@@ -83,7 +85,8 @@ function deliverCainiao($order,$cnId, $cpCode, $sessionKey)
 
 //        $weight = $shortener['result']['gross_weight'];
 
-        $goodsList[0] = array('isContainsBattery' => false,
+        $goodsList[] = array(
+            'isContainsBattery' => false,
             'itemId' => $itemId,
             'goodsNameCn' => $goodsNameCn,
             'quantity' => $quantity,
@@ -92,14 +95,13 @@ function deliverCainiao($order,$cnId, $cpCode, $sessionKey)
             'price' => $price,
             'weight' => $weight,
             'isAneroidMarkup' => false);
-
-        $packageList[] = array('length' => $length,
-            'width' => $width,
-            'height' => $height,
-            'goodsList' => $goodsList
-        );
-
     }
+    $packageList[0] = array(
+        'length' => 1,
+        'width' => 1,
+        'height' => 1,
+        'goodsList' => $goodsList
+    );
 
 
     $sourceArray = array(
@@ -124,16 +126,16 @@ function deliverCainiao($order,$cnId, $cpCode, $sessionKey)
                     ),
                 'sender' =>
                     array(
-                        'zip' => '117246',
-                        'address' => 'Россия Москва Москва Херсонская ул, дом 43, корпус 3',
+                        'zip' => '115114',
+                        'address' => 'Россия, Москва, Павелецкая ул, дом 2, стр 21, оф 237',
                         'province' => 'Москва',
                         'city' => 'Москва',
                         'countryCode' => 'RU',
-                        'street' => 'Херсонская',
+                        'street' => 'Павелецкая',
                         'name' => 'ООО Незабудка',
-                        'mobile' => '79255242747',
+                        'mobile' => '74954812282',
                         'county' => 'Россия',
-                        'telephone' => '79255242747',
+                        'telephone' => '74954812282 доб 121',
                         'addressId' => -1,
                     ),
                 'packageList' => $packageList,
@@ -142,31 +144,31 @@ function deliverCainiao($order,$cnId, $cpCode, $sessionKey)
                     array(
                         'refundAddress' =>
                             array(
-                                'zip' => '117246',
-                                'address' => 'Россия Москва Москва Херсонская ул, дом 43, корпус 3',
+                                'zip' => '115114',
+                                'address' => 'Россия, Москва, Павелецкая ул, дом 2, стр 21, оф 237',
                                 'province' => 'Москва',
                                 'city' => 'Москва',
                                 'countryCode' => 'RU',
-                                'street' => 'Херсонская',
+                                'street' => 'Павелецкая',
                                 'name' => 'ООО Незабудка',
-                                'mobile' => '79255242747',
+                                'mobile' => '74954812282',
                                 'county' => 'Россия',
-                                'telephone' => '79255242747',
+                                'telephone' => '74954812282 доб 121',
                                 'addressId' => -1,
                             ),
                         'undeliverableOption' => false,
                         'pickupAddress' =>
                             array(
-                                'zip' => '117246',
-                                'address' => 'Россия Москва Москва Херсонская ул, дом 43, корпус 3',
+                                'zip' => '115114',
+                                'address' => 'Россия, Москва, Павелецкая ул, дом 2, стр 21, оф 237',
                                 'province' => 'Москва',
                                 'city' => 'Москва',
                                 'countryCode' => 'RU',
-                                'street' => 'Херсонская',
+                                'street' => 'Павелецкая',
                                 'name' => 'ООО Незабудка',
-                                'mobile' => '79255242747',
+                                'mobile' => '74954812282',
                                 'county' => 'Россия',
-                                'telephone' => '79255242747',
+                                'telephone' => '74954812282 доб 121',
                                 'addressId' => -1,
                             ),
                         'expressCompany' => null,
@@ -184,6 +186,7 @@ function deliverCainiao($order,$cnId, $cpCode, $sessionKey)
 
     $resp = $curlCai->CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN($content);
     var_dump($resp);
+    error_log($resp . PHP_EOL, 3, 'CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log');
     $message = "Заказ №$order - создан в Цайняо метод CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN";
     telegram($message, '-278688533');
 
@@ -192,6 +195,11 @@ function deliverCainiao($order,$cnId, $cpCode, $sessionKey)
 
     $distributionConsignResponse = json_decode($resp, true)['DistributionConsignResponse'];
     /*get LP*/
+
+    if (!isset($distributionConsignResponse['logisticsOrderId']) && $distributionConsignResponse['logisticsOrderId'] == '') {
+        $message = "CAINIAO ОШИБКА $order см CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log";
+        telegram($message, '-320614744');
+    }
 
     $sourceArray = array(
         'orderId' => $distributionConsignResponse['logisticsOrderId'], //Digits that follow the LP# (received in the response to DISTRIBUTION_CONSIGN)
@@ -202,18 +210,23 @@ function deliverCainiao($order,$cnId, $cpCode, $sessionKey)
 
     /*MAILNO_QUERY_SERVICE*/
     $res = $curlCai->MAILNO_QUERY_SERVICE($content);
-
+    error_log($resp . PHP_EOL, 3, 'MAILNO_QUERY_SERVICE.log');
 
     /*EXAMPLE RESPONSE string(47) "{"mailNo":"AEWH0000708100RU4","success":"true"}"*/
 
     $mailNoResponse = json_decode($res, true);
-    $mailNo = $mailNoResponse['mailNo'];
-    var_dump($mailNoResponse);
 
-    $message = "Заказ №$order - получен трек номер $mailNo из Цайняо метод MAILNO_QUERY_SERVICE. Заказ не будет доставлен";
-    telegram($message, '-278688533');
-    $message = "ВНИМАНИЕ Обработать заказ $order ВРУЧНУЮ";
-    telegram($message, '-278688533');
+    var_dump($mailNoResponse);
+    if (isset($mailNoResponse['mailNo']) && $mailNoResponse['mailNo'] != '') {
+        $mailNo = $mailNoResponse['mailNo'];
+        $message = "Заказ №$order - получен трек номер $mailNo из Цайняо метод MAILNO_QUERY_SERVICE. Заказ не будет доставлен";
+        telegram($message, '-278688533');
+        $message = "ВНИМАНИЕ Обработать заказ $order ВРУЧНУЮ";
+        telegram($message, '-278688533');
+    } else {
+        $message = "CAINIAO ОШИБКА $order см MAILNO_QUERY_SERVICE.log";
+        telegram($message, '-320614744');
+    }
 
 
     /*AliexpressLogisticsGetpdfsbycloudprintRequest*/

@@ -120,13 +120,13 @@ function checkTimeFromPaid($order, $payTime, $credential)
 
         /*run cainiao delivery process*/
 
-        $result = deliverCainiao($order,$cnId,$cpCode,$sessionKey);
+        $result = deliverCainiao($order, $cnId, $cpCode, $sessionKey);
 
         if ($result['result_success'] == true) {
             $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
             telegram($message, '-278688533');
 
-            $orderMS = new OrderMS('',$order,'');
+            $orderMS = new OrderMS('', $order, '');
             $orderMSDetails = $orderMS->getByName();
             $orderMS->id = $orderMSDetails['id'];
 
@@ -134,24 +134,17 @@ function checkTimeFromPaid($order, $payTime, $credential)
             preg_match(ID_REGEXP, $orderMSDetails['state']['meta']['href'], $matches);
             $state_id = $matches[0];
             $orderMS->state = $state_id;
-            $result['mailNo'] = str_replace(['AEWH', 'RU4'],"",$result['mailNo']);
+            $result['mailNo'] = str_replace(['AEWH', 'RU4'], "", $result['mailNo']);
 
             $orderMS->setTrackNum($result['mailNo']);
-            $message = "Для заказа №$order будет установлен трек ".$result['mailNo']." в МС";
-            telegram($message, '-278688533');
-            /*if В работе  - set Отгрузить */
-            if ($orderMS->state == 'ecf45f89-f518-11e6-7a69-9711000ff0c4') {
-                $message = "Статус заказа №$order будет установлен с В работе на ОТГРУЗИТЬ в МС";
-                telegram($message, '-278688533');
-                $orderMS->setToPack();
-            } else{
-                $message = "ВНИМАНИЕ! Заказ №$order - не может быть отправлен Отгрузку. Статус не В работе.";
-                telegram($message, '-278688533');
-            }
+            /*            $message = "Для заказа №$order будет установлен трек ".$result['mailNo']." в МС";
+                        telegram($message, '-278688533');*/
+            var_dump($orderMS->setToPack());
 
         } else {
-            $message = "CAINIAO ОШИБКА $order";
+            $message = "CAINIAO ОШИБКА $order см ali_order_list_paid.log";
             telegram($message, '-320614744');
+            error_log('ali_order_list_paid err' . json_encode($result), 3, 'ali_order_list_paid.log');
         }
 
 

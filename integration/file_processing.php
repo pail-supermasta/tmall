@@ -132,7 +132,6 @@ function destructResponse(array $shortener, $order, $shop)
                 /*  product result from MS product DB   */
                 $product_ms = getProductIdMS($orderDetails['field_id'], $product['sku_code']);
                 $product_id = $product_ms['id'];
-
                 if ($product_id != '') {
                     /*  BF-5  check if sold price less than minimum sell price in MS product DB   */
 
