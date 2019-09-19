@@ -1,0 +1,5 @@
+{"success":"false","errorCode":"-1","errorMsg":"packageDTO.length is null"}
+{"success":"false","errorCode":"-1","errorMsg":"packageList is null"}
+{"DistributionConsignResponse":{"logisticsOrderId":"145314429481","tradeLogisticsOrderId":"5213693531","tradeOrderId":"5000437621373465","tradeOrderFrom":"AE","logisticsOrderCode":"LP00145314429481"},"success":"true"}
+{"success":"false","errorCode":"P-011-0212-10-15-008","errorMsg":"商品的申报金额不能为空，或小于0.01$"}
+{"DistributionConsignResponse":{"logisticsOrderId":"145335578802","tradeLogisticsOrderId":"5167640598","tradeOrderId":"8002345310822669","tradeOrderFrom":"AE","logisticsOrderCode":"LP00145335578802"},"success":"true"}

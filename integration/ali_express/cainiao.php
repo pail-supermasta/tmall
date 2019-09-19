@@ -66,8 +66,7 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
         $resp = $c->execute($aliexpressSolutionProductInfoGetRequest, $sessionKey);
         $res = json_encode((array)$resp);
         $shortener = json_decode($res, true);
-        var_dump($shortener);
-        die();
+
 
 
         $length = $shortener['result']['package_length'];
@@ -79,7 +78,16 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
         $goodsNameCn = $shortener['result']['product_unit'];
         $quantity = $product['product_count'] ?? 1;
         $goodsNameEn = $shortener['result']['subject'];
-        $price = (int)$shortener['result']['product_price'];
+        if(isset($shortener['result']['product_price'])){
+            $price = (int)$shortener['result']['product_price'];
+        } elseif (isset($shortener['result']['aeop_ae_product_s_k_us']['global_aeop_ae_product_sku'])){
+            foreach ($shortener['result']['aeop_ae_product_s_k_us']['global_aeop_ae_product_sku'] as $sku){
+                if ($product['sku_code'] == $sku['sku_code']){
+                    $price=(int)$sku['sku_discount_price'];
+                }
+            }
+        }
+
         $weight = (int)$shortener['result']['gross_weight'] == 0 ? 1 : (int)$shortener['result']['gross_weight'];
 
 

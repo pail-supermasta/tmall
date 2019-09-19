@@ -32,11 +32,17 @@ $mailNoHTML = '<div id="mailNo" class="">' . $mailNo . '</div>';
 
 $LPNum = 'LP00141041126618';
 $AEOrderId = '705317922239895';
-$productDescriptions = array('HOBOT 298 Household Windows Cleaner Robot Window Cleaning Vacuum Cleaner Wiper Wet Dry Remote Control Electric Washing Glass HOBOT 298 Household Windows Cleaner Robot Window Cleaning Vacuum Cleaner Wiper Wet Dry Remote Control Electric Washing Glass HOBOT 298 Household Windows Cleaner Robot Window Cleaning Vacuum Cleaner Wiper Wet Dry Remote Control Electric Washing Glass', 'HOBOT 298 Household Windows Cleaner Robot Window Cleaning Vacuum Cleaner Wiper Wet Dry Remote Control Electric Washing Glass');
+$productDescriptions = array('HOBOT 298 Household Windows Cleaner Robot Window Cleaning Vacuum Cleaner Wiper Wet Dry Remote Control Electric Washing Glass', 'HOBOT 298 Household Windows Cleaner Robot Window Cleaning Vacuum Cleaner Wiper Wet Dry Remote Control Electric Washing Glass');
 
 $LPNumHTML = '<div id="LPNum" class="">' . $LPNum . '</div>';
 $AEOrderIdHTML = '<div id="AEOrderId" class="">' . $AEOrderId . '</div>';
-$productDescriptionHTML = '<div class="productDescription">' . $productDescriptions[0] . '</div>';
+$AEOrderIdPageOneHTML = '<div id="AEOrderIdPageOne" class="">#' . $AEOrderId . '</div>';
+$productDescriptionHTML='';
+foreach ($productDescriptions as $productDescription){
+    $productDescriptionHTML .= '<div style="margin-top: 20px;" class="productDescription">' . $productDescription . '</div>';
+}
+$productDescriptionsHTML='<div class="productDescriptionsHTML">'.$productDescriptionHTML.'</div>';
+
 $mailNoHTML2 = '<div id="mailNo2" class="">' . $mailNo . '</div>';
 
 try {
@@ -57,9 +63,9 @@ try {
 } catch (\Picqer\Barcode\Exceptions\BarcodeException $e) {
 }
 
-$dynamicHTML = $deliveryAddress . $receiverName . $receiverPhone . $mailNoHTML . $otgruzkaDate;
+$dynamicHTML = $deliveryAddress . $receiverName . $receiverPhone . $mailNoHTML . $otgruzkaDate.$AEOrderIdPageOneHTML;
 
-$dynamicHTML2 = '<div id="dynamicHTML2" class="">' . $LPNumHTML . $mailNoHTML2 . $AEOrderIdHTML . $productDescriptionHTML . '</div>';
+$dynamicHTML2 = '<div id="dynamicHTML2" class="">' . $LPNumHTML . $mailNoHTML2 . $AEOrderIdHTML . $productDescriptionsHTML . '</div>';
 
 // Write some HTML code:
 
@@ -176,6 +182,16 @@ $html = '<!DOCTYPE html>
         rotate: 90;
         
     }
+    #AEOrderIdPageOne{
+   
+        position: absolute;
+        top: 142px;
+        left: 2px;
+        font-size: 10px;
+        letter-spacing: 0;
+        rotate: 90;     
+    }
+    
     #mailNo{
        
         position: absolute;
@@ -190,7 +206,7 @@ $html = '<!DOCTYPE html>
     
     #dynamicHTML2{
         
-        width: 300px;
+        width: 350px;
         overflow: hidden;
        
         font-family: sans-serif;
@@ -203,6 +219,9 @@ $html = '<!DOCTYPE html>
     
     #AEOrderId{
         font-size: 20.0028px;
+    }
+    .productDescriptionsHTML{
+        margin: 16px 0 0 60px;
     }
    
 
@@ -221,15 +240,9 @@ $html = '<!DOCTYPE html>
 <div style="" class="two w0 h0">
    
         <img style="height: 174.70px;" class="" src="template-2.png" alt="">
+       
          ' . $barcode2 . $dynamicHTML2 . '
-         
-         
-         
-
-
-
-
-         
+                
         
 </div>
 
