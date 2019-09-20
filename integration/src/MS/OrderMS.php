@@ -16,6 +16,7 @@ class OrderMS
     public $name;
     public $positions;
     public $state;
+    public $lpNumber;
 
     function __construct($id = null, $name = null, $positions = null)
     {
@@ -75,5 +76,15 @@ class OrderMS
         $this->state = '327c02b4-75c5-11e5-7a40-e89700139937';
 
         return $res;
+    }
+
+    public function setLP($LP)
+    {
+        $this->lpNumber = $LP;
+        $postdata = '{"externalCode": "'.$this->lpNumber.'"}';
+
+        $res = CurlMoiSklad::curlMS('/entity/customerorder/' . $this->id, $postdata, 'put');
+        return $res;
+
     }
 }

@@ -23,6 +23,9 @@ function curlMSCreate($username = false, $post, $memo)
     $headers[] = 'Content-Type: application/json';
     $headers[] = 'X-Lognex-WebHook-Disable: true';
     curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+    echo "Post body is: \n" . $post . "\n";
+
     $result = curl_exec($curl);
     $curl_errno = curl_errno($curl);
     curl_close($curl);
@@ -46,7 +49,7 @@ function curlMSCreate($username = false, $post, $memo)
             /*  BF-7
             send errors to telegram bot */
             $newOrderTeleGMsg = "Получен новый заказ Tmall номер [$orderId]($orderLinkMS). Заказ не отработан";
-            if ($memo != "" && isset($memo)) {
+            if ($memo != '' && isset($memo)) {
                 $userCommentTeleGMsg = "Комментарий к заказу [$orderId]($orderLinkMS): $memo";
                 telegram($userCommentTeleGMsg, '-278688533', 'Markdown');
             }
@@ -100,9 +103,10 @@ function fillOrderTemplate(array $orderDetails)
     $shop = $shopId . '\\n/*Складу - вложить гарантийный талон \\n/*Логистам - Отправить клиенту согласно заполненным полям';
     $markAsPaid = ($paid == true) ? '\\nЗАКАЗ ОПЛАЧЕН' : '';
     $escrowComment = 'escrow_fee_rates: ' . $orderDetails['escrow_fee_rates'];
+    $memoComment = isset($orderDetails['memo']) ? $orderDetails['memo'] . '\\n' : '';
 
 
-    $comment = '"Tmall id: ' . $orderDetails['order'] . '\\n' . $shop . '\\n' . $orderDetails['memo'] . '\\n' . $escrowComment . $markAsPaid . '"';
+    $comment = '"Tmall id: ' . $orderDetails['order'] . '\\n' . $shop . '\\n' . $memoComment . $escrowComment . $markAsPaid . '"';
 
     $postdata = '{
         "name": "' . $orderDetails['order'] . '",
@@ -156,7 +160,7 @@ function fillOrderTemplate(array $orderDetails)
             },
             {
                 "id": "547ffc2a-ef8e-11e6-7a31-d0fd0021d141",
-                "value": ' . $orderDetails['discountApplied'] . '
+                "value": ' . (int)$orderDetails['discountApplied'] . '
             },
             {
                 "id": "4552a58b-46a8-11e7-7a34-5acf002eb7ad",
@@ -175,7 +179,7 @@ function fillOrderTemplate(array $orderDetails)
     }';
 
 
-    curlMSCreate('kurskii@техтрэнд', $postdata, $orderDetails['memo']);
+    curlMSCreate('kurskii@техтрэнд', $postdata, $orderDetails['memo'] ?? '');
 
 
 }

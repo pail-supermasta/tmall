@@ -68,7 +68,6 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
         $shortener = json_decode($res, true);
 
 
-
         $length = $shortener['result']['package_length'];
         $width = $shortener['result']['package_width'];
         $height = $shortener['result']['package_height'];
@@ -78,12 +77,12 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
         $goodsNameCn = $shortener['result']['product_unit'];
         $quantity = $product['product_count'] ?? 1;
         $goodsNameEn = $shortener['result']['subject'];
-        if(isset($shortener['result']['product_price'])){
+        if (isset($shortener['result']['product_price'])) {
             $price = (int)$shortener['result']['product_price'];
-        } elseif (isset($shortener['result']['aeop_ae_product_s_k_us']['global_aeop_ae_product_sku'])){
-            foreach ($shortener['result']['aeop_ae_product_s_k_us']['global_aeop_ae_product_sku'] as $sku){
-                if ($product['sku_code'] == $sku['sku_code']){
-                    $price=(int)$sku['sku_discount_price'];
+        } elseif (isset($shortener['result']['aeop_ae_product_s_k_us']['global_aeop_ae_product_sku'])) {
+            foreach ($shortener['result']['aeop_ae_product_s_k_us']['global_aeop_ae_product_sku'] as $sku) {
+                if ($product['sku_code'] == $sku['sku_code']) {
+                    $price = (int)$sku['sku_discount_price'];
                 }
             }
         }
@@ -194,7 +193,7 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
 
     $resp = $curlCai->CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN($content);
     var_dump($resp);
-    error_log($resp . PHP_EOL, 3, 'CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log');
+    error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . json_encode($resp) . $content . PHP_EOL, 3, 'CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log');
     $message = "Заказ №$order - создан в Цайняо метод CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN";
     telegram($message, '-278688533');
 
@@ -207,6 +206,12 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
     if (!isset($distributionConsignResponse['logisticsOrderId']) && $distributionConsignResponse['logisticsOrderId'] == '') {
         $message = "CAINIAO ОШИБКА $order см CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log";
         telegram($message, '-320614744');
+    } else{
+        /*save LP to the MS*/
+        $orderMS = new \Avaks\MS\OrderMS('', $order, '');
+        $orderMSDetails = $orderMS->getByName();
+        $orderMS->id = $orderMSDetails['id'];
+        $orderMS->setLP($distributionConsignResponse['logisticsOrderId']);
     }
 
     $sourceArray = array(
@@ -218,7 +223,8 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
 
     /*MAILNO_QUERY_SERVICE*/
     $res = $curlCai->MAILNO_QUERY_SERVICE($content);
-    error_log($resp . PHP_EOL, 3, 'MAILNO_QUERY_SERVICE.log');
+
+    error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . json_encode($res) . $content . PHP_EOL, 3, 'MAILNO_QUERY_SERVICE.log');
 
     /*EXAMPLE RESPONSE string(47) "{"mailNo":"AEWH0000708100RU4","success":"true"}"*/
 
