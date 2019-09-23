@@ -1,0 +1,2 @@
+[20-Sep-2019 15:18:54 UTC] PHP Notice:  Undefined index: deliveryAddress in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Customs.php on line 41
+[20-Sep-2019 15:18:55 UTC] PHP Notice:  Undefined variable: mailNoHTML in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Customs.php on line 85

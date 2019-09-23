@@ -17,6 +17,7 @@ require_once '../integration/vendor/autoload.php';
 
 
 $generator = new Picqer\Barcode\BarcodeGeneratorPNG();
+//$orderMS = new \Avaks\MS\OrderMS('2ebe8da0-dbaf-11e9-0a80-034e0008d2c2');
 $mailNo = 'AEWH0000657988RU4';
 
 // Page 1 variables
@@ -250,6 +251,8 @@ $html = '<!DOCTYPE html>
 </body>
 </html>';
 
+echo $html;
+die();
 
 try {
 //    $mpdf->WriteHTML('<h1>Hello World</h1><br><p>My first PDF with mPDF</p>');
@@ -260,14 +263,29 @@ try {
 // Output a PDF file directly to the browser
 try {
 //    $mpdf->Output();
-    $mpdf->Output('pdf/Hello1.pdf', \Mpdf\Output\Destination::FILE);
-//    $pdfCode = $mpdf->Output(null, \Mpdf\Output\Destination::STRING_RETURN);
+//    $mpdf->Output('pdf/Hello1.pdf', \Mpdf\Output\Destination::FILE);
+    $pdfCode = $mpdf->Output(null, \Mpdf\Output\Destination::STRING_RETURN);
 } catch (\Mpdf\MpdfException $e) {
     var_dump($e);
 }
 
 /*$content = base64_encode($pdfCode);
 echo '<img id="" src="data:image/png;base64,' . $content . '">';*/
+
+
+
+$content = base64_encode($pdfCode);
+$attribute['id'] = 'b8a8f6d6-5782-11e8-9ff4-34e800181bf6';
+$attribute['file']['filename'] = "Маркировка $orderMS->name.pdf";
+$attribute['file']['content'] = $content;
+$put_data['attributes'][] = $attribute;
+
+$final = json_encode($put_data);
+var_dump($orderMS->setSticker($final));
+
+
+
+
 
 
 

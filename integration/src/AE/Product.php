@@ -68,7 +68,7 @@ class Product
                 $result['new_stock'] = json_decode($res, true)['result']['modify_count'];
             }
         }
-        return $result;
+        return $result ?? false;
     }
 
 // Берём из Алиэкспресс информацию о продукте, по ID товара в Алиэкспресс
@@ -81,6 +81,6 @@ class Product
         $req->setProductId("$this->id");
         $resp = $c->execute($req, $sessionKey);
         $res = json_encode((array)$resp);
-        return json_decode($res, true)['result'];
+        return json_decode($res, true)['result'] ?? false;
     }
 }

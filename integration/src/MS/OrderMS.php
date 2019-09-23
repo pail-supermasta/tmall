@@ -17,6 +17,7 @@ class OrderMS
     public $positions;
     public $state;
     public $lpNumber;
+    public $trackNum;
 
     function __construct($id = null, $name = null, $positions = null)
     {
@@ -43,20 +44,21 @@ class OrderMS
         return $res;
     }
 
-    public function setTrackNum($trackNum)
+    public function setTrackNum($mailNo)
     {
 
         $put_data = array();
         $attribute = array();
 
         $attribute['id'] = 'a446677c-46b8-11e7-7a34-5acf0031d7b9';
-        $attribute['value'] = (int)$trackNum;
+        $attribute['value'] = (int)$mailNo;
         $put_data['attributes'][] = $attribute;
 
 
         $postdata = json_encode($put_data);
 
         $res = CurlMoiSklad::curlMS('/entity/customerorder/' . $this->id, $postdata, 'put');
+        $this->trackNum = $mailNo;
         return $res;
     }
 
