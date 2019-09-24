@@ -6,6 +6,12 @@
  * Time: 11:42
  */
 
+
+ini_set('display_errors', 1);
+
+header('Content-Type: application/json');
+
+
 use Avaks\MS\Orders;
 use Avaks\MS\OrderMS;
 

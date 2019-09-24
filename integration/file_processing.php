@@ -20,6 +20,28 @@ require_once 'moi_sklad/ms_post_order_dynamic.php';
 require_once 'moi_sklad/ms_mysql_products_dynamic.php';
 
 
+/*TEST PART DELETE ATER*/
+
+/*define('APPKEY', '27862248');
+define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
+require_once 'ali_express/taobao/TopSdk.php';
+// Telegram err logs integration
+require_once 'class/telegram.php';
+
+
+$order = '5000187075139959';
+$sessionKey = '50002301103yrRc163e29d7ZzgUiKwh0xhbCbrgNTyjFHJHwjSsCd5lSPWxJBdCZLQ5';
+$login = 'bestgoodsstore@yandex.ru';
+
+$res = findorderbyid($order, $sessionKey);
+
+destructResponse($res, $order, $login);
+
+die();*/
+
+/*TEST PART DELETE ATER*/
+
+
 /*  Data validation according https://docs.google.com/document/d/1jzyjiFzT44BoxQCnYYeg2TmOz40yIe4C/edit */
 
 /*  AF-3
@@ -122,8 +144,8 @@ function destructResponse(array $shortener, $order, $shop)
     /*  stores all positions    */
     $positions = array();
     $positionsEscrowFee = array();
+    $escrowFeeSum = 0;
     $productsCost = 0;
-    $discountApplied = 0;
     try {
         if (is_array($products)) {
 
@@ -145,14 +167,50 @@ function destructResponse(array $shortener, $order, $shop)
                     /*product sold by price in Tmall*/
                     $sellPrice = $product['product_price']['cent'];
 
+
+                    /**
+                     * товар1 - 1шт - сумма = 200
+                     * товар2 - 2шт -сумма = 100
+                     *
+                     * купон = 50р
+                     *
+                     * итого цена товар1 = 200 - 50*(200/300)
+                     * цена товар2 = 200 - 50*(100/300)
+                     */
+
+                    $productsTotal = 0;
+                    $priceArrInt = array();
+                    $orderAmount = 0;
+
+                    foreach ($products as $item) {
+                        $prodParam = array();
+                        $prPrice = $item['product_price']['cent'];
+                        $prCo = $item['product_count'];
+                        $prTotal = $prPrice * $prCo;
+                        $productsTotal += $prTotal;
+                        $orderAmount = $shortener['order_amount']['cent'];
+                        $prodParam['count'] = $prCo;
+                        $prodParam['price'] = $prPrice;
+                        $prodParam['total'] = $prTotal;
+                        $priceArrInt[] = $prodParam;
+                    }
+
+
+                    $productPrices = $priceArrInt[0];
+                    $sumDis = $productPrices['total'] - $orderAmount * ($productPrices['total'] / $productsTotal);
+
+                    $productPercentDisc = $sumDis * 100 / $productPrices['total'];
+
                     /*percentage difference btw Tmall price and MS price - applied discount*/
-                    $discount = 0;
+                    /*plus coupon or discount applied*/
                     if ($msPrice > $sellPrice) {
-                        $discount = (1 - $sellPrice / $msPrice) * 100;
+                        $discount = $productPercentDisc + (1 - $sellPrice / $msPrice) * 100;
                         $price = $msPrice;
                     } else {
                         $price = $sellPrice;
+                        $discount = $productPercentDisc;
                     }
+
 
                     if ($minPrice > $sellPrice || $msPrice > $sellPrice || $sellPrice > $msPrice) {
                         $sellPrice = number_format($sellPrice / 100, 2, ',', ' ');
@@ -185,7 +243,7 @@ function destructResponse(array $shortener, $order, $shop)
                         $positionEscrowFee = array($product_ms['code'] => $product['escrow_fee_rate']);
                         array_push($positionsEscrowFee, $positionEscrowFee);
                     }
-
+                    $escrowFeeSum += $product['escrow_fee_rate'];
 
                     array_push($positions, $position);
 
@@ -201,9 +259,7 @@ function destructResponse(array $shortener, $order, $shop)
                 }
             }
 
-            $customerPay = $shortener['order_amount']['cent'];
 
-            $discountApplied = $productsCost - $customerPay;
 
         } else {
             throw new NotArray();
@@ -217,9 +273,10 @@ function destructResponse(array $shortener, $order, $shop)
     $orderDetails['positions'] = json_encode($positions, JSON_UNESCAPED_SLASHES);
     $orderDetails['escrow_fee_rates'] = str_replace(array('%5D', '%5B'), "", http_build_query($positionsEscrowFee, ' ', ','));
 
-    /*ДШ amount*/
-    $orderDetails['discountApplied'] = ($discountApplied > 0) ? $discountApplied / 100 : 0;
 
+    /*ДШ amount*/
+
+    $orderDetails['dshSum'] = $orderAmount * $escrowFeeSum / sizeof($products) / 100;
 
 
     /*  fill JSON for order create function */
@@ -278,7 +335,7 @@ function processOrders($files)
 
         /*  if array NOT empty then -> foreach value in array   */
         if ($split) {
-            $getOrderDetailsCount = 0;
+           
 
             foreach ($split as $order) {
                 if ($order) {
