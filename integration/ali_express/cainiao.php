@@ -39,194 +39,192 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
 
 
     /*check if no LP*/
-
-    if (!isset($orderMSDetails['externalCode'])) {
-
-
-        $curlCai = new Cainiao($cpCode);
-
-        /*get order details from Ali*/
-
-        $orderDetails = findorderbyid($order, $sessionKey);
+    $curlCai = new Cainiao($cpCode);
+//    if ($orderMSDetails['externalCode'] == '0') {
 
 
-        $zip = $orderDetails['receipt_address']['zip'];
-        $address = $orderDetails['receipt_address']['address2'];
-        $province = $orderDetails['receipt_address']['province'];
-        $city = $orderDetails['receipt_address']['city'];
-        $street = $orderDetails['receipt_address']['detail_address'];
-        $name = $orderDetails['receipt_address']['contact_person'];
-        $mobile = '7' . $orderDetails['receipt_address']['mobile_no'];
+    /*get order details from Ali*/
+
+    $orderDetails = findorderbyid($order, $sessionKey);
 
 
-        $products = $orderDetails['child_order_list']['global_aeop_tp_child_order_dto'];
-
-        $c = new TopClient;
-        $aliexpressSolutionProductInfoGetRequest = new AliexpressSolutionProductInfoGetRequest;
-        /*0 lvl list of products*/
-        $packageList = array();
-        /*1 lvl product size*/
-        $packageDTO = array();
-        /*2 lvl - product*/
-        $goodsList = array();
-
-        foreach ((array)$products as $product) {
-
-            $c->appkey = APPKEY;
-            $c->secretKey = SECRET;
-
-            $aliexpressSolutionProductInfoGetRequest->setProductId($product['product_id']);
-            $resp = $c->execute($aliexpressSolutionProductInfoGetRequest, $sessionKey);
-            $res = json_encode((array)$resp);
-            $shortener = json_decode($res, true);
+    $zip = $orderDetails['receipt_address']['zip'];
+    $address = $orderDetails['receipt_address']['address2'];
+    $province = $orderDetails['receipt_address']['province'];
+    $city = $orderDetails['receipt_address']['city'];
+    $street = $orderDetails['receipt_address']['detail_address'];
+    $name = $orderDetails['receipt_address']['contact_person'];
+    $mobile = '7' . $orderDetails['receipt_address']['mobile_no'];
 
 
-            $length = $shortener['result']['package_length'];
-            $width = $shortener['result']['package_width'];
-            $height = $shortener['result']['package_height'];
+    $products = $orderDetails['child_order_list']['global_aeop_tp_child_order_dto'];
+
+    $c = new TopClient;
+    $aliexpressSolutionProductInfoGetRequest = new AliexpressSolutionProductInfoGetRequest;
+    /*0 lvl list of products*/
+    $packageList = array();
+    /*1 lvl product size*/
+    $packageDTO = array();
+    /*2 lvl - product*/
+    $goodsList = array();
+
+    foreach ((array)$products as $product) {
+
+        $c->appkey = APPKEY;
+        $c->secretKey = SECRET;
+
+        $aliexpressSolutionProductInfoGetRequest->setProductId($product['product_id']);
+        $resp = $c->execute($aliexpressSolutionProductInfoGetRequest, $sessionKey);
+        $res = json_encode((array)$resp);
+        $shortener = json_decode($res, true);
 
 
-            $itemId = $shortener['result']['product_id'];
-            $goodsNameCn = $shortener['result']['product_unit'];
-            $quantity = $product['product_count'] ?? 1;
-            $goodsNameEn = $shortener['result']['subject'];
-            if (isset($shortener['result']['product_price'])) {
-                $price = (int)$shortener['result']['product_price'];
-            } elseif (isset($shortener['result']['aeop_ae_product_s_k_us']['global_aeop_ae_product_sku'])) {
-                foreach ($shortener['result']['aeop_ae_product_s_k_us']['global_aeop_ae_product_sku'] as $sku) {
-                    if ($product['sku_code'] == $sku['sku_code']) {
-                        $price = (int)$sku['sku_discount_price'];
-                    }
+        $length = $shortener['result']['package_length'];
+        $width = $shortener['result']['package_width'];
+        $height = $shortener['result']['package_height'];
+
+
+        $itemId = $shortener['result']['product_id'];
+        $goodsNameCn = $shortener['result']['product_unit'];
+        $quantity = $product['product_count'] ?? 1;
+        $goodsNameEn = $shortener['result']['subject'];
+        if (isset($shortener['result']['product_price'])) {
+            $price = (int)$shortener['result']['product_price'];
+        } elseif (isset($shortener['result']['aeop_ae_product_s_k_us']['global_aeop_ae_product_sku'])) {
+            foreach ($shortener['result']['aeop_ae_product_s_k_us']['global_aeop_ae_product_sku'] as $sku) {
+                if ($product['sku_code'] == $sku['sku_code']) {
+                    $price = (int)$sku['sku_discount_price'];
                 }
             }
+        }
 
-            $weight = (int)$shortener['result']['gross_weight'] == 0 ? 1 : (int)$shortener['result']['gross_weight'];
+        $weight = (int)$shortener['result']['gross_weight'] == 0 ? 1 : (int)$shortener['result']['gross_weight'];
 
 
 //        $weight = $shortener['result']['gross_weight'];
 
-            $goodsList[] = array(
-                'isContainsBattery' => false,
-                'itemId' => $itemId,
-                'goodsNameCn' => $goodsNameCn,
-                'quantity' => $quantity,
-                'hscode' => null,
-                'goodsNameEn' => $goodsNameEn,
-                'price' => $price,
-                'weight' => $weight,
-                'isAneroidMarkup' => false);
-        }
-        $packageList[0] = array(
-            'length' => 1,
-            'width' => 1,
-            'height' => 1,
-            'goodsList' => $goodsList
-        );
-
-
-        $sourceArray = array(
-            'DistributionConsignRequest' =>
-                array(
-                    'orderSource' =>
-                        array(
-                            'tradeOrderId' => $order,
-                            'tradeOrderFrom' => 'AE',
-                        ),
-                    'receiver' =>
-                        array(
-                            'zip' => $zip,
-                            'address' => $address . $street,
-                            'province' => $province,
-                            'city' => $city,
-                            'countryCode' => 'RU',
-                            'street' => $street,
-                            'name' => $name,
-                            'mobile' => $mobile,
-                            'telephone' => null,
-                        ),
-                    'sender' =>
-                        array(
-                            'zip' => '115114',
-                            'address' => 'Россия, Москва, Павелецкая ул, дом 2, стр 21, оф 237',
-                            'province' => 'Москва',
-                            'city' => 'Москва',
-                            'countryCode' => 'RU',
-                            'street' => 'Павелецкая',
-                            'name' => 'ООО Незабудка',
-                            'mobile' => '74954812282',
-                            'county' => 'Россия',
-                            'telephone' => '74954812282 доб 121',
-                            'addressId' => -1,
-                        ),
-                    'packageList' => $packageList,
-
-                    'consignContract' =>
-                        array(
-                            'refundAddress' =>
-                                array(
-                                    'zip' => '115114',
-                                    'address' => 'Россия, Москва, Павелецкая ул, дом 2, стр 21, оф 237',
-                                    'province' => 'Москва',
-                                    'city' => 'Москва',
-                                    'countryCode' => 'RU',
-                                    'street' => 'Павелецкая',
-                                    'name' => 'ООО Незабудка',
-                                    'mobile' => '74954812282',
-                                    'county' => 'Россия',
-                                    'telephone' => '74954812282 доб 121',
-                                    'addressId' => -1,
-                                ),
-                            'undeliverableOption' => false,
-                            'pickupAddress' =>
-                                array(
-                                    'zip' => '115114',
-                                    'address' => 'Россия, Москва, Павелецкая ул, дом 2, стр 21, оф 237',
-                                    'province' => 'Москва',
-                                    'city' => 'Москва',
-                                    'countryCode' => 'RU',
-                                    'street' => 'Павелецкая',
-                                    'name' => 'ООО Незабудка',
-                                    'mobile' => '74954812282',
-                                    'county' => 'Россия',
-                                    'telephone' => '74954812282 доб 121',
-                                    'addressId' => -1,
-                                ),
-                            'expressCompany' => null,
-                            'warehouseCarrierService' => 'AE_RU_MP_COURIER_PH3_13329064',
-                            'needPickup' => true,
-                        ),
-                ),
-        );
-
-
-        $content = json_encode($sourceArray, JSON_UNESCAPED_UNICODE);
-
-
-        /*CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN*/
-
-        $resp = $curlCai->CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN($content);
-        var_dump($resp);
-        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . json_encode($resp) . $content . PHP_EOL, 3, 'CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log');
-        $message = "Заказ №$order - создан в Цайняо метод CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN";
-        telegram($message, '-278688533');
-
-
-        /*{"DistributionConsignResponse":{"logisticsOrderId":"147002440549","tradeLogisticsOrderId":"5137660691","tradeOrderId":"5000269028796387","tradeOrderFrom":"AE","logisticsOrderCode":"LP00147002440549"},"success":"true"}*/
-
-        $distributionConsignResponse = json_decode($resp, true)['DistributionConsignResponse'];
-        /*get LP*/
-
-        if (!isset($distributionConsignResponse['logisticsOrderId']) && $distributionConsignResponse['logisticsOrderId'] == '') {
-            $message = "CAINIAO ОШИБКА $order см CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log";
-            telegram($message, '-320614744');
-        } else {
-
-            $orderMS->setLP($distributionConsignResponse['logisticsOrderId']);
-        }
-
-    } else {
-        $distributionConsignResponse['logisticsOrderId'] = $orderMSDetails['externalCode'];
+        $goodsList[] = array(
+            'isContainsBattery' => false,
+            'itemId' => $itemId,
+            'goodsNameCn' => $goodsNameCn,
+            'quantity' => $quantity,
+            'hscode' => null,
+            'goodsNameEn' => $goodsNameEn,
+            'price' => $price,
+            'weight' => $weight,
+            'isAneroidMarkup' => false);
     }
+    $packageList[0] = array(
+        'length' => 1,
+        'width' => 1,
+        'height' => 1,
+        'goodsList' => $goodsList
+    );
+
+
+    $sourceArray = array(
+        'DistributionConsignRequest' =>
+            array(
+                'orderSource' =>
+                    array(
+                        'tradeOrderId' => $order,
+                        'tradeOrderFrom' => 'AE',
+                    ),
+                'receiver' =>
+                    array(
+                        'zip' => $zip,
+                        'address' => $address . $street,
+                        'province' => $province,
+                        'city' => $city,
+                        'countryCode' => 'RU',
+                        'street' => $street,
+                        'name' => $name,
+                        'mobile' => $mobile,
+                        'telephone' => null,
+                    ),
+                'sender' =>
+                    array(
+                        'zip' => '115114',
+                        'address' => 'Россия, Москва, Павелецкая ул, дом 2, стр 21, оф 237',
+                        'province' => 'Москва',
+                        'city' => 'Москва',
+                        'countryCode' => 'RU',
+                        'street' => 'Павелецкая',
+                        'name' => 'ООО Незабудка',
+                        'mobile' => '74954812282',
+                        'county' => 'Россия',
+                        'telephone' => '74954812282 доб 121',
+                        'addressId' => -1,
+                    ),
+                'packageList' => $packageList,
+
+                'consignContract' =>
+                    array(
+                        'refundAddress' =>
+                            array(
+                                'zip' => '115114',
+                                'address' => 'Россия, Москва, Павелецкая ул, дом 2, стр 21, оф 237',
+                                'province' => 'Москва',
+                                'city' => 'Москва',
+                                'countryCode' => 'RU',
+                                'street' => 'Павелецкая',
+                                'name' => 'ООО Незабудка',
+                                'mobile' => '74954812282',
+                                'county' => 'Россия',
+                                'telephone' => '74954812282 доб 121',
+                                'addressId' => -1,
+                            ),
+                        'undeliverableOption' => false,
+                        'pickupAddress' =>
+                            array(
+                                'zip' => '115114',
+                                'address' => 'Россия, Москва, Павелецкая ул, дом 2, стр 21, оф 237',
+                                'province' => 'Москва',
+                                'city' => 'Москва',
+                                'countryCode' => 'RU',
+                                'street' => 'Павелецкая',
+                                'name' => 'ООО Незабудка',
+                                'mobile' => '74954812282',
+                                'county' => 'Россия',
+                                'telephone' => '74954812282 доб 121',
+                                'addressId' => -1,
+                            ),
+                        'expressCompany' => null,
+                        'warehouseCarrierService' => 'AE_RU_MP_COURIER_PH3_13329064',
+                        'needPickup' => true,
+                    ),
+            ),
+    );
+
+
+    $content = json_encode($sourceArray, JSON_UNESCAPED_UNICODE);
+
+
+    /*CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN*/
+
+    $resp = $curlCai->CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN($content);
+    var_dump($resp);
+    error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . json_encode($resp) . $content . PHP_EOL, 3, 'CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log');
+    $message = "Заказ №$order - создан в Цайняо метод CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN";
+    telegram($message, '-278688533');
+
+
+    /*{"DistributionConsignResponse":{"logisticsOrderId":"147002440549","tradeLogisticsOrderId":"5137660691","tradeOrderId":"5000269028796387","tradeOrderFrom":"AE","logisticsOrderCode":"LP00147002440549"},"success":"true"}*/
+
+    $distributionConsignResponse = json_decode($resp, true)['DistributionConsignResponse'];
+    /*get LP*/
+
+    if (!isset($distributionConsignResponse['logisticsOrderId']) && $distributionConsignResponse['logisticsOrderId'] == '') {
+        $message = "CAINIAO ОШИБКА $order см CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log";
+        telegram($message, '-320614744');
+    } else {
+
+        $orderMS->setLP($distributionConsignResponse['logisticsOrderId']);
+    }
+
+    /*    } else {
+            $distributionConsignResponse['logisticsOrderId'] = $orderMSDetails['externalCode'];
+        }*/
 
 
     $sourceArray = array(

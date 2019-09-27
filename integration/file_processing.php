@@ -29,7 +29,7 @@ require_once 'ali_express/taobao/TopSdk.php';
 require_once 'class/telegram.php';
 
 
-$order = '5000187075139959';
+$order = '5000456496969609';
 $sessionKey = '50002301103yrRc163e29d7ZzgUiKwh0xhbCbrgNTyjFHJHwjSsCd5lSPWxJBdCZLQ5';
 $login = 'bestgoodsstore@yandex.ru';
 
@@ -145,7 +145,10 @@ function destructResponse(array $shortener, $order, $shop)
     $positions = array();
     $positionsEscrowFee = array();
     $escrowFeeSum = 0;
+    $escrowFee = 0;
     $productsCost = 0;
+    $orderDiscount = 0;
+
     try {
         if (is_array($products)) {
 
@@ -181,6 +184,8 @@ function destructResponse(array $shortener, $order, $shop)
                     $productsTotal = 0;
                     $priceArrInt = array();
                     $orderAmount = 0;
+                    $discountDiff = 0;
+                    $discountNoDiff = 0;
 
                     foreach ($products as $item) {
                         $prodParam = array();
@@ -189,6 +194,7 @@ function destructResponse(array $shortener, $order, $shop)
                         $prTotal = $prPrice * $prCo;
                         $productsTotal += $prTotal;
                         $orderAmount = $shortener['order_amount']['cent'];
+
                         $prodParam['count'] = $prCo;
                         $prodParam['price'] = $prPrice;
                         $prodParam['total'] = $prTotal;
@@ -196,19 +202,24 @@ function destructResponse(array $shortener, $order, $shop)
                     }
 
 
-                    $productPrices = $priceArrInt[0];
-                    $sumDis = $productPrices['total'] - $orderAmount * ($productPrices['total'] / $productsTotal);
+                    $orderShip = $shortener['logistics_amount']['cent'] ?? 0;
+                    $coupon = $productsTotal + $orderShip - $orderAmount;
+                    $productPercentDisc = $coupon * 100 / $productsTotal;
+                    var_dump('$productPercentDisc' . $productPercentDisc);
 
-                    $productPercentDisc = $sumDis * 100 / $productPrices['total'];
 
                     /*percentage difference btw Tmall price and MS price - applied discount*/
                     /*plus coupon or discount applied*/
                     if ($msPrice > $sellPrice) {
-                        $discount = $productPercentDisc + (1 - $sellPrice / $msPrice) * 100;
                         $price = $msPrice;
+                        $discountDiff = ($price - $sellPrice + $coupon) * 100 / ($price - $sellPrice + $productsTotal);
+                        var_dump('$discountDiff' . $discountDiff);
+                        $orderDiscount = $discountDiff;
                     } else {
                         $price = $sellPrice;
-                        $discount = $productPercentDisc;
+                        $discountNoDiff = $productPercentDisc;
+                        var_dump('$discountNoDiff' . $discountNoDiff);
+
                     }
 
 
@@ -217,8 +228,15 @@ function destructResponse(array $shortener, $order, $shop)
                         $msPrice = number_format($msPrice / 100, 2, ',', ' ');
                         $minPrice = number_format($minPrice / 100, 2, ',', ' ');
 
-                        telegram("Tmall продал товар по неверной цене. Цена продажи $sellPrice. Минимальная цена $minPrice. Цена товарв в МС $msPrice. Заказ на Tmall № $order.", '-278688533');
+//                        telegram("Tmall продал товар по неверной цене. Цена продажи $sellPrice. Минимальная цена $minPrice. Цена товарв в МС $msPrice. Заказ на Tmall № $order.", '-278688533');
                     }
+                    if ($orderDiscount != 0) {
+                        $discount = $orderDiscount;
+                    } else {
+                        $discount = $discountNoDiff;
+                    }
+                    var_dump('$orderDiscount' . $orderDiscount);
+                    var_dump('$discount' . $discount);
 
                     /*  stores one position */
                     $position = array(
@@ -245,6 +263,7 @@ function destructResponse(array $shortener, $order, $shop)
                     }
                     $escrowFeeSum += $product['escrow_fee_rate'];
 
+
                     array_push($positions, $position);
 
                     $productsCost += $product['product_price']['cent'] * $product['product_count'];
@@ -255,10 +274,9 @@ function destructResponse(array $shortener, $order, $shop)
 //                    mail("p.kurskii@avaks.org", "Товар не найден в МС", $productErrorMsg);
 
                     /*  send errors to telegram bot */
-                    telegram($productErrorMsg, '-278688533');
+//                    telegram($productErrorMsg, '-278688533');
                 }
             }
-
 
 
         } else {
@@ -267,7 +285,7 @@ function destructResponse(array $shortener, $order, $shop)
 
     } catch (NotArray  $e) {
 //        error_log("Caught $e in order $order \n Product list $products");
-        telegram("Caught $e in order $order \n", '-320614744');
+//        telegram("Caught $e in order $order \n", '-320614744');
     }
 
     $orderDetails['positions'] = json_encode($positions, JSON_UNESCAPED_SLASHES);
@@ -276,11 +294,15 @@ function destructResponse(array $shortener, $order, $shop)
 
     /*ДШ amount*/
 
-    $orderDetails['dshSum'] = $orderAmount * $escrowFeeSum / sizeof($products) / 100;
-
+//    $orderDetails['dshSum'] = $orderAmount * $escrowFeeSum / sizeof($products) / 100;
+    $couponEscrow = $coupon * $escrowFeeSum / sizeof($products);
+    $escrowFee = $escrowFeeSum / sizeof($products) * $productsTotal;
+    $orderShipEscrow = isset($shortener['logisitcs_escrow_fee_rate']) ? $shortener['logisitcs_escrow_fee_rate'] * $orderShip : 0;
+    $orderDetails['dshSum'] = $escrowFee + $orderShipEscrow - $couponEscrow;
+    die();
 
     /*  fill JSON for order create function */
-    fillOrderTemplate($orderDetails);
+//    fillOrderTemplate($orderDetails);
 }
 
 
@@ -335,7 +357,7 @@ function processOrders($files)
 
         /*  if array NOT empty then -> foreach value in array   */
         if ($split) {
-           
+
 
             foreach ($split as $order) {
                 if ($order) {
