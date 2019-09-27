@@ -6,10 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80146bb5-79f6-4afc-a154-c01ae4967d76" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log" beforeDir="false" afterPath="$PROJECT_DIR$/CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/ali_express/cainiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/cainiao.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/file_processing.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/file_processing.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +23,8 @@
       <file leaf-file-name="ali_order_details_dynamic.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+            <state relative-caret-position="360">
+              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -45,8 +41,8 @@
       <file leaf-file-name="file_processing.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/integration/file_processing.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="24" column="2" selection-start-line="24" selection-end-line="39" selection-end-column="8" />
+            <state relative-caret-position="371">
+              <caret line="328" lean-forward="true" selection-start-line="328" selection-end-line="328" />
               <folding>
                 <element signature="n#userDataValidation#0;n#!!top" />
               </folding>
@@ -58,13 +54,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>findorderbyid</find>
-      <find>global_aeop_tp_child_order_dto</find>
       <find>$discountApplied</find>
       <find>191</find>
       <find>disc</find>
       <find>discountApplied</find>
-      <find>fillOrderTemplate</find>
       <find>die</find>
       <find>discountA</find>
       <find>$oA</find>
@@ -88,6 +81,9 @@
       <find>$escrowFee</find>
       <find>$discount</find>
       <find>var</find>
+      <find>telegram</find>
+      <find>fillOrderTemplate</find>
+      <find>dshSum</find>
     </findStrings>
     <replaceStrings>
       <replace>$tmallProducts</replace>
@@ -298,12 +294,12 @@
       <workItem from="1569416439212" duration="624000" />
       <workItem from="1569419085849" duration="7569000" />
       <workItem from="1569491178341" duration="2237000" />
-      <workItem from="1569564220667" duration="14274000" />
+      <workItem from="1569564220667" duration="14711000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198384000" />
+    <option name="totallyTimeSpent" value="198821000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="12" y="11" width="1396" height="1027" extended-state="0" />
@@ -589,13 +585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/moi_sklad/ms_post_order_dynamic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="87" column="18" lean-forward="true" selection-start-line="84" selection-start-column="4" selection-end-line="87" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/ali_express/compilation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -638,13 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_print.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -652,10 +634,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/moi_sklad/ms_post_order_dynamic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="162" column="55" selection-start-line="162" selection-start-column="49" selection-end-line="162" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/integration/file_processing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="24" column="2" selection-start-line="24" selection-end-line="39" selection-end-column="8" />
+        <state relative-caret-position="371">
+          <caret line="328" lean-forward="true" selection-start-line="328" selection-end-line="328" />
           <folding>
             <element signature="n#userDataValidation#0;n#!!top" />
           </folding>

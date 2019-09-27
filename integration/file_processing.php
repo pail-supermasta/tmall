@@ -228,7 +228,7 @@ function destructResponse(array $shortener, $order, $shop)
                         $msPrice = number_format($msPrice / 100, 2, ',', ' ');
                         $minPrice = number_format($minPrice / 100, 2, ',', ' ');
 
-//                        telegram("Tmall продал товар по неверной цене. Цена продажи $sellPrice. Минимальная цена $minPrice. Цена товарв в МС $msPrice. Заказ на Tmall № $order.", '-278688533');
+                        telegram("Tmall продал товар по неверной цене. Цена продажи $sellPrice. Минимальная цена $minPrice. Цена товарв в МС $msPrice. Заказ на Tmall № $order.", '-278688533');
                     }
                     if ($orderDiscount != 0) {
                         $discount = $orderDiscount;
@@ -274,7 +274,7 @@ function destructResponse(array $shortener, $order, $shop)
 //                    mail("p.kurskii@avaks.org", "Товар не найден в МС", $productErrorMsg);
 
                     /*  send errors to telegram bot */
-//                    telegram($productErrorMsg, '-278688533');
+                    telegram($productErrorMsg, '-278688533');
                 }
             }
 
@@ -285,7 +285,7 @@ function destructResponse(array $shortener, $order, $shop)
 
     } catch (NotArray  $e) {
 //        error_log("Caught $e in order $order \n Product list $products");
-//        telegram("Caught $e in order $order \n", '-320614744');
+        telegram("Caught $e in order $order \n", '-320614744');
     }
 
     $orderDetails['positions'] = json_encode($positions, JSON_UNESCAPED_SLASHES);
@@ -299,10 +299,9 @@ function destructResponse(array $shortener, $order, $shop)
     $escrowFee = $escrowFeeSum / sizeof($products) * $productsTotal;
     $orderShipEscrow = isset($shortener['logisitcs_escrow_fee_rate']) ? $shortener['logisitcs_escrow_fee_rate'] * $orderShip : 0;
     $orderDetails['dshSum'] = $escrowFee + $orderShipEscrow - $couponEscrow;
-    die();
 
     /*  fill JSON for order create function */
-//    fillOrderTemplate($orderDetails);
+    fillOrderTemplate($orderDetails);
 }
 
 
