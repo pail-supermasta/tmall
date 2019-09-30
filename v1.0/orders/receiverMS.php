@@ -12,8 +12,8 @@ error_reporting(E_ALL);
 ini_set("error_log", "../php-error.log");
 
 
-define('MS_USERNAME', 'kurskii@техтрэнд');
-define('MS_PASSWORD', 'UR4638YFe');
+define('MS_USERNAME', 'робот_next@техтрэнд');
+define('MS_PASSWORD', 'Next0913');
 
 
 error_log(file_get_contents('php://input') . " \n", 3, "wh.log");

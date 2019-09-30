@@ -100,7 +100,7 @@ function fillOrderTemplate($order, $state)
     }';
 
 
-        curlMSCancel('kurskii@техтрэнд', $postdata, $order);
+        curlMSCancel('робот_next@техтрэнд', $postdata, $order);
     } else if ($state == 'paid') {
         /*set state as В работе*/
         $postdata = '{
@@ -112,7 +112,7 @@ function fillOrderTemplate($order, $state)
             }
 	}
     }';
-        curlMSPaid('kurskii@техтрэнд', $postdata, $order);
+        curlMSPaid('робот_next@техтрэнд', $postdata, $order);
     }
 
 

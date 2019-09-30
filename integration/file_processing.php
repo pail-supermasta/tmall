@@ -108,8 +108,8 @@ function destructResponse(array $shortener, $order, $shop)
     $offset = 10 * 60 * 60;
     $create_date = date("Y-m-d H:i:s", strtotime($shortener['gmt_create']) + $offset);
 
-    /*  add 1 day shift for delivery from create_date */
-    $offset = 24 * 60 * 60;
+    /*  add 4 hours shift for delivery from create_date */
+    $offset = 4 * 60 * 60;
     $deliveryPlannedMoment = date("Y-m-d H:i:s", strtotime($create_date) + $offset);
 
     /*  make array of order details */
@@ -238,6 +238,12 @@ function destructResponse(array $shortener, $order, $shop)
                     var_dump('$orderDiscount' . $orderDiscount);
                     var_dump('$discount' . $discount);
 
+/*                    if ($orderDetails['paid'] == 'PAY_SUCCESS') {
+                        $toReserve = $product['product_count'];
+                    } else {
+                        $toReserve = 0;
+                    }*/
+
                     /*  stores one position */
                     $position = array(
                         "quantity" => $product['product_count'],
@@ -298,7 +304,8 @@ function destructResponse(array $shortener, $order, $shop)
     $couponEscrow = $coupon * $escrowFeeSum / sizeof($products);
     $escrowFee = $escrowFeeSum / sizeof($products) * $productsTotal;
     $orderShipEscrow = isset($shortener['logisitcs_escrow_fee_rate']) ? $shortener['logisitcs_escrow_fee_rate'] * $orderShip : 0;
-    $orderDetails['dshSum'] = $escrowFee + $orderShipEscrow - $couponEscrow;
+    $orderDetails['dshSum'] = ($escrowFee + $orderShipEscrow - $couponEscrow)/100;
+    $orderDetails['coupon'] = $coupon;
 
     /*  fill JSON for order create function */
     fillOrderTemplate($orderDetails);

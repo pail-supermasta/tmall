@@ -7,8 +7,8 @@
  */
 
 
-define('MS_USERNAME', 'kurskii@техтрэнд');
-define('MS_PASSWORD', 'UR4638YFe');
+define('MS_USERNAME', 'робот_next@техтрэнд');
+define('MS_PASSWORD', 'Next0913');
 define('MS_PATH', 'https://online.moysklad.ru/api/remap/1.1');
 
 function curlMS($link = false, $data = false, $username = false)

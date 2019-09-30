@@ -22,7 +22,8 @@ class CurlMoiSklad
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_FOLLOWLOCATION, false);
         curl_setopt($curl, CURLOPT_URL, 'https://online.moysklad.ru/api/remap/1.1/' . $link);
-        curl_setopt($curl, CURLOPT_USERPWD, 'kurskii@техтрэнд:UR4638YFe');
+        curl_setopt($curl, CURLOPT_USERPWD, 'робот_next@техтрэнд:Next0913');
+
 
         if ($type == 'put') {
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PUT');
@@ -46,6 +47,7 @@ class CurlMoiSklad
 
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($curl, CURLINFO_HEADER_OUT, true);
+
 
         $result = curl_exec($curl);
         $info = curl_getinfo($curl);

@@ -174,7 +174,7 @@ function fillOrderTemplate($orderDetails)
     }';
 
 
-    curlMSCreate('kurskii@техтрэнд', $postdata, $orderDetails['memo']);
+    curlMSCreate('робот_next@техтрэнд', $postdata, $orderDetails['memo']);
 
 
 }

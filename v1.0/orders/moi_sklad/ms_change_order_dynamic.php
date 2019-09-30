@@ -60,7 +60,7 @@ function fillOrderTemplate($order)
     }';
 
 
-    curlMSCreate('kurskii@техтрэнд', $postdata, $order);
+    curlMSCreate('робот_next@техтрэнд', $postdata, $order);
 
 
 }

@@ -22,6 +22,7 @@ function curlMSCreate($username = false, $post, $memo)
     $headers = array();
     $headers[] = 'Content-Type: application/json';
     $headers[] = 'X-Lognex-WebHook-Disable: true';
+    $headers[] = 'X-Lognex-Precision: true';
     curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 
     echo "Post body is: \n" . $post . "\n";
@@ -84,7 +85,7 @@ function fillOrderTemplate(array $orderDetails)
     $shopId = '';
     switch ($orderDetails['shop']) {
         case "novinkiooo@yandex.ru":
-            $shopId = "novinkiooo (ID 4901001)";
+            $shopId = "Avax store (ID 4901001)";
             break;
         case "bestgoodsstore@yandex.ru":
             $shopId = "BESTGOODS (ID 5041091)";
@@ -102,17 +103,28 @@ function fillOrderTemplate(array $orderDetails)
 
     $shop = $shopId . '\\n/*Складу - вложить гарантийный талон \\n/*Логистам - Отправить клиенту согласно заполненным полям';
     $markAsPaid = ($paid == true) ? '\\nЗАКАЗ ОПЛАЧЕН' : '';
-    $escrowComment = 'escrow_fee_rates: ' . $orderDetails['escrow_fee_rates'];
+    $escrowComment = '\\nescrow_fee_rates: ' . $orderDetails['escrow_fee_rates'];
     $memoComment = isset($orderDetails['memo']) ? $orderDetails['memo'] . '\\n' : '';
 
+    $dshSumComment = isset($orderDetails['dshSum']) ? '\\nКомиссия:' . $orderDetails['dshSum'] : '';
+    $couponComment = isset($orderDetails['coupon']) ? '\\nКупон / Доп. скидка:' . $orderDetails['coupon'] : '';
 
-    $comment = '"Tmall id: ' . $orderDetails['order'] . '\\n' . $shop . '\\n' . $memoComment . $escrowComment . $markAsPaid . '"';
+
+    $comment = '"' . $orderDetails['order'] . '\\n' . $shop . '\\n' . $memoComment .  $markAsPaid . $escrowComment .
+        $dshSumComment . $couponComment . '"';
 
     $postdata = '{
         "name": "' . $orderDetails['order'] . '",
         "moment": "' . $orderDetails['gmt_create'] . '",
         "deliveryPlannedMoment": "' . $orderDetails['deliveryPlannedMoment'] . '",
         "applicable": true,
+        "owner": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/employee/96e93084-5588-11e9-9107-5048000ac025",
+                "type": "employee",
+                "mediaType": "application/json"
+            }
+        },
         "description": ' . $comment . ',
         "vatEnabled": false,
         "shared": true,
@@ -165,7 +177,7 @@ function fillOrderTemplate(array $orderDetails)
             {
                 "id": "4552a58b-46a8-11e7-7a34-5acf002eb7ad",
                 "value": {
-                    "name": "0 Нужна доставка"
+                    "name": "1 Не нужна доставка"
                 }
             },
             {
@@ -179,7 +191,7 @@ function fillOrderTemplate(array $orderDetails)
     }';
 
 
-    curlMSCreate('kurskii@техтрэнд', $postdata, $orderDetails['memo'] ?? '');
+    curlMSCreate('робот_next@техтрэнд', $postdata, $orderDetails['memo'] ?? '');
 
 
 }

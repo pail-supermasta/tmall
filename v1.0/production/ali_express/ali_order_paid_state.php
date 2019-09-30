@@ -10,8 +10,8 @@ error_reporting(E_ALL);
 ini_set("error_log", "../php-error.log");
 
 
-define('MS_USERNAME', 'kurskii@техтрэнд');
-define('MS_PASSWORD', 'UR4638YFe');
+define('MS_USERNAME', 'робот_next@техтрэнд');
+define('MS_PASSWORD', 'Next0913');
 define('MS_PATH', 'https://online.moysklad.ru/api/remap/1.1');
 define('MS_LINK', MS_PATH . '/entity/customerorder');
 define('ID_REGEXP', '/[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}/'); // Регулярка для UUID
