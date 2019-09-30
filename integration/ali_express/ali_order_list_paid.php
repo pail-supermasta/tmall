@@ -155,7 +155,10 @@ function checkTimeFromPaid($order, $payTime, $credential)
 
             /*check if order has track in MS*/
             $trackId = false;
-            $trackId = getOrderTrack($order);
+//            $trackId = getOrderTrack($order);
+            $delivery = getOrderTrack($order);
+            $trackId = $delivery['track'];
+            $agentId = $delivery['agent'];
 
             /*has no track*/
             if ($trackId == false) {
@@ -164,12 +167,25 @@ function checkTimeFromPaid($order, $payTime, $credential)
             } else {
                 /*set track number in Tmall*/
 
+                switch ($agentId) {
+                    case "3e974e59-c2ad-11e6-7a69-8f55000291d8":
+                        $trackingWebsite = "https://cdek.ru/track.html?order_id=$trackId";
+                        break;
+                    case "1da99879-55a8-11e7-7a6c-d2a90009f537":
+                        $trackingWebsite = "https://iml.ru/status/";
+                        break;
+                    case "3071006a-d2db-11e9-0a80-025a0021cd0d":
+                        $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=AEWH0000'.$trackId.'RU4"';
+                        break;
+
+                }
+
                 $c = new TopClient;
                 $c->appkey = APPKEY;
                 $c->secretKey = SECRET;
                 $req = new AliexpressSolutionOrderFulfillRequest;
                 $req->setServiceName("OTHER_RU_CITY_RUB");
-                $req->setTrackingWebsite("https://cse.ru/track.php");
+                $req->setTrackingWebsite("$trackingWebsite");
                 $req->setOutRef("$order");
                 $req->setSendType("all");
 //            $req->setDescription("memo");

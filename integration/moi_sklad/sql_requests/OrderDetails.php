@@ -14,19 +14,19 @@ function getOrderTrack($orderName)
     /*Отгрузить*/
 
     $query = "SELECT attributes FROM `ms_customerorder` WHERE `name` = '$orderName'";
-//    $query = "SELECT attributes FROM `ms_customerorder` WHERE `name` = '104969913584519'";
     $result = $sql->query($query);
     $rows = mysqli_fetch_all($result);
     $rows = json_decode($rows[0][0], true);
+    $agentId = $rows['4552a58b-46a8-11e7-7a34-5acf002eb7ad'];
 
     if (isset($rows['a446677c-46b8-11e7-7a34-5acf0031d7b9'])) {
         $trackId = $rows['a446677c-46b8-11e7-7a34-5acf0031d7b9'];
-//        print_r($trackId);
+
         $sql->close();
-        return $trackId;
+        return array('agent'=>$agentId,'track'=>$trackId);
     } else {
         $sql->close();
-        return false;
+        return array('agent'=>$agentId,'track'=>false);
     }
 }
 
@@ -64,8 +64,6 @@ function checkCainiaoReady($order)
     }
 
 }
-
-
 
 
 

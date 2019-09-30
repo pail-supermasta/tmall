@@ -7,32 +7,8 @@
   <component name="ChangeListManager">
     <list default="true" id="80146bb5-79f6-4afc-a154-c01ae4967d76" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log" beforeDir="false" afterPath="$PROJECT_DIR$/CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_list_finished.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_list_finished.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_paid_state.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_paid_state.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/ali_express/cainiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/cainiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/file_processing.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/file_processing.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/moi_sklad/ms_change_order_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/moi_sklad/ms_change_order_dynamic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/moi_sklad/ms_get_orders_compilation.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/moi_sklad/ms_get_orders_compilation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/moi_sklad/ms_get_orders_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/moi_sklad/ms_get_orders_dynamic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/moi_sklad/ms_mysql_products_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/moi_sklad/ms_mysql_products_dynamic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/moi_sklad/ms_post_order_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/moi_sklad/ms_post_order_dynamic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/src/MS/CurlMoiSklad.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/src/MS/CurlMoiSklad.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/orders/ali_express/ali_order_list_finished.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/orders/ali_express/ali_order_list_finished.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/orders/moi_sklad/ms_change_order_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/orders/moi_sklad/ms_change_order_dynamic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/orders/moi_sklad/ms_get_orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/orders/moi_sklad/ms_get_orders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/orders/moi_sklad/ms_get_orders_compilation.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/orders/moi_sklad/ms_get_orders_compilation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/orders/moi_sklad/ms_get_orders_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/orders/moi_sklad/ms_get_orders_dynamic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/orders/moi_sklad/ms_post_order.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/orders/moi_sklad/ms_post_order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/orders/moi_sklad/ms_post_order_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/orders/moi_sklad/ms_post_order_dynamic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/orders/receiverMS-tets.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/orders/receiverMS-tets.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/orders/receiverMS.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/orders/receiverMS.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/production/ali_express/ali_order_list_finished.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/production/ali_express/ali_order_list_finished.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/production/ali_express/ali_order_paid_state.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/production/ali_express/ali_order_paid_state.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/production/moi_sklad/ms_change_order_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/production/moi_sklad/ms_change_order_dynamic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/production/moi_sklad/ms_get_orders_compilation.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/production/moi_sklad/ms_get_orders_compilation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/production/moi_sklad/ms_get_orders_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/production/moi_sklad/ms_get_orders_dynamic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0/production/moi_sklad/ms_post_order_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0/production/moi_sklad/ms_post_order_dynamic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/moi_sklad/sql_requests/OrderDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/moi_sklad/sql_requests/OrderDetails.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,23 +22,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CurlMoiSklad.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/integration/src/MS/CurlMoiSklad.php">
+      <file leaf-file-name="ali_order_list_paid.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="15" />
+            <state relative-caret-position="313">
+              <caret line="176" column="64" lean-forward="true" selection-start-line="176" selection-start-column="64" selection-end-line="176" selection-end-column="64" />
+              <folding>
+                <element signature="n#formMasterList#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="file_processing.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/integration/file_processing.php">
+      <file leaf-file-name="OrderDetails.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/integration/moi_sklad/sql_requests/OrderDetails.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="39" column="3" selection-start-line="39" selection-end-line="39" selection-end-column="3" />
-              <folding>
-                <element signature="n#userDataValidation#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="445">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
             </state>
           </provider>
         </entry>
@@ -71,20 +47,16 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$coupon</find>
-      <find>$priceArrInt</find>
-      <find>$escrowFee</find>
       <find>$discount</find>
       <find>var</find>
       <find>telegram</find>
       <find>dshSum</find>
-      <find>ЗАКАЗ ОПЛАЧЕН</find>
+      <find />
       <find>5041091</find>
       <find>fillOrderTemplate</find>
       <find>owner</find>
       <find>deliveryPlannedMoment</find>
       <find>$orderDetails['paid']</find>
-      <find>reser</find>
       <find>оплач</find>
       <find>ОПЛАЧЕН</find>
       <find>paid</find>
@@ -101,6 +73,10 @@
       <find>UR4638YFe</find>
       <find>$lpNumber</find>
       <find>lp</find>
+      <find>fill</find>
+      <find>switch</find>
+      <find>reser</find>
+      <find>htt</find>
     </findStrings>
     <replaceStrings>
       <replace>$tmallProducts</replace>
@@ -114,7 +90,7 @@
       <replace>$shortener</replace>
       <replace>115114</replace>
       <replace>74954812282</replace>
-      <replace>Россия, Москва, Павелецкая ул, дом 2, стр 21, оф 237</replace>
+      <replace />
       <replace>Павелецкая</replace>
       <replace>80px</replace>
       <replace>76px</replace>
@@ -152,10 +128,8 @@
         <option value="$PROJECT_DIR$/stickerHTML/rotate.php" />
         <option value="$PROJECT_DIR$/stickerHTML/htmlToPdf.php" />
         <option value="$PROJECT_DIR$/integration/src/Cainiao/Cainiao.php" />
-        <option value="$PROJECT_DIR$/integration/src/MS/Products.php" />
         <option value="$PROJECT_DIR$/stickerHTML/htmlToPdf2.php" />
         <option value="$PROJECT_DIR$/integration/src/Customs.php" />
-        <option value="$PROJECT_DIR$/integration/moi_sklad/sql_requests/OrderDetails.php" />
         <option value="$PROJECT_DIR$/integration/src/AE/Product.php" />
         <option value="$PROJECT_DIR$/integration/src/MS/Orders.php" />
         <option value="$PROJECT_DIR$/test-units/coupon.php" />
@@ -169,8 +143,10 @@
         <option value="$PROJECT_DIR$/integration/ali_express/ali_order_list_finished.php" />
         <option value="$PROJECT_DIR$/integration/src/MS/CurlMoiSklad.php" />
         <option value="$PROJECT_DIR$/integration/src/MS/OrderMS.php" />
-        <option value="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/cainiao.php" />
+        <option value="$PROJECT_DIR$/integration/src/MS/Products.php" />
+        <option value="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" />
+        <option value="$PROJECT_DIR$/integration/moi_sklad/sql_requests/OrderDetails.php" />
       </list>
     </option>
   </component>
@@ -189,8 +165,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="439" />
-    <option name="y" value="21" />
+    <option name="x" value="572" />
+    <option name="y" value="116" />
     <option name="width" value="1352" />
     <option name="height" value="1027" />
   </component>
@@ -300,8 +276,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Script.cainiao.php">
-    <configuration name="AvaksSQL.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/src/SQL/AvaksSQL.php" />
+  <component name="RunManager" selected="PHP Script.OrderDetails.php">
+    <configuration name="OrderDetails.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/moi_sklad/sql_requests/OrderDetails.php" />
     <configuration name="OrderMS.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/src/MS/OrderMS.php" />
     <configuration name="ali_order_details_dynamic.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php" />
     <configuration name="cainiao.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/ali_express/cainiao.php" />
@@ -309,17 +285,17 @@
     <list>
       <item itemvalue="PHP Script.ali_order_details_dynamic.php" />
       <item itemvalue="PHP Script.file_processing.php" />
-      <item itemvalue="PHP Script.AvaksSQL.php" />
       <item itemvalue="PHP Script.OrderMS.php" />
       <item itemvalue="PHP Script.cainiao.php" />
+      <item itemvalue="PHP Script.OrderDetails.php" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHP Script.OrderDetails.php" />
         <item itemvalue="PHP Script.cainiao.php" />
         <item itemvalue="PHP Script.OrderMS.php" />
         <item itemvalue="PHP Script.file_processing.php" />
         <item itemvalue="PHP Script.ali_order_details_dynamic.php" />
-        <item itemvalue="PHP Script.AvaksSQL.php" />
       </list>
     </recent_temporary>
   </component>
@@ -363,27 +339,28 @@
       <workItem from="1569491178341" duration="2237000" />
       <workItem from="1569564220667" duration="14860000" />
       <workItem from="1569588078219" duration="11579000" />
-      <workItem from="1569823960455" duration="2018000" />
+      <workItem from="1569823960455" duration="5871000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212567000" />
+    <option name="totallyTimeSpent" value="216420000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="240" y="25" width="1853" height="1027" extended-state="0" />
+    <frame x="447" y="109" width="1352" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.18985507" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25438598" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25438598" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32894737" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.18985507" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993174" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -394,7 +371,6 @@
       <window_info anchor="bottom" id="Inspection Results" order="7" weight="0.32894737" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Version Control" order="13" />
@@ -538,13 +514,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/stickerHTML/htmlToPdf2.php" />
-    <entry file="file://$PROJECT_DIR$/integration/src/MS/Products.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="57" column="84" lean-forward="true" selection-start-line="56" selection-start-column="11" selection-end-line="57" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/src/AE/Product.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -659,17 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-          <folding>
-            <element signature="n#checkTimeFromPaid#0;n#!!top" />
-            <element signature="n#formMasterList#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_finished.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -701,27 +659,13 @@
     <entry file="file://$PROJECT_DIR$/integration/moi_sklad/ms_get_orders_dynamic.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/moi_sklad/ms_mysql_products_dynamic.php">
+    <entry file="file://$PROJECT_DIR$/integration/file_processing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/integration/moi_sklad/ms_post_order_dynamic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="113" column="46" lean-forward="true" selection-start-line="113" selection-start-column="46" selection-end-line="113" selection-end-column="46" />
+        <state relative-caret-position="48">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
           <folding>
-            <element signature="n#curlMSCreate#0;n#!!top" />
+            <element signature="n#userDataValidation#0;n#!!top" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/integration/moi_sklad/sql_requests/OrderDetails.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="38" column="31" lean-forward="true" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -732,13 +676,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/file_processing.php">
+    <entry file="file://$PROJECT_DIR$/integration/moi_sklad/ms_post_order_dynamic.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="39" column="3" selection-start-line="39" selection-end-line="39" selection-end-column="3" />
+        <state relative-caret-position="323">
+          <caret line="88" column="18" lean-forward="true" selection-start-line="85" selection-start-column="4" selection-end-line="88" selection-end-column="18" />
           <folding>
-            <element signature="n#userDataValidation#0;n#!!top" />
+            <element signature="n#curlMSCreate#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/src/MS/Products.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="57" column="84" lean-forward="true" selection-start-line="57" selection-start-column="84" selection-end-line="57" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/moi_sklad/ms_mysql_products_dynamic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="5" selection-start-line="5" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="176" column="64" lean-forward="true" selection-start-line="176" selection-start-column="64" selection-end-line="176" selection-end-column="64" />
+          <folding>
+            <element signature="n#formMasterList#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/moi_sklad/sql_requests/OrderDetails.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
         </state>
       </provider>
     </entry>
