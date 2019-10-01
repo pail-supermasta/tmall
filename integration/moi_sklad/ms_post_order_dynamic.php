@@ -72,13 +72,26 @@ function fillOrderTemplate(array $orderDetails)
 
     // признак оплаты в ALIE
 //    $paid = $orderDetails['paid'] == 'PAY_SUCCESS' ? true : false;
-    if ($orderDetails['paid'] == 'PAY_SUCCESS') {
+    $availableMS = true;
+    foreach ($orderDetails['productStocks'] as $productStock) {
+        if (reset($productStock) == false) {
+            $availableMS = false;
+        }
+    }
+    if ($orderDetails['paid'] == 'PAY_SUCCESS' && $availableMS == true) {
         $paid = true;
         $state = 'ecf45f89-f518-11e6-7a69-9711000ff0c4';
-    } else {
+        $logisticsProvider = 'Cainiao';
+    } elseif ($availableMS == true && $orderDetails['err'] == '') {
         $paid = false;
         $state = '327c0111-75c5-11e5-7a40-e89700139936';
+        $logisticsProvider = '1 Не нужна доставка';
+    } else {
+        $paid = false;
+        $state = '552a994e-2905-11e7-7a31-d0fd002c3df2';
+        $logisticsProvider = '1 Не нужна доставка';
     }
+    var_dump($paid, $state, $logisticsProvider);
 
 
     // указываем магазин в котором купили на ALI
@@ -102,7 +115,7 @@ function fillOrderTemplate(array $orderDetails)
     }
 
     $shop = $shopId . '\\n/*Складу - вложить гарантийный талон \\n/*Логистам - Отправить клиенту согласно заполненным полям';
-    $markAsPaid = ($paid == true) ? '\\nЗАКАЗ ОПЛАЧЕН' : '';
+    $markAsPaid = ($paid == true) ? 'ЗАКАЗ ОПЛАЧЕН' : '';
     $escrowComment = '\\nescrow_fee_rates: ' . $orderDetails['escrow_fee_rates'];
     $memoComment = isset($orderDetails['memo']) ? $orderDetails['memo'] . '\\n' : '';
 
@@ -110,7 +123,7 @@ function fillOrderTemplate(array $orderDetails)
     $couponComment = isset($orderDetails['coupon']) ? '\\nКупон / Доп. скидка:' . $orderDetails['coupon'] : '';
 
 
-    $comment = '"' . $orderDetails['order'] . '\\n' . $shop . '\\n' . $memoComment .  $markAsPaid . $escrowComment .
+    $comment = '"' . $orderDetails['order'] . '\\n' . $shop . '\\n' . $memoComment . $markAsPaid . $escrowComment .
         $dshSumComment . $couponComment . '"';
 
     $postdata = '{
@@ -177,7 +190,7 @@ function fillOrderTemplate(array $orderDetails)
             {
                 "id": "4552a58b-46a8-11e7-7a34-5acf002eb7ad",
                 "value": {
-                    "name": "1 Не нужна доставка"
+                    "name": "' . $logisticsProvider . '"
                 }
             },
             {
@@ -189,7 +202,6 @@ function fillOrderTemplate(array $orderDetails)
         ],
         "positions": ' . $orderDetails['positions'] . '
     }';
-
 
     curlMSCreate('робот_next@техтрэнд', $postdata, $orderDetails['memo'] ?? '');
 

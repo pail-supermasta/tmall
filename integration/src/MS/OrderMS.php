@@ -80,6 +80,26 @@ class OrderMS
         return $res;
     }
 
+    public function setStateProcessManually()
+    {
+        $postdata = '{
+            "state": {
+                "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/metadata/states/552a994e-2905-11e7-7a31-d0fd002c3df2",
+                    "type": "state",
+                    "mediaType": "application/json"
+                }
+            }
+        }';
+        $res = '';
+        $res = CurlMoiSklad::curlMS('/entity/customerorder/' . $this->id, $postdata, 'put');
+        $this->state = '552a994e-2905-11e7-7a31-d0fd002c3df2';
+
+        return $res;
+    }
+
+
+
     public function setLP($LP)
     {
         $this->lpNumber = $LP;

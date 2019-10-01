@@ -17,7 +17,6 @@ require_once '../vendor/autoload.php';
 require_once 'taobao/TopSdk.php';
 
 
-
 use Avaks\Cainiao\Cainiao;
 
 // Get order details from Ali by ID
@@ -200,8 +199,6 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
         $resp = $curlCai->CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN($content);
         var_dump($resp);
         error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . json_encode($resp) . $content . PHP_EOL, 3, 'CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log');
-        $message = "Заказ №$order - создан в Цайняо метод CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN";
-        telegram($message, '-278688533');
 
 
         /*{"DistributionConsignResponse":{"logisticsOrderId":"147002440549","tradeLogisticsOrderId":"5137660691","tradeOrderId":"5000269028796387","tradeOrderFrom":"AE","logisticsOrderCode":"LP00147002440549"},"success":"true"}*/
@@ -210,8 +207,9 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
         /*get LP*/
 
         if (!isset($distributionConsignResponse['logisticsOrderId']) && $distributionConsignResponse['logisticsOrderId'] == '') {
-            $message = "CAINIAO ОШИБКА $order см CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log";
-            telegram($message, '-320614744');
+            $message = "ОШИБКА в заказе $order ОБРАБОТАТЬ ВРУЧНУЮ. Метод CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.";
+            telegram($message, '-278688533');
+            var_dump($orderMS->setStateProcessManually());
         } else {
             var_dump($orderMS->setLP($distributionConsignResponse['logisticsOrderId']));
         }
@@ -220,8 +218,6 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
     } else {
         $distributionConsignResponse['logisticsOrderId'] = $orderMSDetails['externalCode'];
     }
-
-
 
 
     $sourceArray = array(
@@ -243,13 +239,12 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
     var_dump($mailNoResponse);
     if (isset($mailNoResponse['mailNo']) && $mailNoResponse['mailNo'] != '') {
         $mailNo = $mailNoResponse['mailNo'];
-        $message = "Заказ №$order - получен трек номер $mailNo из Цайняо метод MAILNO_QUERY_SERVICE. Заказ не будет доставлен";
-        telegram($message, '-278688533');
-        $message = "ВНИМАНИЕ Обработать заказ $order ВРУЧНУЮ";
+        $message = "Заказ №$order - получен трек номер $mailNo из Цайняо метод MAILNO_QUERY_SERVICE.";
         telegram($message, '-278688533');
     } else {
-        $message = "CAINIAO ОШИБКА $order см MAILNO_QUERY_SERVICE.log";
-        telegram($message, '-320614744');
+        $message = "ОШИБКА в заказе $order ОБРАБОТАТЬ ВРУЧНУЮ. Метод MAILNO_QUERY_SERVICE.";
+        telegram($message, '-278688533');
+        var_dump($orderMS->setStateProcessManually());
     }
 
 

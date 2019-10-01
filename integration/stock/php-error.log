@@ -1,0 +1,36 @@
+[01-Oct-2019 11:28:06 UTC] PHP Notice:  Undefined variable: result in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\AE\Product.php on line 71
+[01-Oct-2019 11:33:09 UTC] PHP Warning:  Illegal string offset 'old_stock' in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\AE\Product.php on line 33
+[01-Oct-2019 11:33:09 UTC] PHP Warning:  Illegal string offset 'old_stock' in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\AE\Product.php on line 35
+[01-Oct-2019 11:33:09 UTC] PHP Warning:  Illegal string offset 'new_stock' in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\AE\Product.php on line 36
+[01-Oct-2019 11:33:09 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 128
+[01-Oct-2019 11:33:11 UTC] PHP Warning:  Illegal string offset 'old_stock' in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\AE\Product.php on line 33
+[01-Oct-2019 11:33:11 UTC] PHP Warning:  Illegal string offset 'old_stock' in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\AE\Product.php on line 35
+[01-Oct-2019 11:33:11 UTC] PHP Warning:  Illegal string offset 'new_stock' in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\AE\Product.php on line 36
+[01-Oct-2019 11:33:11 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 128
+[01-Oct-2019 11:33:14 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 128
+[01-Oct-2019 11:33:15 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 128
+[01-Oct-2019 11:33:23 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 128
+[01-Oct-2019 11:33:28 UTC] PHP Warning:  Illegal string offset 'old_stock' in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\AE\Product.php on line 33
+[01-Oct-2019 11:33:28 UTC] PHP Warning:  Illegal string offset 'old_stock' in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\AE\Product.php on line 35
+[01-Oct-2019 11:33:28 UTC] PHP Warning:  Illegal string offset 'new_stock' in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\AE\Product.php on line 36
+[01-Oct-2019 11:33:28 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 128
+[01-Oct-2019 11:33:29 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 128
+[01-Oct-2019 11:33:32 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 128
+[01-Oct-2019 11:37:58 UTC] PHP Warning:  Illegal string offset 'old_stock' in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\AE\Product.php on line 35
+[01-Oct-2019 11:39:48 UTC] PHP Notice:  Undefined index: old_stock in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 133
+[01-Oct-2019 11:39:49 UTC] PHP Notice:  Undefined index: old_stock in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 133
+[01-Oct-2019 11:39:50 UTC] PHP Warning:  Illegal string offset 'new_stock' in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\AE\Product.php on line 36
+[01-Oct-2019 11:39:50 UTC] PHP Warning:  array_merge(): Expected parameter 2 to be an array, string given in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 128
+[01-Oct-2019 11:39:51 UTC] PHP Notice:  Undefined index: old_stock in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 133
+[01-Oct-2019 11:39:52 UTC] PHP Notice:  Undefined index: old_stock in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 133
+[01-Oct-2019 11:48:50 UTC] PHP Notice:  Undefined variable: syncErrors in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 122
+[01-Oct-2019 12:08:17 UTC] PHP Notice:  Undefined offset: 0 in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 120
+[01-Oct-2019 12:08:18 UTC] PHP Notice:  Undefined offset: 0 in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 120
+[01-Oct-2019 12:08:19 UTC] PHP Notice:  Undefined offset: 0 in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 120
+[01-Oct-2019 12:09:17 UTC] PHP Notice:  Undefined offset: 0 in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 121
+[01-Oct-2019 12:09:18 UTC] PHP Notice:  Undefined offset: 0 in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 121
+[01-Oct-2019 12:09:19 UTC] PHP Notice:  Undefined offset: 0 in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 121
+[01-Oct-2019 12:09:39 UTC] PHP Notice:  Undefined offset: 0 in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 121
+[01-Oct-2019 12:09:40 UTC] PHP Notice:  Undefined offset: 0 in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 121
+[01-Oct-2019 12:09:41 UTC] PHP Notice:  Undefined offset: 0 in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 121
+[01-Oct-2019 12:11:15 UTC] PHP Notice:  Undefined offset: 1 in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 155

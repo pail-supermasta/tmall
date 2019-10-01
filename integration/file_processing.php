@@ -18,6 +18,7 @@ require_once 'ali_express/ali_order_details_dynamic.php';
 require_once 'moi_sklad/ms_post_order_dynamic.php';
 // Find product in MS DB by produci_id from ALI
 require_once 'moi_sklad/ms_mysql_products_dynamic.php';
+require_once 'vendor/autoload.php';
 
 
 /*TEST PART DELETE ATER*/
@@ -29,7 +30,7 @@ require_once 'ali_express/taobao/TopSdk.php';
 require_once 'class/telegram.php';
 
 
-$order = '5000456496969609';
+$order = '8003355172825776';
 $sessionKey = '50002301103yrRc163e29d7ZzgUiKwh0xhbCbrgNTyjFHJHwjSsCd5lSPWxJBdCZLQ5';
 $login = 'bestgoodsstore@yandex.ru';
 
@@ -55,6 +56,7 @@ die();*/
 
 function userDataValidation($address, $order)
 {
+    $err = '';
 
     $cleanPhone = preg_replace('/\D+/', '', $address['mobile_no']);
     $fullPhone = $address['phone_country'] . $cleanPhone;
@@ -65,6 +67,7 @@ function userDataValidation($address, $order)
     $fioFail = count(array_filter($pieces));
     if ($fioFail < 3) {
         $message .= "\nПо заказу № $order покупатель не верно указал ФИО, ему отправлено сообщение. Тел номер : $fullPhone";
+        $err .= ($fioFail > 0) ? '' : '$fioFail ';
     }
 
     /*AF3 индекс не соответствует формату -  6 цифр где первые три цифры между 100 и 999*/
@@ -81,10 +84,12 @@ function userDataValidation($address, $order)
     $countryCode = substr_count($address['phone_country'], "7");
     if ($countryCode < 1 || strlen($cleanPhone) < 10) {
         $message .= "\nПо заказу № $order покупатель не верно указал номер телефона.";
+        $err .= 'номер телефона err';
     }
 
     /*  send errors to telegram bot */
     telegram($message, '-278688533');
+    return $err;
 
 }
 
@@ -102,7 +107,7 @@ function destructResponse(array $shortener, $order, $shop)
     $fullAddress = $address['zip'] . ", " . $country . ", " . $address['province'] . ", " . $address['city'] . ", " . $address['detail_address'] . ", " . $address2;
 
     /*  validate address information    */
-    userDataValidation($address, $order);
+    $err = userDataValidation($address, $order);
 
     /*  add 10 hour shift from PST to RU */
     $offset = 10 * 60 * 60;
@@ -125,6 +130,8 @@ function destructResponse(array $shortener, $order, $shop)
     $orderDetails['phone'] = $address['phone_country'] . $address['mobile_no'];
     $orderDetails['fullAddress'] = $fullAddress;
     $orderDetails['shop'] = $shop;
+
+    $err .= (sizeof($fullAddress) > 0) ? '' : ' $fullAddress err';
 
     /*  get field_id    */
     $field_id = '';
@@ -171,6 +178,27 @@ function destructResponse(array $shortener, $order, $shop)
                     $sellPrice = $product['product_price']['cent'];
 
 
+                    /*get MS stock*/
+
+                    $stores = array(
+                        // 'f80cdf08-29a0-11e6-7a69-971100124ae8', // Склад-РЦ3
+                        // 'f257b41d-c2d9-11e7-6b01-4b1d00131678', // СКЛАД ХД
+                        '48de3b8e-8b84-11e9-9ff4-34e8001a4ea1',  // MP_NFF
+                    );
+                    $stockProduct = new \Avaks\MS\Products();
+                    $stocks = $stockProduct->getMsStock($product_id, $stores);
+                    $avaliable_stock = $stocks[0];
+                    $productMSName = $stocks[1];
+
+                    if ($avaliable_stock >= $product['product_count']) {
+                        $orderDetails['productStocks'][$product_id]['availableMS'] = true;
+                    } else {
+                        $orderDetails['productStocks'][$product_id]['availableMS'] = false;
+//                        echo "Tmall не хватает товара $productMSName для отгрузки!!! Продано - " . $product['product_count'] . " В МС на момент заказа - $avaliable_stock. Заказ на Tmall № $order.";
+                        telegram("Tmall не хватает товара $productMSName для отгрузки!!! Продано - ".$product['product_count']." В МС на момент заказа - $avaliable_stock. Заказ на Tmall № $order.", '-278688533');
+                    }
+
+
                     /**
                      * товар1 - 1шт - сумма = 200
                      * товар2 - 2шт -сумма = 100
@@ -205,7 +233,7 @@ function destructResponse(array $shortener, $order, $shop)
                     $orderShip = $shortener['logistics_amount']['cent'] ?? 0;
                     $coupon = $productsTotal + $orderShip - $orderAmount;
                     $productPercentDisc = $coupon * 100 / $productsTotal;
-                    var_dump('$productPercentDisc' . $productPercentDisc);
+//                    var_dump('$productPercentDisc' . $productPercentDisc);
 
 
                     /*percentage difference btw Tmall price and MS price - applied discount*/
@@ -213,12 +241,12 @@ function destructResponse(array $shortener, $order, $shop)
                     if ($msPrice > $sellPrice) {
                         $price = $msPrice;
                         $discountDiff = ($price - $sellPrice + $coupon) * 100 / ($price - $sellPrice + $productsTotal);
-                        var_dump('$discountDiff' . $discountDiff);
+//                        var_dump('$discountDiff' . $discountDiff);
                         $orderDiscount = $discountDiff;
                     } else {
                         $price = $sellPrice;
                         $discountNoDiff = $productPercentDisc;
-                        var_dump('$discountNoDiff' . $discountNoDiff);
+//                        var_dump('$discountNoDiff' . $discountNoDiff);
 
                     }
 
@@ -235,14 +263,14 @@ function destructResponse(array $shortener, $order, $shop)
                     } else {
                         $discount = $discountNoDiff;
                     }
-                    var_dump('$orderDiscount' . $orderDiscount);
-                    var_dump('$discount' . $discount);
+//                    var_dump('$orderDiscount' . $orderDiscount);
+//                    var_dump('$discount' . $discount);
 
-/*                    if ($orderDetails['paid'] == 'PAY_SUCCESS') {
-                        $toReserve = $product['product_count'];
-                    } else {
-                        $toReserve = 0;
-                    }*/
+                    /*                    if ($orderDetails['paid'] == 'PAY_SUCCESS') {
+                                            $toReserve = $product['product_count'];
+                                        } else {
+                                            $toReserve = 0;
+                                        }*/
 
                     /*  stores one position */
                     $position = array(
@@ -300,12 +328,18 @@ function destructResponse(array $shortener, $order, $shop)
 
     /*ДШ amount*/
 
-//    $orderDetails['dshSum'] = $orderAmount * $escrowFeeSum / sizeof($products) / 100;
     $couponEscrow = $coupon * $escrowFeeSum / sizeof($products);
     $escrowFee = $escrowFeeSum / sizeof($products) * $productsTotal;
     $orderShipEscrow = isset($shortener['logisitcs_escrow_fee_rate']) ? $shortener['logisitcs_escrow_fee_rate'] * $orderShip : 0;
-    $orderDetails['dshSum'] = ($escrowFee + $orderShipEscrow - $couponEscrow)/100;
+    $orderDetails['dshSum'] = ($escrowFee + $orderShipEscrow - $couponEscrow) / 100;
     $orderDetails['coupon'] = $coupon;
+
+    var_dump($orderDetails['productStocks']);
+    $orderDetails['err'] = $err;
+    if ($orderDetails['err'] != '') {
+        telegram("Нет персональных данных. Причина " . $orderDetails['err'] . ". Заказ на Tmall № $order.", '-278688533');
+    };
+
 
     /*  fill JSON for order create function */
     fillOrderTemplate($orderDetails);

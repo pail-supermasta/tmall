@@ -104,14 +104,20 @@ function fillOrderTemplate($order, $state)
     } else if ($state == 'paid') {
         /*set state as В работе*/
         $postdata = '{
-        "state": {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/metadata/states/ecf45f89-f518-11e6-7a69-9711000ff0c4",
-                "type": "state",
-                "mediaType": "application/json"
-            }
-	}
-    }';
+            "state": {
+                "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/metadata/states/ecf45f89-f518-11e6-7a69-9711000ff0c4",
+                    "type": "state",
+                    "mediaType": "application/json"
+                }
+            },
+            "attributes": [{
+                    "id": "4552a58b-46a8-11e7-7a34-5acf002eb7ad",
+                    "value": {
+                        "name": "Cainiao"
+                    }
+            }]
+         }';
         curlMSPaid('робот_next@техтрэнд', $postdata, $order);
     }
 

@@ -50,15 +50,17 @@ class Products
 
 
         $avaliable_stock = 0;
+        $product_name = false;
 
         foreach ($stores as $key => $store) {
-            $query = "SELECT (`stock` - `reserve`) as `avaliable_stock` FROM `ms_stock` WHERE `product_id` = '$product_id' AND `store_id` = '" . $store . "' ORDER BY `datetime` DESC LIMIT 1";
+            $query = "SELECT (`stock` - `reserve`) as `avaliable_stock`, product_name FROM `ms_stock_now` WHERE `product_id` = '$product_id' AND `store_id` = '" . $store . "'";
 
             $row = AvaksSQL::selectAllAssoc($query);
             $avaliable_stock = $avaliable_stock + ($row[0]['avaliable_stock'] ?? 0);
+            $product_name = $row[0]['product_name'] ?? false;
         }
 
 
-        return $avaliable_stock;
+        return array($avaliable_stock, $product_name);
     }
 }

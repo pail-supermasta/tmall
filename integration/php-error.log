@@ -1,2 +1,24 @@
 [20-Sep-2019 15:18:54 UTC] PHP Notice:  Undefined index: deliveryAddress in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Customs.php on line 41
 [20-Sep-2019 15:18:55 UTC] PHP Notice:  Undefined variable: mailNoHTML in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Customs.php on line 85
+[30-Sep-2019 12:58:47 UTC] PHP Warning:  Use of undefined constant APPKEY - assumed 'APPKEY' (this will throw an Error in a future version of PHP) in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_details_dynamic.php on line 9
+[30-Sep-2019 12:58:47 UTC] PHP Warning:  Use of undefined constant SECRET - assumed 'SECRET' (this will throw an Error in a future version of PHP) in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_details_dynamic.php on line 10
+[30-Sep-2019 12:58:48 UTC] PHP Notice:  Undefined property: stdClass::$result in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_details_dynamic.php on line 17
+[30-Sep-2019 12:58:48 UTC] PHP Notice:  Trying to get property 'data' of non-object in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_details_dynamic.php on line 17
+[30-Sep-2019 12:58:48 UTC] PHP Notice:  Undefined index: receipt_address in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao.php on line 49
+[30-Sep-2019 12:58:48 UTC] PHP Notice:  Undefined index: receipt_address in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao.php on line 50
+[30-Sep-2019 12:58:48 UTC] PHP Notice:  Undefined index: receipt_address in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao.php on line 51
+[30-Sep-2019 12:58:48 UTC] PHP Notice:  Undefined index: receipt_address in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao.php on line 52
+[30-Sep-2019 12:58:48 UTC] PHP Notice:  Undefined index: receipt_address in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao.php on line 53
+[30-Sep-2019 12:58:48 UTC] PHP Notice:  Undefined index: receipt_address in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao.php on line 54
+[30-Sep-2019 12:58:48 UTC] PHP Notice:  Undefined index: receipt_address in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao.php on line 55
+[30-Sep-2019 12:58:48 UTC] PHP Notice:  Undefined index: child_order_list in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao.php on line 58
+[30-Sep-2019 12:58:48 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
+[30-Sep-2019 12:59:15 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
+[01-Oct-2019 06:10:10 UTC] PHP Warning:  require_once(../../taobao/TopSdk.php): failed to open stream: No such file or directory in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\taobao\top\TopClient.php on line 384
+[01-Oct-2019 06:10:10 UTC] PHP Fatal error:  require_once(): Failed opening required '../../taobao/TopSdk.php' (include_path='.;C:\php\pear') in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\taobao\top\TopClient.php on line 384
+[01-Oct-2019 06:10:24 UTC] PHP Warning:  require_once(../../taobao/TopSdk.php): failed to open stream: No such file or directory in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\taobao\top\TopClient.php on line 384
+[01-Oct-2019 06:10:24 UTC] PHP Fatal error:  require_once(): Failed opening required '../../taobao/TopSdk.php' (include_path='.;C:\php\pear') in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\taobao\top\TopClient.php on line 384
+[01-Oct-2019 06:11:55 UTC] PHP Warning:  require_once(../../taobao/TopSdk.php): failed to open stream: No such file or directory in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\taobao\top\TopClient.php on line 384
+[01-Oct-2019 06:11:55 UTC] PHP Fatal error:  require_once(): Failed opening required '../../taobao/TopSdk.php' (include_path='.;C:\php\pear') in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\taobao\top\TopClient.php on line 384
+[01-Oct-2019 06:13:36 UTC] PHP Warning:  require_once(../../taobao/TopSdk.php): failed to open stream: No such file or directory in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\taobao\top\TopClient.php on line 384
+[01-Oct-2019 06:13:36 UTC] PHP Fatal error:  require_once(): Failed opening required '../../taobao/TopSdk.php' (include_path='.;C:\php\pear') in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\taobao\top\TopClient.php on line 384
