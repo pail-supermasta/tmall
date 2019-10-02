@@ -30,7 +30,7 @@ require_once 'ali_express/taobao/TopSdk.php';
 require_once 'class/telegram.php';
 
 
-$order = '8003355172825776';
+$order = '5000550493109042';
 $sessionKey = '50002301103yrRc163e29d7ZzgUiKwh0xhbCbrgNTyjFHJHwjSsCd5lSPWxJBdCZLQ5';
 $login = 'bestgoodsstore@yandex.ru';
 
@@ -131,7 +131,7 @@ function destructResponse(array $shortener, $order, $shop)
     $orderDetails['fullAddress'] = $fullAddress;
     $orderDetails['shop'] = $shop;
 
-    $err .= (sizeof($fullAddress) > 0) ? '' : ' $fullAddress err';
+    $err .= (strlen($fullAddress) > 0) ? '' : ' $fullAddress err';
 
     /*  get field_id    */
     $field_id = '';
@@ -192,7 +192,8 @@ function destructResponse(array $shortener, $order, $shop)
 
                     if ($avaliable_stock >= $product['product_count']) {
                         $orderDetails['productStocks'][$product_id]['availableMS'] = true;
-                    } else {
+                    } elseif ($productMSName != '') {
+                        /*in case of coupon added to the order*/
                         $orderDetails['productStocks'][$product_id]['availableMS'] = false;
 //                        echo "Tmall не хватает товара $productMSName для отгрузки!!! Продано - " . $product['product_count'] . " В МС на момент заказа - $avaliable_stock. Заказ на Tmall № $order.";
                         telegram("Tmall не хватает товара $productMSName для отгрузки!!! Продано - ".$product['product_count']." В МС на момент заказа - $avaliable_stock. Заказ на Tmall № $order.", '-278688533');
