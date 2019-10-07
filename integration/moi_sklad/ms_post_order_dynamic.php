@@ -78,20 +78,22 @@ function fillOrderTemplate(array $orderDetails)
             $availableMS = false;
         }
     }
-    if ($orderDetails['paid'] == 'PAY_SUCCESS' && $availableMS == true) {
+    if ($availableMS == true && $orderDetails['err'] == '' && $orderDetails['paid'] == 'PAY_SUCCESS') {
         $paid = true;
+        /*в работе*/
         $state = 'ecf45f89-f518-11e6-7a69-9711000ff0c4';
         $logisticsProvider = 'Cainiao';
-    } elseif ($availableMS == true && $orderDetails['err'] == '') {
+    } elseif ($availableMS == true && $orderDetails['err'] == '' && $orderDetails['paid'] == 'PLACE_ORDER_SUCCESS') {
         $paid = false;
+        /*ждем оплаты*/
         $state = '327c0111-75c5-11e5-7a40-e89700139936';
         $logisticsProvider = '1 Не нужна доставка';
     } else {
         $paid = false;
+        /*отработать*/
         $state = '552a994e-2905-11e7-7a31-d0fd002c3df2';
         $logisticsProvider = '1 Не нужна доставка';
     }
-    var_dump($paid, $state, $logisticsProvider);
 
 
     // указываем магазин в котором купили на ALI
@@ -115,15 +117,15 @@ function fillOrderTemplate(array $orderDetails)
     }
 
     $shop = $shopId . '\\n/*Складу - вложить гарантийный талон \\n/*Логистам - Отправить клиенту согласно заполненным полям';
-    $markAsPaid = ($paid == true) ? 'ЗАКАЗ ОПЛАЧЕН' : '';
+    $markAsPaid = ($paid == true) ? '\\nЗАКАЗ ОПЛАЧЕН' : '';
     $escrowComment = '\\nescrow_fee_rates: ' . $orderDetails['escrow_fee_rates'];
-    $memoComment = isset($orderDetails['memo']) ? $orderDetails['memo'] . '\\n' : '';
+    $memoComment = isset($orderDetails['memo']) ? '\\n' . $orderDetails['memo'] : '';
 
     $dshSumComment = isset($orderDetails['dshSum']) ? '\\nКомиссия:' . $orderDetails['dshSum'] : '';
     $couponComment = isset($orderDetails['coupon']) ? '\\nКупон / Доп. скидка:' . $orderDetails['coupon'] : '';
 
 
-    $comment = '"' . $orderDetails['order'] . '\\n' . $shop . '\\n' . $memoComment . $markAsPaid . $escrowComment .
+    $comment = '"' . $orderDetails['order'] . '\\n' . $shop . $memoComment . $markAsPaid . $escrowComment .
         $dshSumComment . $couponComment . '"';
 
     $postdata = '{

@@ -22,3 +22,18 @@
 [01-Oct-2019 06:11:55 UTC] PHP Fatal error:  require_once(): Failed opening required '../../taobao/TopSdk.php' (include_path='.;C:\php\pear') in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\taobao\top\TopClient.php on line 384
 [01-Oct-2019 06:13:36 UTC] PHP Warning:  require_once(../../taobao/TopSdk.php): failed to open stream: No such file or directory in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\taobao\top\TopClient.php on line 384
 [01-Oct-2019 06:13:36 UTC] PHP Fatal error:  require_once(): Failed opening required '../../taobao/TopSdk.php' (include_path='.;C:\php\pear') in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\taobao\top\TopClient.php on line 384
+[04-Oct-2019 08:19:14 UTC] PHP Notice:  Undefined property: stdClass::$result in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_details_dynamic.php on line 17
+[04-Oct-2019 08:19:14 UTC] PHP Notice:  Trying to get property 'data' of non-object in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_details_dynamic.php on line 17
+[04-Oct-2019 08:19:14 UTC] PHP Notice:  Undefined index: receipt_address in C:\Users\User\Documents\aliexpr.avaks.org\integration\file_processing.php on line 108
+[04-Oct-2019 08:19:24 UTC] PHP Notice:  Undefined index: gmt_create in C:\Users\User\Documents\aliexpr.avaks.org\integration\file_processing.php on line 118
+[04-Oct-2019 08:19:24 UTC] PHP Notice:  Undefined index: fund_status in C:\Users\User\Documents\aliexpr.avaks.org\integration\file_processing.php on line 127
+[04-Oct-2019 08:19:24 UTC] PHP Notice:  Undefined index: child_order_list in C:\Users\User\Documents\aliexpr.avaks.org\integration\file_processing.php on line 154
+[04-Oct-2019 08:19:34 UTC] PHP Notice:  Undefined variable: coupon in C:\Users\User\Documents\aliexpr.avaks.org\integration\file_processing.php on line 336
+[04-Oct-2019 08:19:34 UTC] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in C:\Users\User\Documents\aliexpr.avaks.org\integration\file_processing.php on line 336
+[04-Oct-2019 08:19:34 UTC] PHP Warning:  Division by zero in C:\Users\User\Documents\aliexpr.avaks.org\integration\file_processing.php on line 336
+[04-Oct-2019 08:19:34 UTC] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in C:\Users\User\Documents\aliexpr.avaks.org\integration\file_processing.php on line 337
+[04-Oct-2019 08:19:34 UTC] PHP Warning:  Division by zero in C:\Users\User\Documents\aliexpr.avaks.org\integration\file_processing.php on line 337
+[04-Oct-2019 08:19:34 UTC] PHP Notice:  Undefined variable: productsTotal in C:\Users\User\Documents\aliexpr.avaks.org\integration\file_processing.php on line 337
+[04-Oct-2019 08:19:34 UTC] PHP Notice:  Undefined variable: coupon in C:\Users\User\Documents\aliexpr.avaks.org\integration\file_processing.php on line 340
+[04-Oct-2019 08:19:54 UTC] PHP Notice:  Undefined index: productStocks in C:\Users\User\Documents\aliexpr.avaks.org\integration\moi_sklad\ms_post_order_dynamic.php on line 76
+[04-Oct-2019 08:19:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\User\Documents\aliexpr.avaks.org\integration\moi_sklad\ms_post_order_dynamic.php on line 76

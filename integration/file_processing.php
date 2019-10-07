@@ -30,9 +30,14 @@ require_once 'ali_express/taobao/TopSdk.php';
 require_once 'class/telegram.php';
 
 
-$order = '5000550493109042';
-$sessionKey = '50002301103yrRc163e29d7ZzgUiKwh0xhbCbrgNTyjFHJHwjSsCd5lSPWxJBdCZLQ5';
+$order = '5000481033994782';
+
+
+//$order = '5000550696796183';
+$sessionKey = '50002301422cdaiudiQfUvkfkfueltWFHi137e3f5bQGZdRtFEwBpxDxPrTG2jMrE6H';
+//$sessionKey = '50002500e10kEPynqBacfX146882beFiwgzuCbjAqgpxYFoHtmygVTBcZzz4YHQguxt';
 $login = 'bestgoodsstore@yandex.ru';
+//$login = 'NezabudkaMR@yandex.ru';
 
 $res = findorderbyid($order, $sessionKey);
 
@@ -97,7 +102,6 @@ function userDataValidation($address, $order)
 // Create array of order fields
 function destructResponse(array $shortener, $order, $shop)
 {
-
 
     /*  get details from raw response   */
 //    $shortener = $res['aliexpress_solution_order_info_get_response']['result']['data'];
@@ -196,8 +200,11 @@ function destructResponse(array $shortener, $order, $shop)
                         /*in case of coupon added to the order*/
                         $orderDetails['productStocks'][$product_id]['availableMS'] = false;
 //                        echo "Tmall не хватает товара $productMSName для отгрузки!!! Продано - " . $product['product_count'] . " В МС на момент заказа - $avaliable_stock. Заказ на Tmall № $order.";
-                        telegram("Tmall не хватает товара $productMSName для отгрузки!!! Продано - ".$product['product_count']." В МС на момент заказа - $avaliable_stock. Заказ на Tmall № $order.", '-278688533');
+                        telegram("Tmall не хватает товара $productMSName для отгрузки!!! Продано - " . $product['product_count'] . " В МС на момент заказа - $avaliable_stock. Заказ на Tmall № $order.", '-278688533');
                     }
+
+
+                    /*DISCOUNT CALCULATION BEGINS*/
 
 
                     /**
@@ -211,45 +218,48 @@ function destructResponse(array $shortener, $order, $shop)
                      */
 
                     $productsTotal = 0;
-                    $priceArrInt = array();
                     $orderAmount = 0;
                     $discountDiff = 0;
-                    $discountNoDiff = 0;
 
+                    /*need this block to calculate Ali clean total positions cost = $productsTotal*/
                     foreach ($products as $item) {
-                        $prodParam = array();
                         $prPrice = $item['product_price']['cent'];
                         $prCo = $item['product_count'];
                         $prTotal = $prPrice * $prCo;
                         $productsTotal += $prTotal;
                         $orderAmount = $shortener['order_amount']['cent'];
+                    }
 
-                        $prodParam['count'] = $prCo;
-                        $prodParam['price'] = $prPrice;
-                        $prodParam['total'] = $prTotal;
-                        $priceArrInt[] = $prodParam;
+
+                    /*percentage difference btw Tmall price and MS price - applied discount*/
+                    if ($msPrice > $sellPrice) {
+                        $price = $msPrice;
+                        $tmallTotal = $product['product_count'] * $product['product_price']['cent'];
+                        $discountDiff = ($price - $sellPrice) * 100 / ($price - $sellPrice + $tmallTotal);
+                        var_dump('$discountDiff' . $discountDiff);
+                    }else{
+                        $price = $sellPrice;
                     }
 
 
                     $orderShip = $shortener['logistics_amount']['cent'] ?? 0;
                     $coupon = $productsTotal + $orderShip - $orderAmount;
-                    $productPercentDisc = $coupon * 100 / $productsTotal;
-//                    var_dump('$productPercentDisc' . $productPercentDisc);
+                    $msPosition = $msPrice * $product['product_count'];
+                    $aliPosition = $sellPrice * $product['product_count'];
 
 
-                    /*percentage difference btw Tmall price and MS price - applied discount*/
-                    /*plus coupon or discount applied*/
-                    if ($msPrice > $sellPrice) {
-                        $price = $msPrice;
-                        $discountDiff = ($price - $sellPrice + $coupon) * 100 / ($price - $sellPrice + $productsTotal);
-//                        var_dump('$discountDiff' . $discountDiff);
-                        $orderDiscount = $discountDiff;
-                    } else {
-                        $price = $sellPrice;
-                        $discountNoDiff = $productPercentDisc;
-//                        var_dump('$discountNoDiff' . $discountNoDiff);
+                    $totalDisc = ($msPosition - $aliPosition + $coupon) * 100 / ($msPosition - $aliPosition + $productsTotal);
+                    echo "new disc $totalDisc = ($msPosition - $aliPosition + $coupon) * 100 / ($msPosition - $aliPosition + $productsTotal)";
+                    $orderDiscount = ($discountDiff > 0 && $orderDiscount == 0) ? $totalDisc : $orderDiscount;
 
-                    }
+                    echo $orderDiscount;
+
+
+                    /*not work for MR https://gsp.aliexpress.com/apps/order/detail?spm=5261.order_list.orderTable.2379.55bc3e5fBypimc&orderId=5000481033994782*/
+                    /*heavy solution get all MS prices and calculate discount for each and return final into json*/
+
+
+                    /*DISCOUNT CALCULATION ENDS*/
 
 
                     if ($minPrice > $sellPrice || $msPrice > $sellPrice || $sellPrice > $msPrice) {
@@ -259,13 +269,7 @@ function destructResponse(array $shortener, $order, $shop)
 
                         telegram("Tmall продал товар по неверной цене. Цена продажи $sellPrice. Минимальная цена $minPrice. Цена товарв в МС $msPrice. Заказ на Tmall № $order.", '-278688533');
                     }
-                    if ($orderDiscount != 0) {
-                        $discount = $orderDiscount;
-                    } else {
-                        $discount = $discountNoDiff;
-                    }
-//                    var_dump('$orderDiscount' . $orderDiscount);
-//                    var_dump('$discount' . $discount);
+
 
                     /*                    if ($orderDetails['paid'] == 'PAY_SUCCESS') {
                                             $toReserve = $product['product_count'];
@@ -277,7 +281,7 @@ function destructResponse(array $shortener, $order, $shop)
                     $position = array(
                         "quantity" => $product['product_count'],
                         "price" => $price,
-                        "discount" => $discount,
+                        "discount" => $orderDiscount,
                         "vat" => 0,
                         "assortment" =>
                             array(
@@ -334,13 +338,18 @@ function destructResponse(array $shortener, $order, $shop)
     $orderShipEscrow = isset($shortener['logisitcs_escrow_fee_rate']) ? $shortener['logisitcs_escrow_fee_rate'] * $orderShip : 0;
     $orderDetails['dshSum'] = ($escrowFee + $orderShipEscrow - $couponEscrow) / 100;
     $orderDetails['coupon'] = $coupon;
+    var_dump("dsh " . $orderDetails['dshSum']);
+    var_dump("coupon " . $orderDetails['coupon']);
 
-    var_dump($orderDetails['productStocks']);
+//    var_dump($orderDetails['productStocks']);
     $orderDetails['err'] = $err;
     if ($orderDetails['err'] != '') {
         telegram("Нет персональных данных. Причина " . $orderDetails['err'] . ". Заказ на Tmall № $order.", '-278688533');
     };
 
+    if ($orderDetails['paid'] != 'PAY_SUCCESS') {
+        telegram("Заказ на Tmall № $order. Не оплачен. Ждем оплаты.", '-278688533');
+    }
 
     /*  fill JSON for order create function */
     fillOrderTemplate($orderDetails);

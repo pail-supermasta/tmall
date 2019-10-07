@@ -22,7 +22,7 @@ define('LOGINS', array(
         'name' => 'Незабудка MR',
         'login' => 'NezabudkaMR@yandex.ru',
         'field_id' => '0bbcd991-81f4-11e9-9109-f8fc0004dec9',
-        'sessionKey' => '50002500500V1acb5e0esBdqLFskhnQwtwheYk1CiSexTFfFAv6nWUefGArBboUuh8F',
+        'sessionKey' => '50002500e10kEPynqBacfX146882beFiwgzuCbjAqgpxYFoHtmygVTBcZzz4YHQguxt',
         'cpCode' => 'UTV0a1NLakt5dE9DdzZOdEt1elhnblRnMURQaExvS0w4RVZEVHMyM2o2eTRqUjdiOEdxalpTVjhRN0ZBQldVZA==',
         'cnId' => '4398983084403'
     ),
@@ -30,7 +30,7 @@ define('LOGINS', array(
         'name' => 'bestgoodsstore',
         'login' => 'bestgoodsstore@yandex.ru',
         'field_id' => '0bbcd3e6-81f4-11e9-9109-f8fc0004dec8',
-        'sessionKey' => '50002301103yrRc163e29d7ZzgUiKwh0xhbCbrgNTyjFHJHwjSsCd5lSPWxJBdCZLQ5',
+        'sessionKey' => '50002301422cdaiudiQfUvkfkfueltWFHi137e3f5bQGZdRtFEwBpxDxPrTG2jMrE6H',
         'cpCode' => 'QXJCQk1QcjJKTkZDbHk4ZVZ4bW11cFQ2L2QreW1XT0lJd2ZlMnEvL2dFZC9NbG5CSklEV2tiY0cxNkRSMWlYcQ==',
         'cnId' => '4398985192396'
 
@@ -39,7 +39,7 @@ define('LOGINS', array(
         'name' => 'Новинки',
         'login' => 'novinkiooo@yandex.ru',
         'field_id' => 'e8a40577-77b9-11e9-912f-f3d40003d45d',
-        'sessionKey' => '50002500737cfRNerkKCo3qqiYbivGmqfVSjYiCsiryXdglSI1e4adc70E1lvJFkJus',
+        'sessionKey' => '50002501218puBbzgXFkqhvplWEdrh1c808e85pszGJkLnXgVzGGx9wxCcCqsvPj6As',
         'cpCode' => 'OTQwTzB2T1U3N1Nza0Y3OVRKMHZyVWtPL0RFRjJHczBqUHBDRHBqK05LVXdBc1pJRkk0THo1YUVLR21PNE5IZQ==',
         'cnId' => '4398985964371'
     ),
@@ -47,7 +47,7 @@ define('LOGINS', array(
         'name' => 'Незабудка iRobot',
         'login' => 'NezabudkaiRobot@yandex.ru',
         'field_id' => '0bbcde02-81f4-11e9-9109-f8fc0004deca',
-        'sessionKey' => '50002500703cfRN14e0f429er9JHvWsscC4j2hLvisve7cDy7nRylIluKtZQNPQCxQu',
+        'sessionKey' => '50002500345b04qabswlyhnCqZstidcl2dorAsRlaeAuCNzUGdZtBBR6h1c2a3209li',
         'cpCode' => 'czJBM3dFNm9aQ0RuSnhnY0tEK2p2a3g1cEI5aFYwSGw1TlpxTVAyUE1CYk1iYkRCTU1tWENocFo4alU3aFdmUg==',
         'cnId' => '4398985334183'
     ),
@@ -55,7 +55,7 @@ define('LOGINS', array(
         'name' => 'Незабудка ND',
         'login' => 'NezabudkaND@yandex.ru',
         'field_id' => '0bbce15c-81f4-11e9-9109-f8fc0004decb',
-        'sessionKey' => '50002700532VsBdqLktCoFvXnxeB4JxEjRbWTD7DDviK14d17745W1DmhKcqJnlQq9B',
+        'sessionKey' => '50002700f07CsXpqaf1167cf3bdl0ipRaztFcFeR5MtYHGEvJ1IQXHD3CpkVzlo6zzy',
         'cpCode' => 'V1ZDUlZnY09vbHoyQTFpNEZEUElkcGlmUE43Z1hYZEdoVEZwM2huTDlWeWVKUHdIUmY4QmFWV1FOdXVCT3JQeg==',
         'cnId' => '4398983195649'
     )
@@ -136,10 +136,10 @@ function checkTimeFromPaid($order, $payTime, $credential)
             $orderMS->state = $state_id;
             $result['mailNo'] = str_replace(['AEWH', 'RU4'], "", $result['mailNo']);
 
-            $orderMS->setTrackNum($result['mailNo']);
+            error_log($orderMS->setTrackNum($result['mailNo']),3,'setTrackNum.log');
             /*            $message = "Для заказа №$order будет установлен трек ".$result['mailNo']." в МС";
                         telegram($message, '-278688533');*/
-            var_dump($orderMS->setToPack());
+            error_log($orderMS->setToPack(),3,'setToPack.log');
 
         } else {
             $message = "CAINIAO ОШИБКА $order см ali_order_list_paid.log";
@@ -175,7 +175,7 @@ function checkTimeFromPaid($order, $payTime, $credential)
                         $trackingWebsite = "https://iml.ru/status/";
                         break;
                     case "3071006a-d2db-11e9-0a80-025a0021cd0d":
-                        $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=AEWH0000'.$trackId.'RU4"';
+                        $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=AEWH0000' . $trackId . 'RU4"';
                         break;
 
                 }
