@@ -72,7 +72,7 @@ function curlMSPaid($username = false, $post, $order)
             $orderId = $result['name'];
             $orderLinkMS = $result['meta']['uuidHref'];
 
-            $newOrderTeleGMsg = "ВНИМАНИЕ. Заказ [$orderId]($orderLinkMS) попал в статус ОПЛАЧЕН. Срочно отработать";
+            $newOrderTeleGMsg = "Заказ [$orderId]($orderLinkMS) попал в статус ОПЛАЧЕН.";
             telegram($newOrderTeleGMsg, '-278688533', 'Markdown');
         };
 

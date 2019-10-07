@@ -78,12 +78,16 @@ function fillOrderTemplate(array $orderDetails)
             $availableMS = false;
         }
     }
-    if ($availableMS == true && $orderDetails['err'] == '' && $orderDetails['paid'] == 'PAY_SUCCESS') {
+    if (!isset($orderDetails['productStocks'])) {
+        /*отработать*/
+        $state = '552a994e-2905-11e7-7a31-d0fd002c3df2';
+        $logisticsProvider = '1 Не нужна доставка';
+    } elseif ($availableMS == true && $orderDetails['err'] == '' && $orderDetails['paid'] == 'PAY_SUCCESS') {
         $paid = true;
         /*в работе*/
         $state = 'ecf45f89-f518-11e6-7a69-9711000ff0c4';
         $logisticsProvider = 'Cainiao';
-    } elseif ($availableMS == true && $orderDetails['err'] == '' && $orderDetails['paid'] == 'PLACE_ORDER_SUCCESS') {
+    } elseif ($availableMS == true && $orderDetails['err'] == '' && ($orderDetails['paid'] == 'PLACE_ORDER_SUCCESS' || $orderDetails['paid'] == 'NOT_PAY')) {
         $paid = false;
         /*ждем оплаты*/
         $state = '327c0111-75c5-11e5-7a40-e89700139936';
