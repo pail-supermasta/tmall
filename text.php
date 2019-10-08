@@ -23,8 +23,8 @@ function bundle($post_data, $sessionKey)
     $req = new AliexpressOfferRedefiningQuerybundleRequest;
     $param_aeop_offer_bundle_query_condition = new AeopOfferBundleQueryCondition;
     $param_aeop_offer_bundle_query_condition->current_page = "1";
-    $param_aeop_offer_bundle_query_condition->item_id = $post_data;
-    $param_aeop_offer_bundle_query_condition->item_subject = "Body Fat Scientific ";
+    $param_aeop_offer_bundle_query_condition->item_id = "33022142079";
+//    $param_aeop_offer_bundle_query_condition->item_subject = "";
     $param_aeop_offer_bundle_query_condition->page_size = "10";
     $req->setParamAeopOfferBundleQueryCondition(json_encode($param_aeop_offer_bundle_query_condition));
     $resp = $c->execute($req, $sessionKey);

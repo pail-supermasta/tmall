@@ -33,6 +33,7 @@ require_once 'class/telegram.php';
 //$order = '5000620116289901'; //0
 //$order = '5000481033994782'; //2
 //$order = '8003767178094779'; //1
+$order = '5000628994334556';
 
 
 //$order = '5000550696796183';
@@ -353,6 +354,7 @@ function destructResponse(array $shortener, $order, $shop)
         telegram("Заказ на Tmall № $order. Не оплачен. Ждем оплаты.", '-278688533');
     }
 
+//    var_dump($orderDetails);
     /*  fill JSON for order create function */
     fillOrderTemplate($orderDetails);
 }
