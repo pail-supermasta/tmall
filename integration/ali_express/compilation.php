@@ -108,7 +108,7 @@ function formMasterList($credential)
     $param_aeop_order_query->buyer_login_id = $buyer_login_id;
     $param_aeop_order_query->create_date_start = $create_day;
     $param_aeop_order_query->current_page = "1";
-    $param_aeop_order_query->order_status_list = array('WAIT_SELLER_SEND_GOODS', 'PLACE_ORDER_SUCCESS');
+    $param_aeop_order_query->order_status_list = array('WAIT_SELLER_SEND_GOODS', 'PLACE_ORDER_SUCCESS','PAYMENT_PROCESSING');
     $param_aeop_order_query->page_size = "20";
     $req->setParamAeopOrderQuery(json_encode($param_aeop_order_query));
     $resp = $c->execute($req, $sessionKey);
