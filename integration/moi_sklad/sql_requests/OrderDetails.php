@@ -13,7 +13,7 @@ function getOrderTrack($orderName)
     $sql = new mysqli(MS_HOST, MS_USER, MS_PASS, MS_DB);
     /*Отгрузить*/
 
-    $query = "SELECT attributes FROM `ms_customerorder` WHERE `name` = '$orderName'";
+    $query = "SELECT attributes FROM `ms_customerorder` WHERE `name` = '$orderName'  AND deleted='' ";
     $result = $sql->query($query);
     $rows = mysqli_fetch_all($result);
     $rows = json_decode($rows[0][0], true);
