@@ -17,15 +17,15 @@ define('APPKEY', '27862248');
 define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
 
 define('LOGINS', array(
-        array(
-            'name' => 'Незабудка MR',
-            'login' => 'NezabudkaMR@yandex.ru',
-            'field_id' => '0bbcd991-81f4-11e9-9109-f8fc0004dec9',
-            'sessionKey' => '50002500e10kEPynqBacfX146882beFiwgzuCbjAqgpxYFoHtmygVTBcZzz4YHQguxt',
-            'cpCode' => 'UTV0a1NLakt5dE9DdzZOdEt1elhnblRnMURQaExvS0w4RVZEVHMyM2o2eTRqUjdiOEdxalpTVjhRN0ZBQldVZA==',
-            'cnId' => '4398983084403'
-        ),
-    /*array(
+    array(
+        'name' => 'Незабудка MR',
+        'login' => 'NezabudkaMR@yandex.ru',
+        'field_id' => '0bbcd991-81f4-11e9-9109-f8fc0004dec9',
+        'sessionKey' => '50002500e10kEPynqBacfX146882beFiwgzuCbjAqgpxYFoHtmygVTBcZzz4YHQguxt',
+        'cpCode' => 'UTV0a1NLakt5dE9DdzZOdEt1elhnblRnMURQaExvS0w4RVZEVHMyM2o2eTRqUjdiOEdxalpTVjhRN0ZBQldVZA==',
+        'cnId' => '4398983084403'
+    ),
+    array(
         'name' => 'bestgoodsstore',
         'login' => 'bestgoodsstore@yandex.ru',
         'field_id' => '0bbcd3e6-81f4-11e9-9109-f8fc0004dec8',
@@ -34,30 +34,30 @@ define('LOGINS', array(
         'cnId' => '4398985192396'
 
     ),
-        array(
-            'name' => 'Новинки',
-            'login' => 'novinkiooo@yandex.ru',
-            'field_id' => 'e8a40577-77b9-11e9-912f-f3d40003d45d',
-            'sessionKey' => '50002501218puBbzgXFkqhvplWEdrh1c808e85pszGJkLnXgVzGGx9wxCcCqsvPj6As',
-            'cpCode' => 'OTQwTzB2T1U3N1Nza0Y3OVRKMHZyVWtPL0RFRjJHczBqUHBDRHBqK05LVXdBc1pJRkk0THo1YUVLR21PNE5IZQ==',
-            'cnId' => '4398985964371'
-        ),
-        array(
-            'name' => 'Незабудка iRobot',
-            'login' => 'NezabudkaiRobot@yandex.ru',
-            'field_id' => '0bbcde02-81f4-11e9-9109-f8fc0004deca',
-            'sessionKey' => '50002500345b04qabswlyhnCqZstidcl2dorAsRlaeAuCNzUGdZtBBR6h1c2a3209li',
-            'cpCode' => 'czJBM3dFNm9aQ0RuSnhnY0tEK2p2a3g1cEI5aFYwSGw1TlpxTVAyUE1CYk1iYkRCTU1tWENocFo4alU3aFdmUg==',
-            'cnId' => '4398985334183'
-        ),
-        array(
-            'name' => 'Незабудка ND',
-            'login' => 'NezabudkaND@yandex.ru',
-            'field_id' => '0bbce15c-81f4-11e9-9109-f8fc0004decb',
-            'sessionKey' => '50002700f07CsXpqaf1167cf3bdl0ipRaztFcFeR5MtYHGEvJ1IQXHD3CpkVzlo6zzy',
-            'cpCode' => 'V1ZDUlZnY09vbHoyQTFpNEZEUElkcGlmUE43Z1hYZEdoVEZwM2huTDlWeWVKUHdIUmY4QmFWV1FOdXVCT3JQeg==',
-            'cnId' => '4398983195649'
-        )*/
+    array(
+        'name' => 'Новинки',
+        'login' => 'novinkiooo@yandex.ru',
+        'field_id' => 'e8a40577-77b9-11e9-912f-f3d40003d45d',
+        'sessionKey' => '50002501218puBbzgXFkqhvplWEdrh1c808e85pszGJkLnXgVzGGx9wxCcCqsvPj6As',
+        'cpCode' => 'OTQwTzB2T1U3N1Nza0Y3OVRKMHZyVWtPL0RFRjJHczBqUHBDRHBqK05LVXdBc1pJRkk0THo1YUVLR21PNE5IZQ==',
+        'cnId' => '4398985964371'
+    ),
+    array(
+        'name' => 'Незабудка iRobot',
+        'login' => 'NezabudkaiRobot@yandex.ru',
+        'field_id' => '0bbcde02-81f4-11e9-9109-f8fc0004deca',
+        'sessionKey' => '50002500345b04qabswlyhnCqZstidcl2dorAsRlaeAuCNzUGdZtBBR6h1c2a3209li',
+        'cpCode' => 'czJBM3dFNm9aQ0RuSnhnY0tEK2p2a3g1cEI5aFYwSGw1TlpxTVAyUE1CYk1iYkRCTU1tWENocFo4alU3aFdmUg==',
+        'cnId' => '4398985334183'
+    ),
+    array(
+        'name' => 'Незабудка ND',
+        'login' => 'NezabudkaND@yandex.ru',
+        'field_id' => '0bbce15c-81f4-11e9-9109-f8fc0004decb',
+        'sessionKey' => '50002700f07CsXpqaf1167cf3bdl0ipRaztFcFeR5MtYHGEvJ1IQXHD3CpkVzlo6zzy',
+        'cpCode' => 'V1ZDUlZnY09vbHoyQTFpNEZEUElkcGlmUE43Z1hYZEdoVEZwM2huTDlWeWVKUHdIUmY4QmFWV1FOdXVCT3JQeg==',
+        'cnId' => '4398983195649'
+    )
 ));
 
 
@@ -74,7 +74,7 @@ $stores = array(
 //require_once '../class/error.php';
 
 // Telegram err logs integration
-require_once '../class/telegram.php';
+//require_once '../class/telegram.php';
 
 require_once '../ali_express/taobao/TopSdk.php';
 
@@ -84,8 +84,7 @@ require_once '../vendor/autoload.php';
 use Avaks\MS\Products;
 
 $productsMS = new Products();
-$syncErrors = '';
-$skuSearchLog = '';
+
 
 foreach (LOGINS as $login) {
 
@@ -106,10 +105,9 @@ foreach (LOGINS as $login) {
         $skuCode = $product['code'];
 
         // Получаем сток из БД
-        $stocks = $productsMS->getMsStock($product['id'], $stores);
-        $product['stock'] = $stocks[0];
+        $product['stock'] = $productsMS->getMsStock($product['id'], $stores);
 
-        $product['ali_stock'] = $product['stock'];
+        $product['ali_stock'] = $product['stock'][0];
 
 
         if ($product['ali_stock'] < 0) $product['ali_stock'] = 0;
@@ -118,18 +116,17 @@ foreach (LOGINS as $login) {
         $arr = $aliProduct->setStock($product['ali_stock'], $login);
 
 
-        if (isset($arr[0])) {
-            $syncErrors .= 'ID Aliexp ' . $product['ali_product_id'] . ' Код МС ' . $product['code'] . ' неверный ID aliexpress для ' . $login['login'] . PHP_EOL;
-            $skuSearchLog .= $arr[1];
+        if (!$arr) {
+            var_dump($product['name'] . ' неверный ID aliexpress для ' . $login['login']);
             continue;
         }
 
         $product = array_merge($product, $arr);
 
         if ($product['new_stock'] === false) {
-            var_dump($product['ali_product_id'] . ' ' . $product['code'] . ' ' . round(100 * ($key / count($products))) . '% ' . $product['name'] . ' ' . $product['old_stock'] . ' без изменений' . PHP_EOL);
+            var_dump($product['ali_product_id'] . ' ' . $product['code'] . ' ' . round(100 * ($key / count($products))) . '% ' . $product['name'] . ' ' . $product['old_stock'] . ' без изменений'.PHP_EOL);
         } else {
-            var_dump($product['ali_product_id'] . ' ' . $product['code'] . ' ' . round(100 * ($key / count($products))) . '% ' . $product['name'] . ' ' . $product['old_stock'] . ' ' . $product['new_stock'] . PHP_EOL);
+            var_dump($product['ali_product_id'] . ' ' . $product['code'] . ' ' . round(100 * ($key / count($products))) . '% ' . $product['name'] . ' ' . $product['old_stock'] . ' ' . $product['new_stock'].PHP_EOL);
         }
 
         $products[$key] = $product;
@@ -152,9 +149,7 @@ foreach (LOGINS as $login) {
         $message .= " без изменений<br>";
     }
 
-    var_dump(telegram($message, '-391758030'));
-    var_dump($syncErrors);
-    var_dump($skuSearchLog);
+    //var_dump(telegram($message));
 
-//    echo $message;
+    echo $message;
 }

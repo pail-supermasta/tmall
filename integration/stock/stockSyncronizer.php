@@ -74,7 +74,7 @@ $stores = array(
 //require_once '../class/error.php';
 
 // Telegram err logs integration
-//require_once '../class/telegram.php';
+require_once '../class/telegram.php';
 
 require_once '../ali_express/taobao/TopSdk.php';
 
@@ -84,7 +84,7 @@ require_once '../vendor/autoload.php';
 use Avaks\MS\Products;
 
 $productsMS = new Products();
-
+$syncErrors = '';
 
 foreach (LOGINS as $login) {
 
@@ -105,7 +105,8 @@ foreach (LOGINS as $login) {
         $skuCode = $product['code'];
 
         // Получаем сток из БД
-        $product['stock'] = $productsMS->getMsStock($product['id'], $stores);
+        $stocks = $productsMS->getMsStock($product['id'], $stores);
+        $product['stock'] = $stocks[0];
 
         $product['ali_stock'] = $product['stock'];
 
@@ -113,23 +114,27 @@ foreach (LOGINS as $login) {
         if ($product['ali_stock'] < 0) $product['ali_stock'] = 0;
 
         $aliProduct = new \Avaks\AE\Product($product['ali_product_id'], $skuCode);
+
         $arr = $aliProduct->setStock($product['ali_stock'], $login);
 
 
-        if (!$arr) {
-            var_dump($product['name'] . ' неверный ID aliexpress для ' . $login['login']);
+        if ($arr == false) {
+            $syncErrors .= 'ID Aliexp ' . $product['ali_product_id'] . ' Код МС ' . $product['code'] . ' ошибка сопоставления для магазина ' . $login['login'] . PHP_EOL;
             continue;
-        }
-
-        $product = array_merge($product, $arr);
-
-        if ($product['new_stock'] === false) {
-            var_dump($product['ali_product_id'] . ' ' . $product['code'] . ' ' . round(100 * ($key / count($products))) . '% ' . $product['name'] . ' ' . $product['old_stock'] . ' без изменений'.PHP_EOL);
         } else {
-            var_dump($product['ali_product_id'] . ' ' . $product['code'] . ' ' . round(100 * ($key / count($products))) . '% ' . $product['name'] . ' ' . $product['old_stock'] . ' ' . $product['new_stock'].PHP_EOL);
+            $product = array_merge($product, $arr);
+
+            if ($product['new_stock'] === false) {
+//                var_dump($product['ali_product_id'] . ' ' . $product['code'] . ' ' . round(100 * ($key / count($products))) . '% ' . $product['name'] . ' ' . $arr['old_stock'] . ' без изменений' . PHP_EOL);
+            } else {
+//                var_dump($product['ali_product_id'] . ' ' . $product['code'] . ' ' . round(100 * ($key / count($products))) . '% ' . $product['name'] . ' ' . $arr['old_stock'] . ' ' . $product['ali_stock'] . PHP_EOL);
+                $product['new_stock'] = $product['ali_stock'];
+            }
+
+            $products[$key] = $product;
         }
 
-        $products[$key] = $product;
+
     }
 
     $test = false;
@@ -137,19 +142,20 @@ foreach (LOGINS as $login) {
     foreach ($products as $key => $product) {
         // if ($key > 2) continue;
         if (!isset($product['ali_product_id'])) continue;
-        if ($product['new_stock'] === false) {
-            // $message.= $product['name']."\n";
+        if ($product['new_stock'] == false) {
+//            $message .= $product['name'] . "\n";
         } else {
             $test = true;
-            $message .= $product['name'] . ' ' . $product['old_stock'] . ' => <b>' . $product['new_stock'] . "</b>\n";
+            $message .= $product['name'] . ' ' . $product['old_stock'] . ' => <b>' . $product['ali_stock'] . "</b>\n";
         }
     }
-
-    if (!$test) {
-        $message .= " без изменений<br>";
+    if ($test == true) {
+        var_dump(telegram($message, '-391758030'));
+        echo $message;
     }
 
-    //var_dump(telegram($message));
 
-    echo $message;
+//    var_dump($syncErrors);
+
+//    echo $message;
 }
