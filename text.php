@@ -29,7 +29,7 @@ function bundle($post_data, $sessionKey)
     $req->setParamAeopOfferBundleQueryCondition(json_encode($param_aeop_offer_bundle_query_condition));
     $resp = $c->execute($req, $sessionKey);
 
-    var_dump($req);
+    var_dump($param_aeop_offer_bundle_query_condition);
 //    return json_decode($resp,true);
     return $resp;
 }
@@ -48,7 +48,7 @@ function bundlebyid($post_data, $sessionKey)
     $c->appkey = APPKEY;
     $c->secretKey = SECRET;
     $req = new AliexpressOfferRedefiningFindbundlebyidRequest;
-    $req->setBundleId("1800061065");
+    $req->setBundleId("10001");
     $resp = $c->execute($req, $sessionKey);
     var_dump($req);
 
@@ -58,7 +58,7 @@ function bundlebyid($post_data, $sessionKey)
 }
 
 
-//$shorten = bundlebyid('1800061065', '50002700f07CsXpqaf1167cf3bdl0ipRaztFcFeR5MtYHGEvJ1IQXHD3CpkVzlo6zzy');
+//$shorten = bundlebyid('10001', '50002700f07CsXpqaf1167cf3bdl0ipRaztFcFeR5MtYHGEvJ1IQXHD3CpkVzlo6zzy');
 //var_dump($shorten);
 
 

@@ -138,13 +138,13 @@ foreach (LOGINS as $login) {
     }
 
     $test = false;
-    $message = "Обновление стока «{$login['name']}» на Aliexpress:";
+    $message = "ЗАКОНЧИЛИСЬ товары для «{$login['name']}» на Aliexpress:";
     foreach ($products as $key => $product) {
         // if ($key > 2) continue;
         if (!isset($product['ali_product_id'])) continue;
         if ($product['new_stock'] == false) {
 //            $message .= $product['name'] . "\n";
-        } else {
+        } elseif ($product['ali_stock'] <= 0) {
             $test = true;
             $message .= $product['name'] . ' ' . $product['old_stock'] . ' => <b>' . $product['ali_stock'] . "</b>\n";
         }
