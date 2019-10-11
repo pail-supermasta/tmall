@@ -33,7 +33,7 @@ require_once 'class/telegram.php';
 //$order = '5000620116289901'; //0
 //$order = '5000481033994782'; //2
 //$order = '8003767178094779'; //1
-$order = '5000628994334556';
+$order = '5000671328202858';
 
 
 //$order = '5000550696796183';
@@ -240,7 +240,7 @@ function destructResponse(array $shortener, $order, $shop)
                         $tmallTotal = $product['product_count'] * $product['product_price']['cent'];
                         $discountDiff = ($price - $sellPrice) * 100 / ($price - $sellPrice + $tmallTotal);
                         var_dump('$discountDiff' . $discountDiff);
-                    }else{
+                    } else {
                         $price = $sellPrice;
                     }
 
@@ -370,14 +370,19 @@ function assembleOrderDetails($order, $filename)
     foreach (LOGINS as $constant) {
         if ($constant['login'] == $login) {
             $sessionKey = $constant['sessionKey'];
+            $shopEmail = $login;
         }
     }
 
     /*  request details from ALI by order id    */
 
     $res = findorderbyid($order, $sessionKey);
+    if ($res != false) {
+        destructResponse($res, $order, $login);
+    } else {
+        telegram("Ошибка API для заказа $order для магазина $shopEmail", "-320614744");
+    }
 
-    destructResponse($res, $order, $login);
 
 }
 

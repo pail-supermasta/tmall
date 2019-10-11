@@ -14,11 +14,17 @@ function findorderbyid($post_data, $sessionKey)
     $param1->order_id = $post_data;
     $req->setParam1(json_encode($param1));
     $resp = $c->execute($req, $sessionKey);
-    $result = $resp->result->data;
-    $res = json_encode((array)$result);
+
+    if (!isset($resp->result)) {
+        return false;
+    } else {
+        $result = $resp->result->data;
+        $res = json_encode((array)$result);
+
+        return json_decode($res, true);
+    }
 
 
-    return json_decode($res,true);
 //    return $res;
 }
 

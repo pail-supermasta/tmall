@@ -8,11 +8,14 @@
 
 namespace Avaks\SQL;
 
+if (!defined('MS_HOST')) define('MS_HOST', 'avaks.org');
+if (!defined('MS_USER')) define('MS_USER', 'avaks');
+if (!defined('MS_PASS')) define('MS_PASS', 'SbTZN8L9fCpVDxtc');
+if (!defined('MS_DB')) define('MS_DB', 'avaks');
 
-define('MS_HOST', 'avaks.org');
-define('MS_USER', 'avaks');
-define('MS_PASS', 'SbTZN8L9fCpVDxtc');
-define('MS_DB', 'avaks');
+
+
+
 
 
 class AvaksSQL
