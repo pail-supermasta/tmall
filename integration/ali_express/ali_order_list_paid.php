@@ -136,10 +136,21 @@ function checkTimeFromPaid($order, $payTime, $credential)
             $orderMS->state = $state_id;
             $result['mailNo'] = str_replace(['AEWH', 'RU4'], "", $result['mailNo']);
 
-            error_log($orderMS->setTrackNum($result['mailNo']),3,'setTrackNum.log');
-            /*            $message = "Для заказа №$order будет установлен трек ".$result['mailNo']." в МС";
-                        telegram($message, '-278688533');*/
-            error_log($orderMS->setToPack(),3,'setToPack.log');
+
+            $setTrackNumRes = '';
+            $setTrackNumRes = $orderMS->setTrackNum($result['mailNo']);
+            if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
+                telegram("setTrackNum error found " . $result['mailNo'], '-320614744');
+                error_log($setTrackNumRes, 3, "setTrackNum.log");
+            }
+
+            $setToPackRes = '';
+            $setToPackRes = $orderMS->setToPack();
+            if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
+                telegram("setToPack error found $order", '-320614744');
+                error_log($setToPackRes, 3, "setToPack.log");
+            }
+
 
         } else {
             $message = "CAINIAO ОШИБКА $order см ali_order_list_paid.log";

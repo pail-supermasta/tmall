@@ -7,8 +7,10 @@
   <component name="ChangeListManager">
     <list default="true" id="80146bb5-79f6-4afc-a154-c01ae4967d76" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/stock/stockSyncronizer.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/stock/stockSyncronizer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text.php" beforeDir="false" afterPath="$PROJECT_DIR$/text.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/access/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/access/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/cainiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/cainiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/file_processing.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/file_processing.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,20 +24,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="stockSyncronizer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/integration/stock/stockSyncronizer.php">
+      <file leaf-file-name="cainiao.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/integration/ali_express/cainiao.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="142" column="34" lean-forward="true" selection-start-line="142" selection-start-column="34" selection-end-line="142" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="text.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/text.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="72">
+              <caret line="69" column="45" lean-forward="true" selection-start-line="69" selection-start-column="45" selection-end-line="69" selection-end-column="45" />
+              <folding>
+                <element signature="e#3950#7571#0#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -43,17 +39,8 @@
       <file leaf-file-name="ali_order_list_paid.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="158" column="46" lean-forward="true" selection-start-line="158" selection-start-column="46" selection-end-line="158" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderDetails.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/integration/moi_sklad/sql_requests/OrderDetails.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+            <state relative-caret-position="322">
+              <caret line="146" column="31" lean-forward="true" selection-start-line="146" selection-start-column="31" selection-end-line="146" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -62,39 +49,38 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>AliexpressOfferRedefiningQuerybundleRequest</find>
-      <find>ught an error when searchin</find>
-      <find>MS_USER</find>
-      <find>552a994e-2905-11e7-7a31-d0fd002c3df2</find>
-      <find>setStateProcessManually</find>
-      <find>var_dum</find>
-      <find>curlMSCreate</find>
-      <find>var</find>
-      <find>5000628731798926</find>
-      <find>die</find>
-      <find>processOrders</find>
-      <find>неверный</find>
-      <find>ali_s</find>
-      <find>$product['ali_stock']</find>
-      <find>$product['stock']</find>
-      <find>setStock</find>
-      <find>5011832060952</find>
-      <find>$skuSearchLog</find>
-      <find>33025218608</find>
-      <find>%</find>
-      <find>33026143594</find>
-      <find>logger</find>
-      <find>product_logger</find>
-      <find>Product_logger</find>
-      <find>modify_count</find>
       <find>new_stock</find>
       <find>sku_code</find>
       <find>br</find>
       <find>! Необходимо сро</find>
       <find>AliexpressOfferRedefiningFindbundlebyidRequest</find>
+      <find>ali_order_details_dynamic.php</find>
+      <find>telegram</find>
+      <find>price</find>
+      <find>sku_discount_price</find>
+      <find>global_aeop_ae_product_sku</find>
+      <find>$price</find>
+      <find>die</find>
+      <find>deliverCainiao</find>
+      <find>50002301422cdaiudiQfUvkfkfueltWFHi137e3f5bQGZdRtFEwBpxDxPrTG2jMrE6H</find>
+      <find>setTopack</find>
+      <find>ошиб</find>
+      <find>$setToPackRes</find>
+      <find>4398983195649</find>
+      <find>tele</find>
+      <find>http://lcp.cloud.cainiao.com/permission/isv</find>
+      <find>DKXWrit6e16htW008PFwW7tN5Y8758qq</find>
+      <find>V1ZDUlZnY09vbHoyQTFpNEZEUElkcGlmUE43Z1hYZEdoVEZwM2huTDlWeWVKUHdIUmY4QmFWV1FOdXVCT3JQeg==</find>
+      <find>sellershipmentfortop</find>
+      <find>$cnId</find>
+      <find>goodsNameEn</find>
+      <find>$goodsNameCn</find>
+      <find>var</find>
+      <find>шибка API для заказа</find>
+      <find>findorderbyid</find>
+      <find>subject</find>
     </findStrings>
     <replaceStrings>
-      <replace>$tmallProducts</replace>
       <replace>$$tmallProduct</replace>
       <replace>$tmallProduct</replace>
       <replace>$productsMS</replace>
@@ -124,6 +110,7 @@
       <replace>50002501218puBbzgXFkqhvplWEdrh1c808e85pszGJkLnXgVzGGx9wxCcCqsvPj6As</replace>
       <replace>50002700f07CsXpqaf1167cf3bdl0ipRaztFcFeR5MtYHGEvJ1IQXHD3CpkVzlo6zzy</replace>
       <replace>50002500345b04qabswlyhnCqZstidcl2dorAsRlaeAuCNzUGdZtBBR6h1c2a3209li</replace>
+      <replace>$setTrackNumRes</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\User\Documents\aliexpr.avaks.org\integration\class</dir>
@@ -149,12 +136,10 @@
         <option value="$PROJECT_DIR$/stickerHTML/barcode.php" />
         <option value="$PROJECT_DIR$/stickerHTML/rotate.php" />
         <option value="$PROJECT_DIR$/stickerHTML/htmlToPdf.php" />
-        <option value="$PROJECT_DIR$/integration/src/Cainiao/Cainiao.php" />
         <option value="$PROJECT_DIR$/stickerHTML/htmlToPdf2.php" />
         <option value="$PROJECT_DIR$/integration/src/Customs.php" />
         <option value="$PROJECT_DIR$/integration/src/MS/Orders.php" />
         <option value="$PROJECT_DIR$/test-units/coupon.php" />
-        <option value="$PROJECT_DIR$/integration/src/SQL/AvaksSQL.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/ali_order_print.php" />
         <option value="$PROJECT_DIR$/integration/src/MS/CurlMoiSklad.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/cainiao_2.php" />
@@ -162,22 +147,25 @@
         <option value="$PROJECT_DIR$/integration/ali_express/taobao/top/TopClient.php" />
         <option value="$PROJECT_DIR$/integration/stock/php-error.log" />
         <option value="$PROJECT_DIR$/access/auth.html" />
-        <option value="$PROJECT_DIR$/access/auth.php" />
         <option value="$PROJECT_DIR$/integration/moi_sklad/ms_change_order_dynamic.php" />
         <option value="$PROJECT_DIR$/integration/src/MS/Products.php" />
         <option value="$PROJECT_DIR$/integration/moi_sklad/ms_mysql_products_dynamic.php" />
-        <option value="$PROJECT_DIR$/integration/ali_express/cainiao.php" />
-        <option value="$PROJECT_DIR$/integration/src/MS/OrderMS.php" />
         <option value="$PROJECT_DIR$/integration/moi_sklad/ms_post_order_dynamic.php" />
-        <option value="$PROJECT_DIR$/integration/file_processing.php" />
-        <option value="$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/compilation.php" />
         <option value="$PROJECT_DIR$/integration/stock/stockSyncronizer_draw_new.php" />
         <option value="$PROJECT_DIR$/integration/src/AE/Product.php" />
-        <option value="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" />
         <option value="$PROJECT_DIR$/integration/moi_sklad/sql_requests/OrderDetails.php" />
         <option value="$PROJECT_DIR$/integration/stock/stockSyncronizer.php" />
         <option value="$PROJECT_DIR$/text.php" />
+        <option value="$PROJECT_DIR$/integration/src/SQL/AvaksSQL.php" />
+        <option value="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" />
+        <option value="$PROJECT_DIR$/integration/src/MS/OrderMS.php" />
+        <option value="$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php" />
+        <option value="$PROJECT_DIR$/access/auth.php" />
+        <option value="$PROJECT_DIR$/integration/src/Cainiao/Cainiao.php" />
+        <option value="$PROJECT_DIR$/integration/ali_express/cainiao_test.php" />
+        <option value="$PROJECT_DIR$/integration/file_processing.php" />
+        <option value="$PROJECT_DIR$/integration/ali_express/cainiao.php" />
       </list>
     </option>
   </component>
@@ -190,14 +178,18 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
       <path value="$PROJECT_DIR$/orders/vendor/composer" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="371" />
-    <option name="width" value="1389" />
+    <option name="x" value="395" />
+    <option name="y" value="10" />
+    <option name="width" value="1393" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -216,6 +208,11 @@
             <path>
               <item name="aliexpr.avaks.org" type="b2602c69:ProjectViewProjectNode" />
               <item name="aliexpr.avaks.org" type="462c0819:PsiDirectoryNode" />
+              <item name="access" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aliexpr.avaks.org" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aliexpr.avaks.org" type="462c0819:PsiDirectoryNode" />
               <item name="integration" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -224,24 +221,6 @@
               <item name="integration" type="462c0819:PsiDirectoryNode" />
               <item name="ali_express" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="aliexpr.avaks.org" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aliexpr.avaks.org" type="462c0819:PsiDirectoryNode" />
-              <item name="integration" type="462c0819:PsiDirectoryNode" />
-              <item name="moi_sklad" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aliexpr.avaks.org" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aliexpr.avaks.org" type="462c0819:PsiDirectoryNode" />
-              <item name="integration" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aliexpr.avaks.org" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aliexpr.avaks.org" type="462c0819:PsiDirectoryNode" />
-              <item name="integration" type="462c0819:PsiDirectoryNode" />
-              <item name="stock" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -249,27 +228,28 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="tele&#9;FILE&#9;file://C:/Users/User/Documents/aliexpr.avaks.org/integration/class/telegram.php&#10;termi&#9;ACTION&#9;ActivateTerminalToolWindow&#10;stock&#9;FILE&#9;file://C:/Users/User/Documents/aliexpr.avaks.org/integration/stock/stockSyncronizer.php&#10;paid&#9;FILE&#9;file://C:/Users/User/Documents/aliexpr.avaks.org/integration/ali_express/ali_order_list_paid.php&#10;ыещсл&#9;FILE&#9;file://C:/Users/User/Documents/aliexpr.avaks.org/integration/stock/stockSyncronizer.php&#10;logins&#9;null&#9;null&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;ali.&#9;FILE&#9;file://C:/Users/User/Documents/aliexpr.avaks.org/integration/stock/ali.php&#10;te&#9;ACTION&#9;ActivateTerminalToolWindow" />
+    <property name="SearchEverywhereHistoryKey" value="ca&#9;FILE&#9;file://C:/Users/User/Documents/aliexpr.avaks.org/integration/ali_express/cainiao.php&#10;paid&#9;FILE&#9;file://C:/Users/User/Documents/aliexpr.avaks.org/integration/ali_express/ali_order_list_paid.php&#10;cain&#9;FILE&#9;file://C:/Users/User/Documents/aliexpr.avaks.org/integration/ali_express/cainiao.php&#10;tele&#9;FILE&#9;file://C:/Users/User/Documents/aliexpr.avaks.org/integration/class/telegram.php&#10;termi&#9;ACTION&#9;ActivateTerminalToolWindow&#10;stock&#9;FILE&#9;file://C:/Users/User/Documents/aliexpr.avaks.org/integration/stock/stockSyncronizer.php&#10;ыещсл&#9;FILE&#9;file://C:/Users/User/Documents/aliexpr.avaks.org/integration/stock/stockSyncronizer.php&#10;logins&#9;null&#9;null&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;ali.&#9;FILE&#9;file://C:/Users/User/Documents/aliexpr.avaks.org/integration/stock/ali.php&#10;te&#9;ACTION&#9;ActivateTerminalToolWindow" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../aligateway" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\User\Documents\aliexpr.avaks.org\integration" />
-      <recent name="C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express" />
-      <recent name="C:\Users\User\Documents\aliexpr.avaks.org\test-units" />
-      <recent name="C:\Users\User\Documents\aliexpr.avaks.org\integration\src\images" />
-      <recent name="C:\Users\User\Documents\aliexpr.avaks.org\stickerHTML" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\Documents\aliexpr.avaks.org\integration" />
       <recent name="C:\Users\User\Documents\aliexpr.avaks.org\integration\src\images\cainiaoSticker" />
       <recent name="C:\Users\User\Documents\aliexpr.avaks.org\integration\src" />
       <recent name="C:\Users\User\Documents\aliexpr.avaks.org\orders\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express" />
+      <recent name="C:\Users\User\Documents\aliexpr.avaks.org\integration" />
+      <recent name="C:\Users\User\Documents\aliexpr.avaks.org\test-units" />
+      <recent name="C:\Users\User\Documents\aliexpr.avaks.org\integration\src\images" />
+      <recent name="C:\Users\User\Documents\aliexpr.avaks.org\stickerHTML" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -284,26 +264,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Script.text.php">
-    <configuration name="ali_order_list_paid.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" />
-    <configuration name="compilation.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/ali_express/compilation.php" />
-    <configuration name="stockSyncronizer_old.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/stock/stockSyncronizer_old.php" />
-    <configuration name="stockSyncronizer.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/stock/stockSyncronizer.php" />
-    <configuration name="text.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/text.php" />
+  <component name="RunManager" selected="PHP Script.cainiao_test.php">
+    <configuration name="ali_order_details_dynamic.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php" />
+    <configuration name="auth.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/access/auth.php" />
+    <configuration name="cainiao.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/ali_express/cainiao.php" />
+    <configuration name="cainiao_test.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/ali_express/cainiao_test.php" />
+    <configuration name="file_processing.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/file_processing.php" />
     <list>
-      <item itemvalue="PHP Script.compilation.php" />
-      <item itemvalue="PHP Script.stockSyncronizer_old.php" />
-      <item itemvalue="PHP Script.stockSyncronizer.php" />
-      <item itemvalue="PHP Script.ali_order_list_paid.php" />
-      <item itemvalue="PHP Script.text.php" />
+      <item itemvalue="PHP Script.file_processing.php" />
+      <item itemvalue="PHP Script.cainiao.php" />
+      <item itemvalue="PHP Script.ali_order_details_dynamic.php" />
+      <item itemvalue="PHP Script.auth.php" />
+      <item itemvalue="PHP Script.cainiao_test.php" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHP Script.text.php" />
-        <item itemvalue="PHP Script.ali_order_list_paid.php" />
-        <item itemvalue="PHP Script.stockSyncronizer.php" />
-        <item itemvalue="PHP Script.stockSyncronizer_old.php" />
-        <item itemvalue="PHP Script.compilation.php" />
+        <item itemvalue="PHP Script.cainiao_test.php" />
+        <item itemvalue="PHP Script.auth.php" />
+        <item itemvalue="PHP Script.cainiao.php" />
+        <item itemvalue="PHP Script.ali_order_details_dynamic.php" />
+        <item itemvalue="PHP Script.file_processing.php" />
       </list>
     </recent_temporary>
   </component>
@@ -366,28 +346,33 @@
       <workItem from="1570524746289" duration="9000" />
       <workItem from="1570532127526" duration="11355000" />
       <workItem from="1570623216309" duration="2655000" />
+      <workItem from="1570718596259" duration="99000" />
+      <workItem from="1570779597799" duration="1891000" />
+      <workItem from="1570787315080" duration="3673000" />
+      <workItem from="1571034444973" duration="10695000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="325933000" />
+    <option name="totallyTimeSpent" value="342291000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="371" y="0" width="1389" height="1047" extended-state="0" />
+    <frame x="395" y="10" width="1393" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2532189" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2532189" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32894737" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24399126" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2432825" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39914164" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39914164" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="7" />
@@ -432,18 +417,10 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="28" />
+      <option name="time" value="29" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/v1.0/production/moi_sklad/ms_post_order_dynamic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="83" column="46" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-units/vendor/psr/log/Psr/Log/Test/TestLogger.php" />
     <entry file="file://$PROJECT_DIR$/test-units/coupon.php" />
     <entry file="file://$PROJECT_DIR$/integration/ali_express/taobao/top/request/AliexpressSolutionOrderInfoGetRequest.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -538,20 +515,6 @@
       <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/integration/file_processing_cop.php" />
-    <entry file="file://$PROJECT_DIR$/integration/src/SQL/AvaksSQL.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/access/auth.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="85" selection-start-line="7" selection-start-column="77" selection-end-line="7" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_print.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -563,13 +526,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="22" column="58" lean-forward="true" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/access/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="70" lean-forward="true" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
         </state>
       </provider>
     </entry>
@@ -629,24 +585,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/src/MS/OrderMS.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="82" column="45" lean-forward="true" selection-start-line="82" selection-start-column="45" selection-end-line="82" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/moi_sklad/ms_post_order_dynamic.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/integration/ali_express/cainiao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="221" selection-start-line="221" selection-end-line="221" />
         </state>
       </provider>
     </entry>
@@ -657,31 +599,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/ali_express/compilation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/integration/file_processing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/integration/stock/stockSyncronizer_old.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="107" column="41" lean-forward="true" selection-start-line="107" selection-start-column="41" selection-end-line="107" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -707,27 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="158" column="46" lean-forward="true" selection-start-line="158" selection-start-column="46" selection-end-line="158" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/integration/moi_sklad/sql_requests/OrderDetails.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/integration/stock/stockSyncronizer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="142" column="34" lean-forward="true" selection-start-line="142" selection-start-column="34" selection-end-line="142" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/ali_express/taobao/top/request/AliexpressOfferRedefiningFindbundlebyidRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -737,8 +637,102 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/text.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="68">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/stock/stockSyncronizer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="142" column="34" selection-start-line="142" selection-start-column="34" selection-end-line="142" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/moi_sklad/sql_requests/OrderDetails.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/src/SQL/AvaksSQL.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/src/MS/OrderMS.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="86" column="25" lean-forward="true" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/src/Cainiao/Cainiao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/stock/stockSyncronizer_old.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="56" column="92" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/access/auth.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="166" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="166" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/access/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/cainiao_test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="64" column="30" lean-forward="true" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="146" column="31" lean-forward="true" selection-start-line="146" selection-start-column="31" selection-end-line="146" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/file_processing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/cainiao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="69" column="45" lean-forward="true" selection-start-line="69" selection-start-column="45" selection-end-line="69" selection-end-column="45" />
+          <folding>
+            <element signature="e#3950#7571#0#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>
