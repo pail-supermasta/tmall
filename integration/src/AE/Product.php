@@ -50,24 +50,27 @@ class Product
             }
         } else {
             $skuItem = $skuList;
-            if ($skuItem['sku_code'] == $this->skuCode) {
-                $result['old_stock'] = $skuItem['ipm_sku_stock'];
-                $sku_id = $skuItem['id'];
-                if ($result['old_stock'] == $stock) {
-                    $result['new_stock'] = false;
-                } else {
-                    $c = new \TopClient;
-                    $c->appkey = APPKEY;
-                    $c->secretKey = SECRET;
-                    $req = new \AliexpressPostproductRedefiningEditsingleskustockRequest;
-                    $req->setProductId("$this->id");
-                    $req->setSkuId("$sku_id");
-                    $req->setIpmSkuStock("$stock");
-                    $resp = $c->execute($req, $sessionKey);
-                    $res = json_encode((array)$resp);
-                    $result['new_stock'] = json_decode($res, true)['result']['modify_count'];
+            if (isset($skuItem['sku_code'])) {
+                if ($skuItem['sku_code'] == $this->skuCode) {
+                    $result['old_stock'] = $skuItem['ipm_sku_stock'];
+                    $sku_id = $skuItem['id'];
+                    if ($result['old_stock'] == $stock) {
+                        $result['new_stock'] = false;
+                    } else {
+                        $c = new \TopClient;
+                        $c->appkey = APPKEY;
+                        $c->secretKey = SECRET;
+                        $req = new \AliexpressPostproductRedefiningEditsingleskustockRequest;
+                        $req->setProductId("$this->id");
+                        $req->setSkuId("$sku_id");
+                        $req->setIpmSkuStock("$stock");
+                        $resp = $c->execute($req, $sessionKey);
+                        $res = json_encode((array)$resp);
+                        $result['new_stock'] = json_decode($res, true)['result']['modify_count'];
+                    }
                 }
             }
+
         }
         return $result ?? false;
     }

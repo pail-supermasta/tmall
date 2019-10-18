@@ -147,7 +147,7 @@ function checkTimeFromPaid($order, $payTime, $credential)
             $setToPackRes = '';
             $setToPackRes = $orderMS->setToPack();
             if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
-                telegram("setToPack error found $order", '-320614744');
+                telegram("setToPack error found $orderMS->name", '-320614744');
                 error_log($setToPackRes, 3, "setToPack.log");
             }
 
