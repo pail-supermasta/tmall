@@ -142,13 +142,13 @@ function checkTimeFromPaid($order, $payTime, $credential)
             if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
                 telegram("setTrackNum error found " . $result['mailNo'], '-320614744');
                 error_log($setTrackNumRes, 3, "setTrackNum.log");
-            }
-
-            $setToPackRes = '';
-            $setToPackRes = $orderMS->setToPack();
-            if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
-                telegram("setToPack error found $orderMS->name", '-320614744');
-                error_log($setToPackRes, 3, "setToPack.log");
+            } else {
+                $setToPackRes = '';
+                $setToPackRes = $orderMS->setToPack();
+                if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
+                    telegram("setToPack error found $orderMS->name", '-320614744');
+                    error_log($setToPackRes, 3, "setToPack.log");
+                }
             }
 
 

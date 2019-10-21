@@ -8,7 +8,6 @@
     <list default="true" id="80146bb5-79f6-4afc-a154-c01ae4967d76" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/src/AE/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/src/AE/Product.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,8 +24,26 @@
       <file leaf-file-name="ali_order_list_paid.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+            <state relative-caret-position="204">
+              <caret line="135" column="40" lean-forward="true" selection-start-line="135" selection-start-column="40" selection-end-line="135" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cainiao.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/integration/ali_express/cainiao.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="258" column="1" selection-start-line="258" selection-start-column="1" selection-end-line="258" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stockSyncronizer_old.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/integration/stock/stockSyncronizer_old.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="31" column="92" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="92" />
             </state>
           </provider>
         </entry>
@@ -35,9 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>deliverCainiao</find>
-      <find>50002301422cdaiudiQfUvkfkfueltWFHi137e3f5bQGZdRtFEwBpxDxPrTG2jMrE6H</find>
-      <find>setTopack</find>
       <find>ошиб</find>
       <find>$setToPackRes</find>
       <find>4398983195649</find>
@@ -65,6 +79,9 @@
       <find>AliexpressPostproductRedefiningCreateproductgroupRequest</find>
       <find>agent</find>
       <find>setTrackNum error found</find>
+      <find>получен трек номер</find>
+      <find>session</find>
+      <find>setToPa</find>
     </findStrings>
     <replaceStrings>
       <replace>$$tmallProduct</replace>
@@ -147,12 +164,12 @@
         <option value="$PROJECT_DIR$/integration/src/Cainiao/Cainiao.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/cainiao_test.php" />
         <option value="$PROJECT_DIR$/integration/file_processing.php" />
-        <option value="$PROJECT_DIR$/integration/ali_express/cainiao.php" />
         <option value="$PROJECT_DIR$/integration/src/AE/Product.php" />
         <option value="$PROJECT_DIR$/integration/stock/stockSyncronizer.php" />
         <option value="$PROJECT_DIR$/text.php" />
         <option value="$PROJECT_DIR$/textGroups.php" />
         <option value="$PROJECT_DIR$/integration/moi_sklad/ms_get_orders_dynamic.php" />
+        <option value="$PROJECT_DIR$/integration/ali_express/cainiao.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" />
       </list>
     </option>
@@ -253,26 +270,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Script.textGroups.php">
-    <configuration name="auth.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/access/auth.php" />
+  <component name="RunManager" selected="PHP Script.cainiao.php">
+    <configuration name="cainiao.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/ali_express/cainiao.php" />
     <configuration name="cainiao_test.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/ali_express/cainiao_test.php" />
     <configuration name="stockSyncronizer.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/stock/stockSyncronizer.php" />
     <configuration name="textGroups.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/textGroups.php" />
     <configuration name="text.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/text.php" />
     <list>
-      <item itemvalue="PHP Script.auth.php" />
       <item itemvalue="PHP Script.cainiao_test.php" />
       <item itemvalue="PHP Script.stockSyncronizer.php" />
       <item itemvalue="PHP Script.text.php" />
       <item itemvalue="PHP Script.textGroups.php" />
+      <item itemvalue="PHP Script.cainiao.php" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHP Script.cainiao.php" />
         <item itemvalue="PHP Script.textGroups.php" />
         <item itemvalue="PHP Script.text.php" />
         <item itemvalue="PHP Script.stockSyncronizer.php" />
         <item itemvalue="PHP Script.cainiao_test.php" />
-        <item itemvalue="PHP Script.auth.php" />
       </list>
     </recent_temporary>
   </component>
@@ -349,28 +366,31 @@
       <workItem from="1571135833101" duration="69000" />
       <workItem from="1571136128488" duration="742000" />
       <workItem from="1571379233122" duration="979000" />
+      <workItem from="1571386040019" duration="1417000" />
+      <workItem from="1571641301821" duration="412000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="350043000" />
+    <option name="totallyTimeSpent" value="351872000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="395" y="10" width="1393" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.2532189" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32894737" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2432825" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2432825" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39914164" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="7" />
@@ -419,9 +439,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/integration/vendor/autoload.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/moi_sklad/ms_get_orders_compilation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="485">
@@ -622,13 +639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/stock/stockSyncronizer_old.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="56" column="92" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/access/auth.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -648,13 +658,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/integration/ali_express/cainiao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
         </state>
       </provider>
     </entry>
@@ -728,10 +731,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/integration/stock/stockSyncronizer_old.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="31" column="92" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/taobao/top/request/AliexpressLogisticsSellershipmentfortopRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="108" column="5" lean-forward="true" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/cainiao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="258" column="1" selection-start-line="258" selection-start-column="1" selection-end-line="258" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+        <state relative-caret-position="204">
+          <caret line="135" column="40" lean-forward="true" selection-start-line="135" selection-start-column="40" selection-end-line="135" selection-end-column="40" />
         </state>
       </provider>
     </entry>
