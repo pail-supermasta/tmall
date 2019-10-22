@@ -88,4 +88,22 @@ class Orders
         return $ordersNoSticker;
 
     }
+
+    /**
+     * check if state Ждем оплаты
+     * check not deleted
+     * check if has Контрагент Покупатель Тмолл
+     */
+    public function getWaitPayment()
+    {
+
+        $query = "SELECT id,`name`,positions,moment
+                  FROM `ms_customerorder`
+                  WHERE state = '327c0111-75c5-11e5-7a40-e89700139936'
+                  AND agent = '1b33fbc1-5539-11e9-9ff4-315000060bc8'
+                  AND deleted = ''";
+        $ordersNoSticker = AvaksSQL::selectAllAssoc($query);
+        return $ordersNoSticker;
+
+    }
 }

@@ -109,4 +109,12 @@ class OrderMS
         return $res;
 
     }
+
+    public function updatePositions($postdata,$positionID)
+    {
+
+        $res = CurlMoiSklad::curlMS('/entity/customerorder/' . $this->id.'/positions/'.$positionID, $postdata, 'put');
+        return $res;
+
+    }
 }

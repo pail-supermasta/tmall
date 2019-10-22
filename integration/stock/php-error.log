@@ -34,3 +34,7 @@
 [01-Oct-2019 12:09:40 UTC] PHP Notice:  Undefined offset: 0 in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 121
 [01-Oct-2019 12:09:41 UTC] PHP Notice:  Undefined offset: 0 in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 121
 [01-Oct-2019 12:11:15 UTC] PHP Notice:  Undefined offset: 1 in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\stockSyncronizer.php on line 155
+[22-Oct-2019 07:08:12 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\cancelReserve.php on line 43
+[22-Oct-2019 07:09:51 UTC] PHP Notice:  Array to string conversion in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\cancelReserve.php on line 45
+[22-Oct-2019 07:09:51 UTC] PHP Notice:  Array to string conversion in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\cancelReserve.php on line 45
+[22-Oct-2019 09:17:49 UTC] PHP Notice:  Undefined variable: reset in C:\Users\User\Documents\aliexpr.avaks.org\integration\stock\cancelReserve.php on line 56
