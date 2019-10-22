@@ -140,14 +140,31 @@ function checkTimeFromPaid($order, $payTime, $credential)
             $setTrackNumRes = '';
             $setTrackNumRes = $orderMS->setTrackNum($result['mailNo']);
             if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
-                telegram("setTrackNum error found " . $result['mailNo'], '-320614744');
-                error_log($setTrackNumRes, 3, "setTrackNum.log");
+
+                /*try again*/
+                sleep(5);
+
+
+                $setTrackNumRes = $orderMS->setTrackNum($result['mailNo']);
+                if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
+                    telegram("setTrackNum error found " . $orderMS->name, '-320614744');
+                    error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setTrackNumRes . " " . $orderMS->name . PHP_EOL, 3, "setTrackNum.log");
+                } else {
+                    $setToPackRes = '';
+                    $setToPackRes = $orderMS->setToPack();
+                    if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
+                        telegram("setToPack error found $orderMS->name", '-320614744');
+                        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
+                    }
+                }
+
+
             } else {
                 $setToPackRes = '';
                 $setToPackRes = $orderMS->setToPack();
                 if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
                     telegram("setToPack error found $orderMS->name", '-320614744');
-                    error_log($setToPackRes, 3, "setToPack.log");
+                    error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
                 }
             }
 
