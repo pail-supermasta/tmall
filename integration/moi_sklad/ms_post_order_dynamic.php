@@ -43,13 +43,11 @@ function curlMSCreate($username = false, $post, $memo)
         if (isset($result['name'])) {
             $orderId = $result['name'];
             $orderLinkMS = $result['meta']['uuidHref'];
-            /*        BF-6
-            $newOrderMsg = "Получен новый заказ Tmall номер $orderId";
-            mail("p.kurskii@avaks.org", "Tmall новый заказ", $newOrderMsg);*/
+            /*        BF-6*/
 
             /*  BF-7
             send errors to telegram bot */
-            $newOrderTeleGMsg = "Получен новый заказ Tmall номер [$orderId]($orderLinkMS). Заказ не отработан";
+            $newOrderTeleGMsg = "Новый заказ #[$orderId]($orderLinkMS).";
             if ($memo != '' && isset($memo)) {
                 $userCommentTeleGMsg = "Комментарий к заказу [$orderId]($orderLinkMS): $memo";
                 telegram($userCommentTeleGMsg, '-278688533', 'Markdown');

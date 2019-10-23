@@ -227,7 +227,7 @@ function getOrderFromMS($reason, $order)
                     }
                     /*look if has tracking number in MS*/
                     if (recursive_array_search('a446677c-46b8-11e7-7a34-5acf0031d7b9', $res)) {
-                        $messageCancelUrgent = "ВНИМАНИЕ. Заказ с ТРЕК НОМЕРОМ [$orderId]($orderLinkMS) попал в статус ОТМЕНЕН. СРОЧНО обработать.";
+                        $messageCancelUrgent = "ОТМЕНЕН заказ #[$orderId]($orderLinkMS)";
                         telegram($messageCancelUrgent, '-278688533', 'Markdown');
                     }
 

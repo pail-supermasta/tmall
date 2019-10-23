@@ -75,7 +75,6 @@ foreach ($newCategRus as $parent=>$childs){
             $shorten = createcategory($child,$parentID, '50002301422cdaiudiQfUvkfkfueltWFHi137e3f5bQGZdRtFEwBpxDxPrTG2jMrE6H');
         }
     }
-    die();
 
 }
 

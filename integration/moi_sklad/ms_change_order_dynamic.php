@@ -36,7 +36,7 @@ function curlMSCancel($username = false, $post, $order)
             $orderId = $result['name'];
             $orderLinkMS = $result['meta']['uuidHref'];
 
-            $newOrderTeleGMsg = "ВНИМАНИЕ. Заказ [$orderId]($orderLinkMS) попал в статус ОТМЕНЕН.";
+            $newOrderTeleGMsg = "ОТМЕНЕН заказ #[$orderId]($orderLinkMS)";
             telegram($newOrderTeleGMsg, '-278688533', 'Markdown');
         };
 
@@ -72,7 +72,7 @@ function curlMSPaid($username = false, $post, $order)
             $orderId = $result['name'];
             $orderLinkMS = $result['meta']['uuidHref'];
 
-            $newOrderTeleGMsg = "Заказ [$orderId]($orderLinkMS) попал в статус ОПЛАЧЕН.";
+            $newOrderTeleGMsg = "ОПЛАЧЕН заказ #[$orderId]($orderLinkMS)";
             telegram($newOrderTeleGMsg, '-278688533', 'Markdown');
         };
 

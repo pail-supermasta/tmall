@@ -76,7 +76,7 @@ function userDataValidation($address, $order)
     $pieces = explode(" ", $address['contact_person']);
     $fioFail = count(array_filter($pieces));
     if ($fioFail < 3) {
-        $message .= "\nПо заказу № $order покупатель не верно указал ФИО, ему отправлено сообщение. Тел номер : $fullPhone";
+        $message .= "\nФИО, ошибка в заказе #$order";
         $err .= ($fioFail > 0) ? '' : '$fioFail ';
     }
 
@@ -86,14 +86,14 @@ function userDataValidation($address, $order)
     $streetLen = strlen($address['detail_address']);
     $address2Len = isset($address['address2']) ? strlen($address['address2']) : 0;
     if ($indexLen != 6 || $cityLen == 0 || $streetLen == 0 || $address2Len == 0) {
-        $message .= "\nПо заказу № $order покупатель не верно указал Адрес, ему отправлено сообщение. Тел номер : $fullPhone";
+        $message .= "\nАдрес, ошибка в заказе #$order";
     }
 
     /*AF3 3.1 код страны не содержит 7*/
     /*AF3 3.2 телефон не содержит 7 цифр - формат 999 99 99*/
     $countryCode = substr_count($address['phone_country'], "7");
     if ($countryCode < 1 || strlen($cleanPhone) < 10) {
-        $message .= "\nПо заказу № $order покупатель не верно указал номер телефона.";
+        $message .= "\nТелефонный номер, ошибка в заказе #$order";
         $err .= 'номер телефона err';
     }
 
@@ -204,8 +204,7 @@ function destructResponse(array $shortener, $order, $shop)
                     } elseif ($productMSName != '') {
                         /*in case of coupon added to the order*/
                         $orderDetails['productStocks'][$product_id]['availableMS'] = false;
-//                        echo "Tmall не хватает товара $productMSName для отгрузки!!! Продано - " . $product['product_count'] . " В МС на момент заказа - $avaliable_stock. Заказ на Tmall № $order.";
-                        telegram("Tmall не хватает товара $productMSName для отгрузки!!! Продано - " . $product['product_count'] . " В МС на момент заказа - $avaliable_stock. Заказ на Tmall № $order.", '-278688533');
+                        telegram("Недостача товара $productMSName. Продано - " . $product['product_count'] . " В МС на момент заказа - $avaliable_stock. Заказ на Tmall № $order.", '-278688533');
                     }
 
 
@@ -272,7 +271,7 @@ function destructResponse(array $shortener, $order, $shop)
                         $msPrice = number_format($msPrice / 100, 2, ',', ' ');
                         $minPrice = number_format($minPrice / 100, 2, ',', ' ');
 
-                        telegram("Tmall продал товар по неверной цене. Цена продажи $sellPrice. Минимальная цена $minPrice. Цена товарв в МС $msPrice. Заказ на Tmall № $order.", '-278688533');
+//                        telegram("Tmall продал товар по неверной цене. Цена продажи $sellPrice. Минимальная цена $minPrice. Цена товарв в МС $msPrice. Заказ на Tmall № $order.", '-278688533');
                     }
 
 
@@ -352,9 +351,9 @@ function destructResponse(array $shortener, $order, $shop)
         telegram("Нет персональных данных. Причина " . $orderDetails['err'] . ". Заказ на Tmall № $order.", '-278688533');
     };
 
-    if ($orderDetails['paid'] != 'PAY_SUCCESS') {
+/*    if ($orderDetails['paid'] != 'PAY_SUCCESS') {
         telegram("Заказ на Tmall № $order. Не оплачен. Ждем оплаты.", '-278688533');
-    }
+    }*/
 
 //    var_dump($orderDetails);
     /*  fill JSON for order create function */

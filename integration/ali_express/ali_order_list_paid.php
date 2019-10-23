@@ -191,7 +191,7 @@ function checkTimeFromPaid($order, $payTime, $credential)
             /*has no track*/
             if ($trackId == false) {
 //                var_dump($timeFromPayment . PHP_EOL);
-                telegram("По заказу Tmall номер $order не заполнен номер трека! Необходимо срочно заполнить.", '-278688533');
+                telegram("Трек не заполнен, заказ #$order", '-278688533');
             } else {
                 /*set track number in Tmall*/
 
