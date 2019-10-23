@@ -208,7 +208,7 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
 
         if (!isset($distributionConsignResponse['logisticsOrderId']) && $distributionConsignResponse['logisticsOrderId'] == '') {
             $message = "ОШИБКА СОЗДАНИЯ В CAINIAO заказа $order. Метод CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.";
-            telegram($message, '-278688533');
+            telegram($message, '-320614744');
 //            var_dump($orderMS->setStateProcessManually());
         } else {
             var_dump($orderMS->setLP($distributionConsignResponse['logisticsOrderId']));
@@ -240,10 +240,10 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
     if (isset($mailNoResponse['mailNo']) && $mailNoResponse['mailNo'] != '') {
         $mailNo = $mailNoResponse['mailNo'];
         $message = "Заказ №$order - получен трек номер $mailNo из Цайняо метод MAILNO_QUERY_SERVICE.";
-        telegram($message, '-278688533');
+        telegram($message, '-320614744');
     } else {
         $message = "ОШИБКА ПОЛУЧЕНИЯ ТРЕКА в заказе $order. Метод MAILNO_QUERY_SERVICE.";
-        telegram($message, '-278688533');
+        telegram($message, '-320614744');
 //        var_dump($orderMS->setStateProcessManually());
     }
 
