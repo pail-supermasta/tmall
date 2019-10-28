@@ -248,7 +248,7 @@ class Customs
                 <body>
                 <!-- image path to images search from the file that calls Customs.php-->
                 <img class="stickerWrap" src="../images/cainiaoSticker/template-1.png" alt="">
-                        <div class="page w0 h0">' . $barcode . '</div>
+                        <div class="page ">' . $barcode . '</div>
                         <!--<div class="page2 w0 h0"><img src="template-1.png" alt=""></div>-->
                        
                     
@@ -256,7 +256,7 @@ class Customs
                 
                 
                     
-                <div style="" class="two w0 h0">
+                <div style="" class="two ">
                    
                         <img style="height: 174.70px;" class="" src="../images/cainiaoSticker/template-2.png" alt="">
                        
