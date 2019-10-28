@@ -38,13 +38,13 @@ class Customs
 
 
 //        $deliveryAddress = '<div id="deliveryAddress" class="">309500, Старый Оскол, Белгородская область, дом 13 подъезд 2 квартира 46 северный микрорайон</div>';
-        $deliveryAddress = '<div id="deliveryAddress" class="">'.$toPrint['fullAddress'].'</div>';
+        $deliveryAddress = '<div id="deliveryAddress" class="">' . $toPrint['fullAddress'] . '</div>';
 //        $receiverName = '<div id="receiverName" class="">Каюмов Руслан Наилевич</div>';
-        $receiverName = '<div id="receiverName" class="">'.$toPrint['receiverName'].'</div>';
+        $receiverName = '<div id="receiverName" class="">' . $toPrint['receiverName'] . '</div>';
 //        $receiverPhone = '<div id="receiverPhone" class="">9227829596,</div>';
-        $receiverPhone = '<div id="receiverPhone" class="">'.$toPrint['receiverPhone'].',</div>';
+        $receiverPhone = '<div id="receiverPhone" class="">' . str_replace(' ', '', $toPrint['receiverPhone']) . '</div>';
 //        $otgruzkaDate = '<div id="otgruzkaDate" class="">2019-08-11</div>';
-        $otgruzkaDate = '<div id="otgruzkaDate" class="">'.$toPrint['otgruzkaDate'].'</div>';
+        $otgruzkaDate = '<div id="otgruzkaDate" class="">' . $toPrint['otgruzkaDate'] . '</div>';
         $mailNoHTML = '<div id="mailNo" class="">' . $mailNo . '</div>';
 
 
@@ -268,7 +268,6 @@ class Customs
                 
                 </body>
                 </html>';
-
 
 
         try {
