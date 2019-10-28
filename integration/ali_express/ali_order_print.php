@@ -162,25 +162,3 @@ foreach ($ordersNoSticker as $orderNoSticker) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*foreach (LOGINS as $credential) {
-    formMasterList($credential);
-}*/
-
-
-/*get orders from MS with no sticker but with track num and related to Cainiao*/
-
-/*assemble sticker details*/
-

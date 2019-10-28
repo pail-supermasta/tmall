@@ -27,7 +27,7 @@ function listcategory($post_data, $sessionKey)
 }
 
 
-//$shorten = listcategory('', '50002301422cdaiudiQfUvkfkfueltWFHi137e3f5bQGZdRtFEwBpxDxPrTG2jMrE6H');
+//$shorten = listcategory('', '50002500e10kEPynqBacfX146882beFiwgzuCbjAqgpxYFoHtmygVTBcZzz4YHQguxt');
 //var_dump($shorten);
 
 $newCategRus = array(
@@ -47,8 +47,46 @@ $newCategRus = array(
     "Умные устройства" => array("Умные весы",
         "Мониторы сердечной активности",
     ),
-    "Электрические велосипеды" => array()
+    "Электрические велосипеды" => array(),
+    "Сумки и рюкзаки" => array("Рюкзаки",
+        "Кошельки",
+    ),
+    "Постельные принадлежности" => array("Подушка для разглаживания морщин",
+        "Простыни на резинке",
+    ),
 );
+
+
+/*$newCategRus = array(
+    "Электрические чайники" => array(),
+    "Электрические утюги" => array(),
+    "Блендеры и миксеры" => array(),
+    "Аксессуары и запчасти" => array(),
+    "Кофеварки" => array(),
+    "Хлебопечки" => array(),
+    "Тостеры" => array(),
+    "Суповарки" => array(),
+    "Грильбокс" => array(),
+);*/
+
+/*$newCategRus = array(
+    "Умные часы" => array("LIFE 2",
+        "LIFE 2 Плюс",
+        "MATE 2",
+        "CITY",
+        "MATE 2 Плюс",
+    ),
+    "Умные весы" => array("MINIMI"),
+    "Умная бутылочка" => array("LIZ"),
+    "Умный тонометр" => array("ZERO"),
+    "Аксессуары" => array("Ремешки для умных часов Noerden"),
+);*/
+/*$newCategRus = array(
+    "Роботы-пылесосы" => array(),
+    "Роботы-мойщики полов" => array(),
+    "Запчасти и аксессуары" => array(),
+);*/
+
 
 function createcategory($name, $parentkey, $sessionKey)
 {
@@ -63,16 +101,18 @@ function createcategory($name, $parentkey, $sessionKey)
     return $res;
 }
 
-foreach ($newCategRus as $parent=>$childs){
-    if(sizeof($childs)>0){
+$parentID = '0';
+foreach ($newCategRus as $parent => $childs) {
+    if (sizeof($childs) > 0) {
         $parentID = '0';
     }
-    $shorten = createcategory($parent,$parentID, '50002301422cdaiudiQfUvkfkfueltWFHi137e3f5bQGZdRtFEwBpxDxPrTG2jMrE6H');
-    $shorten = json_decode($shorten,true);
-    if (isset($shorten["result"]["target"]) && sizeof($childs)>0){
+
+    $shorten = createcategory($parent, $parentID, '50002501218puBbzgXFkqhvplWEdrh1c808e85pszGJkLnXgVzGGx9wxCcCqsvPj6As');
+    $shorten = json_decode($shorten, true);
+    if (isset($shorten["result"]["target"]) && sizeof($childs) > 0) {
         $parentID = $shorten["result"]["target"];
-        foreach ($childs as $child){
-            $shorten = createcategory($child,$parentID, '50002301422cdaiudiQfUvkfkfueltWFHi137e3f5bQGZdRtFEwBpxDxPrTG2jMrE6H');
+        foreach ($childs as $child) {
+            $shorten = createcategory($child, $parentID, '50002501218puBbzgXFkqhvplWEdrh1c808e85pszGJkLnXgVzGGx9wxCcCqsvPj6As');
         }
     }
 
@@ -93,7 +133,7 @@ function getcategory($post_data, $sessionKey)
     return $resp;
 }
 
-$shorten = getcategory('516652310', '50002301422cdaiudiQfUvkfkfueltWFHi137e3f5bQGZdRtFEwBpxDxPrTG2jMrE6H');
+$shorten = getcategory('516652310', '50002500e10kEPynqBacfX146882beFiwgzuCbjAqgpxYFoHtmygVTBcZzz4YHQguxt');
 var_dump($shorten);*/
 
 
