@@ -15,24 +15,24 @@ function findorderbyid($post_data, $sessionKey)
     $req->setParam1(json_encode($param1));
     $resp = $c->execute($req, $sessionKey);
 
-    if (!isset($resp->result)) {
+/*    if (!isset($resp->result)) {
         return false;
     } else {
         $result = $resp->result->data;
         $res = json_encode((array)$result);
 
         return json_decode($res, true);
-    }
+    }*/
 
 
-//    return $res;
+    return $resp;
 }
 
-/*
-require_once 'taobao/TopSdk.php';
+
+require_once '../integration/ali_express/taobao/TopSdk.php';
 define('APPKEY', '27862248');
 define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
-$shorten = findorderbyid('5000456496969609','50002301537b3HwdiqAxRjekju8LsvFIFOnVHqTAiY8rpjwSW11d54902lPHBjVb1lb');
+$shorten = findorderbyid('5001049346071652','50002301422cdaiudiQfUvkfkfueltWFHi137e3f5bQGZdRtFEwBpxDxPrTG2jMrE6H');
 //var_dump($shorten['logistics_amount']['cent']);
 //var_dump($shorten['order_amount']['cent']);
-var_dump($shorten);*/
+var_dump($shorten);
