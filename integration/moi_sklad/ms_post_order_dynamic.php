@@ -29,6 +29,12 @@ function curlMSCreate($username = false, $post, $memo)
 
     $result = curl_exec($curl);
     $curl_errno = curl_errno($curl);
+    if (strpos($result, 'обработка-ошибок') > 0 || $result == '') {
+        telegram("Ошибка создания заказа в МС. $curl_errno", '-320614744');
+        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . "Return error " . $result . " POST BODY IS " . $post . PHP_EOL, 3, "orderCreateErr.log");
+    }
+
+
     curl_close($curl);
 
     if ($curl_errno == 0) {

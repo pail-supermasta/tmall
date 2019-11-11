@@ -37,3 +37,6 @@
 [04-Oct-2019 08:19:34 UTC] PHP Notice:  Undefined variable: coupon in C:\Users\User\Documents\aliexpr.avaks.org\integration\file_processing.php on line 340
 [04-Oct-2019 08:19:54 UTC] PHP Notice:  Undefined index: productStocks in C:\Users\User\Documents\aliexpr.avaks.org\integration\moi_sklad\ms_post_order_dynamic.php on line 76
 [04-Oct-2019 08:19:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\User\Documents\aliexpr.avaks.org\integration\moi_sklad\ms_post_order_dynamic.php on line 76
+[11-Nov-2019 13:19:30 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
+[11-Nov-2019 13:19:40 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
+[11-Nov-2019 13:38:23 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66

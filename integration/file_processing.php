@@ -171,155 +171,161 @@ function destructResponse(array $shortener, $order, $shop)
             foreach ($products as $product) {
 
                 /*  product result from MS product DB   */
-                $product_ms = getProductIdMS($orderDetails['field_id'], $product['sku_code']);
-                $product_id = $product_ms['id'];
-                if ($product_id != '') {
-                    /*  BF-5  check if sold price less than minimum sell price in MS product DB   */
+                if (isset($product['sku_code'])) {
+                    $product_ms = getProductIdMS($orderDetails['field_id'], $product['sku_code']);
+                    $product_id = $product_ms['id'];
+                    if ($product_id != '') {
+                        /*  BF-5  check if sold price less than minimum sell price in MS product DB   */
 
-                    /*minimal product price to sell in MS*/
-                    $minPrice = $product_ms['minPrice'];
+                        /*minimal product price to sell in MS*/
+                        $minPrice = $product_ms['minPrice'];
 
-                    /*actual product price in MS*/
-                    $msPriceArray = json_decode($product_ms['salePrices'], true);
-                    $msPrice = $msPriceArray[0]["value"];
+                        /*actual product price in MS*/
+                        $msPriceArray = json_decode($product_ms['salePrices'], true);
+                        $msPrice = $msPriceArray[0]["value"];
 
-                    /*product sold by price in Tmall*/
-                    $sellPrice = $product['product_price']['cent'];
-
-
-                    /*get MS stock*/
-
-                    $stores = array(
-                        // 'f80cdf08-29a0-11e6-7a69-971100124ae8', // Склад-РЦ3
-                        // 'f257b41d-c2d9-11e7-6b01-4b1d00131678', // СКЛАД ХД
-                        '48de3b8e-8b84-11e9-9ff4-34e8001a4ea1',  // MP_NFF
-                    );
-                    $stockProduct = new \Avaks\MS\Products();
-                    $stocks = $stockProduct->getMsStock($product_id, $stores);
-                    $avaliable_stock = $stocks[0];
-                    $productMSName = $stocks[1];
-
-                    if ($avaliable_stock >= $product['product_count']) {
-                        $orderDetails['productStocks'][$product_id]['availableMS'] = true;
-                    } elseif ($productMSName != '') {
-                        /*in case of coupon added to the order*/
-                        $orderDetails['productStocks'][$product_id]['availableMS'] = false;
-                        telegram("Недостача товара $productMSName. Продано - " . $product['product_count'] . " В МС на момент заказа - $avaliable_stock. Заказ на Tmall № $order.", '-278688533');
-                    }
+                        /*product sold by price in Tmall*/
+                        $sellPrice = $product['product_price']['cent'];
 
 
-                    /*DISCOUNT CALCULATION BEGINS*/
+                        /*get MS stock*/
+
+                        $stores = array(
+                            // 'f80cdf08-29a0-11e6-7a69-971100124ae8', // Склад-РЦ3
+                            // 'f257b41d-c2d9-11e7-6b01-4b1d00131678', // СКЛАД ХД
+                            '48de3b8e-8b84-11e9-9ff4-34e8001a4ea1',  // MP_NFF
+                        );
+                        $stockProduct = new \Avaks\MS\Products();
+                        $stocks = $stockProduct->getMsStock($product_id, $stores);
+                        $avaliable_stock = $stocks[0];
+                        $productMSName = $stocks[1];
+
+                        if ($avaliable_stock >= $product['product_count']) {
+                            $orderDetails['productStocks'][$product_id]['availableMS'] = true;
+                        } elseif ($productMSName != '') {
+                            /*in case of coupon added to the order*/
+                            $orderDetails['productStocks'][$product_id]['availableMS'] = false;
+                            telegram("Недостача товара $productMSName. Продано - " . $product['product_count'] . " В МС на момент заказа - $avaliable_stock. Заказ на Tmall № $order.", '-278688533');
+                        }
 
 
-                    /**
-                     * товар1 - 1шт - сумма = 200
-                     * товар2 - 2шт -сумма = 100
-                     *
-                     * купон = 50р
-                     *
-                     * итого цена товар1 = 200 - 50*(200/300)
-                     * цена товар2 = 200 - 50*(100/300)
-                     */
-
-                    $productsTotal = 0;
-                    $orderAmount = 0;
-                    $discountDiff = 0;
-
-                    /*need this block to calculate Ali clean total positions cost = $productsTotal*/
-                    foreach ($products as $item) {
-                        $prPrice = $item['product_price']['cent'];
-                        $prCo = $item['product_count'];
-                        $prTotal = $prPrice * $prCo;
-                        $productsTotal += $prTotal;
-                        $orderAmount = $shortener['order_amount']['cent'];
-                    }
+                        /*DISCOUNT CALCULATION BEGINS*/
 
 
-                    /*percentage difference btw Tmall price and MS price - applied discount*/
-                    if ($msPrice > $sellPrice) {
-                        $price = $msPrice;
-                        $tmallTotal = $product['product_count'] * $product['product_price']['cent'];
-                        $discountDiff = ($price - $sellPrice) * 100 / ($price - $sellPrice + $tmallTotal);
-                        var_dump('$discountDiff' . $discountDiff);
-                    } else {
-                        $price = $sellPrice;
-                    }
+                        /**
+                         * товар1 - 1шт - сумма = 200
+                         * товар2 - 2шт -сумма = 100
+                         *
+                         * купон = 50р
+                         *
+                         * итого цена товар1 = 200 - 50*(200/300)
+                         * цена товар2 = 200 - 50*(100/300)
+                         */
+
+                        $productsTotal = 0;
+                        $orderAmount = 0;
+                        $discountDiff = 0;
+
+                        /*need this block to calculate Ali clean total positions cost = $productsTotal*/
+                        foreach ($products as $item) {
+                            $prPrice = $item['product_price']['cent'];
+                            $prCo = $item['product_count'];
+                            $prTotal = $prPrice * $prCo;
+                            $productsTotal += $prTotal;
+                            $orderAmount = $shortener['order_amount']['cent'];
+                        }
 
 
-                    $orderShip = $shortener['logistics_amount']['cent'] ?? 0;
-                    $coupon = $productsTotal + $orderShip - $orderAmount;
-                    $msPosition = $msPrice * $product['product_count'];
-                    $aliPosition = $sellPrice * $product['product_count'];
+                        /*percentage difference btw Tmall price and MS price - applied discount*/
+                        if ($msPrice > $sellPrice) {
+                            $price = $msPrice;
+                            $tmallTotal = $product['product_count'] * $product['product_price']['cent'];
+                            $discountDiff = ($price - $sellPrice) * 100 / ($price - $sellPrice + $tmallTotal);
+                            var_dump('$discountDiff' . $discountDiff);
+                        } else {
+                            $price = $sellPrice;
+                        }
 
 
-                    $totalDisc = ($msPosition - $aliPosition + $coupon) * 100 / ($msPosition - $aliPosition + $productsTotal);
-                    echo "new disc $totalDisc = ($msPosition - $aliPosition + $coupon) * 100 / ($msPosition - $aliPosition + $productsTotal)";
-                    $orderDiscount = ($discountDiff > 0 && $orderDiscount == 0) ? $totalDisc : $orderDiscount;
-
-                    echo $orderDiscount;
-
-
-                    /*not work for MR https://gsp.aliexpress.com/apps/order/detail?spm=5261.order_list.orderTable.2379.55bc3e5fBypimc&orderId=5000481033994782*/
-                    /*heavy solution get all MS prices and calculate discount for each and return final into json*/
+                        $orderShip = $shortener['logistics_amount']['cent'] ?? 0;
+                        $coupon = $productsTotal + $orderShip - $orderAmount;
+                        $msPosition = $msPrice * $product['product_count'];
+                        $aliPosition = $sellPrice * $product['product_count'];
 
 
-                    /*DISCOUNT CALCULATION ENDS*/
+                        $totalDisc = ($msPosition - $aliPosition + $coupon) * 100 / ($msPosition - $aliPosition + $productsTotal);
+                        echo "new disc $totalDisc = ($msPosition - $aliPosition + $coupon) * 100 / ($msPosition - $aliPosition + $productsTotal)";
+                        $orderDiscount = ($discountDiff > 0 && $orderDiscount == 0) ? $totalDisc : $orderDiscount;
+
+                        echo $orderDiscount;
 
 
-                    if ($minPrice > $sellPrice || $msPrice > $sellPrice || $sellPrice > $msPrice) {
-                        $sellPrice = number_format($sellPrice / 100, 2, ',', ' ');
-                        $msPrice = number_format($msPrice / 100, 2, ',', ' ');
-                        $minPrice = number_format($minPrice / 100, 2, ',', ' ');
+                        /*not work for MR https://gsp.aliexpress.com/apps/order/detail?spm=5261.order_list.orderTable.2379.55bc3e5fBypimc&orderId=5000481033994782*/
+                        /*heavy solution get all MS prices and calculate discount for each and return final into json*/
+
+
+                        /*DISCOUNT CALCULATION ENDS*/
+
+
+                        if ($minPrice > $sellPrice || $msPrice > $sellPrice || $sellPrice > $msPrice) {
+                            $sellPrice = number_format($sellPrice / 100, 2, ',', ' ');
+                            $msPrice = number_format($msPrice / 100, 2, ',', ' ');
+                            $minPrice = number_format($minPrice / 100, 2, ',', ' ');
 
 //                        telegram("Tmall продал товар по неверной цене. Цена продажи $sellPrice. Минимальная цена $minPrice. Цена товарв в МС $msPrice. Заказ на Tmall № $order.", '-278688533');
-                    }
+                        }
 
 
-                    /*                    if ($orderDetails['paid'] == 'PAY_SUCCESS') {
-                                            $toReserve = $product['product_count'];
-                                        } else {
-                                            $toReserve = 0;
-                                        }*/
+                        /*                    if ($orderDetails['paid'] == 'PAY_SUCCESS') {
+                                                $toReserve = $product['product_count'];
+                                            } else {
+                                                $toReserve = 0;
+                                            }*/
 
-                    /*  stores one position */
-                    $position = array(
-                        "quantity" => $product['product_count'],
-                        "price" => $price,
-                        "discount" => $orderDiscount,
-                        "vat" => 0,
-                        "assortment" =>
-                            array(
-                                "meta" =>
-                                    array(
-                                        "href" => "https://online.moysklad.ru/api/remap/1.1/entity/product/$product_id",
-                                        "type" => "product",
-                                        "mediaType" => "application/json"
-                                    ),
-                            ),
-                        "reserve" => $product['product_count']
-                    );
+                        /*  stores one position */
+                        $position = array(
+                            "quantity" => $product['product_count'],
+                            "price" => $price,
+                            "discount" => $orderDiscount,
+                            "vat" => 0,
+                            "assortment" =>
+                                array(
+                                    "meta" =>
+                                        array(
+                                            "href" => "https://online.moysklad.ru/api/remap/1.1/entity/product/$product_id",
+                                            "type" => "product",
+                                            "mediaType" => "application/json"
+                                        ),
+                                ),
+                            "reserve" => $product['product_count']
+                        );
 
-                    /*  gather escrow fee for each product id   */
-                    if (isset($product['escrow_fee_rate'])) {
-                        $positionEscrowFee = array($product_ms['code'] => $product['escrow_fee_rate']);
-                        array_push($positionsEscrowFee, $positionEscrowFee);
-                    }
-                    $escrowFeeSum += $product['escrow_fee_rate'];
+                        /*  gather escrow fee for each product id   */
+                        if (isset($product['escrow_fee_rate'])) {
+                            $positionEscrowFee = array($product_ms['code'] => $product['escrow_fee_rate']);
+                            array_push($positionsEscrowFee, $positionEscrowFee);
+                        }
+                        $escrowFeeSum += $product['escrow_fee_rate'];
 
 
-                    array_push($positions, $position);
+                        array_push($positions, $position);
 
-                    $productsCost += $product['product_price']['cent'] * $product['product_count'];
+                        $productsCost += $product['product_price']['cent'] * $product['product_count'];
 
-                } else {
-                    /*  send email  */
-                    $productErrorMsg = "Tmall продал товар, которого нет. Заказ на Tmall № $order";
+                    } else {
+                        /*  send email  */
+                        $productErrorMsg = "Tmall продал товар, которого нет. Заказ на Tmall № $order";
 //                    mail("p.kurskii@avaks.org", "Товар не найден в МС", $productErrorMsg);
 
-                    /*  send errors to telegram bot */
-                    telegram($productErrorMsg, '-278688533');
+                        /*  send errors to telegram bot */
+                        telegram($productErrorMsg, '-278688533');
+                    }
+                }else{
+                    telegram("No sku_code found for $order \n", '-320614744');
                 }
+
             }
+
 
 
         } else {
@@ -351,9 +357,9 @@ function destructResponse(array $shortener, $order, $shop)
         telegram("Нет персональных данных. Причина " . $orderDetails['err'] . ". Заказ на Tmall № $order.", '-278688533');
     };
 
-/*    if ($orderDetails['paid'] != 'PAY_SUCCESS') {
-        telegram("Заказ на Tmall № $order. Не оплачен. Ждем оплаты.", '-278688533');
-    }*/
+    /*    if ($orderDetails['paid'] != 'PAY_SUCCESS') {
+            telegram("Заказ на Tmall № $order. Не оплачен. Ждем оплаты.", '-278688533');
+        }*/
 
 //    var_dump($orderDetails);
     /*  fill JSON for order create function */

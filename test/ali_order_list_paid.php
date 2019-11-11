@@ -66,17 +66,17 @@ define('ID_REGEXP', '/[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{1
 /*  INCLUDES    */
 
 // Error handlers
-require_once '../class/error.php';
+//require_once '../class/error.php';
 
 // Telegram err logs integration
-require_once '../class/telegram.php';
+//require_once '../class/telegram.php';
 
 // SQL get track number for orden name from MS
-require_once '../moi_sklad/sql_requests/OrderDetails.php';
+require_once '../integration/moi_sklad/sql_requests/OrderDetails.php';
 
-require_once 'taobao/TopSdk.php';
-require_once 'cainiao.php';
-require_once '../vendor/autoload.php';
+require_once '../integration/ali_express/taobao/TopSdk.php';
+require_once '../integration/ali_express/cainiao.php';
+require_once '../integration/vendor/autoload.php';
 
 
 use Avaks\MS\OrderMS;
@@ -121,59 +121,60 @@ function checkTimeFromPaid($order, $payTime, $credential)
         /*run cainiao delivery process*/
 
         $result = deliverCainiao($order, $cnId, $cpCode, $sessionKey);
+        var_dump($result);
 
-        if ($result['result_success'] == true) {
-            $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
-            telegram($message, '-278688533');
-
-            $orderMS = new OrderMS('', $order, '');
-            $orderMSDetails = $orderMS->getByName();
-            $orderMS->id = $orderMSDetails['id'];
-
-            /*get order state in MS*/
-            preg_match(ID_REGEXP, $orderMSDetails['state']['meta']['href'], $matches);
-            $state_id = $matches[0];
-            $orderMS->state = $state_id;
-            $result['mailNo'] = str_replace(['AEWH', 'RU4'], "", $result['mailNo']);
-
-
-            $setTrackNumRes = '';
-            $setTrackNumRes = $orderMS->setTrackNum($result['mailNo']);
-            if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
-
-                /*try again*/
-                sleep(5);
-
-
-                $setTrackNumRes = $orderMS->setTrackNum($result['mailNo']);
-                if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
-                    telegram("setTrackNum error found " . $orderMS->name, '-320614744');
-                    error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setTrackNumRes . " " . $orderMS->name . PHP_EOL, 3, "setTrackNum.log");
-                } else {
-                    $setToPackRes = '';
-                    $setToPackRes = $orderMS->setToPack();
-                    if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
-                        telegram("setToPack error found $orderMS->name", '-320614744');
-                        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
-                    }
-                }
-
-
-            } else {
-                $setToPackRes = '';
-                $setToPackRes = $orderMS->setToPack();
-                if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
-                    telegram("setToPack error found $orderMS->name", '-320614744');
-                    error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
-                }
-            }
-
-
-        } else {
-            $message = "CAINIAO ОШИБКА $order см ali_order_list_paid.log";
-            telegram($message, '-320614744');
-            error_log('ali_order_list_paid err' . json_encode($result), 3, 'ali_order_list_paid.log');
-        }
+//        if ($result['result_success'] == true) {
+//            $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
+//            telegram($message, '-278688533');
+//
+//            $orderMS = new OrderMS('', $order, '');
+//            $orderMSDetails = $orderMS->getByName();
+//            $orderMS->id = $orderMSDetails['id'];
+//
+//            /*get order state in MS*/
+//            preg_match(ID_REGEXP, $orderMSDetails['state']['meta']['href'], $matches);
+//            $state_id = $matches[0];
+//            $orderMS->state = $state_id;
+//            $result['mailNo'] = str_replace(['AEWH', 'RU4'], "", $result['mailNo']);
+//
+//
+//            $setTrackNumRes = '';
+//            $setTrackNumRes = $orderMS->setTrackNum($result['mailNo']);
+//            if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
+//
+//                /*try again*/
+//                sleep(5);
+//
+//
+//                $setTrackNumRes = $orderMS->setTrackNum($result['mailNo']);
+//                if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
+//                    telegram("setTrackNum error found " . $orderMS->name, '-320614744');
+//                    error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setTrackNumRes . " " . $orderMS->name . PHP_EOL, 3, "setTrackNum.log");
+//                } else {
+//                    $setToPackRes = '';
+//                    $setToPackRes = $orderMS->setToPack();
+//                    if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
+//                        telegram("setToPack error found $orderMS->name", '-320614744');
+//                        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
+//                    }
+//                }
+//
+//
+//            } else {
+//                $setToPackRes = '';
+//                $setToPackRes = $orderMS->setToPack();
+//                if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
+//                    telegram("setToPack error found $orderMS->name", '-320614744');
+//                    error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
+//                }
+//            }
+//
+//
+//        } else {
+//            $message = "CAINIAO ОШИБКА $order см ali_order_list_paid.log";
+//            telegram($message, '-320614744');
+//            error_log('ali_order_list_paid err' . json_encode($result), 3, 'ali_order_list_paid.log');
+//        }
 
 
     } else {
