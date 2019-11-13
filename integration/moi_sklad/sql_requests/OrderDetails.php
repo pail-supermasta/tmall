@@ -13,26 +13,26 @@ function getOrderTrack($orderName)
     $sql = new mysqli(MS_HOST, MS_USER, MS_PASS, MS_DB);
     /*Отгрузить*/
 
-    $query = "SELECT attributes FROM `ms_customerorder` WHERE `name` = '$orderName'  AND deleted='' ";
+    $query = "SELECT state,attributes FROM `ms_customerorder` WHERE `name` = '$orderName'  AND deleted='' ";
     $result = $sql->query($query);
     $rows = mysqli_fetch_all($result);
 
-
-    if (isset($rows[0][0])) {
-        $rows = json_decode($rows[0][0], true);
+    $state = isset($rows[0][0]) ? $rows[0][0] : false;
+    if (isset($rows[0][1])) {
+        $rows = json_decode($rows[0][1], true);
         $agentId = $rows['4552a58b-46a8-11e7-7a34-5acf002eb7ad'];
 
         if (isset($rows['a446677c-46b8-11e7-7a34-5acf0031d7b9'])) {
             $trackId = $rows['a446677c-46b8-11e7-7a34-5acf0031d7b9'];
             $sql->close();
-            return array('agent' => $agentId, 'track' => $trackId);
+            return array('agent' => $agentId, 'track' => $trackId,'state' => $state);
         } else {
             $sql->close();
-            return array('agent' => $agentId, 'track' => false);
+            return array('agent' => $agentId, 'track' => false, 'state' => $state);
         }
     } else {
         $sql->close();
-        return array('agent' => false, 'track' => false);
+        return array('agent' => false, 'track' => false,'state' => false);
     }
 
 }

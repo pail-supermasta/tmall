@@ -253,9 +253,9 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
     /*add pdf to order MS*/
 
     /*AliexpressLogisticsSellershipmentfortopRequest*/
-//    return array('mailNo' => $mailNo, 'result_success' => true);
+    return array('mailNo' => $mailNo, 'result_success' => true);
 
-    return sellerShipmentForTop($order, $mailNo, $sessionKey);
+//    return sellerShipmentForTop($order, $mailNo, $sessionKey);
 }
 
 function sellerShipmentForTop($order, $logisticsNo, $sessionKey)

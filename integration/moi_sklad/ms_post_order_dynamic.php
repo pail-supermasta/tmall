@@ -30,7 +30,7 @@ function curlMSCreate($username = false, $post, $memo)
     $result = curl_exec($curl);
     $curl_errno = curl_errno($curl);
     if (strpos($result, 'обработка-ошибок') > 0 || $result == '') {
-        telegram("Ошибка создания заказа в МС. $curl_errno", '-320614744');
+        telegram("Ошибка создания заказа в МС.", '-320614744');
         error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . "Return error " . $result . " POST BODY IS " . $post . PHP_EOL, 3, "orderCreateErr.log");
     }
 
@@ -106,9 +106,11 @@ function fillOrderTemplate(array $orderDetails)
 
     // указываем магазин в котором купили на ALI
     $shopId = '';
+    $organization = '326d65ca-75c5-11e5-7a40-e8970013991b';
     switch ($orderDetails['shop']) {
         case "novinkiooo@yandex.ru":
             $shopId = "Avax store (ID 4901001)";
+            $organization = "b2c9e371-1b98-11e6-7a69-93a700176cab";
             break;
         case "bestgoodsstore@yandex.ru":
             $shopId = "BESTGOODS (ID 5041091)";
@@ -127,7 +129,7 @@ function fillOrderTemplate(array $orderDetails)
     $shop = $shopId . '\\n/*Складу - вложить гарантийный талон \\n/*Логистам - Отправить клиенту согласно заполненным полям';
     $markAsPaid = ($paid == true) ? '\\nЗАКАЗ ОПЛАЧЕН' : '';
     $escrowComment = '\\nescrow_fee_rates: ' . $orderDetails['escrow_fee_rates'];
-    $memoComment = isset($orderDetails['memo']) ? '\\n' . $orderDetails['memo'] : '';
+    $memoComment = isset($orderDetails['memo']) ? '\\n' . htmlspecialchars($orderDetails['memo']) : '';
 
     $dshSumComment = isset($orderDetails['dshSum']) ? '\\nКомиссия:' . $orderDetails['dshSum'] : '';
     $couponComment = isset($orderDetails['coupon']) ? '\\nКупон / Доп. скидка:' . $orderDetails['coupon'] : '';
@@ -153,7 +155,7 @@ function fillOrderTemplate(array $orderDetails)
         "shared": true,
         "organization": {
             "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.1/entity/organization/326d65ca-75c5-11e5-7a40-e8970013991b",
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/organization/' . $organization . '",
                 "type": "organization",
                 "mediaType": "application/json"
             }
@@ -183,11 +185,11 @@ function fillOrderTemplate(array $orderDetails)
         },
         "attributes": [{
                 "id": "5b766cb9-ef7e-11e6-7a31-d0fd001e5310",
-                "value": "' . $orderDetails['contact_person'] . '"
+                "value": "' . htmlspecialchars($orderDetails['contact_person']) . '"
             },
             {
                 "id": "547ff930-ef8e-11e6-7a31-d0fd0021d13e",
-                "value": "' . $orderDetails['fullAddress'] . '"
+                "value": "' . htmlspecialchars(stripslashes($orderDetails['fullAddress'])) . '"
             },
             {
                 "id": "1bf09429-ef77-11e6-7a31-d0fd001c9667",

@@ -97,7 +97,7 @@ function strpos_recursive($haystack, $needle, $offset = 0, &$results = array())
 
 function checkTimeFromPaid($order, $payTime, $credential)
 {
-    $buyer_login_id = $credential['login'];
+
     $sessionKey = $credential['sessionKey'];
     $cpCode = $credential['cpCode'];
     $cnId = $credential['cnId'];
@@ -137,7 +137,6 @@ function checkTimeFromPaid($order, $payTime, $credential)
             $result['mailNo'] = str_replace(['AEWH', 'RU4'], "", $result['mailNo']);
 
 
-            $setTrackNumRes = '';
             $setTrackNumRes = $orderMS->setTrackNum($result['mailNo']);
             if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
 
@@ -150,7 +149,7 @@ function checkTimeFromPaid($order, $payTime, $credential)
                     telegram("setTrackNum error found " . $orderMS->name, '-320614744');
                     error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setTrackNumRes . " " . $orderMS->name . PHP_EOL, 3, "setTrackNum.log");
                 } else {
-                    $setToPackRes = '';
+
                     $setToPackRes = $orderMS->setToPack();
                     if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
                         telegram("setToPack error found $orderMS->name", '-320614744');
@@ -160,7 +159,7 @@ function checkTimeFromPaid($order, $payTime, $credential)
 
 
             } else {
-                $setToPackRes = '';
+
                 $setToPackRes = $orderMS->setToPack();
                 if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
                     telegram("setToPack error found $orderMS->name", '-320614744');
@@ -182,45 +181,75 @@ function checkTimeFromPaid($order, $payTime, $credential)
         if ($timeFromPayment >= 2) {
 
             /*check if order has track in MS*/
-            $trackId = false;
-//            $trackId = getOrderTrack($order);
+
             $delivery = getOrderTrack($order);
             $trackId = $delivery['track'];
-            $agentId = $delivery['agent'];
 
             /*has no track*/
             if ($trackId == false) {
-//                var_dump($timeFromPayment . PHP_EOL);
+                var_dump($timeFromPayment . PHP_EOL);
 //                telegram("Трек не заполнен, заказ #$order", '-278688533');
-            } else {
-                /*set track number in Tmall*/
-
-                switch ($agentId) {
-                    case "3e974e59-c2ad-11e6-7a69-8f55000291d8":
-                        $trackingWebsite = "https://cdek.ru/track.html?order_id=$trackId";
-                        break;
-                    case "1da99879-55a8-11e7-7a6c-d2a90009f537":
-                        $trackingWebsite = "https://iml.ru/status/";
-                        break;
-                    case "3071006a-d2db-11e9-0a80-025a0021cd0d":
-                        $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=AEWH0000' . $trackId . 'RU4"';
-                        break;
-
-                }
-
-                $c = new TopClient;
-                $c->appkey = APPKEY;
-                $c->secretKey = SECRET;
-                $req = new AliexpressSolutionOrderFulfillRequest;
-                $req->setServiceName("OTHER_RU_CITY_RUB");
-                $req->setTrackingWebsite("$trackingWebsite");
-                $req->setOutRef("$order");
-                $req->setSendType("all");
-//            $req->setDescription("memo");
-                $req->setLogisticsNo("$trackId");
-                $resp = $c->execute($req, $sessionKey);
             }
         }
+
+    }
+
+
+}
+
+function setTrackToTmall($order, $credential)
+{
+
+    $sessionKey = $credential['sessionKey'];
+
+    /*check if in MS state is Доставляется and has a track number*/
+    $delivery = getOrderTrack($order);
+
+    /*Комплектуется, На выдаче, Доставляется*/
+    $statesToShip = array("8beb227b-6088-11e7-7a6c-d2a9003b81a3",
+        "8beb25ab-6088-11e7-7a6c-d2a9003b81a4",
+        "327c03c6-75c5-11e5-7a40-e89700139938",);
+
+
+    telegram("Заказ $order ожидает доставки - статус в МС ". $delivery['state'] . $delivery['agent'] , '-320614744');
+    if (in_array($delivery['state'], $statesToShip) == 1) {
+        $trackId = $delivery['track'];
+        $agentId = $delivery['agent'];
+
+        /*set track number in Tmall*/
+
+        $serviceName="OTHER_RU_CITY_RUB";
+        switch ($agentId) {
+            case "3e974e59-c2ad-11e6-7a69-8f55000291d8":
+                $trackingWebsite = "https://cdek.ru/track.html?order_id=$trackId";
+                $serviceName = "OTHER_RU_CITY_RUB";
+                break;
+            case "1da99879-55a8-11e7-7a6c-d2a90009f537":
+                $trackingWebsite = "https://iml.ru/status/";
+                $serviceName = "OTHER_RU_CITY_RUB";
+                break;
+            case "3071006a-d2db-11e9-0a80-025a0021cd0d":
+                $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=AEWH0000' . $trackId . 'RU4"';
+                $serviceName = "AE_RU_MP_COURIER_PH3_CITY";
+                $trackId = "AEWH0000" . $trackId . "RU4";
+                break;
+        }
+
+        telegram("Трек отправлен в цаняо для $order $trackId $serviceName", '-320614744');
+
+        $c = new TopClient;
+        $c->appkey = APPKEY;
+        $c->secretKey = SECRET;
+        $req = new AliexpressSolutionOrderFulfillRequest;
+        $req->setServiceName($serviceName);
+        $req->setTrackingWebsite("$trackingWebsite");
+        $req->setOutRef("$order");
+        $req->setSendType("all");
+//            $req->setDescription("memo");
+        $req->setLogisticsNo("$trackId");
+        $resp = $c->execute($req, $sessionKey);
+
+        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . "Order name $order response from setLogisticsNo $resp" . PHP_EOL, 3, "setLogisticsNo.log");
 
     }
 
@@ -268,6 +297,9 @@ function formMasterList($credential)
 
                 /*check if paid and no track number*/
                 checkTimeFromPaid($shorty['order_id'], $shorty['gmt_pay_time'], $credential);
+
+                /*check if Доставляется in MS and has track num*/
+                setTrackToTmall($shorty['order_id'], $credential);
             }
         }
     }
@@ -279,6 +311,7 @@ function formMasterList($credential)
 foreach (LOGINS as $credential) {
     formMasterList($credential);
 }
+
 
 
 
