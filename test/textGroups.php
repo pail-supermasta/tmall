@@ -7,7 +7,7 @@
  */
 
 
-require_once 'integration/ali_express/taobao/TopSdk.php';
+require_once '../integration/ali_express/taobao/TopSdk.php';
 define('APPKEY', '27862248');
 define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
 
@@ -30,7 +30,7 @@ function listcategory($post_data, $sessionKey)
 //$shorten = listcategory('', '50002500e10kEPynqBacfX146882beFiwgzuCbjAqgpxYFoHtmygVTBcZzz4YHQguxt');
 //var_dump($shorten);
 
-$newCategRus = array(
+/*$newCategRus = array(
     "Пылесосы" => array("Беспроводные пылесосы",
         "Роботы-мойщики окон",
         "Роботы-полотеры",
@@ -54,9 +54,9 @@ $newCategRus = array(
     "Постельные принадлежности" => array("Подушка для разглаживания морщин",
         "Простыни на резинке",
     ),
-);
+);*/
 
-
+/*MORPHY RICH*/
 /*$newCategRus = array(
     "Электрические чайники" => array(),
     "Электрические утюги" => array(),
@@ -68,6 +68,13 @@ $newCategRus = array(
     "Суповарки" => array(),
     "Грильбокс" => array(),
 );*/
+$newCategRus = array(
+    "Миксеры и блендеры" => array(
+        "Миксеры",
+        "Блендеры"
+    ),
+);
+
 
 /*$newCategRus = array(
     "Умные часы" => array("LIFE 2",
@@ -107,12 +114,12 @@ foreach ($newCategRus as $parent => $childs) {
         $parentID = '0';
     }
 
-    $shorten = createcategory($parent, $parentID, '50002501218puBbzgXFkqhvplWEdrh1c808e85pszGJkLnXgVzGGx9wxCcCqsvPj6As');
+    $shorten = createcategory($parent, $parentID, '50002501b20seTrdXDcT3OUujmlPG0lQ1c55d345tmh2nRxEtuysQNxvhfmWYdVTL6x');
     $shorten = json_decode($shorten, true);
     if (isset($shorten["result"]["target"]) && sizeof($childs) > 0) {
         $parentID = $shorten["result"]["target"];
         foreach ($childs as $child) {
-            $shorten = createcategory($child, $parentID, '50002501218puBbzgXFkqhvplWEdrh1c808e85pszGJkLnXgVzGGx9wxCcCqsvPj6As');
+            $shorten = createcategory($child, $parentID, '50002501b20seTrdXDcT3OUujmlPG0lQ1c55d345tmh2nRxEtuysQNxvhfmWYdVTL6x');
         }
     }
 

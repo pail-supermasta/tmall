@@ -137,17 +137,29 @@ function checkTimeFromPaid($order, $payTime, $credential)
             $result['mailNo'] = str_replace(['AEWH', 'RU4'], "", $result['mailNo']);
 
 
-            $setTrackNumRes = $orderMS->setTrackNum($result['mailNo']);
-            if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
-
-                /*try again*/
-                sleep(5);
-
-
+            /*check if stripped mailno 6 chars long*/
+            if (strlen($result['mailNo']) >= 6) {
                 $setTrackNumRes = $orderMS->setTrackNum($result['mailNo']);
                 if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
-                    telegram("setTrackNum error found " . $orderMS->name, '-320614744');
-                    error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setTrackNumRes . " " . $orderMS->name . PHP_EOL, 3, "setTrackNum.log");
+
+                    /*try again*/
+                    sleep(5);
+
+
+                    $setTrackNumRes = $orderMS->setTrackNum($result['mailNo']);
+                    if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
+                        telegram("setTrackNum error found " . $orderMS->name, '-320614744');
+                        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setTrackNumRes . " " . $orderMS->name . PHP_EOL, 3, "setTrackNum.log");
+                    } else {
+
+                        $setToPackRes = $orderMS->setToPack();
+                        if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
+                            telegram("setToPack error found $orderMS->name", '-320614744');
+                            error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
+                        }
+                    }
+
+
                 } else {
 
                     $setToPackRes = $orderMS->setToPack();
@@ -155,15 +167,6 @@ function checkTimeFromPaid($order, $payTime, $credential)
                         telegram("setToPack error found $orderMS->name", '-320614744');
                         error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
                     }
-                }
-
-
-            } else {
-
-                $setToPackRes = $orderMS->setToPack();
-                if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
-                    telegram("setToPack error found $orderMS->name", '-320614744');
-                    error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
                 }
             }
 
@@ -211,14 +214,14 @@ function setTrackToTmall($order, $credential)
         "327c03c6-75c5-11e5-7a40-e89700139938",);
 
 
-    telegram("Заказ $order ожидает доставки - статус в МС ". $delivery['state'] . $delivery['agent'] , '-320614744');
+    telegram("Заказ $order ожидает доставки - статус в МС " . $delivery['state'] . $delivery['agent'], '-320614744');
     if (in_array($delivery['state'], $statesToShip) == 1) {
         $trackId = $delivery['track'];
         $agentId = $delivery['agent'];
 
         /*set track number in Tmall*/
 
-        $serviceName="OTHER_RU_CITY_RUB";
+        $serviceName = "OTHER_RU_CITY_RUB";
         switch ($agentId) {
             case "3e974e59-c2ad-11e6-7a69-8f55000291d8":
                 $trackingWebsite = "https://cdek.ru/track.html?order_id=$trackId";
@@ -229,9 +232,9 @@ function setTrackToTmall($order, $credential)
                 $serviceName = "OTHER_RU_CITY_RUB";
                 break;
             case "3071006a-d2db-11e9-0a80-025a0021cd0d":
-                $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=AEWH0000' . $trackId . 'RU4"';
+                $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=AEWH000' . $trackId . 'RU4"';
                 $serviceName = "AE_RU_MP_COURIER_PH3_CITY";
-                $trackId = "AEWH0000" . $trackId . "RU4";
+                $trackId = "AEWH000" . $trackId . "RU4";
                 break;
         }
 
@@ -248,8 +251,7 @@ function setTrackToTmall($order, $credential)
 //            $req->setDescription("memo");
         $req->setLogisticsNo("$trackId");
         $resp = $c->execute($req, $sessionKey);
-
-        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . "Order name $order response from setLogisticsNo $resp" . PHP_EOL, 3, "setLogisticsNo.log");
+        var_dump($resp);
 
     }
 

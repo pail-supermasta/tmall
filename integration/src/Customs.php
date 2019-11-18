@@ -33,7 +33,7 @@ class Customs
 
 
         $generator = new BarcodeGeneratorPNG();
-//        $mailNo = 'AEWH0000657988RU4';
+//        $mailNo = 'AEWH000657988RU4';
         $mailNo = $toPrint['mailNo'];
 
 

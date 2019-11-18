@@ -204,7 +204,7 @@ function checkTimeFromPaid($order, $payTime, $credential)
                         $trackingWebsite = "https://iml.ru/status/";
                         break;
                     case "3071006a-d2db-11e9-0a80-025a0021cd0d":
-                        $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=AEWH0000' . $trackId . 'RU4"';
+                        $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=AEWH000' . $trackId . 'RU4"';
                         break;
 
                 }

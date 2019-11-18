@@ -236,7 +236,7 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
 
 //    error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . json_encode($res) . $content . PHP_EOL, 3, 'MAILNO_QUERY_SERVICE.log');
 
-    /*EXAMPLE RESPONSE string(47) "{"mailNo":"AEWH0000708100RU4","success":"true"}"*/
+    /*EXAMPLE RESPONSE string(47) "{"mailNo":"AEWH000708100RU4","success":"true"}"*/
 
     $mailNoResponse = json_decode($res, true);
 
