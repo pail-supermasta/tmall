@@ -30,19 +30,64 @@ require_once 'ali_express/taobao/TopSdk.php';
 require_once 'class/telegram.php';
 
 
+
+define('LOGINS', array(
+    array(
+        'name' => 'Незабудка MR',
+        'login' => 'NezabudkaMR@yandex.ru',
+        'field_id' => '0bbcd991-81f4-11e9-9109-f8fc0004dec9',
+        'sessionKey' => '50002501b20seTrdXDcT3OUujmlPG0lQ1c55d345tmh2nRxEtuysQNxvhfmWYdVTL6x',
+        'cpCode' => 'UTV0a1NLakt5dE9DdzZOdEt1elhnblRnMURQaExvS0w4RVZEVHMyM2o2eTRqUjdiOEdxalpTVjhRN0ZBQldVZA==',
+        'cnId' => '4398983084403'
+    ),
+    array(
+        'name' => 'bestgoodsstore',
+        'login' => 'bestgoodsstore@yandex.ru',
+        'field_id' => '0bbcd3e6-81f4-11e9-9109-f8fc0004dec8',
+        'sessionKey' => '50002301537b3HwdiqAxRjekju8LsvFIFOnVHqTAiY8rpjwSW11d54902lPHBjVb1lb',
+        'cpCode' => 'QXJCQk1QcjJKTkZDbHk4ZVZ4bW11cFQ2L2QreW1XT0lJd2ZlMnEvL2dFZC9NbG5CSklEV2tiY0cxNkRSMWlYcQ==',
+        'cnId' => '4398985192396'
+
+    ),
+    array(
+        'name' => 'Новинки',
+        'login' => 'novinkiooo@yandex.ru',
+        'field_id' => 'e8a40577-77b9-11e9-912f-f3d40003d45d',
+        'sessionKey' => '50002501204puBbz1f903348gXFkqhvplWEdrhpszGJkLnXgVzGGx9wxCcCqsvPj6As',
+        'cpCode' => 'OTQwTzB2T1U3N1Nza0Y3OVRKMHZyVWtPL0RFRjJHczBqUHBDRHBqK05LVXdBc1pJRkk0THo1YUVLR21PNE5IZQ==',
+        'cnId' => '4398985964371'
+    ),
+    array(
+        'name' => 'Незабудка iRobot',
+        'login' => 'NezabudkaiRobot@yandex.ru',
+        'field_id' => '0bbcde02-81f4-11e9-9109-f8fc0004deca',
+        'sessionKey' => '50002501801wh1496eab7JsasrEejBv6nVzgoixm4exukdZHsrAOxYxMQtreJr4qUVo',
+        'cpCode' => 'czJBM3dFNm9aQ0RuSnhnY0tEK2p2a3g1cEI5aFYwSGw1TlpxTVAyUE1CYk1iYkRCTU1tWENocFo4alU3aFdmUg==',
+        'cnId' => '4398985334183'
+    ),
+    array(
+        'name' => 'Незабудка ND',
+        'login' => 'NezabudkaND@yandex.ru',
+        'field_id' => '0bbce15c-81f4-11e9-9109-f8fc0004decb',
+        'sessionKey' => '50002701012q0OsaZ5izjnxB1c6971a8swh9hEtfmTvHKEuIYjVSokXFspWEUsi208y',
+        'cpCode' => 'V1ZDUlZnY09vbHoyQTFpNEZEUElkcGlmUE43Z1hYZEdoVEZwM2huTDlWeWVKUHdIUmY4QmFWV1FOdXVCT3JQeg==',
+        'cnId' => '4398983195649'
+    )
+));
 //$order = '5000620116289901'; //0
 //$order = '5000481033994782'; //2
 //$order = '8003767178094779'; //1
-$order = '5000693962455960';
+$order = '5000712847875450'; //BG
+//$order = '5001720021532591'; //mr
 
 
 //$order = '5000550696796183';
-//$sessionKey = '50002301537b3HwdiqAxRjekju8LsvFIFOnVHqTAiY8rpjwSW11d54902lPHBjVb1lb';
-//$sessionKey = '50002301537b3HwdiqAxRjekju8LsvFIFOnVHqTAiY8rpjwSW11d54902lPHBjVb1lb';
-$sessionKey = '50002701012q0OsaZ5izjnxB1c6971a8swh9hEtfmTvHKEuIYjVSokXFspWEUsi208y';
-//$login = 'bestgoodsstore@yandex.ru';
+$sessionKey = '50002301537b3HwdiqAxRjekju8LsvFIFOnVHqTAiY8rpjwSW11d54902lPHBjVb1lb';
+//$sessionKey = '50002501b20seTrdXDcT3OUujmlPG0lQ1c55d345tmh2nRxEtuysQNxvhfmWYdVTL6x';
+//$sessionKey = '50002701012q0OsaZ5izjnxB1c6971a8swh9hEtfmTvHKEuIYjVSokXFspWEUsi208y';
+$login = 'bestgoodsstore@yandex.ru';
 //$login = 'NezabudkaMR@yandex.ru';
-$login = 'NezabudkaND@yandex.ru';
+//$login = 'NezabudkaND@yandex.ru';
 
 $res = findorderbyid($order, $sessionKey);
 
@@ -224,9 +269,9 @@ function destructResponse(array $shortener, $order, $shop)
 
                         $productsTotal = 0;
                         $orderAmount = 0;
-                        $discountDiff = 0;
-
-                        /*need this block to calculate Ali clean total positions cost = $productsTotal*/
+//                        $discountDiff = 0;
+//
+//                        /*need this block to calculate Ali clean total positions cost = $productsTotal*/
                         foreach ($products as $item) {
                             $prPrice = $item['product_price']['cent'];
                             $prCo = $item['product_count'];
@@ -234,34 +279,34 @@ function destructResponse(array $shortener, $order, $shop)
                             $productsTotal += $prTotal;
                             $orderAmount = $shortener['order_amount']['cent'];
                         }
-
-
-                        /*percentage difference btw Tmall price and MS price - applied discount*/
-                        if ($msPrice > $sellPrice) {
-                            $price = $msPrice;
-                            $tmallTotal = $product['product_count'] * $product['product_price']['cent'];
-                            $discountDiff = ($price - $sellPrice) * 100 / ($price - $sellPrice + $tmallTotal);
-                            var_dump('$discountDiff' . $discountDiff);
-                        } else {
+                        echo "init_oder_amount ".$shortener['init_oder_amount']['cent'];
+//
+//                        /*percentage difference btw Tmall price and MS price - applied discount*/
+//                        if ($msPrice > $sellPrice) {
+//                            $price = $msPrice;
+//                            $tmallTotal = $product['product_count'] * $product['product_price']['cent'];
+//                            $discountDiff = ($price - $sellPrice) * 100 / ($price - $sellPrice + $tmallTotal);
+//                            var_dump('$discountDiff' . $discountDiff);
+//                        } else {
                             $price = $sellPrice;
-                        }
-
-
+//                        }
+//
+//
                         $orderShip = $shortener['logistics_amount']['cent'] ?? 0;
                         $coupon = $productsTotal + $orderShip - $orderAmount;
-                        $msPosition = $msPrice * $product['product_count'];
-                        $aliPosition = $sellPrice * $product['product_count'];
-
-
-                        $totalDisc = ($msPosition - $aliPosition + $coupon) * 100 / ($msPosition - $aliPosition + $productsTotal);
-                        echo "new disc $totalDisc = ($msPosition - $aliPosition + $coupon) * 100 / ($msPosition - $aliPosition + $productsTotal)";
-                        $orderDiscount = ($discountDiff > 0 && $orderDiscount == 0) ? $totalDisc : $orderDiscount;
-
-                        echo $orderDiscount;
-
-
-                        /*not work for MR https://gsp.aliexpress.com/apps/order/detail?spm=5261.order_list.orderTable.2379.55bc3e5fBypimc&orderId=5000481033994782*/
-                        /*heavy solution get all MS prices and calculate discount for each and return final into json*/
+//                        $msPosition = $msPrice * $product['product_count'];
+//                        $aliPosition = $sellPrice * $product['product_count'];
+//
+//
+//                        $totalDisc = ($msPosition - $aliPosition + $coupon) * 100 / ($msPosition - $aliPosition + $productsTotal);
+//                        echo "new disc $totalDisc = ($msPosition - $aliPosition + $coupon) * 100 / ($msPosition - $aliPosition + $productsTotal)";
+//                        $orderDiscount = ($discountDiff > 0 && $orderDiscount == 0) ? $totalDisc : $orderDiscount;
+//
+//                        echo $orderDiscount;
+//
+//
+//                        /*not work for MR https://gsp.aliexpress.com/apps/order/detail?spm=5261.order_list.orderTable.2379.55bc3e5fBypimc&orderId=5000481033994782*/
+//                        /*heavy solution get all MS prices and calculate discount for each and return final into json*/
 
 
                         /*DISCOUNT CALCULATION ENDS*/
@@ -275,12 +320,6 @@ function destructResponse(array $shortener, $order, $shop)
 //                        telegram("Tmall продал товар по неверной цене. Цена продажи $sellPrice. Минимальная цена $minPrice. Цена товарв в МС $msPrice. Заказ на Tmall № $order.", '-278688533');
                         }
 
-
-                        /*                    if ($orderDetails['paid'] == 'PAY_SUCCESS') {
-                                                $toReserve = $product['product_count'];
-                                            } else {
-                                                $toReserve = 0;
-                                            }*/
 
                         /*  stores one position */
                         $position = array(
@@ -347,7 +386,7 @@ function destructResponse(array $shortener, $order, $shop)
     $escrowFee = $escrowFeeSum / sizeof($products) * $productsTotal;
     $orderShipEscrow = isset($shortener['logisitcs_escrow_fee_rate']) ? $shortener['logisitcs_escrow_fee_rate'] * $orderShip : 0;
     $orderDetails['dshSum'] = ($escrowFee + $orderShipEscrow - $couponEscrow) / 100;
-    $orderDetails['coupon'] = $coupon;
+    $orderDetails['coupon'] = $coupon/100;
     var_dump("dsh " . $orderDetails['dshSum']);
     var_dump("coupon " . $orderDetails['coupon']);
 

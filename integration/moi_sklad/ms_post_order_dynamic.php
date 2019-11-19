@@ -197,7 +197,7 @@ function fillOrderTemplate(array $orderDetails)
             },
             {
                 "id": "547ffc2a-ef8e-11e6-7a31-d0fd0021d141",
-                "value": ' . (int)$orderDetails['dshSum'] . '
+                "value": ' . round($orderDetails['dshSum']) . '
             },
             {
                 "id": "4552a58b-46a8-11e7-7a34-5acf002eb7ad",
