@@ -18,14 +18,14 @@ define('APPKEY', '27862248');
 define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
 
 define('LOGINS', array(
-    array(
-        'name' => 'Незабудка MR',
-        'login' => 'NezabudkaMR@yandex.ru',
-        'field_id' => '0bbcd991-81f4-11e9-9109-f8fc0004dec9',
-        'sessionKey' => '50002501b20seTrdXDcT3OUujmlPG0lQ1c55d345tmh2nRxEtuysQNxvhfmWYdVTL6x',
-        'cpCode' => 'UTV0a1NLakt5dE9DdzZOdEt1elhnblRnMURQaExvS0w4RVZEVHMyM2o2eTRqUjdiOEdxalpTVjhRN0ZBQldVZA==',
-        'cnId' => '4398983084403'
-    ),
+//    array(
+//        'name' => 'Незабудка MR',
+//        'login' => 'NezabudkaMR@yandex.ru',
+//        'field_id' => '0bbcd991-81f4-11e9-9109-f8fc0004dec9',
+//        'sessionKey' => '50002501b20seTrdXDcT3OUujmlPG0lQ1c55d345tmh2nRxEtuysQNxvhfmWYdVTL6x',
+//        'cpCode' => 'UTV0a1NLakt5dE9DdzZOdEt1elhnblRnMURQaExvS0w4RVZEVHMyM2o2eTRqUjdiOEdxalpTVjhRN0ZBQldVZA==',
+//        'cnId' => '4398983084403'
+//    ),
     array(
         'name' => 'bestgoodsstore',
         'login' => 'bestgoodsstore@yandex.ru',
@@ -35,30 +35,30 @@ define('LOGINS', array(
         'cnId' => '4398985192396'
 
     ),
-    array(
-        'name' => 'Новинки',
-        'login' => 'novinkiooo@yandex.ru',
-        'field_id' => 'e8a40577-77b9-11e9-912f-f3d40003d45d',
-        'sessionKey' => '50002501204puBbz1f903348gXFkqhvplWEdrhpszGJkLnXgVzGGx9wxCcCqsvPj6As',
-        'cpCode' => 'OTQwTzB2T1U3N1Nza0Y3OVRKMHZyVWtPL0RFRjJHczBqUHBDRHBqK05LVXdBc1pJRkk0THo1YUVLR21PNE5IZQ==',
-        'cnId' => '4398985964371'
-    ),
-    array(
-        'name' => 'Незабудка iRobot',
-        'login' => 'NezabudkaiRobot@yandex.ru',
-        'field_id' => '0bbcde02-81f4-11e9-9109-f8fc0004deca',
-        'sessionKey' => '50002501801wh1496eab7JsasrEejBv6nVzgoixm4exukdZHsrAOxYxMQtreJr4qUVo',
-        'cpCode' => 'czJBM3dFNm9aQ0RuSnhnY0tEK2p2a3g1cEI5aFYwSGw1TlpxTVAyUE1CYk1iYkRCTU1tWENocFo4alU3aFdmUg==',
-        'cnId' => '4398985334183'
-    ),
-    array(
-        'name' => 'Незабудка ND',
-        'login' => 'NezabudkaND@yandex.ru',
-        'field_id' => '0bbce15c-81f4-11e9-9109-f8fc0004decb',
-        'sessionKey' => '50002701012q0OsaZ5izjnxB1c6971a8swh9hEtfmTvHKEuIYjVSokXFspWEUsi208y',
-        'cpCode' => 'V1ZDUlZnY09vbHoyQTFpNEZEUElkcGlmUE43Z1hYZEdoVEZwM2huTDlWeWVKUHdIUmY4QmFWV1FOdXVCT3JQeg==',
-        'cnId' => '4398983195649'
-    )
+//    array(
+//        'name' => 'Новинки',
+//        'login' => 'novinkiooo@yandex.ru',
+//        'field_id' => 'e8a40577-77b9-11e9-912f-f3d40003d45d',
+//        'sessionKey' => '50002501204puBbz1f903348gXFkqhvplWEdrhpszGJkLnXgVzGGx9wxCcCqsvPj6As',
+//        'cpCode' => 'OTQwTzB2T1U3N1Nza0Y3OVRKMHZyVWtPL0RFRjJHczBqUHBDRHBqK05LVXdBc1pJRkk0THo1YUVLR21PNE5IZQ==',
+//        'cnId' => '4398985964371'
+//    ),
+//    array(
+//        'name' => 'Незабудка iRobot',
+//        'login' => 'NezabudkaiRobot@yandex.ru',
+//        'field_id' => '0bbcde02-81f4-11e9-9109-f8fc0004deca',
+//        'sessionKey' => '50002501801wh1496eab7JsasrEejBv6nVzgoixm4exukdZHsrAOxYxMQtreJr4qUVo',
+//        'cpCode' => 'czJBM3dFNm9aQ0RuSnhnY0tEK2p2a3g1cEI5aFYwSGw1TlpxTVAyUE1CYk1iYkRCTU1tWENocFo4alU3aFdmUg==',
+//        'cnId' => '4398985334183'
+//    ),
+//    array(
+//        'name' => 'Незабудка ND',
+//        'login' => 'NezabudkaND@yandex.ru',
+//        'field_id' => '0bbce15c-81f4-11e9-9109-f8fc0004decb',
+//        'sessionKey' => '50002701012q0OsaZ5izjnxB1c6971a8swh9hEtfmTvHKEuIYjVSokXFspWEUsi208y',
+//        'cpCode' => 'V1ZDUlZnY09vbHoyQTFpNEZEUElkcGlmUE43Z1hYZEdoVEZwM2huTDlWeWVKUHdIUmY4QmFWV1FOdXVCT3JQeg==',
+//        'cnId' => '4398983195649'
+//    )
 ));
 
 define('ID_REGEXP', '/[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}/'); // Регулярка для UUID
@@ -73,7 +73,7 @@ require_once '../class/telegram.php';
 
 // SQL get track number for orden name from MS
 require_once '../moi_sklad/sql_requests/OrderDetails.php';
-//require_once '../moi_sklad/ms_get_orders_dynamic.php';
+require_once '../moi_sklad/ms_get_orders_dynamic.php';
 //require_once 'ali_order_details_dynamic.php';
 
 require_once 'taobao/TopSdk.php';
@@ -202,14 +202,15 @@ function checkTimeFromPaid($order, $payTime, $credential)
 
 }
 
-function setNewPositionPrice($order='5001722108797220',$credential)
+//function setNewPositionPrice($order='5001722108797220',$credential)
+function setNewPositionPrice($order,$credential)
 {
     $sessionKey = $credential['sessionKey'];
 
     /*get order details from Aliexp*/
 
     $findorderbyidRes = findorderbyid($order,$sessionKey);
-    var_dump($findorderbyidRes);
+
 
     /*get order Итого in MS*/
 
@@ -217,27 +218,24 @@ function setNewPositionPrice($order='5001722108797220',$credential)
 
 
     $res = json_decode(curlMS($link), true)['rows'][0];
-    var_dump($res);
+
     $orderMSSum = $res['sum'] / 100;
 
-    $orderMS = new OrderMS($findorderbyidRes['id']);
-//    $orderMS = new OrderMS('d62a11b7-0214-11ea-0a80-019d00055d1a');
+    $orderMS = new OrderMS($res['id']);
+
 
     $pay_amount_by_settlement_cur = (int)$findorderbyidRes['pay_amount_by_settlement_cur'];
-    $logistics_amount = (int)$findorderbyidRes['logistics_amount'] ?? 0;
-//    $logistics_amount = round(0) ?? 0;
-//    $pay_amount_by_settlement_cur = (int)"20990";
-    $diff = $orderMSSum - $pay_amount_by_settlement_cur + $logistics_amount;
-    echo $orderMSSum . PHP_EOL;
-    echo $diff . PHP_EOL;
-//    $products = array(array("qty" => "1", "price" => '1'), array("qty" => "1", "price" => '22491'));
+    $logistics_amount = $findorderbyidRes['logistics_amount']['cent'] ?? 0;
+    $diff = $orderMSSum - $pay_amount_by_settlement_cur + round($logistics_amount/100);
+
+
     $products = $res['positions']['rows'];
     foreach ($products as $product) {
         /*может быть испорчено доставкой*/
         $oldPosTot = $product["quantity"] * $product["price"] / 100;
         $newPosTot = $oldPosTot - $diff * ($oldPosTot / $orderMSSum);
         $newPrice = 100 * $newPosTot / $product["quantity"];
-        echo $newPosTot . " " . $newPrice . PHP_EOL;
+
         /*set new prices in MS*/
 
         $postdata = '{
@@ -254,7 +252,7 @@ function setNewPositionPrice($order='5001722108797220',$credential)
         }
     }
     /*update comment*/
-    $newLines = " Всего скидок для заказа: $diff Сумма была: $orderMSSum, Сумма оплачена $pay_amount_by_settlement_cur";
+    $newLines = " Всего скидок для заказа: $diff Сумма была: $orderMSSum, Сумма оплачена $pay_amount_by_settlement_cur, Сумма доставки ".$logistics_amount/100;
     $oldDescription = $res['description'];
     /*удалить двойные ковычки*/
     $oldDescription = str_replace('"', '', $oldDescription);
@@ -342,52 +340,50 @@ function formMasterList($credential)
     $sessionKey = $credential['sessionKey'];
 
 
-    /*additional - 3 hours for RU shift*/
-    $offset = 72 * 60 * 60;
-    $create_day = date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) - $offset);
+//    /*additional - 3 hours for RU shift*/
+//    $offset = 72 * 60 * 60;
+//    $create_day = date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) - $offset);
+//
+//    $c = new TopClient;
+//    $c->format = "json";
+//    $c->appkey = APPKEY;
+//    $c->secretKey = SECRET;
+//    $req = new AliexpressTradeSellerOrderlistGetRequest;
+//    $param_aeop_order_query = new AeopOrderQuery;
+//    $param_aeop_order_query->buyer_login_id = $buyer_login_id;
+//    $param_aeop_order_query->create_date_start = $create_day;
+//    $param_aeop_order_query->current_page = "1";
+//    $param_aeop_order_query->order_status_list = array('WAIT_SELLER_SEND_GOODS');
+//    $param_aeop_order_query->page_size = "20";
+//    $req->setParamAeopOrderQuery(json_encode($param_aeop_order_query));
+//    $resp = $c->execute($req, $sessionKey);
+//
+//    $final = $resp->result->target_list->aeop_order_item_dto ?? "";
+//
+//
+//    $orderList = array();
+//
+//    if ($final != "") {
+//        $res = json_encode((array)$final);
+//        $shortener = json_decode($res, true);
+//        foreach ($shortener as $shorty) {
+//            if ($shorty['order_status'] == 'WAIT_SELLER_SEND_GOODS') {
+//                $orderList[$shorty['order_id']] = $shorty['gmt_pay_time'];
+//
+//
+//                /*check if paid and no track number*/
+//                checkTimeFromPaid($shorty['order_id'], $shorty['gmt_pay_time'], $credential);
+//
+//                /*check if Доставляется in MS and has track num*/
+//                setTrackToTmall($shorty['order_id'], $credential);
+//
+//                /*set new position price*/
+//            }
+//        }
+//    }
+    setNewPositionPrice('5001720021532591', $credential);
 
-    $c = new TopClient;
-    $c->format = "json";
-    $c->appkey = APPKEY;
-    $c->secretKey = SECRET;
-    $req = new AliexpressTradeSellerOrderlistGetRequest;
-    $param_aeop_order_query = new AeopOrderQuery;
-    $param_aeop_order_query->buyer_login_id = $buyer_login_id;
-    $param_aeop_order_query->create_date_start = $create_day;
-    $param_aeop_order_query->current_page = "1";
-    $param_aeop_order_query->order_status_list = array('WAIT_SELLER_SEND_GOODS');
-    $param_aeop_order_query->page_size = "20";
-    $req->setParamAeopOrderQuery(json_encode($param_aeop_order_query));
-    $resp = $c->execute($req, $sessionKey);
-
-    $final = $resp->result->target_list->aeop_order_item_dto ?? "";
-
-
-    $orderList = array();
-
-    if ($final != "") {
-        $res = json_encode((array)$final);
-        $shortener = json_decode($res, true);
-        foreach ($shortener as $shorty) {
-            if ($shorty['order_status'] == 'WAIT_SELLER_SEND_GOODS') {
-                $orderList[$shorty['order_id']] = $shorty['gmt_pay_time'];
-
-
-                /*check if paid and no track number*/
-                checkTimeFromPaid($shorty['order_id'], $shorty['gmt_pay_time'], $credential);
-
-                /*check if Доставляется in MS and has track num*/
-                setTrackToTmall($shorty['order_id'], $credential);
-
-                /*set new position price*/
-//                setNewPositionPrice('5001722108797220', $credential);
-//                setNewPositionPrice(array("order_id" => "5001104965251454"));
-//                die();
-            }
-        }
-    }
-
-    return $orderList;
+//    return $orderList;
 }
 
 

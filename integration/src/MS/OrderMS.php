@@ -44,6 +44,12 @@ class OrderMS
         return $res;
     }
 
+    public function updateOrder($postdata)
+    {
+        $res = CurlMoiSklad::curlMS('/entity/customerorder/' . $this->id, $postdata, 'put');
+        return $res;
+    }
+
     public function setTrackNum($mailNo)
     {
 
