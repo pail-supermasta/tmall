@@ -73,7 +73,7 @@ require_once '../class/telegram.php';
 
 // SQL get track number for orden name from MS
 require_once '../moi_sklad/sql_requests/OrderDetails.php';
-//require_once '../moi_sklad/ms_get_orders_dynamic.php';
+require_once '../moi_sklad/ms_get_orders_dynamic.php';
 //require_once 'ali_order_details_dynamic.php';
 
 require_once 'taobao/TopSdk.php';
@@ -202,14 +202,14 @@ function checkTimeFromPaid($order, $payTime, $credential)
 
 }
 
-function setNewPositionPrice($order='5001722108797220',$credential)
+function setNewPositionPrice($order,$credential)
 {
     $sessionKey = $credential['sessionKey'];
 
     /*get order details from Aliexp*/
 
     $findorderbyidRes = findorderbyid($order,$sessionKey);
-    var_dump($findorderbyidRes);
+
 
     /*get order Итого in MS*/
 
@@ -217,27 +217,24 @@ function setNewPositionPrice($order='5001722108797220',$credential)
 
 
     $res = json_decode(curlMS($link), true)['rows'][0];
-    var_dump($res);
+
     $orderMSSum = $res['sum'] / 100;
 
-    $orderMS = new OrderMS($findorderbyidRes['id']);
-//    $orderMS = new OrderMS('d62a11b7-0214-11ea-0a80-019d00055d1a');
+    $orderMS = new OrderMS($res['id']);
+
 
     $pay_amount_by_settlement_cur = (int)$findorderbyidRes['pay_amount_by_settlement_cur'];
-    $logistics_amount = (int)$findorderbyidRes['logistics_amount'] ?? 0;
-//    $logistics_amount = round(0) ?? 0;
-//    $pay_amount_by_settlement_cur = (int)"20990";
-    $diff = $orderMSSum - $pay_amount_by_settlement_cur + $logistics_amount;
-    echo $orderMSSum . PHP_EOL;
-    echo $diff . PHP_EOL;
-//    $products = array(array("qty" => "1", "price" => '1'), array("qty" => "1", "price" => '22491'));
+    $logistics_amount = $findorderbyidRes['logistics_amount']['cent'] ?? 0;
+    $diff = $orderMSSum - $pay_amount_by_settlement_cur + round($logistics_amount/100);
+
+
     $products = $res['positions']['rows'];
     foreach ($products as $product) {
         /*может быть испорчено доставкой*/
         $oldPosTot = $product["quantity"] * $product["price"] / 100;
         $newPosTot = $oldPosTot - $diff * ($oldPosTot / $orderMSSum);
         $newPrice = 100 * $newPosTot / $product["quantity"];
-        echo $newPosTot . " " . $newPrice . PHP_EOL;
+
         /*set new prices in MS*/
 
         $postdata = '{
@@ -246,7 +243,6 @@ function setNewPositionPrice($order='5001722108797220',$credential)
 
 
         $setNewPositionPriceResp = $orderMS->updatePositions($postdata, $product['id']);
-        var_dump($setNewPositionPriceResp);
         /*check if no Errors from MS or check again otherwise send TG message*/
         if (strpos($setNewPositionPriceResp, 'обработка-ошибок') > 0 || $setNewPositionPriceResp == '') {
             telegram("setNewPositionPrice error found " . $order, '-320614744');
@@ -254,7 +250,7 @@ function setNewPositionPrice($order='5001722108797220',$credential)
         }
     }
     /*update comment*/
-    $newLines = " Всего скидок для заказа: $diff Сумма была: $orderMSSum, Сумма оплачена $pay_amount_by_settlement_cur";
+    $newLines = " Всего скидок для заказа: $diff Сумма была: $orderMSSum, Сумма оплачена $pay_amount_by_settlement_cur, Сумма доставки ".$logistics_amount/100;
     $oldDescription = $res['description'];
     /*удалить двойные ковычки*/
     $oldDescription = str_replace('"', '', $oldDescription);
@@ -263,9 +259,7 @@ function setNewPositionPrice($order='5001722108797220',$credential)
     $updateComment = '{
                   "description": "' . $oldDescription . $newLines . '"
                 }';
-    var_dump($updateComment);
     $updateOrderResp = $orderMS->updateOrder($updateComment);
-    var_dump($updateOrderResp);
     if (strpos($updateOrderResp, 'обработка-ошибок') > 0 || $updateOrderResp == '') {
         telegram("updateOrderResp error found " . $order, '-320614744');
         error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $updateOrderResp . " " . $order . PHP_EOL, 3, "updateOrderResp.log");
@@ -380,9 +374,8 @@ function formMasterList($credential)
                 setTrackToTmall($shorty['order_id'], $credential);
 
                 /*set new position price*/
-//                setNewPositionPrice('5001722108797220', $credential);
-//                setNewPositionPrice(array("order_id" => "5001104965251454"));
-//                die();
+                setNewPositionPrice($shorty['order_id'], $credential);
+
             }
         }
     }

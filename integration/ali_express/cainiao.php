@@ -81,7 +81,8 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
             $itemId = $shortener['result']['product_id'];
             $goodsNameCn = $shortener['result']['product_unit'];
             $quantity = $product['product_count'] ?? 1;
-            $goodsNameEn = preg_replace("/[^A-Za-z0-9. ]/", '', $shortener['result']['subject']);
+
+            $goodsNameEn = preg_replace("/[^а-яёa-z0-9. ]/iu", '', $shortener['result']['subject']);
             if (isset($shortener['result']['product_price'])) {
                 $price = (int)$shortener['result']['product_price'];
             } elseif (isset($shortener['result']['aeop_ae_product_s_k_us']['global_aeop_ae_product_sku'])) {

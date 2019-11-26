@@ -246,10 +246,10 @@ function setNewPositionPrice($order,$credential)
         $setNewPositionPriceResp = $orderMS->updatePositions($postdata, $product['id']);
         var_dump($setNewPositionPriceResp);
         /*check if no Errors from MS or check again otherwise send TG message*/
-        if (strpos($setNewPositionPriceResp, 'обработка-ошибок') > 0 || $setNewPositionPriceResp == '') {
-            telegram("setNewPositionPrice error found " . $order, '-320614744');
-            error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setNewPositionPriceResp . " " . $order . PHP_EOL, 3, "setNewPositionPriceResp.log");
-        }
+//        if (strpos($setNewPositionPriceResp, 'обработка-ошибок') > 0 || $setNewPositionPriceResp == '') {
+//            telegram("setNewPositionPrice error found " . $order, '-320614744');
+//            error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setNewPositionPriceResp . " " . $order . PHP_EOL, 3, "setNewPositionPriceResp.log");
+//        }
     }
     /*update comment*/
     $newLines = " Всего скидок для заказа: $diff Сумма была: $orderMSSum, Сумма оплачена $pay_amount_by_settlement_cur, Сумма доставки ".$logistics_amount/100;
@@ -264,11 +264,11 @@ function setNewPositionPrice($order,$credential)
     var_dump($updateComment);
     $updateOrderResp = $orderMS->updateOrder($updateComment);
     var_dump($updateOrderResp);
-    if (strpos($updateOrderResp, 'обработка-ошибок') > 0 || $updateOrderResp == '') {
-        telegram("updateOrderResp error found " . $order, '-320614744');
-        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $updateOrderResp . " " . $order . PHP_EOL, 3, "updateOrderResp.log");
-
-    }
+//    if (strpos($updateOrderResp, 'обработка-ошибок') > 0 || $updateOrderResp == '') {
+//        telegram("updateOrderResp error found " . $order, '-320614744');
+//        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $updateOrderResp . " " . $order . PHP_EOL, 3, "updateOrderResp.log");
+//
+//    }
 
 
 }
@@ -381,7 +381,7 @@ function formMasterList($credential)
 //            }
 //        }
 //    }
-    setNewPositionPrice('5001720021532591', $credential);
+    setNewPositionPrice('5001722108797220', $credential);
 
 //    return $orderList;
 }
