@@ -202,13 +202,13 @@ function checkTimeFromPaid($order, $payTime, $credential)
 
 }
 
-function setNewPositionPrice($order,$credential)
+function setNewPositionPrice($order, $credential)
 {
     $sessionKey = $credential['sessionKey'];
 
     /*get order details from Aliexp*/
 
-    $findorderbyidRes = findorderbyid($order,$sessionKey);
+    $findorderbyidRes = findorderbyid($order, $sessionKey);
 
 
     /*get order Итого in MS*/
@@ -225,7 +225,7 @@ function setNewPositionPrice($order,$credential)
 
     $pay_amount_by_settlement_cur = (int)$findorderbyidRes['pay_amount_by_settlement_cur'];
     $logistics_amount = $findorderbyidRes['logistics_amount']['cent'] ?? 0;
-    $diff = $orderMSSum - $pay_amount_by_settlement_cur + round($logistics_amount/100);
+    $diff = $orderMSSum - $pay_amount_by_settlement_cur + round($logistics_amount / 100);
 
 
     $products = $res['positions']['rows'];
@@ -250,7 +250,7 @@ function setNewPositionPrice($order,$credential)
         }
     }
     /*update comment*/
-    $newLines = " Всего скидок для заказа: $diff Сумма была: $orderMSSum, Сумма оплачена $pay_amount_by_settlement_cur, Сумма доставки ".$logistics_amount/100;
+    $newLines = " Всего скидок для заказа: $diff Сумма была: $orderMSSum, Сумма оплачена $pay_amount_by_settlement_cur, Сумма доставки " . $logistics_amount / 100;
     $oldDescription = $res['description'];
     /*удалить двойные ковычки*/
     $oldDescription = str_replace('"', '', $oldDescription);
@@ -270,7 +270,7 @@ function setNewPositionPrice($order,$credential)
 }
 
 
-function setTrackToTmall($order, $credential)
+function setTrackToTmall($order, $payTime, $credential)
 {
 
     $sessionKey = $credential['sessionKey'];
@@ -284,7 +284,6 @@ function setTrackToTmall($order, $credential)
         "327c03c6-75c5-11e5-7a40-e89700139938",);
 
 
-    telegram("Заказ $order ожидает доставки - статус в МС " . $delivery['state'] . $delivery['agent'], '-320614744');
     if (in_array($delivery['state'], $statesToShip) == 1) {
         $trackId = $delivery['track'];
         $agentId = $delivery['agent'];
@@ -323,6 +322,18 @@ function setTrackToTmall($order, $credential)
         $resp = $c->execute($req, $sessionKey);
         var_dump($resp);
 
+    } else {
+        /*  add 3 hour shift from GMT to RU */
+        $offsetNow = 3 * 60 * 60;
+        $now = strtotime(gmdate("Y-m-d H:i:s")) + $offsetNow;
+        /*  add 10 hour shift from PST to RU */
+        $offsetAli = 10 * 60 * 60;
+        $timeFromPayment = (strtotime($payTime) + $offsetAli) - $now;
+        $timeFromPayment = $timeFromPayment / 60 / 60 * (-1);
+
+        if ($timeFromPayment >= 9) {
+            telegram("ЗАДЕРЖКА отправки заказа #$order", '-278688533');
+        }
     }
 
 
@@ -371,7 +382,7 @@ function formMasterList($credential)
                 checkTimeFromPaid($shorty['order_id'], $shorty['gmt_pay_time'], $credential);
 
                 /*check if Доставляется in MS and has track num*/
-                setTrackToTmall($shorty['order_id'], $credential);
+                setTrackToTmall($shorty['order_id'], $shorty['gmt_pay_time'], $credential);
 
                 /*set new position price*/
                 setNewPositionPrice($shorty['order_id'], $credential);

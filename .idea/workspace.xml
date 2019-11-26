@@ -6,10 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80146bb5-79f6-4afc-a154-c01ae4967d76" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid_test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/ali_express/cainiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/cainiao.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,22 +20,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ali_order_list_paid.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ali_order_list_paid.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="362" column="42" lean-forward="true" selection-start-line="362" selection-start-column="42" selection-end-line="362" selection-end-column="42" />
+            <state relative-caret-position="345">
+              <caret line="336" column="5" selection-start-line="336" selection-start-column="5" selection-end-line="336" selection-end-column="5" />
               <folding>
                 <element signature="e#441#2451#0#PHP" />
                 <element signature="n#strpos_recursive#0;n#!!top" />
-                <element signature="n#checkTimeFromPaid#0;n#!!top" />
-                <element signature="n#setTrackToTmall#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cainiao.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cainiao.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/integration/ali_express/cainiao.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
@@ -51,9 +46,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>coupon</find>
-      <find>pay_</find>
-      <find>mysqli_fetch_all($result);</find>
       <find>sessionKey</find>
       <find>sum</find>
       <find>50002501b20seTrdXDcT3OUujmlPG0lQ1c55d345tmh2nRxEtuysQNxvhfmWYdVTL6x</find>
@@ -78,9 +70,12 @@
       <find>pay_amount_by_settlement_cur</find>
       <find>Всего скидок для за</find>
       <find>5001791893980991</find>
-      <find>setTrackToTmall</find>
       <find>die</find>
       <find>goodsNameEn</find>
+      <find>setTrackToTmall</find>
+      <find>$payTime</find>
+      <find>checkTimeFromPaid</find>
+      <find>$timeFromPayment</find>
     </findStrings>
     <replaceStrings>
       <replace>Россия, Москва, Павелецкая ул, дом 2, стр 21, оф 237</replace>
@@ -174,8 +169,8 @@
         <option value="$PROJECT_DIR$/integration/src/MS/OrderMS.php" />
         <option value="$PROJECT_DIR$/test/ali_order_details_dynamic.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid_test.php" />
-        <option value="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/cainiao.php" />
+        <option value="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" />
       </list>
     </option>
   </component>
@@ -419,12 +414,12 @@
       <workItem from="1574673812321" duration="633000" />
       <workItem from="1574683449740" duration="4281000" />
       <workItem from="1574690397444" duration="6000" />
-      <workItem from="1574750103727" duration="1712000" />
+      <workItem from="1574750103727" duration="3030000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="461180000" />
+    <option name="totallyTimeSpent" value="462498000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="431" y="19" width="1391" height="993" extended-state="0" />
@@ -792,23 +787,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="362" column="42" lean-forward="true" selection-start-line="362" selection-start-column="42" selection-end-line="362" selection-end-column="42" />
-          <folding>
-            <element signature="e#441#2451#0#PHP" />
-            <element signature="n#strpos_recursive#0;n#!!top" />
-            <element signature="n#checkTimeFromPaid#0;n#!!top" />
-            <element signature="n#setTrackToTmall#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/ali_express/cainiao.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="336" column="5" selection-start-line="336" selection-start-column="5" selection-end-line="336" selection-end-column="5" />
+          <folding>
+            <element signature="e#441#2451#0#PHP" />
+            <element signature="n#strpos_recursive#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
