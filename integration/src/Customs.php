@@ -68,9 +68,9 @@ class Customs
         $mailNoHTML2 = '<div id="mailNo2" class="">' . $mailNo . '</div>';
 
         try {
-            $mpdf = new \Mpdf\Mpdf(['margin_left' => '0',
+            $mpdf = new \Mpdf\Mpdf(['margin_left' => '5',
                 'margin_right' => '0',
-                'margin_top' => '0',
+                'margin_top' => '5',
                 'margin_bottom' => '0',
                 'margin_header' => '0',
                 'margin_footer' => '0']);
@@ -155,8 +155,10 @@ class Customs
                         
                          
                         font-size: 11px;
-                        top: 76px;
-                        left: 192px;
+                        /*top: 76px;
+                        left: 192px;*/
+                        top: 96px;
+                        left: 212px;
                         height: 43px;
                         rotate: 90;
                         
@@ -164,10 +166,10 @@ class Customs
                     }
                     #receiverName{
                         
-                        /*top: 195px;
-                        left: 18px;*/ 
-                        top: 76px;
-                        left: 142px;
+                        /*top: 76px;
+                        left: 142px;*/
+                        top: 96px;
+                        left: 162px;
                         height: 43px;
                         font-size: 15px;
                         letter-spacing: -1px;
@@ -176,11 +178,11 @@ class Customs
                         
                     }
                     #receiverPhone{
-                        
-                        /*top: 196px;
-                        left: -9px;*/
-                       top: 76px;
-                       left: 115px;
+
+                       /*top: 76px;
+                       left: 115px;*/
+                       top: 96px;
+                       left: 135px;
                         height: 43px;
                         font-size: 13px;
                         letter-spacing: 0;
@@ -191,10 +193,10 @@ class Customs
                     #otgruzkaDate{
                     
                         position: absolute;
-                        /*top: 74px;
-                        left: -14px;*/
-                        top: 50px;
-                        left: 2px;
+                        /*top: 50px;
+                        left: 2px;*/
+                        top: 70px;
+                        left: 22px;
                         font-size: 11px;
                         letter-spacing: 0;
                         rotate: 90;
@@ -203,8 +205,10 @@ class Customs
                     #AEOrderIdPageOne{
                    
                         position: absolute;
-                        top: 142px;
-                        left: 2px;
+                        /*top: 142px;
+                        left: 2px;  */                      
+                        top: 162px;
+                        left: 22px;
                         font-size: 10px;
                         letter-spacing: 0;
                         rotate: 90;     

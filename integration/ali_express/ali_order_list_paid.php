@@ -158,6 +158,9 @@ function checkTimeFromPaid($order, $payTime, $credential)
                         if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
                             telegram("setToPack error found $orderMS->name", '-320614744');
                             error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
+                        } else {
+                            /*set new position price*/
+                            setNewPositionPrice($orderMS->name, $credential);
                         }
                     }
 
@@ -168,6 +171,9 @@ function checkTimeFromPaid($order, $payTime, $credential)
                     if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
                         telegram("setToPack error found $orderMS->name", '-320614744');
                         error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
+                    } else {
+                        /*set new position price*/
+                        setNewPositionPrice($orderMS->name, $credential);
                     }
                 }
             }
@@ -284,7 +290,7 @@ function setTrackToTmall($order, $payTime, $credential)
         "327c03c6-75c5-11e5-7a40-e89700139938",);
 
 
-    if (in_array($delivery['state'], $statesToShip) == 1) {
+    if (in_array($delivery['state'], $statesToShip) == 1 && $delivery['track'] != false) {
         $trackId = $delivery['track'];
         $agentId = $delivery['agent'];
 
@@ -307,7 +313,10 @@ function setTrackToTmall($order, $payTime, $credential)
                 break;
         }
 
-        telegram("Трек отправлен в цаняо для $order $trackId $serviceName", '-320614744');
+        if ($agentId == '3071006a-d2db-11e9-0a80-025a0021cd0d') {
+            telegram("Трек отправлен в цаняо для $order $trackId $serviceName", '-320614744');
+        }
+
 
         $c = new TopClient;
         $c->appkey = APPKEY;
@@ -384,8 +393,6 @@ function formMasterList($credential)
                 /*check if Доставляется in MS and has track num*/
                 setTrackToTmall($shorty['order_id'], $shorty['gmt_pay_time'], $credential);
 
-                /*set new position price*/
-                setNewPositionPrice($shorty['order_id'], $credential);
 
             }
         }
