@@ -74,9 +74,14 @@ require_once '../class/telegram.php';
 
 // Cancel order in MS
 require_once '../moi_sklad/ms_change_order_dynamic.php';
+require_once '../moi_sklad/ms_get_orders_dynamic.php';
+require_once 'ali_order_details_dynamic.php';
 
 require_once 'taobao/TopSdk.php';
+require_once '../vendor/autoload.php';
 
+
+use Avaks\MS\OrderMS;
 
 /*Search for an error*/
 function strpos_recursive($haystack, $needle, $offset = 0, &$results = array())
@@ -179,7 +184,74 @@ function recursive_array_search($needle, $haystack)
     }
 }
 
-function getOrderFromMS($order, $item)
+function setNewPositionPrice($order, $credential)
+{
+    $sessionKey = $credential['sessionKey'];
+
+    /*get order details from Aliexp*/
+
+    $findorderbyidRes = findorderbyid($order, $sessionKey);
+
+
+    /*get order Итого in MS*/
+
+    $link = MS_PATH . "/entity/customerorder/?filter=name=" . $order . "&expand=positions";
+
+
+    $res = json_decode(curlMS($link), true)['rows'][0];
+
+    $orderMSSum = $res['sum'] / 100;
+
+    $orderMS = new OrderMS($res['id']);
+
+
+    $pay_amount_by_settlement_cur = (int)$findorderbyidRes['pay_amount_by_settlement_cur'];
+    $logistics_amount = $findorderbyidRes['logistics_amount']['cent'] ?? 0;
+    $diff = $orderMSSum - $pay_amount_by_settlement_cur + round($logistics_amount / 100);
+
+
+    $products = $res['positions']['rows'];
+    foreach ($products as $product) {
+        /*может быть испорчено доставкой*/
+        $oldPosTot = $product["quantity"] * $product["price"] / 100;
+        $newPosTot = $oldPosTot - $diff * ($oldPosTot / $orderMSSum);
+        $newPrice = 100 * $newPosTot / $product["quantity"];
+
+        /*set new prices in MS*/
+
+        $postdata = '{
+                  "price": ' . $newPrice . '
+                }';
+
+
+        $setNewPositionPriceResp = $orderMS->updatePositions($postdata, $product['id']);
+        /*check if no Errors from MS or check again otherwise send TG message*/
+        if (strpos($setNewPositionPriceResp, 'обработка-ошибок') > 0 || $setNewPositionPriceResp == '') {
+            telegram("setNewPositionPrice error found " . $order, '-320614744');
+            error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setNewPositionPriceResp . " " . $order . PHP_EOL, 3, "setNewPositionPriceResp.log");
+        }
+    }
+    /*update comment*/
+    $newLines = " Всего скидок для заказа: $diff Сумма была: $orderMSSum, Сумма оплачена $pay_amount_by_settlement_cur, Сумма доставки " . $logistics_amount / 100;
+    $oldDescription = $res['description'];
+    /*удалить двойные ковычки*/
+    $oldDescription = str_replace('"', '', $oldDescription);
+    /*удалить новую строку*/
+    $oldDescription = preg_replace('/\s+/', ' ', trim($oldDescription));
+    $updateComment = '{
+                  "description": "' . $oldDescription . $newLines . '"
+                }';
+    $updateOrderResp = $orderMS->updateOrder($updateComment);
+    if (strpos($updateOrderResp, 'обработка-ошибок') > 0 || $updateOrderResp == '') {
+        telegram("updateOrderResp error found " . $order, '-320614744');
+        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $updateOrderResp . " " . $order . PHP_EOL, 3, "updateOrderResp.log");
+
+    }
+
+
+}
+
+function getOrderFromMS($order, $credential)
 {
 
     $link = MS_PATH . "/entity/customerorder/?filter=name=" . $order;
@@ -196,18 +268,17 @@ function getOrderFromMS($order, $item)
 
                 /*if equals Ждем оплаты */
                 if ($state_id == '327c0111-75c5-11e5-7a40-e89700139936') {
-                    $attributesArray = $row['attributes'];
                     if (isset($row['name'])) {
                         $orderId = $row['name'];
-                        $orderLinkMS = $row['meta']['uuidHref'];
+                        $oldDescription = $row['description'];
+
+                        /*pass order id from MS to update to Paid*/
+                        fillOrderTemplate($row['id'], 'paid', $oldDescription);
+
+                        /*set new position price*/
+                        setNewPositionPrice($orderId, $credential);
+
                     }
-
-
-                    echo $order . ' with ' . $state_id . ' is not Paid in MS; ';
-
-
-                    /*pass order id from MS to update to Paid*/
-                    fillOrderTemplate($row['id'], 'paid');
                 }
             }
         }
@@ -222,14 +293,16 @@ $final = array();
 // add shop value
 foreach (LOGINS as $credential) {
     $formed = formMasterList($credential);
-    $final[$credential['login']] = $formed;
+    if (isset($formed['result']['target_list']['aeop_order_item_dto'])) {
+        foreach ($formed['result']['target_list']['aeop_order_item_dto'] as $shorty) {
+            getOrderFromMS($shorty['order_id'], $credential);
+        }
+    }
+
 }
 
 
-//item is cancel reason,key is order id
-array_walk_recursive($final, function ($item, $key) {
-    getOrderFromMS($item, $key);
-});
+
 
 
 

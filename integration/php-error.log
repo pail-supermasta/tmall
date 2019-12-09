@@ -40,3 +40,143 @@
 [11-Nov-2019 13:19:30 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
 [11-Nov-2019 13:19:40 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
 [11-Nov-2019 13:38:23 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
+[06-Dec-2019 12:58:42 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 2 passed and exactly 3 expected in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php:304
+Stack trace:
+#0 [internal function]: {closure}(1, 'current_page')
+#1 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php(307): array_walk_recursive(Array, Object(Closure))
+#2 {main}
+  thrown in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 304
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:00:07 UTC] PHP Notice:  Undefined variable: final in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 305
+[06-Dec-2019 13:20:41 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 2 passed and exactly 3 expected in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php:301
+Stack trace:
+#0 [internal function]: {closure}(1, 'current_page')
+#1 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php(305): array_walk_recursive(Array, Object(Closure))
+#2 {main}
+  thrown in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 301
+[09-Dec-2019 08:25:50 UTC] PHP Notice:  Undefined index: order_id in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 301
+[09-Dec-2019 08:26:00 UTC] PHP Notice:  Undefined index: rows in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 301
+[09-Dec-2019 08:48:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function findorderbyid() in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php:190
+Stack trace:
+#0 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php(289): setNewPositionPrice('500209109685214...', Array)
+#1 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php(305): getOrderFromMS(5002091096852148, Array)
+#2 {main}
+  thrown in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 190
+[09-Dec-2019 08:52:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function findorderbyid() in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php:191
+Stack trace:
+#0 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php(290): setNewPositionPrice('500209109685214...', Array)
+#1 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php(306): getOrderFromMS(5002091096852148, Array)
+#2 {main}
+  thrown in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 191
+[09-Dec-2019 08:53:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function curlMS() in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php:200
+Stack trace:
+#0 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php(291): setNewPositionPrice('500209109685214...', Array)
+#1 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php(307): getOrderFromMS(5002091096852148, Array)
+#2 {main}
+  thrown in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 200
+[09-Dec-2019 08:54:30 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\aliexpr.avaks.org\integration\moi_sklad\ms_get_orders_dynamic.php on line 10
+[09-Dec-2019 08:54:30 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\aliexpr.avaks.org\integration\moi_sklad\ms_get_orders_dynamic.php on line 11
+[09-Dec-2019 08:54:30 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\aliexpr.avaks.org\integration\moi_sklad\ms_get_orders_dynamic.php on line 12
+[09-Dec-2019 08:54:32 UTC] PHP Fatal error:  Uncaught Error: Class 'Avaks\MS\OrderMS' not found in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php:205
+Stack trace:
+#0 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php(292): setNewPositionPrice('500209109685214...', Array)
+#1 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php(308): getOrderFromMS(5002091096852148, Array)
+#2 {main}
+  thrown in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_paid_state.php on line 205
+[09-Dec-2019 08:56:28 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\aliexpr.avaks.org\integration\moi_sklad\ms_get_orders_dynamic.php on line 10
+[09-Dec-2019 08:56:28 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\aliexpr.avaks.org\integration\moi_sklad\ms_get_orders_dynamic.php on line 11
+[09-Dec-2019 08:56:28 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\aliexpr.avaks.org\integration\moi_sklad\ms_get_orders_dynamic.php on line 12

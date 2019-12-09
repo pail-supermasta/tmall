@@ -83,7 +83,7 @@ function curlMSPaid($username = false, $post, $order)
 
 }
 
-function fillOrderTemplate($order, $state)
+function fillOrderTemplate($order, $state, $oldDescription = false)
 {
 
     /*if cancel state - then call cancel Update*/
@@ -102,6 +102,12 @@ function fillOrderTemplate($order, $state)
 
         curlMSCancel('робот_next@техтрэнд', $postdata, $order);
     } else if ($state == 'paid') {
+        /*удалить двойные ковычки*/
+        $oldDescription = str_replace('"', '', $oldDescription);
+
+        /*удалить новую строку*/
+        $oldDescription = preg_replace('/\s+/', ' ', trim($oldDescription));
+
         /*set state as В работе*/
         $postdata = '{
             "state": {
@@ -111,6 +117,7 @@ function fillOrderTemplate($order, $state)
                     "mediaType": "application/json"
                 }
             },
+            "description": "' . $oldDescription . ' ЗАКАЗ ОПЛАЧЕН",
             "attributes": [{
                     "id": "4552a58b-46a8-11e7-7a34-5acf002eb7ad",
                     "value": {
