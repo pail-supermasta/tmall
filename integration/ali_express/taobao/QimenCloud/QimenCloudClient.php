@@ -9,7 +9,7 @@ class QimenCloudClient
 
 	public $gatewayUrl = null;
 
-	public $format = "json";
+	public $format = "xml";
 
 	public $connectTimeout;
 

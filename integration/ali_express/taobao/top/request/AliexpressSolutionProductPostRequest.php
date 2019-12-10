@@ -3,7 +3,7 @@
  * TOP API: aliexpress.solution.product.post request
  * 
  * @author auto create
- * @since 1.0, 2019.08.24
+ * @since 1.0, 2019.12.02
  */
 class AliexpressSolutionProductPostRequest
 {

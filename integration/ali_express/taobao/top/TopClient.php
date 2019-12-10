@@ -48,7 +48,6 @@ class TopClient
 		$stringToBeSigned .= $this->secretKey;
 
 		return strtoupper(md5($stringToBeSigned));
-
 	}
 
 	public function curl($url, $postFields = null)

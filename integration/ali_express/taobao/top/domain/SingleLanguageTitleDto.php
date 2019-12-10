@@ -13,7 +13,7 @@ class SingleLanguageTitleDto
 	public $language;
 	
 	/** 
-	 * subject
+	 * subject, maximum 128 characters.
 	 **/
 	public $subject;	
 }

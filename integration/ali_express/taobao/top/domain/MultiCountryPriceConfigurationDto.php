@@ -13,7 +13,7 @@ class MultiCountryPriceConfigurationDto
 	public $country_price_list;
 	
 	/** 
-	 * Currently supporting absolute/relative/percentage. Please test carefully before uploading products.
+	 * price type
 	 **/
 	public $price_type;	
 }

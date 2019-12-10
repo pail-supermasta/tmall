@@ -3,7 +3,7 @@
  * TOP API: aliexpress.solution.order.fulfill request
  * 
  * @author auto create
- * @since 1.0, 2019.07.22
+ * @since 1.0, 2019.10.08
  */
 class AliexpressSolutionOrderFulfillRequest
 {

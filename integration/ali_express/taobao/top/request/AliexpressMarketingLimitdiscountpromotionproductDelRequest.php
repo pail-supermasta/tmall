@@ -3,7 +3,7 @@
  * TOP API: aliexpress.marketing.limitdiscountpromotionproduct.del request
  * 
  * @author auto create
- * @since 1.0, 2018.07.25
+ * @since 1.0, 2019.09.02
  */
 class AliexpressMarketingLimitdiscountpromotionproductDelRequest
 {

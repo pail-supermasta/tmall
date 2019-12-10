@@ -3,7 +3,7 @@
  * TOP API: aliexpress.solution.batch.product.price.update request
  * 
  * @author auto create
- * @since 1.0, 2019.08.06
+ * @since 1.0, 2019.10.08
  */
 class AliexpressSolutionBatchProductPriceUpdateRequest
 {

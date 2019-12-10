@@ -8,7 +8,7 @@ class SynchronizeSkuRequestDto
 {
 	
 	/** 
-	 * discount_price of an sku. If not set, the discount_price will keep the previous value.
+	 * discount_price of an sku. If not set, the discount_price will be erased.
 	 **/
 	public $discount_price;
 	

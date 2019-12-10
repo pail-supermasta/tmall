@@ -3,7 +3,7 @@
  * TOP API: aliexpress.trade.new.redefining.findorderbyid request
  * 
  * @author auto create
- * @since 1.0, 2019.07.31
+ * @since 1.0, 2019.11.08
  */
 class AliexpressTradeNewRedefiningFindorderbyidRequest
 {

@@ -363,7 +363,11 @@ class DingTalkClient
         $sysParams["method"] = $request->getApiMethodName();
         //系统参数放入GET请求串
         if($bestUrl){
-            $requestUrl = $bestUrl."?";
+            if(strpos($bestUrl,'?') === false){
+                $requestUrl = $bestUrl."?";
+            }else{
+                $requestUrl = $bestUrl;
+            }
         }else{
             $requestUrl = $this->gatewayUrl."?";
         }
@@ -515,7 +519,11 @@ class DingTalkClient
 
 		//系统参数放入GET请求串
 		if($bestUrl){
-			$requestUrl = $bestUrl."?";
+            if(strpos($bestUrl,'?') === false){
+                $requestUrl = $bestUrl."?";
+            }else{
+                $requestUrl = $bestUrl;
+            }
 			$sysParams["partner_id"] = $this->getClusterTag();
 		}else{
 			$requestUrl = $this->gatewayUrl."?";

@@ -33,11 +33,6 @@ class GlobalAeopFindProductResultDto
 	public $aeop_ae_product_s_k_us;
 	
 	/** 
-	 * Sub-national pricing rules datas,suggest using new format,please refer to "API change in Mar 08, 2019": https://developers.aliexpress.com/en/doc.htm?docId=109105&docType=1
-	 **/
-	public $aeop_national_quote_configuration;
-	
-	/** 
 	 * Required when is_pack_sell equals to true. It means no additional freight will be charged when the number of pieces to be purchased is under the base unit. Value range: 1-1000.
 	 **/
 	public $base_unit;
@@ -58,16 +53,6 @@ class GlobalAeopFindProductResultDto
 	public $category_id;
 	
 	/** 
-	 * the expiration date of the coupon. Please ignore in most categories.
-	 **/
-	public $coupon_end_date;
-	
-	/** 
-	 * the start date of the coupon. Please ignore in most categories.
-	 **/
-	public $coupon_start_date;
-	
-	/** 
 	 * the Currency code. "USD" will be used as the default value if this information is not provided; Currency code is mandatory for Russian sellers and Spanish sellers. For Russian sellers, RUB should be filled in while EUR for Spanish sellers.
 	 **/
 	public $currency_code;
@@ -78,22 +63,12 @@ class GlobalAeopFindProductResultDto
 	public $delivery_time;
 	
 	/** 
-	 * Detail information of the product in English.
+	 * Deprecated, please use multi_language_description_list
 	 **/
 	public $detail;
 	
 	/** 
-	 * error code
-	 **/
-	public $error_code;
-	
-	/** 
-	 * error msg
-	 **/
-	public $error_message;
-	
-	/** 
-	 * Freight template ID. Obtained from the freight interface listFreightTemplate or directly obtained from the seller's backend.
+	 * shipping template id
 	 **/
 	public $freight_template_id;
 	
@@ -128,19 +103,9 @@ class GlobalAeopFindProductResultDto
 	public $image_u_r_ls;
 	
 	/** 
-	 * Out of date, please ignore
-	 **/
-	public $is_image_dynamic;
-	
-	/** 
 	 * Whether customized weighting is enabled or not. True means customized weighting enabled. When is_pack_sell equals to true, add_unit, add_weight and base_unit must be filled in. For example, base_unit equals to 5, add_unit equals to 2 and add_weight equals to 1.2. It means that Basic shipping cost will cover the first 5 pieces, freight calculating of which will base on a single product. For every additional 2 pieces, the shipping cost will be added to the total shipping cost for 1.2kg
 	 **/
 	public $is_pack_sell;
-	
-	/** 
-	 * Out of date, please ignore
-	 **/
-	public $keyword;
 	
 	/** 
 	 * Number of piece(s) in each pack. In case of packing sale,lotNum>1, and in case of unpacking sale, lotNum=1.
@@ -151,6 +116,21 @@ class GlobalAeopFindProductResultDto
 	 * mobile detail
 	 **/
 	public $mobile_detail;
+	
+	/** 
+	 * multi country price configuration
+	 **/
+	public $multi_country_price_configuration;
+	
+	/** 
+	 * multo language description list
+	 **/
+	public $multi_language_description_list;
+	
+	/** 
+	 * multi language subject list
+	 **/
+	public $multi_language_subject_list;
 	
 	/** 
 	 * Out of date, please ignore
@@ -188,22 +168,12 @@ class GlobalAeopFindProductResultDto
 	public $product_id;
 	
 	/** 
-	 * Out of date, please ignore
-	 **/
-	public $product_more_keywords1;
-	
-	/** 
-	 * Out of date, please ignore
-	 **/
-	public $product_more_keywords2;
-	
-	/** 
 	 * Price for product
 	 **/
 	public $product_price;
 	
 	/** 
-	 * Out of date, please ignore
+	 * product status type
 	 **/
 	public $product_status_type;
 	
@@ -228,38 +198,13 @@ class GlobalAeopFindProductResultDto
 	public $sizechart_id;
 	
 	/** 
-	 * Out of date, please ignore
-	 **/
-	public $src;
-	
-	/** 
-	 * Subject
+	 * Deprecated, please use multi_language_subject_list
 	 **/
 	public $subject;
 	
 	/** 
-	 * true or false
+	 * The offline date of the product
 	 **/
-	public $success;
-	
-	/** 
-	 * Out of date, please ignore
-	 **/
-	public $summary;
-	
-	/** 
-	 * Out of date, please ignore
-	 **/
-	public $ws_display;
-	
-	/** 
-	 * Out of date, please ignore
-	 **/
-	public $ws_offline_date;
-	
-	/** 
-	 * Valid number of product online days. Value options: 14, 30, 1825.
-	 **/
-	public $ws_valid_num;	
+	public $ws_offline_date;	
 }
 ?>

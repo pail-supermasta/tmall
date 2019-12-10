@@ -8,7 +8,7 @@ class SingleCountryPriceDto
 {
 	
 	/** 
-	 * Currently supporting RU US CA ES FR UK NL IL BR CL AU UA BY JP TH SG KR ID MY PH VN IT DE SA AE PL TR
+	 * ship to country
 	 **/
 	public $ship_to_country;
 	

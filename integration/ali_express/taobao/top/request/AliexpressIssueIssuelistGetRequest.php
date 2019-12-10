@@ -3,7 +3,7 @@
  * TOP API: aliexpress.issue.issuelist.get request
  * 
  * @author auto create
- * @since 1.0, 2018.07.25
+ * @since 1.0, 2019.10.30
  */
 class AliexpressIssueIssuelistGetRequest
 {

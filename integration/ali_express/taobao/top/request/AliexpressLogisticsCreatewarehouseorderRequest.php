@@ -3,7 +3,7 @@
  * TOP API: aliexpress.logistics.createwarehouseorder request
  * 
  * @author auto create
- * @since 1.0, 2019.07.03
+ * @since 1.0, 2019.10.14
  */
 class AliexpressLogisticsCreatewarehouseorderRequest
 {
@@ -31,6 +31,11 @@ class AliexpressLogisticsCreatewarehouseorderRequest
 	 * 国内快递运单号,长度1-32
 	 **/
 	private $domesticTrackingNo;
+	
+	/** 
+	 * 发票号（可空）
+	 **/
+	private $invoiceNumber;
 	
 	/** 
 	 * 包裹数量： 创建国家小包订单时非必填，创建国家快递订单时必填
@@ -112,6 +117,17 @@ class AliexpressLogisticsCreatewarehouseorderRequest
 	public function getDomesticTrackingNo()
 	{
 		return $this->domesticTrackingNo;
+	}
+
+	public function setInvoiceNumber($invoiceNumber)
+	{
+		$this->invoiceNumber = $invoiceNumber;
+		$this->apiParas["invoice_number"] = $invoiceNumber;
+	}
+
+	public function getInvoiceNumber()
+	{
+		return $this->invoiceNumber;
 	}
 
 	public function setPackageNum($packageNum)

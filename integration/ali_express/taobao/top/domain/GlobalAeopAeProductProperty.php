@@ -23,19 +23,9 @@ class GlobalAeopAeProductProperty
 	public $attr_value;
 	
 	/** 
-	 * end of customized attribute value
-	 **/
-	public $attr_value_end;
-	
-	/** 
 	 * Attribute Value ID
 	 **/
 	public $attr_value_id;
-	
-	/** 
-	 * start of customized attribute value
-	 **/
-	public $attr_value_start;
 	
 	/** 
 	 * unit of customized attribute value

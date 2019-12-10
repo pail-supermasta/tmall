@@ -8,11 +8,6 @@ class GlobalAeopAeProductSku
 {
 	
 	/** 
-	 * SKU discount price for different countries
-	 **/
-	public $aeop_s_k_u_national_discount_price_list;
-	
-	/** 
 	 * List of SKU attributes
 	 **/
 	public $aeop_s_k_u_property_list;

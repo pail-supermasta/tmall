@@ -13,7 +13,7 @@ class PostProductRequestDto
 	public $aliexpress_category_id;
 	
 	/** 
-	 * merchant's attribute list
+	 * There are 4 types of how to fill in the content of each element in this attribute list. 1). When filling in the standard dropdown/multi-dropdown attributes, fill in "aliexpress_attribute_name_id" and "aliexpress_attribute_value_id"(For multi-dropdown, splitting them into multiple elements) 2). When filling in the attributes in which the value needs to be manually entered, fill in "aliexpress_attribute_name_id" and "attribute_value" in the element. 3). There exists a special kind of "aliexpress_attribute_value_id" of which the value represents for "Other". When encoutering this scenario, please fill in "aliexpress_attribute_name_id", "aliexpress_attribute_value_id" and "attribute_value". 4). Besides the three types mentioned above, if the seller would like to fully customized all the atttributes, fill in "attribute name" and "attribute_value" in the element.
 	 **/
 	public $attribute_list;
 	
@@ -23,7 +23,7 @@ class PostProductRequestDto
 	public $brand_name;
 	
 	/** 
-	 * If the category mapping has been done with help of local operator, this field could be filled with the merchant's category ID. The fields:aliexpress_category_id and category_id can not be both empty.
+	 * Deprecated. Please use aliexpress_category_id
 	 **/
 	public $category_id;
 	
@@ -48,7 +48,7 @@ class PostProductRequestDto
 	public $inventory_deduction_strategy;
 	
 	/** 
-	 * Main images to be displayed for the product. The urls needs to be accessible. The url could be in the merchant's server or obtained by uploading the pictures to merchant's Aliexpress photobank, by using the API: aliexpress.photobank.redefining.uploadimageforsdk
+	 * Maximum 6 images. Main images to be displayed for the product. The urls needs to be accessible. The url could be in the merchant's server or obtained by uploading the pictures to merchant's Aliexpress photobank, by using the API: aliexpress.photobank.redefining.uploadimageforsdk
 	 **/
 	public $main_image_urls_list;
 	
@@ -68,17 +68,17 @@ class PostProductRequestDto
 	public $multi_language_subject_list;
 	
 	/** 
-	 * product height in unit of "cm"
+	 * product height in unit of "cm", maximum 700
 	 **/
 	public $package_height;
 	
 	/** 
-	 * product length in unit of "cm"
+	 * product length in unit of "cm", maximum 700
 	 **/
 	public $package_length;
 	
 	/** 
-	 * product width in unit of "cm"
+	 * product width in unit of "cm", maximum 700
 	 **/
 	public $package_width;
 	
@@ -108,7 +108,7 @@ class PostProductRequestDto
 	public $sku_info_list;
 	
 	/** 
-	 * weight for the product, including the package.
+	 * weight for the product, including the package.Maximum 500
 	 **/
 	public $weight;	
 }

@@ -3,12 +3,12 @@
  * TOP API: aliexpress.solution.batch.product.inventory.update request
  * 
  * @author auto create
- * @since 1.0, 2019.08.05
+ * @since 1.0, 2019.09.02
  */
 class AliexpressSolutionBatchProductInventoryUpdateRequest
 {
 	/** 
-	 * The product list, in which the inventory needs to be updated. Maximum 200 products.
+	 * The product list, in which the inventory needs to be updated. Maximum 20 products.
 	 **/
 	private $mutipleProductUpdateList;
 	

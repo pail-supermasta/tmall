@@ -8,13 +8,18 @@ class SingleSkuPriceByCountryDto
 {
 	
 	/** 
-	 * sku_code, the same as the sku_code in sku_info_list
+	 * discount price
 	 **/
-	public $sku_code;
+	public $discount_price;
 	
 	/** 
-	 * Value of price configuration, which represents different meanings according to different price_type
+	 * price
 	 **/
-	public $value;	
+	public $price;
+	
+	/** 
+	 * sku code
+	 **/
+	public $sku_code;	
 }
 ?>
