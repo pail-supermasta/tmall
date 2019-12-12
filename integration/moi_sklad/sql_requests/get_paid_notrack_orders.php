@@ -16,7 +16,7 @@ function getPaidNoTrackOrder($order)
 {
 
     $sql = new mysqli(MS_HOST, MS_USER, MS_PASS, MS_DB);
-    $query = "SELECT * FROM `ms_customerorder`  WHERE `name`='$order' and state='327c02b4-75c5-11e5-7a40-e89700139937' AND attributes  LIKE '%\"a446677c-46b8-11e7-7a34-5acf0031d7b9\":%'";
+    $query = "SELECT * FROM `ms_customerorder`  WHERE `name`='$order' and state='327c02b4-75c5-11e5-7a40-e89700139937' AND attributes  LIKE '%\"8a500683-10fc-11ea-0a80-0533000590c8\":%'";
     $result = $sql->query($query);
 
     var_dump($result);

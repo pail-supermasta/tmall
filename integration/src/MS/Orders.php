@@ -82,7 +82,7 @@ class Orders
               WHERE attributes LIKE '%3071006a-d2db-11e9-0a80-025a0021cd0d%'
 			  AND deleted = ''
 			  AND agent LIKE '%1b33fbc1-5539-11e9-9ff4-315000060bc8%'  
-              AND attributes LIKE '%a446677c-46b8-11e7-7a34-5acf0031d7b9%'
+              AND attributes LIKE '%8a500683-10fc-11ea-0a80-0533000590c8%'
               AND attributes NOT LIKE '%b8a8f6d6-5782-11e8-9ff4-34e800181bf6%'";
         $ordersNoSticker = AvaksSQL::selectAllAssoc($query);
         return $ordersNoSticker;

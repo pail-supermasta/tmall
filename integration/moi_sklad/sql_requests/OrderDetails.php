@@ -22,8 +22,8 @@ function getOrderTrack($orderName)
         $rows = json_decode($rows[0][1], true);
         $agentId = $rows['4552a58b-46a8-11e7-7a34-5acf002eb7ad'];
 
-        if (isset($rows['a446677c-46b8-11e7-7a34-5acf0031d7b9'])) {
-            $trackId = $rows['a446677c-46b8-11e7-7a34-5acf0031d7b9'];
+        if (isset($rows['8a500683-10fc-11ea-0a80-0533000590c8'])) {
+            $trackId = $rows['8a500683-10fc-11ea-0a80-0533000590c8'];
             $sql->close();
             return array('agent' => $agentId, 'track' => $trackId,'state' => $state);
         } else {
@@ -57,7 +57,7 @@ function checkCainiaoReady($order)
               AND attributes LIKE '%3071006a-d2db-11e9-0a80-025a0021cd0d%'
 			  AND deleted = ''
 			  AND agent LIKE '%1b33fbc1-5539-11e9-9ff4-315000060bc8%'  
-              AND attributes NOT LIKE '%a446677c-46b8-11e7-7a34-5acf0031d7b9%'";
+              AND attributes NOT LIKE '%8a500683-10fc-11ea-0a80-0533000590c8%'";
     $result = $sql->query($query);
 
 //    var_dump($result);

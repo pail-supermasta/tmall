@@ -56,7 +56,7 @@ class OrderMS
         $put_data = array();
         $attribute = array();
 
-        $attribute['id'] = 'a446677c-46b8-11e7-7a34-5acf0031d7b9';
+        $attribute['id'] = '8a500683-10fc-11ea-0a80-0533000590c8';
         $attribute['value'] = (int)$mailNo;
         $put_data['attributes'][] = $attribute;
 

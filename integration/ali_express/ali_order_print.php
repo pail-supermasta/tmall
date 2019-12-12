@@ -153,7 +153,7 @@ foreach ($ordersNoSticker as $orderNoSticker) {
 
     $orderMS = new OrderMS($orderNoSticker['id'], $orderNoSticker['name']);
     $orderMS->lpNumber = $orderNoSticker['externalCode'];
-    $orderMS->trackNum = json_decode($orderNoSticker['attributes'], true)['a446677c-46b8-11e7-7a34-5acf0031d7b9'];
+    $orderMS->trackNum = json_decode($orderNoSticker['attributes'], true)['8a500683-10fc-11ea-0a80-0533000590c8'];
     $sessionKey = getOrderShop($orderNoSticker['description']);
 
     var_dump(printCainiaoSticker($orderMS, $sessionKey));
