@@ -125,8 +125,7 @@ function checkTimeFromPaid($order, $payTime, $credential)
         $result = deliverCainiao($order, $cnId, $cpCode, $sessionKey);
 
         if ($result['result_success'] == true) {
-            $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
-            telegram($message, '-278688533');
+
 
             $orderMS = new OrderMS('', $order, '');
             $orderMSDetails = $orderMS->getByName();
@@ -136,7 +135,7 @@ function checkTimeFromPaid($order, $payTime, $credential)
             preg_match(ID_REGEXP, $orderMSDetails['state']['meta']['href'], $matches);
             $state_id = $matches[0];
             $orderMS->state = $state_id;
-            $result['mailNo'] = str_replace(['AEWH', 'RU4'], "", $result['mailNo']);
+//            $result['mailNo'] = str_replace(['AEWH', 'RU4'], "", $result['mailNo']);
 
 
             /*check if stripped mailno 6 chars long*/
@@ -146,19 +145,31 @@ function checkTimeFromPaid($order, $payTime, $credential)
 
                     /*try again*/
                     sleep(5);
-
-
                     $setTrackNumRes = $orderMS->setTrackNum($result['mailNo']);
                     if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
                         telegram("setTrackNum error found " . $orderMS->name, '-320614744');
                         error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setTrackNumRes . " " . $orderMS->name . PHP_EOL, 3, "setTrackNum.log");
                     } else {
-
                         $setToPackRes = $orderMS->setToPack();
                         if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
-                            telegram("setToPack error found $orderMS->name", '-320614744');
-                            error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
+
+                            /*try again*/
+                            sleep(5);
+                            $setToPackRes = $orderMS->setToPack();
+                            if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
+                                telegram("setToPack error found $orderMS->name", '-320614744');
+                                error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
+
+                            } else {
+                                $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
+                                telegram($message, '-278688533');
+                                /*set new position price*/
+                                setNewPositionPrice($orderMS->name, $credential);
+                            }
+
                         } else {
+                            $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
+                            telegram($message, '-278688533');
                             /*set new position price*/
                             setNewPositionPrice($orderMS->name, $credential);
                         }
@@ -169,9 +180,22 @@ function checkTimeFromPaid($order, $payTime, $credential)
 
                     $setToPackRes = $orderMS->setToPack();
                     if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
-                        telegram("setToPack error found $orderMS->name", '-320614744');
-                        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
+
+                        /*try again*/
+                        sleep(5);
+                        $setToPackRes = $orderMS->setToPack();
+                        if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
+                            telegram("setToPack error found $orderMS->name", '-320614744');
+                            error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
+                        } else {
+                            $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
+                            telegram($message, '-278688533');
+                            /*set new position price*/
+                            setNewPositionPrice($orderMS->name, $credential);
+                        }
                     } else {
+                        $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
+                        telegram($message, '-278688533');
                         /*set new position price*/
                         setNewPositionPrice($orderMS->name, $credential);
                     }
@@ -307,9 +331,10 @@ function setTrackToTmall($order, $payTime, $credential)
                 $serviceName = "OTHER_RU_CITY_RUB";
                 break;
             case "3071006a-d2db-11e9-0a80-025a0021cd0d":
-                $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=AEWH000' . $trackId . 'RU4"';
+//                $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=AEWH000' . $trackId . 'RU4"';
+                $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=' . $trackId . '"';
                 $serviceName = "AE_RU_MP_COURIER_PH3_CITY";
-                $trackId = "AEWH000" . $trackId . "RU4";
+//                $trackId = "AEWH000" . $trackId . "RU4";
                 break;
         }
 

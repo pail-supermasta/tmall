@@ -88,7 +88,8 @@ function printCainiaoSticker(OrderMS $orderMS, $sessionKey)
 
 
 //    $mailNo = 'AEWH000657988RU4';
-    $mailNo = 'AEWH000' . $orderMS->trackNum . 'RU4';
+//    $mailNo = 'AEWH000' . $orderMS->trackNum . 'RU4';
+    $mailNo = $orderMS->trackNum;
 
     $address = $findorderbyidRes['receipt_address'];
     $country = $address['country'] == 'RU' ? 'РФ' : $address['country'];
