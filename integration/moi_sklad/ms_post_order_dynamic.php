@@ -104,6 +104,12 @@ function fillOrderTemplate(array $orderDetails)
     }
 
 
+    /*city - Other now not processed by Cainiao, deliver with other shipper*/
+    if (strpos($orderDetails['fullAddress'],"Other") > 0) {
+        $logisticsProvider = '0 Нужна доставка';
+    }
+
+
     // указываем магазин в котором купили на ALI
     $shopId = '';
     $organization = '326d65ca-75c5-11e5-7a40-e8970013991b';
