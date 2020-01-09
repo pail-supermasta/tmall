@@ -69,7 +69,7 @@ function createwarehouseorder($order,$sessionKey)
     $sender->address_id = -1;
     $sender->name = "ООО Незабудка";
     $sender->province = "Москва";
-    $sender->street_address = "Россия, Москва, Павелецкая ул, дом 2, стр 21, оф 237";
+    $sender->street_address = "RU, Москва, Павелецкая ул, дом 2, стр 21, оф 237";
     $sender->mobile = "74954812282";
     $sender->post_code = "115114";
 
@@ -81,7 +81,7 @@ function createwarehouseorder($order,$sessionKey)
     $pickup->member_type = "";
     $pickup->trademanage_id = "";
     $pickup->street = "Павелецкая";
-    $pickup->country = "Россия";
+    $pickup->country = "RU";
     $pickup->city = "Москва";
     $pickup->county = "";
     $pickup->email = "info@avaks.org";
@@ -100,7 +100,7 @@ function createwarehouseorder($order,$sessionKey)
     $refund->member_type = "";
     $refund->trademanage_id = "";
     $refund->street = "Павелецкая";
-    $refund->country = "Россия";
+    $refund->country = "RU";
     $refund->city = "Москва";
     $refund->county = "";
     $refund->email = "info@avaks.org";
@@ -122,7 +122,7 @@ function createwarehouseorder($order,$sessionKey)
     $receiver->trademanage_id = "";
     $receiver->street = "улица Академика Виноградова";
     $receiver->post_code = "117133";
-    $receiver->country = "Россия";
+    $receiver->country = "RU";
     $receiver->city = "Moscow";
     $receiver->county = "";
     $receiver->email = "";
@@ -134,9 +134,9 @@ function createwarehouseorder($order,$sessionKey)
 
     $address_d_t_os->receiver = $receiver;
 
-    $req->setAddressDTOs(json_encode($address_d_t_os));
+    $req->setAddressDTOs(json_encode($address_d_t_os,JSON_UNESCAPED_UNICODE));
     $declare_product_d_t_os = new AeopWlDeclareProductForTopDto;
-    $declare_product_d_t_os->aneroid_markup = false;
+/*    $declare_product_d_t_os->aneroid_markup = false;
     $declare_product_d_t_os->breakable = false;
     $declare_product_d_t_os->category_cn_desc = "";
     $declare_product_d_t_os->category_en_desc = "";
@@ -151,9 +151,53 @@ function createwarehouseorder($order,$sessionKey)
     $declare_product_d_t_os->sc_item_id = "4000229833868";
     $declare_product_d_t_os->sc_item_name = "";
     $declare_product_d_t_os->sku_code = "4607947683912";
-    $declare_product_d_t_os->sku_value = "";
+    $declare_product_d_t_os->sku_value = ""; */
 
-    $req->setDeclareProductDTOs(json_encode($declare_product_d_t_os));
+    $declare_product_d_t_os->aneroid_markup = false;
+    $declare_product_d_t_os->breakable = false;
+    $declare_product_d_t_os->category_cn_desc = "连衣裙";
+    $declare_product_d_t_os->category_en_desc = "dress";
+    $declare_product_d_t_os->contains_battery = false;
+    $declare_product_d_t_os->hs_code = "62044300";
+    $declare_product_d_t_os->only_battery = false;
+    $declare_product_d_t_os->product_declare_amount = "39.84";
+    $declare_product_d_t_os->product_id = "4000229833868";
+    $declare_product_d_t_os->product_num = 1;
+    $declare_product_d_t_os->product_weight = 3;
+    $declare_product_d_t_os->sc_item_code = "scItem code";
+    $declare_product_d_t_os->sc_item_id = 0;
+    $declare_product_d_t_os->sc_item_name = "scItem name";
+    $declare_product_d_t_os->sku_code = "sku code";
+    $declare_product_d_t_os->sku_value = "sku value";
+
+    /*
+     * C:\wamp64\bin\php\php7.3.5\php.exe C:\Users\User\Documents\aliexpr.avaks.org\test\newMethodsCainiao.php
+object(stdClass)#12 (3) {
+  ["result"]=>
+  object(stdClass)#11 (6) {
+    ["error_code"]=>
+    int(1)
+    ["out_order_id"]=>
+    int(162847969542)
+    ["success"]=>
+    bool(true)
+    ["trade_order_from"]=>
+    string(2) "AE"
+    ["trade_order_id"]=>
+    int(5002320926031748)
+    ["warehouse_order_id"]=>
+    int(5489667979)
+  }
+  ["result_success"]=>
+  bool(true)
+  ["request_id"]=>
+  string(12) "6iq57svmg8ws"
+}
+
+Process finished with exit code 0
+*/
+
+    $req->setDeclareProductDTOs(json_encode($declare_product_d_t_os,JSON_UNESCAPED_UNICODE));
 
 //    logistics_service_name from getonlinelogisticsservicelistbyorderid
     $req->setDomesticLogisticsCompany("");

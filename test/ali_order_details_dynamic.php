@@ -33,7 +33,7 @@ function findorderbyid($post_data, $sessionKey)
 require_once '../integration/ali_express/taobao/TopSdk.php';
 define('APPKEY', '27862248');
 define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
-$shorten = findorderbyid('5002183305168842','500023000082eXbwToAg1af40ea9SRlzFmEOwoSCA3mTGhQaxQcZcjShLnX7vRkTL8r');
+$shorten = findorderbyid('5002334360076387','500023000082eXbwToAg1af40ea9SRlzFmEOwoSCA3mTGhQaxQcZcjShLnX7vRkTL8r');
 //var_dump($shorten['logistics_amount']['cent']);
 //var_dump($shorten['order_amount']['cent']);
 var_dump($shorten);
