@@ -297,7 +297,7 @@ define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
 $cpCode = 'QXJCQk1QcjJKTkZDbHk4ZVZ4bW11cFQ2L2QreW1XT0lJd2ZlMnEvL2dFZC9NbG5CSklEV2tiY0cxNkRSMWlYcQ==';
 $cnId = '4398985192396';
 $order = '5002553504091748';
-$sessionKey = '500023000082eXbwToAg1af40ea9SRlzFmEOwoSCA3mTGhQaxQcZcjShLnX7vRkTL8r';
+$sessionKey = '50002301042q0OsaZzGzFoxi0th7ccSgMw0CJduh1FqvAlZmPkEo4j1b78c683GYCQw';
 //deliverCainiao($order, $cnId, $cpCode, $sessionKey);
 
 

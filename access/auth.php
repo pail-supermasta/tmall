@@ -5,7 +5,7 @@ $url = 'https://oauth.aliexpress.com/token';
 $postfields = array('grant_type' => 'authorization_code',
     'client_id' => '27862248', //appKey
     'client_secret' => 'ca6916e55a087b3561b5077fc8b83ee6', //appSecret
-    'code' => '0_nrfdL4avYuVoro05Hv28H0a5171',
+    'code' => '0_YNaNx1RFUiNRgGHBzc5OSYxA850',
     'sp' => 'ae',
     'redirect_uri' => 'http://aliexpr.avaks.org/access/auth.html');
 $post_data = '';
