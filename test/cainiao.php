@@ -20,7 +20,7 @@ require_once '../integration/ali_express/taobao/TopSdk.php';
 use Avaks\Cainiao\Cainiao;
 
 // Get order details from Ali by ID
-require_once 'ali_order_details_dynamic.php';
+//require_once 'ali_order_details_dynamic.php';
 
 
 function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
@@ -274,8 +274,10 @@ function sellerShipmentForTop($order, $logisticsNo, $sessionKey)
     $req->setSendType("all");
     $req->setOutRef("$order");
     $req->setTrackingWebsite("https://global.cainiao.com/");
-    $req->setServiceName("AE_RU_MP_COURIER_PH3_CITY");
+//    $req->setServiceName("AE_RU_MP_COURIER_PH3_CITY");
+    $req->setServiceName("AE_RU_MP_OVERSIZE_PH3");
     $resp = $c->execute($req, $sessionKey);
+    var_dump($resp);
     $result_success = $resp->result_success ?? false;
 
 
@@ -292,8 +294,24 @@ function sellerShipmentForTop($order, $logisticsNo, $sessionKey)
 
 define('APPKEY', '27862248');
 define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
-$cpCode = 'V1ZDUlZnY09vbHoyQTFpNEZEUElkcGlmUE43Z1hYZEdoVEZwM2huTDlWeWVKUHdIUmY4QmFWV1FOdXVCT3JQeg==';
-$cnId = '4398983195649';
-$order = '5001146368063238';
-$sessionKey = '50002701012q0OsaZ5izjnxB1c6971a8swh9hEtfmTvHKEuIYjVSokXFspWEUsi208y';
-deliverCainiao($order, $cnId, $cpCode, $sessionKey);
+$cpCode = 'QXJCQk1QcjJKTkZDbHk4ZVZ4bW11cFQ2L2QreW1XT0lJd2ZlMnEvL2dFZC9NbG5CSklEV2tiY0cxNkRSMWlYcQ==';
+$cnId = '4398985192396';
+$order = '5002553504091748';
+$sessionKey = '500023000082eXbwToAg1af40ea9SRlzFmEOwoSCA3mTGhQaxQcZcjShLnX7vRkTL8r';
+//deliverCainiao($order, $cnId, $cpCode, $sessionKey);
+
+
+//$sourceArray = array(
+//    'orderId' => '165391200165', //Digits that follow the LP# (received in the response to DISTRIBUTION_CONSIGN)
+//    'cnId' => $cnId //Cainiao user ID of the store
+//);
+//
+//$curlCai = new Cainiao($cpCode);
+//$content = json_encode($sourceArray, JSON_UNESCAPED_UNICODE);
+//$res = $curlCai->MAILNO_QUERY_SERVICE($content);
+//$mailNoResponse = json_decode($res, true);
+//var_dump($mailNoResponse);
+//if (isset($mailNoResponse['mailNo']) && $mailNoResponse['mailNo'] != '') {
+//    $mailNo = $mailNoResponse['mailNo'];
+//}
+var_dump(sellerShipmentForTop($order, 'AEWH0002663350RU2', $sessionKey));

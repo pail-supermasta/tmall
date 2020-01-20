@@ -19,10 +19,10 @@ require_once '../integration/ali_express/taobao/TopSdk.php';
 define('APPKEY', '27862248');
 define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
 
-$order = '5002320926031748';
+$order = '5002656627611748';
 $sessionKey = '500023000082eXbwToAg1af40ea9SRlzFmEOwoSCA3mTGhQaxQcZcjShLnX7vRkTL8r';
-//$result_success = getonlinelogisticsservicelistbyorderid ($order, $sessionKey);
-//var_dump($result_success);
+$result_success = getonlinelogisticsservicelistbyorderid ($order, $sessionKey);
+
 
 
 function getonlinelogisticsservicelistbyorderid($order, $sessionKey)
@@ -40,7 +40,18 @@ function getonlinelogisticsservicelistbyorderid($order, $sessionKey)
     $req->setGoodsLength("1");
     $req->setOrderId($order);
     $resp = $c->execute($req, $sessionKey);
-    var_dump($resp);
+//    var_dump($resp);
+
+
+    $resp = json_encode((array)$resp);
+    $resp = json_decode($resp, true);
+    foreach ($resp['result_list']['result'] as $result){
+        echo $result['logistics_service_name'];
+    }
+
+
+
+
     $result_success = $resp->result_success ?? false;
 
     return $result_success;
@@ -57,6 +68,9 @@ function createwarehouseorder($order,$sessionKey)
     $address_d_t_os = new Addressdtos;
     $sender = new AeopWlDeclareAddressDto;
 
+    /**
+     * CONSTANTS BEGIN
+     */
     $sender->phone = "74954812282 доб 121";
     $sender->fax = "";
     $sender->member_type = "";
@@ -114,23 +128,26 @@ function createwarehouseorder($order,$sessionKey)
     $address_d_t_os->refund = $refund;
 
 
+    /**
+     * CONSTANTS END
+     */
 
     $receiver = new AeopWlDeclareAddressDto;
-    $receiver->phone = "89165866131";
+    $receiver->phone = "89857222970";
     $receiver->fax = "";
     $receiver->member_type = "";
     $receiver->trademanage_id = "";
-    $receiver->street = "улица Академика Виноградова";
-    $receiver->post_code = "117133";
+    $receiver->street = "Пресненская набережная";
+    $receiver->post_code = "123112";
     $receiver->country = "RU";
     $receiver->city = "Moscow";
     $receiver->county = "";
     $receiver->email = "";
     $receiver->address_id = -1;
-    $receiver->name = "Северина Елена Наумовна";
+    $receiver->name = "Дмитрий Зубков";
     $receiver->province = "Moscow";
-    $receiver->street_address = "улица Академика Виноградова д.10.кор.2 кв114, Moscow";
-    $receiver->mobile = "9165866131";
+    $receiver->street_address = "Пресненская набережная Дом 10 блок Ц (башня на набережной), Москва, Москва, Russian Federation";
+    $receiver->mobile = "9857222970";
 
     $address_d_t_os->receiver = $receiver;
 
@@ -215,6 +232,10 @@ Process finished with exit code 0
     $req->setInvoiceNumber("");
     $resp = $c->execute($req, $sessionKey);
     var_dump($resp);
+
+    // LP NUMBER LP00165391200165
+    /*["out_order_id"]=>
+    int(165391200165)*/
 }
 
-createwarehouseorder($order,$sessionKey);
+//createwarehouseorder($order,$sessionKey);
