@@ -20,7 +20,7 @@ require_once '../integration/ali_express/taobao/TopSdk.php';
 use Avaks\Cainiao\Cainiao;
 
 // Get order details from Ali by ID
-//require_once 'ali_order_details_dynamic.php';
+require_once '../integration/ali_express/ali_order_details_dynamic.php';
 
 
 function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
@@ -42,16 +42,13 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
 
         $orderDetails = findorderbyid($order, $sessionKey);
 
-
-        $zip = '603024';
-        $address = 'д.109, кв. 97';
-        $province = 'Нижегородская область';
-        $city = 'Нижний Новгород';
-        $street = ' Невзоровых';
-        $name = 'Кучеренко Наталья Вадимовна';
-
-
-        $mobile = '79200654152';
+        $zip = $orderDetails['receipt_address']['zip'];
+        $address = $orderDetails['receipt_address']['address2'];
+        $province = $orderDetails['receipt_address']['province'];
+        $city = $orderDetails['receipt_address']['city'];
+        $street = $orderDetails['receipt_address']['detail_address'];
+        $name = $orderDetails['receipt_address']['contact_person'];
+        $mobile = '7' . $orderDetails['receipt_address']['mobile_no'];
 
 
         $products = $orderDetails['child_order_list']['global_aeop_tp_child_order_dto'];
@@ -84,7 +81,8 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
             $itemId = $shortener['result']['product_id'];
             $goodsNameCn = $shortener['result']['product_unit'];
             $quantity = $product['product_count'] ?? 1;
-            $goodsNameEn = preg_replace("/[^A-Za-z0-9. ]/", '', $shortener['result']['subject']);
+
+            $goodsNameEn = preg_replace("/[^а-яёa-z0-9. ]/iu", '', $shortener['result']['subject']);
             if (isset($shortener['result']['product_price'])) {
                 $price = (int)$shortener['result']['product_price'];
             } elseif (isset($shortener['result']['aeop_ae_product_s_k_us']['global_aeop_ae_product_sku'])) {
@@ -201,8 +199,7 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
 
         $resp = $curlCai->CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN($content);
         var_dump($resp);
-        die();
-//        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . json_encode($resp) . $content . PHP_EOL, 3, 'CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log');
+        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . json_encode($resp) . $content . PHP_EOL, 3, 'CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log');
 
 
         /*{"DistributionConsignResponse":{"logisticsOrderId":"147002440549","tradeLogisticsOrderId":"5137660691","tradeOrderId":"5000269028796387","tradeOrderFrom":"AE","logisticsOrderCode":"LP00147002440549"},"success":"true"}*/
@@ -230,11 +227,13 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
     );
 
     $content = json_encode($sourceArray, JSON_UNESCAPED_UNICODE);
+    var_dump($content);
+    die();
 
     /*MAILNO_QUERY_SERVICE*/
     $res = $curlCai->MAILNO_QUERY_SERVICE($content);
 
-//    error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . json_encode($res) . $content . PHP_EOL, 3, 'MAILNO_QUERY_SERVICE.log');
+    error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . json_encode($res) . $content . PHP_EOL, 3, 'MAILNO_QUERY_SERVICE.log');
 
     /*EXAMPLE RESPONSE string(47) "{"mailNo":"AEWH000708100RU4","success":"true"}"*/
 
@@ -244,10 +243,10 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
     if (isset($mailNoResponse['mailNo']) && $mailNoResponse['mailNo'] != '') {
         $mailNo = $mailNoResponse['mailNo'];
         $message = "Заказ №$order - получен трек номер $mailNo из Цайняо метод MAILNO_QUERY_SERVICE.";
-//        telegram($message, '-320614744');
+        telegram($message, '-320614744');
     } else {
         $message = "ОШИБКА ПОЛУЧЕНИЯ ТРЕКА в заказе $order. Метод MAILNO_QUERY_SERVICE.";
-//        telegram($message, '-320614744');
+        telegram($message, '-320614744');
 //        var_dump($orderMS->setStateProcessManually());
     }
 
@@ -257,9 +256,9 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
     /*add pdf to order MS*/
 
     /*AliexpressLogisticsSellershipmentfortopRequest*/
-//    return array('mailNo' => $mailNo, 'result_success' => true);
+    return array('mailNo' => $mailNo, 'result_success' => true);
 
-    return sellerShipmentForTop($order, $mailNo, $sessionKey);
+//    return sellerShipmentForTop($order, $mailNo, $sessionKey);
 }
 
 function sellerShipmentForTop($order, $logisticsNo, $sessionKey)
@@ -274,10 +273,8 @@ function sellerShipmentForTop($order, $logisticsNo, $sessionKey)
     $req->setSendType("all");
     $req->setOutRef("$order");
     $req->setTrackingWebsite("https://global.cainiao.com/");
-//    $req->setServiceName("AE_RU_MP_COURIER_PH3_CITY");
-    $req->setServiceName("AE_RU_MP_OVERSIZE_PH3");
+    $req->setServiceName("AE_RU_MP_COURIER_PH3_CITY");
     $resp = $c->execute($req, $sessionKey);
-    var_dump($resp);
     $result_success = $resp->result_success ?? false;
 
 
@@ -299,19 +296,3 @@ $cnId = '4398985192396';
 $order = '5002727219496387';
 $sessionKey = '50002301042q0OsaZzGzFoxi0th7ccSgMw0CJduh1FqvAlZmPkEo4j1b78c683GYCQw';
 deliverCainiao($order, $cnId, $cpCode, $sessionKey);
-
-
-//$sourceArray = array(
-//    'orderId' => '165391200165', //Digits that follow the LP# (received in the response to DISTRIBUTION_CONSIGN)
-//    'cnId' => $cnId //Cainiao user ID of the store
-//);
-//
-//$curlCai = new Cainiao($cpCode);
-//$content = json_encode($sourceArray, JSON_UNESCAPED_UNICODE);
-//$res = $curlCai->MAILNO_QUERY_SERVICE($content);
-//$mailNoResponse = json_decode($res, true);
-//var_dump($mailNoResponse);
-//if (isset($mailNoResponse['mailNo']) && $mailNoResponse['mailNo'] != '') {
-//    $mailNo = $mailNoResponse['mailNo'];
-//}
-//var_dump(sellerShipmentForTop($order, 'AEWH0002663350RU2', $sessionKey));

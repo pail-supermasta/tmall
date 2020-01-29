@@ -20,6 +20,8 @@ require_once '../vendor/autoload.php';
 require_once 'ali_order_details_dynamic.php';
 require_once 'taobao/TopSdk.php';
 
+//error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . "1" . PHP_EOL, 3, "cronrunend.log");
+
 
 define('APPKEY', '27862248');
 define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');

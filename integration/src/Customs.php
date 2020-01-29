@@ -73,7 +73,9 @@ class Customs
                 'margin_top' => '5',
                 'margin_bottom' => '0',
                 'margin_header' => '0',
-                'margin_footer' => '0']);
+                'margin_footer' => '0',
+                'debug' => true]);
+            $mpdf->showImageErrors = true;
         } catch (\Mpdf\MpdfException $e) {
         }
 
@@ -251,7 +253,7 @@ class Customs
                 </head>
                 <body>
                 <!-- image path to images search from the file that calls Customs.php-->
-                <img class="stickerWrap" src="../images/cainiaoSticker/template-1.png" alt="">
+                <img class="stickerWrap" src="http://aliexpr.avaks.org/integration/images/cainiaoSticker/template-1.png" alt="">
                         <div class="page ">' . $barcode . '</div>
                         <!--<div class="page2 w0 h0"><img src="template-1.png" alt=""></div>-->
                        
@@ -262,7 +264,7 @@ class Customs
                     
                 <div style="" class="two ">
                    
-                        <img style="height: 174.70px;" class="" src="../images/cainiaoSticker/template-2.png" alt="">
+                        <img style="height: 174.70px;" class="" src="http://aliexpr.avaks.org/integration/images/cainiaoSticker/template-2.png" alt="">
                        
                          ' . $barcode2 . $dynamicHTML2 . '
                                 
@@ -274,6 +276,7 @@ class Customs
                 </html>';
 
 
+
         try {
             $mpdf->WriteHTML($html);
         } catch (\Mpdf\MpdfException $e) {
@@ -283,8 +286,10 @@ class Customs
         try {
             $pdfCode = $mpdf->Output(null, \Mpdf\Output\Destination::STRING_RETURN);
         } catch (\Mpdf\MpdfException $e) {
-            var_dump($e);
+            error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . " " . $AEOrderId . " " . $e . PHP_EOL, 3, "printStickerAEImage.log");
+            die();
         }
+
         return $pdfCode;
     }
 
