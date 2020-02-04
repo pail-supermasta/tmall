@@ -8,6 +8,7 @@ class ComposerStaticInitc7799539a453f51306b49a2d19fb7976
 {
     public static $files = array (
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        '3a37ebac017bc098e9a86b35401e7a68' => __DIR__ . '/..' . '/mongodb/mongodb/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -23,6 +24,7 @@ class ComposerStaticInitc7799539a453f51306b49a2d19fb7976
         'M' => 
         array (
             'Mpdf\\' => 5,
+            'MongoDB\\' => 8,
         ),
         'D' => 
         array (
@@ -53,6 +55,10 @@ class ComposerStaticInitc7799539a453f51306b49a2d19fb7976
         'Mpdf\\' => 
         array (
             0 => __DIR__ . '/..' . '/mpdf/mpdf/src',
+        ),
+        'MongoDB\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mongodb/mongodb/src',
         ),
         'DeepCopy\\' => 
         array (
