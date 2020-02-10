@@ -1,7 +1,7 @@
 //create global variables to be used in the beforeAll function
 let browser
 let page
-const puppeteer = require('puppeteer');
+// const puppeteer = require('puppeteer');
 
 require('dotenv').config();
 const TelegramAPI = require('telegram-bot-api');
@@ -15,7 +15,9 @@ const telegram = new TelegramAPI({
 // });
 
 
-const LOGINS = [{
+
+const LOGINS = [
+    {
         "login": "NezabudkaMR@yandex.ru",
         "pass": "EkutJ!Hau9.m3wf"
     }, {
@@ -30,13 +32,14 @@ const LOGINS = [{
     }, {
         "login": "NezabudkaND@yandex.ru",
         "pass": "ND_+79169722555"
+    }
+    /*{
+        "login": "deeper-eholot@yandex.ru",
+        "pass": "deeper12345"
     },    {
-    "login": "deeper-eholot@yandex.ru",
-    "pass": "deeper12345"
-},    {
-    "login": "irbis.svet.ali@yandex.ru",
-    "pass": "Irb_+79169722555"
-}
+        "login": "irbis.svet.ali@yandex.ru",
+        "pass": "Irb_+79169722555"
+    }*/
 ];
 
 
