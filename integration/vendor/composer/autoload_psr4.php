@@ -10,7 +10,6 @@ return array(
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Picqer\\Barcode\\' => array($vendorDir . '/picqer/php-barcode-generator/src'),
     'Mpdf\\' => array($vendorDir . '/mpdf/mpdf/src'),
-    'MongoDB\\' => array($vendorDir . '/mongodb/mongodb/src'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'Avaks\\MS\\' => array($baseDir . '/src/MS'),
     'Avaks\\Cainiao\\' => array($baseDir . '/src/Cainiao'),

@@ -21,7 +21,7 @@ function curlMSCreate($username = false, $post, $memo)
     curl_setopt($curl, CURLOPT_POST, true);
     $headers = array();
     $headers[] = 'Content-Type: application/json';
-    $headers[] = 'X-Lognex-WebHook-Disable: true';
+//    $headers[] = 'X-Lognex-WebHook-Disable: true';
     $headers[] = 'X-Lognex-Precision: true';
     curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 

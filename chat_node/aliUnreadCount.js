@@ -30,7 +30,13 @@ const LOGINS = [{
     }, {
         "login": "NezabudkaND@yandex.ru",
         "pass": "ND_+79169722555"
-    }
+    },    {
+    "login": "deeper-eholot@yandex.ru",
+    "pass": "deeper12345"
+},    {
+    "login": "irbis.svet.ali@yandex.ru",
+    "pass": "Irb_+79169722555"
+}
 ];
 
 

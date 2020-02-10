@@ -9,8 +9,6 @@ use Mpdf\Color\ColorModeConverter;
 
 use Mpdf\CssManager;
 
-use Mpdf\File\StreamWrapperChecker;
-
 use Mpdf\Gif\Gif;
 
 use Mpdf\Language\LanguageToFontInterface;
@@ -153,12 +151,11 @@ class ImageProcessor implements \Psr\Log\LoggerAwareInterface
 	public function getImage(&$file, $firsttime = true, $allowvector = true, $orig_srcpath = false, $interpolation = false)
 	{
 		/**
-		 * Prevents insecure PHP object injection through phar:// wrapper
+		 * Prevents insecure PHP deserialization through phar:// wrapper
 		 * @see https://github.com/mpdf/mpdf/issues/949
 		 */
-		$wrapperChecker = new StreamWrapperChecker($this->mpdf);
-		if ($wrapperChecker->hasBlacklistedStreamWrapper($file)) {
-			return $this->imageError($file, $firsttime, 'File contains an invalid stream. Only ' . implode(', ', $wrapperChecker->getWhitelistedStreamWrappers()) . ' streams are allowed.');
+		if ($this->hasBlacklistedStreamWrapper($file)) {
+			return $this->imageError($file, $firsttime, 'File contains an invalid stream. Only http://, https://, and file:// streams are valid.');
 		}
 
 		// mPDF 6
@@ -176,7 +173,7 @@ class ImageProcessor implements \Psr\Log\LoggerAwareInterface
 			$file = md5($data);
 		}
 
-		if (preg_match('/data:image\/(gif|jpe?g|png);base64,(.*)/', $file, $v)) {
+		if (preg_match('/data:image\/(gif|jpeg|png);base64,(.*)/', $file, $v)) {
 			$type = $v[1];
 			$data = base64_decode($v[2]);
 			$file = md5($data);
@@ -589,7 +586,7 @@ class ImageProcessor implements \Psr\Log\LoggerAwareInterface
 						if ($p) {
 							$n = $this->fourBytesToInt(substr($data, $p - 4, 4));
 							$transparency = substr($data, $p + 4, $n);
-							// ord($transparency[$index]) = the alpha value for that index
+							// ord($transparency{$index}) = the alpha value for that index
 							// generate alpha channel
 							for ($ypx = 0; $ypx < $h; ++$ypx) {
 								for ($xpx = 0; $xpx < $w; ++$xpx) {
@@ -597,7 +594,7 @@ class ImageProcessor implements \Psr\Log\LoggerAwareInterface
 									if ($colorindex >= $n) {
 										$alpha = 255;
 									} else {
-										$alpha = ord($transparency[$colorindex]);
+										$alpha = ord($transparency{$colorindex});
 									} // 0-255
 									if ($alpha > 0) {
 										imagesetpixel($imgalpha, $xpx, $ypx, $alpha);
@@ -1106,7 +1103,7 @@ class ImageProcessor implements \Psr\Log\LoggerAwareInterface
 					if ($p) {
 						$n = $this->fourBytesToInt(substr($data, $p - 4, 4));
 						$transparency = substr($data, $p + 4, $n);
-						// ord($transparency[$index]) = the alpha value for that index
+						// ord($transparency{$index}) = the alpha value for that index
 						// generate alpha channel
 						for ($ypx = 0; $ypx < $h; ++$ypx) {
 							for ($xpx = 0; $xpx < $w; ++$xpx) {
@@ -1114,7 +1111,7 @@ class ImageProcessor implements \Psr\Log\LoggerAwareInterface
 								if ($colorindex >= $n) {
 									$alpha = 255;
 								} else {
-									$alpha = ord($transparency[$colorindex]);
+									$alpha = ord($transparency{$colorindex});
 								} // 0-255
 								$mimgdata .= chr($alpha);
 							}
@@ -1406,7 +1403,7 @@ class ImageProcessor implements \Psr\Log\LoggerAwareInterface
 		$this->failedImages[$file] = true;
 
 		if ($firsttime && ($this->mpdf->showImageErrors || $this->mpdf->debug)) {
-			throw new \Mpdf\MpdfImageException(sprintf('%s (%s)', $msg, substr($file, 0, 256)));
+			throw new \Mpdf\MpdfImageException(sprintf('%s (%s)', $msg, $file));
 		}
 
 		$this->logger->warning(sprintf('%s (%s)', $msg, $file), ['context' => LogContext::IMAGES]);
@@ -1430,6 +1427,30 @@ class ImageProcessor implements \Psr\Log\LoggerAwareInterface
 		$query = urldecode($query);
 
 		return $file . $query;
+	}
+
+	/**
+	 * @param string $filename
+	 * @return bool
+	 * @since 7.1.8
+	 */
+	private function hasBlacklistedStreamWrapper($filename)
+	{
+		if (strpos($filename, '://') > 0) {
+			$wrappers = stream_get_wrappers();
+			$whitelistStreamWrappers = array_diff($this->mpdf->whitelistStreamWrappers, ['phar']); /* remove `phar` (security issue) */
+			foreach ($wrappers as $wrapper) {
+				if (in_array($wrapper, $whitelistStreamWrappers)) {
+					continue;
+				}
+
+				if (stripos($filename, $wrapper . '://') === 0) {
+					return true;
+				}
+			}
+		}
+
+		return false;
 	}
 
 }
