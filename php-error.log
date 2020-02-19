@@ -1,0 +1,5 @@
+[18-Feb-2020 10:39:29 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
+[18-Feb-2020 10:44:48 UTC] PHP Notice:  Undefined offset: 0 in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\MS\OrderMS.php on line 38
+[18-Feb-2020 10:44:50 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
+[18-Feb-2020 10:55:00 UTC] PHP Notice:  Undefined offset: 0 in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\MS\OrderMS.php on line 38
+[18-Feb-2020 10:55:02 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66

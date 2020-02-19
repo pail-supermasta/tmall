@@ -461,3 +461,9 @@ Stack trace:
 #1 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_print_GCPTEST.php(117): Avaks\Customs->generateCainiaoSticker(Array)
 #2 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_print_GCPTEST.php(163): printCainiaoSticker(Object(Avaks\MS\OrderMS), '')
 #3 {main}
+2020-02-11 16:32:13 80104170testtest Mpdf\MpdfException: Error detected. PDF file generation aborted: fopen(integration/images/cainiaoSticker/template-1_1.png): failed to open stream: No such file or directory in C:\Users\User\Documents\aliexpr.avaks.org\integration\vendor\mpdf\mpdf\src\Image\ImageProcessor.php:231
+Stack trace:
+#0 C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Customs_gcp.php(235): Mpdf\Mpdf->Output(NULL, 'S')
+#1 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_print_GCPTEST.php(117): Avaks\Customs_gcp->generateCainiaoSticker(Array)
+#2 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_print_GCPTEST.php(163): printCainiaoSticker(Object(Avaks\MS\OrderMS), '')
+#3 {main}

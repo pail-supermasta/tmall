@@ -20,7 +20,6 @@ use function array_diff_key;
 use function array_map;
 use function fclose;
 use function fopen;
-use function in_array;
 use function MongoDB\is_last_pipeline_operator_write;
 use function MongoDB\with_transaction;
 use function stream_get_contents;
@@ -113,6 +112,20 @@ final class Operation
         $o->collectionName = $operation->collection;
         $o->collectionOptions = ['writeConcern' => $writeConcern];
         $o->object = self::OBJECT_SELECT_COLLECTION;
+
+        return $o;
+    }
+
+    public static function fromClientSideEncryption(stdClass $operation)
+    {
+        $o = new self($operation);
+
+        $o->errorExpectation = ErrorExpectation::fromClientSideEncryption($operation);
+        $o->resultExpectation = ResultExpectation::fromClientSideEncryption($operation, $o->getResultAssertionType());
+
+        if (isset($operation->collectionOptions)) {
+            $o->collectionOptions = (array) $operation->collectionOptions;
+        }
 
         return $o;
     }
@@ -568,8 +581,7 @@ final class Operation
                  * instead exposes a bool to let us know whether a transaction
                  * is currently in progress. This code may fail down the line
                  * and should be adjusted once PHPC-1438 is implemented. */
-                $expected = in_array($this->arguments['state'], ['in_progress', 'starting']);
-                $test->assertSame($expected, $args['session']->isInTransaction());
+                $test->assertSame($this->arguments['state'], $args['session']->getTransactionState());
 
                 return null;
             case 'assertSessionUnpinned':

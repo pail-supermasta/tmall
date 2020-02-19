@@ -11,7 +11,7 @@ namespace Avaks;
 
 use Picqer\Barcode\BarcodeGeneratorPNG;
 
-class Customs
+class Customs_gcp
 {
 
 
@@ -69,7 +69,7 @@ class Customs
 
         try {
             $mpdf = new \Mpdf\Mpdf(['margin_left' => '5',
-                'margin_right' => '0',
+                'margin_right' => '5',
                 'margin_top' => '5',
                 'margin_bottom' => '0',
                 'margin_header' => '0',
@@ -83,12 +83,10 @@ class Customs
 
             $barRaw = $generator->getBarcode($mailNo, $generator::TYPE_CODE_128);
             $barcode = '<img id="barcodeTarget" src="data:image/png;base64,' . base64_encode($barRaw) . '">';
-            $barcode2 = '<img id="barcodeTarget2" src="data:image/png;base64,' . base64_encode($barRaw) . '">';
         } catch (\Picqer\Barcode\Exceptions\BarcodeException $e) {
         }
 
         $dynamicHTML = $deliveryAddress . $receiverName . $receiverPhone . $mailNoHTML . $otgruzkaDate . $AEOrderIdPageOneHTML;
-        $dynamicHTML2 = '<div id="dynamicHTML2" class="">' . $LPNumHTML . $mailNoHTML2 . $AEOrderIdHTML . $productDescriptionsHTML . '</div>';
 
         $html = '<!DOCTYPE html>
                 <html lang="en">
@@ -98,47 +96,34 @@ class Customs
                     <meta http-equiv="X-UA-Compatible" content="ie=edge">
                     <title>Document</title>
                     <style>
-                    .w0{
-                        width: 794px;
+                    @page { sheet-size:  3425px 2728px}
+                    /*.w0{
+                        width: 70mm;
                     }
                     .h0{
-                        height: 1123px;
-                    }
+                        height: 100mm;
+                    }*/
                     body{
                         margin: 0;
                     }
                     .stickerWrap {
                      position: absolute;
-                        height: 360px;
-                        top: 0;
-                        left: 0;
+                        height: 2728px;
+                        top: 5px;
+                        left: 5px;
                         z-index: 0;
                     }
                     .page{
                          position: relative;
                     }
-                /*    .page *{
-                         position: absolute;
-                    }*/
+                
                     #barcodeTarget {
                         
-                       
-                        /*top: 142px;
-                         left: -62px;*/
                          width: 292px;
                         height: 77px;
-                        
                         transform: translate(-60px, -220px) rotate(90deg);
                        
                     }
-                    #barcodeTarget2 {
-                        
-                        width: 177px;
-                        height: 46px;
-                       
-                       transform: translate(-195px,  -125.70px);
-                    }
-                    
                 
                     #deliveryAddress,
                     #receiverName,
@@ -150,26 +135,19 @@ class Customs
                         word-wrap: break-word;
                         font-family: Arial;
                         overflow: hidden;
-                        
                         position: absolute;
                     }
                     #deliveryAddress{
                         
-                         
                         font-size: 11px;
-                        /*top: 76px;
-                        left: 192px;*/
                         top: 96px;
                         left: 212px;
                         height: 43px;
                         rotate: 90;
-                        
                        
                     }
                     #receiverName{
                         
-                        /*top: 76px;
-                        left: 142px;*/
                         top: 96px;
                         left: 162px;
                         height: 43px;
@@ -181,8 +159,7 @@ class Customs
                     }
                     #receiverPhone{
 
-                       /*top: 76px;
-                       left: 115px;*/
+                       
                        top: 96px;
                        left: 135px;
                         height: 43px;
@@ -195,8 +172,7 @@ class Customs
                     #otgruzkaDate{
                     
                         position: absolute;
-                        /*top: 50px;
-                        left: 2px;*/
+                        
                         top: 70px;
                         left: 22px;
                         font-size: 11px;
@@ -207,8 +183,7 @@ class Customs
                     #AEOrderIdPageOne{
                    
                         position: absolute;
-                        /*top: 142px;
-                        left: 2px;  */                      
+                                      
                         top: 162px;
                         left: 22px;
                         font-size: 10px;
@@ -219,22 +194,11 @@ class Customs
                     #mailNo{
                        
                         position: absolute;
-                        /*top: 161px;
-                        left: -40px;*/
                         top: 116px;
                         height: 43px;
                         font-size: 13px;
                         rotate: 90;
                        
-                    }
-                    
-                    #dynamicHTML2{
-                        
-                        width: 350px;
-                        overflow: hidden;
-                       
-                        font-family: sans-serif;
-                         float: left;margin: -154.7px 0 0 5px;
                     }
                     
                     #LPNum,.productDescription,#mailNo2 {
@@ -254,23 +218,7 @@ class Customs
                 <body>
                 <!-- image path to images search from the file that calls Customs.php-->
                 <img class="stickerWrap" src="http://aliexpr.avaks.org/integration/images/cainiaoSticker/template-1.png" alt="">
-                        <div class="page ">' . $barcode . '</div>
-                        <!--<div class="page2 w0 h0"><img src="template-1.png" alt=""></div>-->
-                       
-                    
-                        ' . $dynamicHTML . '
-                
-                
-                    
-                <div style="" class="two ">
-                   
-                        <img style="height: 174.70px;" class="" src="http://aliexpr.avaks.org/integration/images/cainiaoSticker/template-2.png" alt="">
-                       
-                         ' . $barcode2 . $dynamicHTML2 . '
-                                
                         
-                </div>
-                
                 
                 </body>
                 </html>';

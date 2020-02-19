@@ -105,7 +105,7 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
                 'quantity' => $quantity,
                 'hscode' => null,
                 'goodsNameEn' => $goodsNameEn,
-                'price' => $price,
+                'price' => 100,
                 'weight' => $weight,
                 'isAneroidMarkup' => false);
         }
@@ -293,6 +293,6 @@ define('APPKEY', '27862248');
 define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
 $cpCode = 'QXJCQk1QcjJKTkZDbHk4ZVZ4bW11cFQ2L2QreW1XT0lJd2ZlMnEvL2dFZC9NbG5CSklEV2tiY0cxNkRSMWlYcQ==';
 $cnId = '4398985192396';
-$order = '5002727219496387';
+$order = '5003096338681748';
 $sessionKey = '50002301042q0OsaZzGzFoxi0th7ccSgMw0CJduh1FqvAlZmPkEo4j1b78c683GYCQw';
 deliverCainiao($order, $cnId, $cpCode, $sessionKey);

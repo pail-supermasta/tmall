@@ -6,8 +6,9 @@
  * Time: 11:42
  */
 
-
 ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 header('Content-Type: application/json');
 
@@ -79,7 +80,7 @@ function printCainiaoSticker(OrderMS $orderMS, $sessionKey)
 {
 
 
-    $customs = new \Avaks\Customs();
+    $customs = new \Avaks\Customs_gcp();
     $findorderbyidRes = findorderbyid($orderMS->name, $sessionKey);
 
 

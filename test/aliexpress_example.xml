@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="UTF-8"?><yml_catalog>
+<shop>
+<categories>
+<category id="1409">Самогоноварение</category>
+<category id="1410" parentId="1409">Дополнительное оборудование</category>
+<category id="1411" parentId="1410">Спиртометры, виномеры</category>
+<category id="1412" parentId="1410">Термометры</category>
+<category id="1442" parentId="1410">Фильтрующие устройства</category>
+<category id="1892" parentId="1410">Устройства контроля крепости</category>
+<category id="1893" parentId="1410">Прочее</category>
+<category id="1440" parentId="1409">Самогонные аппараты</category>
+<category id="1861" parentId="1440">Добровар</category>
+<category id="2163" parentId="1861">Абрикос</category>
+<category id="2072" parentId="1861">Идея</category>
+<category id="2030" parentId="1440">Малиновка</category>
+</categories>
+<offers>
+<offer id='9036' group_id='9036'>
+<url>https://firmarost.ru/product/areometr_as_3_0_10/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=9036</url>
+<price>385</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>1</weight>
+<quantity>0</quantity>
+<categoryId>1411</categoryId>
+<picture>https://firmarost.ru/upload/iblock/e41/e411af21092c2ebd91ec175f43d13aa0.jpg</picture>
+<name>Ареометр АС-3 (0-10)</name>
+<description>Ареометр АС-3 (0-10)</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='9037' group_id='9037'>
+<url>https://firmarost.ru/product/areometr_as_3_0_25/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=9037</url>
+<price>220</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>1</weight>
+<quantity>2</quantity>
+<categoryId>1411</categoryId>
+<picture>https://firmarost.ru/upload/iblock/96b/96b3237633228396dc5943e089ad2065.jpg</picture>
+<name>Ареометр АС-3 (0-25)</name>
+<description>Ареометр АС-3 (0-25)</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='9038' group_id='9038'>
+<url>https://firmarost.ru/product/areometr_asp_3_0_40_ts_d_1/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=9038</url>
+<price>209</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>1</weight>
+<quantity>3709</quantity>
+<categoryId>1411</categoryId>
+<picture>https://firmarost.ru/upload/iblock/0f5/0f54b91f28b829dff833db8bca51ce3e.jpg</picture>
+<name>Ареометр АСП-3 (0-40) ц.д. 1</name>
+<description>Ареометр АСП-3 (0-40) ц.д. 1</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='9039' group_id='9039'>
+<url>https://firmarost.ru/product/areometr_asp_3_40_70_ts_d_1/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=9039</url>
+<price>209</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>1</weight>
+<quantity>1268</quantity>
+<categoryId>1411</categoryId>
+<picture>https://firmarost.ru/upload/iblock/1a2/1a2afd922bdfe27dfd09d299a5769d9f.jpg</picture>
+<name>Ареометр АСП-3 (40-70) ц.д. 1</name>
+<description>Ареометр АСП-3 (40-70) ц.д. 1</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='9040' group_id='9040'>
+<url>https://firmarost.ru/product/areometr_asp_3_70_100_ts_d_1/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=9040</url>
+<price>209</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>1</weight>
+<quantity>3605</quantity>
+<categoryId>1411</categoryId>
+<picture>https://firmarost.ru/upload/iblock/fe7/fe7f3b9a2f00d6297e68b1af1a978e55.jpg</picture>
+<name>Ареометр АСП-3 (70-100) ц.д. 1</name>
+<description>Ареометр АСП-3 (70-100) ц.д. 1</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='9216' group_id='9216'>
+<url>https://firmarost.ru/product/vinomer_sakharomer_0_25_sakhar_0_18_spirt/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=9216</url>
+<price>110</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>1</weight>
+<quantity>20</quantity>
+<categoryId>1411</categoryId>
+<picture>https://firmarost.ru/upload/iblock/e07/e07064c31bd39d17a5c06655729362ef.jpg</picture>
+<name>Виномер-сахаромер (0-25 сахар, 0-12 спирт)</name>
+<description>Виномер-сахаромер (0-25 сахар, 0-18 спирт)</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='9409' group_id='9409'>
+<url>https://firmarost.ru/product/zaglushka_dlya_shtutsera_doktor_gradus_10_mm/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=9409</url>
+<price>132</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>1</weight>
+<quantity>0</quantity>
+<categoryId>1893</categoryId>
+<picture>https://firmarost.ru/upload/iblock/7cb/7cbebf1cf3cde7119fceafb9a52327f8.jpg</picture>
+<name>Заглушка для штуцера Доктор Градус 10 мм</name>
+<description>Заглушка для штуцера Доктор Градус 10 мм</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='9593' group_id='9593'>
+<url>https://firmarost.ru/product/komplekt_uplotnitelnykh_kolets_doktor_gradus/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=9593</url>
+<price>132</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>1</weight>
+<quantity>0</quantity>
+<categoryId>1893</categoryId>
+<picture>https://firmarost.ru/upload/iblock/5e7/5e77e503945affb5d20c65ef9f6520f2.jpg</picture>
+<name>Комплект уплотнительных колец Доктор Градус</name>
+<description>Комплект уплотнительных колец Доктор Градус</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='10267' group_id='10267'>
+<url>https://firmarost.ru/product/spirtometr_bytovoy_0_96/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=10267</url>
+<price>55</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>1</weight>
+<quantity>20</quantity>
+<categoryId>1411</categoryId>
+<picture>https://firmarost.ru/upload/iblock/9cd/9cdd11f3b75b9d461775593488b079f2.jpg</picture>
+<name>Спиртометр бытовой (0-96)</name>
+<description>Спиртометр бытовой (0-96)</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='10356' group_id='10356'>
+<url>https://firmarost.ru/product/termometr_bimetallicheskiy_radialnyy_0_120c_d63_l64/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=10356</url>
+<price>385</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>1</weight>
+<quantity>20</quantity>
+<categoryId>1412</categoryId>
+<picture>https://firmarost.ru/upload/iblock/0c7/0c718db26d26de73b48590545f490ff0.jpg</picture>
+<name>Термометр биметаллический (радиальный)  0-120C, D63, L64</name>
+<description>Термометр биметаллический (радиальный)  0-120C, D63, L64</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='10357' group_id='10357'>
+<url>https://firmarost.ru/product/termometr_zhk_samokleyushchiysya/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=10357</url>
+<price>55</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>1</weight>
+<quantity>21</quantity>
+<categoryId>1412</categoryId>
+<picture>https://firmarost.ru/upload/iblock/d84/d84efa5c70dac1dd19eaebbc66e6bfcd.jpg</picture>
+<name>Термометр ЖК самоклеющийся</name>
+<description>Термометр ЖК самоклеющийся</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='10358' group_id='10358'>
+<url>https://firmarost.ru/product/termometr_steklyannyy_kruglyy_t_10_110s/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=10358</url>
+<price>88</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>1</weight>
+<quantity>0</quantity>
+<categoryId>1412</categoryId>
+<picture>https://firmarost.ru/upload/iblock/d04/d04412d78cdd41c60f5eccfcf4be3dbf.jpg</picture>
+<name>Термометр стеклянный круглый t - 10-110С</name>
+<description>Термометр стеклянный круглый t - 10-110С</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='10427' group_id='10427'>
+<url>https://firmarost.ru/product/ugolnaya_kolonka/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=10427</url>
+<price>1485</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>1</weight>
+<quantity>5</quantity>
+<categoryId>1442</categoryId>
+<picture>https://firmarost.ru/upload/iblock/d30/d303b127f7fcbb7bfb7cf8d4d1858e25.jpg</picture>
+<name>Угольная колонка</name>
+<description>Угольная колонка</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='10431' group_id='10431'>
+<url>https://firmarost.ru/product/uplotnenie_dlya_klampa_1_/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=10431</url>
+<price>42</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>1</weight>
+<quantity>0</quantity>
+<categoryId>1893</categoryId>
+<picture>https://firmarost.ru/upload/iblock/35e/35eee53210b1d56ee1c6fcb1b9fc08ef.jpg</picture>
+<name>Уплотнение для Клампа-1½&quot;</name>
+<description>Уплотнение для Клампа-1½&quot;</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='10434' group_id='10434'>
+<url>https://firmarost.ru/product/ustroystvo_dlya_nepreryvnogo_kontrolya_kreposti_dobrovar/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=10434</url>
+<price>1815</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>1</weight>
+<quantity>0</quantity>
+<categoryId>1892</categoryId>
+<picture>https://firmarost.ru/upload/iblock/3da/3daf938adddb8361a28c66b1eaf4c99f.jpg</picture>
+<name>Устройство контроля крепости Добровар на подставке</name>
+<description>Устройство для непрерывного контроля крепости Добровар</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='10626' group_id='10626'>
+<url>https://firmarost.ru/product/elektronnyy_termometr_lshch_105mm_dshch_4_mm/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=10626</url>
+<price>253</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>1</weight>
+<quantity>0</quantity>
+<categoryId>1412</categoryId>
+<picture>https://firmarost.ru/upload/iblock/180/1807fd47d5ae12dc3ffcda105ff0fed8.jpg</picture>
+<name>Термометр электронный WT-1, Lщ=105мм, dщ=3,5 мм</name>
+<description>Электронный термометр Lщ=105мм, dщ=4 мм</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='10627' group_id='10627'>
+<url>https://firmarost.ru/product/elektronnyy_termometr_lshch_148mm_dshch_4_mm/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=10627</url>
+<price>231</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>1</weight>
+<quantity>216</quantity>
+<categoryId>1412</categoryId>
+<picture>https://firmarost.ru/upload/iblock/098/098561d038328cd4a60c6695c773fdfd.jpg</picture>
+<name>Термометр электронный TP 101, Lщ=148мм, dщ=4 мм</name>
+<description>Электронный термометр Lщ=148мм, dщ=4 мм</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='15972' group_id='15972'>
+<url>https://firmarost.ru/product/termometr_bimetallicheskiy_osevoy_0_120c_d63_l50/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=15972</url>
+<price>330</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>1</weight>
+<quantity>20</quantity>
+<categoryId>1412</categoryId>
+<picture>https://firmarost.ru/upload/iblock/195/19569a6f7608e80b6be1faafb99a2140.jpg</picture>
+<name>Термометр биметаллический (осевой)  0-120C, D63, L50</name>
+<description>Термометр биметаллический (осевой)  0-120C, D63, L50</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='16318' group_id='16318'>
+<url>https://firmarost.ru/product/klapan_izbytochnogo_davleniya/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=16318</url>
+<price>110</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>71</quantity>
+<categoryId>1893</categoryId>
+<picture>https://firmarost.ru/upload/iblock/e1d/e1db80f015e8c4e63f05044a809dfe9f.jpg</picture>
+<name>Клапан избыточного давления</name>
+<description>Клапан избыточного давления</description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='17997' group_id='16469'>
+<url>https://firmarost.ru/product/samogonnyy_apparat_malinovka_dachnyy_bkt_12_l/?item=17997utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=17997</url>
+<price>6589</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>0</quantity>
+<categoryId>2030</categoryId>
+<picture>https://firmarost.ru/upload/iblock/6e1/6e13411ff9496546ab62ed21ecb2d7f7.jpg</picture>
+<name>Самогонный аппарат Малиновка Дачный (20 л.)</name>
+<description>Самогонный аппарат Малиновка Дачный, БКТ 12 л</description>
+<country_of_origin>Россия</country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд">Малиновка</param>
+<param name="Объем">20 л</param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='18124' group_id='16498'>
+<url>https://firmarost.ru/product/samogonnyy_apparat_malinovka_ekonom_bkt_6_l/?item=18124utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=18124</url>
+<price>3300</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>0</quantity>
+<categoryId>2030</categoryId>
+<picture>https://firmarost.ru/upload/iblock/47a/47acba817aa1d00e031791bd9a2cc39a.jpg</picture>
+<name>Самогонный аппарат Малиновка Эконом (ТС, 12 л.)</name>
+<description>Самогонный аппарат Малиновка Эконом, БКТ  6 л</description>
+<country_of_origin>Россия</country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд">Малиновка</param>
+<param name="Объем">12 л</param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='16962' group_id='16962'>
+<url>https://firmarost.ru/product/vinomer_kapillyarnyy_0_25_/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=16962</url>
+<price>275</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>0</quantity>
+<categoryId>1411</categoryId>
+<picture>https://firmarost.ru/upload/iblock/1fe/1fe4a4bb15f596ba7b65a74efd89de10.jpg</picture>
+<name>Виномер капиллярный 0-25 %</name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='17138' group_id='17138'>
+<url>https://firmarost.ru/product/nippel_dlya_ustanovki_termometra/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=17138</url>
+<price>154</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>72</quantity>
+<categoryId>1893</categoryId>
+<picture>https://firmarost.ru/upload/iblock/208/208c2b93c6bae24228f8947f79a9cfe9.jpg</picture>
+<name>Ниппель для установки термометра (12)</name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='17192' group_id='17192'>
+<url>https://firmarost.ru/product/ustroystvo_kontrolya_kreposti_steklo/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=17192</url>
+<price>385</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>0</quantity>
+<categoryId>1892</categoryId>
+<picture>https://firmarost.ru/upload/iblock/67d/67d240ddd5432aa0d17fad1eb4b4c066.jpg</picture>
+<name>Устройство контроля крепости стекло</name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='18806' group_id='17234'>
+<url>https://firmarost.ru/product/samogonnyy_apparat_tomagavk_bez_kuba/?item=18806utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=18806</url>
+<price>7260</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>1</quantity>
+<categoryId>2163</categoryId>
+<picture>https://firmarost.ru/upload/iblock/003/003b0b432a7865612840de13d8dc5e76.jpg</picture>
+<name>Самогонный аппарат Добровар Томагавк (23 л.)</name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд">Добровар</param>
+<param name="Объем">23 л.</param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='18807' group_id='17234'>
+<url>https://firmarost.ru/product/samogonnyy_apparat_tomagavk_bez_kuba/?item=18807utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=18807</url>
+<price>2497</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>0</quantity>
+<categoryId>2163</categoryId>
+<picture>https://firmarost.ru/upload/iblock/003/003b0b432a7865612840de13d8dc5e76.jpg</picture>
+<name>Самогонный аппарат Добровар Томагавк (без куба)</name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд">Добровар</param>
+<param name="Объем">без куба</param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='18802' group_id='17240'>
+<url>https://firmarost.ru/product/samogonnyy_apparat_abrikos_bez_kuba/?item=18802utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=18802</url>
+<price>5720</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>1</quantity>
+<categoryId>2163</categoryId>
+<picture>https://firmarost.ru/upload/iblock/e65/e6517e67d459f15ee7c180290cdd89bc.jpg</picture>
+<name>Самогонный аппарат Добровар Абрикос (14 л.)</name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд">Добровар</param>
+<param name="Объем">14 л.</param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='17834' group_id='17834'>
+<url>https://firmarost.ru/product/ustroystvo_kontrolya_kreposti_sk/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=17834</url>
+<price>1320</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>1</quantity>
+<categoryId>1892</categoryId>
+<picture>https://firmarost.ru/upload/iblock/80f/80f8e76e93a89c15b677f13a813eefac.jpg</picture>
+<name>Устройство контроля крепости СК</name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='18142' group_id='18142'>
+<url>https://firmarost.ru/product/termometr_elektronnyy_ta_288_lshch_148mm_dshch_4_mm/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=18142</url>
+<price>275</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>584</quantity>
+<categoryId>1412</categoryId>
+<picture>https://firmarost.ru/upload/iblock/a87/a87853cd93a76a9b3ee00a1501dbb502.jpg</picture>
+<name>Термометр электронный TA-288, Lщ=148мм, dщ=4 мм</name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='18387' group_id='18383'>
+<url>https://firmarost.ru/product/samogonnyy_apparat_brazhnaya_kolonna_ideya_maksi/?item=18387utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=18387</url>
+<price>13365</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>0</quantity>
+<categoryId>2072</categoryId>
+<picture>https://firmarost.ru/upload/iblock/ae6/ae6b69c78d5cc8f5aa165a821d056db2.jpg</picture>
+<name>Самогонный аппарат бражная колонна Идея-Макси (23 л.)</name>
+<description></description>
+<country_of_origin>Россия</country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд">Добровар</param>
+<param name="Объем">23 л.</param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал">Из нержавейки</param>
+</offer>
+<offer id='18388' group_id='18383'>
+<url>https://firmarost.ru/product/samogonnyy_apparat_brazhnaya_kolonna_ideya_maksi/?item=18388utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=18388</url>
+<price>15015</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>0</quantity>
+<categoryId>2072</categoryId>
+<picture>https://firmarost.ru/upload/iblock/ae6/ae6b69c78d5cc8f5aa165a821d056db2.jpg</picture>
+<name>Самогонный аппарат бражная колонна Идея-Макси (29 л.)</name>
+<description></description>
+<country_of_origin>Россия</country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд">Добровар</param>
+<param name="Объем">29 л.</param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал">Из нержавейки</param>
+</offer>
+<offer id='18390' group_id='18390'>
+<url>https://firmarost.ru/product/spirtometr_bytovoy_0_90/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=18390</url>
+<price>55</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>9</quantity>
+<categoryId>1411</categoryId>
+<picture>https://firmarost.ru/upload/iblock/cb8/cb8af463f2a7f930740dc1f3fcd486e8.jpg</picture>
+<name>Спиртометр бытовой (0-90)</name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='18464' group_id='18464'>
+<url>https://firmarost.ru/product/termometr_elektronnyy_ta_288_k_lshch_40mm_dshch_3_5_mm/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=18464</url>
+<price>198</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>23</quantity>
+<categoryId>1412</categoryId>
+<picture>https://firmarost.ru/upload/iblock/bdb/bdbae944c48952a5c1cc561a88e9ea46.jpg</picture>
+<name>Термометр электронный TA-288-К, Lщ=40мм, dщ=3,5 мм</name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='18465' group_id='18465'>
+<url>https://firmarost.ru/product/termometr_elektronnyy_s_vynosnym_datchikom_hy_10_lshnura_1000_mm_dshchupa_mm/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=18465</url>
+<price>165</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>12</quantity>
+<categoryId>1412</categoryId>
+<picture>https://firmarost.ru/upload/iblock/771/771c1c6ea63f56e7df0f1c02a895485a.jpg</picture>
+<name>Термометр электронный с выносным датчиком HY-10, Lшнура=1000 мм, dщупа= мм</name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='18738' group_id='18738'>
+<url>https://firmarost.ru/product/kran_slivnoy_1_2_k/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=18738</url>
+<price>198</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>44</quantity>
+<categoryId>1893</categoryId>
+<picture>https://firmarost.ru/upload/iblock/0aa/0aa383043f371829c4a33ccfcea5f6bc.jpg</picture>
+<name>Кран сливной 1/2 К</name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='18739' group_id='18739'>
+<url>https://firmarost.ru/product/kran_slivnoy_1_2_zh/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=18739</url>
+<price>198</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>0</quantity>
+<categoryId>1893</categoryId>
+<picture>https://firmarost.ru/upload/iblock/1f6/1f6a413a42544bb9d7e97eedaca2f1c6.jpg</picture>
+<name>Кран сливной 1/2 Ж</name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='18763' group_id='18763'>
+<url>https://firmarost.ru/product/samogonnyy_apparat_dobrovar_evrika/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=18763</url>
+<price>14025</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>0</quantity>
+<categoryId>1861</categoryId>
+<picture>https://firmarost.ru/upload/iblock/6e9/6e9de7afab8a23b519958a65c516e2f6.jpg</picture>
+<name>Самогонный аппарат Добровар Эврика</name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='18778' group_id='18778'>
+<url>https://firmarost.ru/product/zaglushka_ftoroplastovaya_dlya_shtutserov_8_mm_/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=18778</url>
+<price>55</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>56</quantity>
+<categoryId>1893</categoryId>
+<picture>https://firmarost.ru/upload/iblock/b65/b654368e06ddc5771644a826b141469b.jpg</picture>
+<name>Заглушка фторопластовая для штуцеров 8 мм </name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='18785' group_id='18785'>
+<url>https://firmarost.ru/product/filtruyushchee_ustroystvo_alkovar_s_perezapravlyaemym_kartridzhem/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=18785</url>
+<price>4345</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>6</quantity>
+<categoryId>1442</categoryId>
+<picture>https://firmarost.ru/upload/iblock/274/27486509aef5c009231ba2ea0cfc3246.png</picture>
+<name>Фильтрующее устройство Алковар с перезаправляемым картриджем</name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='18792' group_id='18792'>
+<url>https://firmarost.ru/product/nabor_areometrov_0_40_40_70_70_100/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=18792</url>
+<price>275</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>7</quantity>
+<categoryId>1411</categoryId>
+<picture>https://firmarost.ru/upload/iblock/852/8526580f61564a3760a14158626f819f.jpg</picture>
+<name>Набор ареометров (0-40,40-70,70-100)</name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='18817' group_id='18817'>
+<url>https://firmarost.ru/product/kniga_retseptov_vodka_i_samogon/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=18817</url>
+<price>165</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>24</quantity>
+<categoryId>1893</categoryId>
+<picture>https://firmarost.ru/upload/iblock/fb5/fb57dac7d46cc5357aa30c3c4984381c.jpg</picture>
+<name>Книга рецептов Водка и самогон</name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+<offer id='18954' group_id='18954'>
+<url>https://firmarost.ru/product/termometr_s_provodnym_termosensorom_i_zvukovym_opoveshcheniem/?utm_source=yandexmarket&amp;utm_medium=cpc&amp;utm_content=18954</url>
+<price>544</price>
+<height></height>
+<length></length>
+<width></width>
+<weight>0</weight>
+<quantity>0</quantity>
+<categoryId>1412</categoryId>
+<name>Термометр с проводным термосенсором и звуковым оповещением</name>
+<description></description>
+<country_of_origin></country_of_origin>
+<param name="Литраж"></param>
+<param name="Материал древесины"></param>
+<param name="Ширина, мм"></param>
+<param name="Бренд"></param>
+<param name="Фасовка"></param>
+<param name="Вес"></param>
+<param name="Материал"></param>
+</offer>
+</offers>
+</shop>
+</yml_catalog>

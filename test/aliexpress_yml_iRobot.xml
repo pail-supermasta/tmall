@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog>
+<shop>
+    <categories>
+        <category id="516759225">Роботы-мойщики полов</category>
+        <category id="516759223">Роботы-пылесосы</category>
+        <category id="516755970">Запчасти и аксессуары</category>
+    </categories>
+    <offers>
+        <offer id='5060359289148' group_id='YMLIROBOT0'>
+            <price>29500</price>
+            <height>9.5</height>
+            <length>34</length>
+            <width>34</width>
+            <weight>5.9</weight>
+            <quantity>1</quantity>
+            <categoryId></categoryId>
+            <vendor>iRobot</vendor>
+            <picture>https://online.moysklad.ru/app/download/</picture>
+            <name>iRobot Робот-пылесос Roomba e5 e515840</name>
+            <description>Мощный, умный, внимательный… И это далеко не все о новом Roomba e5!
+
+                Разработчик еще употребляет эпитеты «инновационный», «убирающий тщательно» «оптимальный». Немного
+                подробнее об этих качествах нового робота-пылесоса Roomba e5.
+
+                Мощный. Конструкция вакуумной системы позволила 5-кратно увеличить силу всасывания по сравнению с
+                базовой 600 серией Roomba без увеличения потребляемой мощности.
+
+                Умный. Запатентованная система навигации помогает Roomba e5 адекватно вести себя в условиях обычного
+                дома: робот-пылесос видит ступени, ориентируется между ножками столов и стульев, мягко касается стен,
+                предметов мебели и не портит их.
+
+                Внимательный. Roomba e5 видит наиболее загрязненные участки пола и уделяет им особое внимание.
+
+                Убирающий тщательно. В новом Roomba e5 использованы валики-скребки инновационного дизайна. Это позволяет
+                обеспечить очень тщательную уборку.
+
+                Инновационный. В новом Roomba e5 мотор вынесен за пределы мусоросборника. Теперь вы можете не только
+                вытряхивать мусор из контейнера, его можно мыть водой.
+
+                Оптимальный. Новый румба наделен замечательными новыми возможностями, но он конечно же умеет делать все
+                то, за что мы ценим базовые модели Roomba.
+            </description>
+            <param name='Артикул'>e515840</param>
+        </offer>
+        <offer id='5060359283689' group_id='YMLIROBOT1'>
+            <price>14900</price>
+            <height>17</height>
+            <length>8.4</length>
+            <width>17</width>
+            <weight>2.29</weight>
+            <quantity>1</quantity>
+            <categoryId></categoryId>
+            <vendor>iRobot</vendor>
+            <picture>https://online.moysklad.ru/app/download/</picture>
+            <name>iRobot Моющий робот Braava jet 240 B240040</name>
+            <description>Робот-пылесос iRobot Braava Jet 240 – автоматический полотёр, предназначенный для работы с
+                твёрдыми поверхностями, включая ламинат, паркет, плитку и прочие. Квадратная форма позволяет ему
+                проникать в углы, а также выполнять уборку в труднодоступных местах – например, рядом с мебелью,
+                кухонными приборами или сантехникой.
+            </description>
+            <param name='Артикул'>B240040</param>
+        </offer>
+        <offer id='5060359287243' group_id='YMLIROBOT2'>
+            <price>16700</price>
+            <height>9.2</height>
+            <length>34</length>
+            <width>34</width>
+            <weight>4.9</weight>
+            <quantity>1</quantity>
+            <categoryId></categoryId>
+            <vendor>iRobot</vendor>
+            <picture>https://online.moysklad.ru/app/download/</picture>
+            <name>iRobot Робот-пылесос Roomba 676 R676040</name>
+            <description>Roomba 676 почистит полы в доме без вашего участия и даже без вашего присутствия. Просто
+                нажмите на кнопку «CLEAN» на панели робота или, используя мобильное приложение, запрограммируйте
+                7-дневный цикл уборки. Новый робот укомплектован литий-ионной аккумуляторной батареей, рассчитанной на
+                уборку в течение 1 часа без дополнительной подзарядки. Кстати, через мобильное приложение вы можете
+                отправить робота на уборку из любой точки мира в любое время. Согласитесь, так приятно возвращаться в
+                чистый уютный дом.
+            </description>
+            <param name='Артикул'>R676040</param>
+        </offer>
+        <offer id='5060359289728' group_id='YMLIROBOT3'>
+            <price>69900</price>
+            <height>9.2</height>
+            <length>11.3</length>
+            <width>35.1</width>
+            <weight>11.3</weight>
+            <quantity>1</quantity>
+            <categoryId></categoryId>
+            <vendor>iRobot</vendor>
+            <picture>https://online.moysklad.ru/app/download/</picture>
+            <name>iRobot Робот-пылесос Roomba i7+ i755840, (черный)</name>
+            <description>iRobot Roomba i7+ автоматически опустошает пылесборник по мере необходимости. Используя
+                интеллектуальную систему построения карты помещения ImprintTM Smart Mapping, Roomba i7+ сохраняет в
+                памяти планы этажей и комнат. Вы можете планировать уборку и направлять робота в конкретную комнату даже
+                голосом
+            </description>
+            <param name='Артикул'>i755840</param>
+        </offer>
+        <offer id='5060359287311' group_id='YMLIROBOT4'>
+            <price>56800</price>
+            <height>9.2</height>
+            <length>34</length>
+            <width>34</width>
+            <weight>5.36</weight>
+            <quantity>1</quantity>
+            <categoryId></categoryId>
+            <vendor>iRobot</vendor>
+            <picture>https://online.moysklad.ru/app/download/</picture>
+            <name>iRobot Робот-пылесос Roomba i7 i715840</name>
+            <description>Мощность и интеллект.
+
+                Roomba i7 – представитель новой генерации роботов для сухой уборки пола, выпускаемых компанией iRobot.
+                Новая конструкция вакуумной системы Roomba i7 дает ему 10-кратное преимущество в силе всасывания по
+                сравнению с моделями Roomba 600 серии. Валики-скребки имеют неодинаковый дизайн лопастей. Благодаря
+                несовпадению «шага протекторов» они очень тщательно чистят полы, гарантировано захватывая все от
+                крупного мусора до мелкой пыли.
+
+                Высокоэффективный фильтр из материала с особыми свойствами улавливает 99% плесени, пыльцы, клещей и
+                различных аллергенов.
+
+                Roomba i7 – робот-пылесос для полностью автономной уборки целого дома. Самостоятельная подзарядка
+                аккумулятора в процессе уборки, технология распознавания наиболее загрязненных участков и еще многое
+                другое – это Roomba i7.
+                Оснащенный технологией составления карты местности (Imprint ™ Smart Mapping), этот робот прекрасно
+                ориентируется среди помещений вашего дома. Вы можете указать ему, какую из комнат следует убрать, и он
+                безошибочно выберет именно ту, что вы указали. А с приложением iRobot HOME для смартфона управление
+                роботом-пылесосом доступно из любого места в любое время.
+            </description>
+            <param name='Артикул'>i715840</param>
+        </offer>
+        <offer id='5060359287199' group_id='YMLIROBOT5'>
+            <price></price>
+            <height>9.2</height>
+            <length>0</length>
+            <width>34</width>
+            <weight>4.9</weight>
+            <quantity>1</quantity>
+            <categoryId></categoryId>
+            <vendor>iRobot</vendor>
+            <picture>https://online.moysklad.ru/app/download/</picture>
+            <name>(EOL) iRobot Roomba 606 робот пылесос (черный)</name>
+            <description>iRobot Roomba 606. Совершенная навигация и уникальная трехступенчатая система очистки позволяет
+                очистить до 60 квадратных метров без подзарядки. Для запуска нужно всего лишь нажать кнопку «Clean» на
+                роботе. iRobot Roomba 606 укомплектован литий-ионным аккумулятором и контейнером повышенной емкости.
+            </description>
+            <param name='Артикул'>R606040</param>
+        </offer>
+        <offer id='5060359282811' group_id='YMLIROBOT6'>
+            <price>20700</price>
+            <height>7.9</height>
+            <length>21.6</length>
+            <width>24.4</width>
+            <weight>2.5</weight>
+            <quantity>1</quantity>
+            <categoryId></categoryId>
+            <vendor>iRobot</vendor>
+            <picture>https://online.moysklad.ru/app/download/</picture>
+            <name>iRobot Моющий робот Braava 390T B390045</name>
+            <description>Робот для деликатной сухой и влажной уборки полов Braava 390T разработан специально для
+                ежедневного ухода за полами с твердым покрытием. Braava 390 очень простой в использовании и не требует
+                никаких особых условий. Нужно всего лишь закрепить салфетку на многофункциональной панели (для сухой
+                уборки) или залить в резервуар панели Pro-Clean раствор моющего средства или воду, закрепить салфетку
+                (для влажной уборки), и ваш робот уже готов к работе. Робот не разбрызгивает по поверхности пола моющий
+                раствор, а протирает полы лишь слегка влажной салфеткой. Для уборки используют многоразовые салфетки из
+                микрофибры, которые поставляются в комплекте и продаются отдельно.
+
+
+                Модель Braava 390Т укомплектована турбо-зарядной базой, что позволяет осуществлять полную зарядку робота
+                всего за 2 часа. Робот работает очень тихо. Настолько тихо, что можно смотреть телевизор, общаться или
+                даже спать в комнате, в которой он убирается. За один цикл уборки Braava 390 может почистить до 93 м2.
+            </description>
+            <param name='Артикул'>B390045</param>
+        </offer>
+        <offer id='11111111111111111111111234' group_id='YMLIROBOT7'>
+            <price>400</price>
+            <height>444</height>
+            <length>222</length>
+            <width>333</width>
+            <weight>111</weight>
+            <quantity>1</quantity>
+            <categoryId></categoryId>
+            <vendor>48 hours gold</vendor>
+            <picture>https://online.moysklad.ru/app/download/</picture>
+            <name>testtovar</name>
+            <description></description>
+            <param name='Артикул'>55555</param>
+        </offer>
+    </offers>
+</shop>
+</yml_catalog>
