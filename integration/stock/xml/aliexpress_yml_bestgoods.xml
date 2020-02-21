@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2020-02-20 18:02">
+    <shop>
+        <categories>
+            <category id="516735936">Беспроводные пылесосы</category>
+            <category id="516739676">Роботы-мойщики окон</category>
+            <category id="516735937">Роботы-полотеры</category>
+            <category id="516739677">Роботы-пылесосы</category>
+            <category id="516739678">Запчасти и Аксессуары</category>
+            <category id="516735935">Пылесосы</category>
+            <category id="516370037">Детские матрасики</category>
+            <category id="516652545">Игрушки</category>
+            <category id="516652544">Детская продукция</category>
+            <category id="516370038">3D ручки</category>
+            <category id="516652546">Чернила для 3D ручек</category>
+            <category id="516739800">Трафареты для 3D ручек</category>
+            <category id="516739799">3D печать</category>
+            <category id="516739801">Умные весы</category>
+            <category id="516652548">Мониторы сердечной активности</category>
+            <category id="516648821">Электрические велосипеды</category>
+            <category id="516652547">Умные устройства</category>
+            <category id="516759288">Рюкзаки</category>
+            <category id="516664907">Кошельки</category>
+            <category id="516763026">Сумки и рюкзаки</category>
+            <category id="516668078">Подушка для разглаживания морщин</category>
+            <category id="516759289">Простыни на резинке</category>
+            <category id="516664908">Постельные принадлежности</category>
+            <category id="516666141">Audiotechnics</category>
+            <category id="516858193">something</category>
+            <category id="517103694">Cosmetics</category>
+            <category id="516977910">Promotional Goods</category>
+        </categories>
+        <offers>
+            <offer id="6924917717049" group_id="AV90203">
+                <price>6490</price>
+                <height>34</height>
+                <length>2</length>
+                <width>26</width>
+                <weight>2.3</weight>
+                <quantity>1</quantity>
+                <categoryId/>
+                <vendor>Picooc</vendor>
+                <picture/>
+                <name>Picooc Умные диагностические весы с Wi Fi S3 Lite White 6924917717049 белые</name>
+                <description>S3 Lite флагманская модель весов которые всего за три секунды определят 12 параметров вес
+                    ИМТ процент жировых тканей воды висцерального жира белка базальный метаболизм мышечную костную и
+                    массу скелетных мышц тип телосложения и биологический возраст Подключение Wi Fi
+                </description>
+                <param name="Артикул">AV90203</param>
+            </offer>
+        </offers>
+    </shop>
+</yml_catalog>

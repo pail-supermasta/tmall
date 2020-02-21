@@ -9032,3 +9032,39 @@ Stack trace:
 #0 /var/www/user/data/www/aliexpr.avaks.org/integration/ali_express/ali_order_list_paid.php(431): formMasterList(Array)
 #1 {main}
   thrown in /var/www/user/data/www/aliexpr.avaks.org/integration/ali_express/ali_order_list_paid.php on line 399
+[21-Feb-2020 10:42:34 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:42:34 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:42:34 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:42:34 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:42:34 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:42:34 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:42:34 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:42:34 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:42:34 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:42:34 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:42:34 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:42:34 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:42:35 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
+[21-Feb-2020 10:42:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function telegram() in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php:212
+Stack trace:
+#0 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php(296): deliverCainiao('500312309525235...', '4398985192396', 'QXJCQk1QcjJKTkZ...', '50002300e00k125...')
+#1 {main}
+  thrown in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 212
+[21-Feb-2020 10:48:47 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
+[21-Feb-2020 10:48:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function telegram() in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php:249
+Stack trace:
+#0 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php(298): deliverCainiao('500312309525235...', '4398985192396', 'QXJCQk1QcjJKTkZ...', '50002300e00k125...')
+#1 {main}
+  thrown in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 249
+[21-Feb-2020 10:49:01 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:49:01 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:49:01 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:49:01 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:49:01 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:49:01 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:49:01 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:49:01 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:49:01 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:49:01 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:49:01 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[21-Feb-2020 10:49:01 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90

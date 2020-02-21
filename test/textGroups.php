@@ -22,13 +22,14 @@ function listcategory($post_data, $sessionKey)
     $req = new AliexpressProductProductgroupsGetRequest;
     $resp = $c->execute($req, $sessionKey);
 
+    var_dump($resp);
 //    return json_decode($resp,true);
     return $resp;
 }
 
 
-//$shorten = listcategory('', '50002500e10kEPynqBacfX146882beFiwgzuCbjAqgpxYFoHtmygVTBcZzz4YHQguxt');
-//var_dump($shorten);
+$shorten = listcategory('', '50002700d259mlqwnwce5l1EixeUuGaDcR5PW19fb431aUDHGPLVIyTGgx4jUXC592o');
+
 
 /*$newCategRus = array(
     "Пылесосы" => array("Беспроводные пылесосы",

@@ -32,7 +32,7 @@ function findorderbyid($post_data, $sessionKey)
 require_once 'taobao/TopSdk.php';
 define('APPKEY', '27862248');
 define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
-$shorten = findorderbyid('5000456496969609','50002301042q0OsaZzGzFoxi0th7ccSgMw0CJduh1FqvAlZmPkEo4j1b78c683GYCQw');
+$shorten = findorderbyid('5000456496969609','50002300e00k125e1091EPynqa94I0kqyewPdYEDR8rRXcGePIvgr1mGX4SJq7FiFGn');
 //var_dump($shorten['logistics_amount']['cent']);
 //var_dump($shorten['order_amount']['cent']);
 var_dump($shorten);*/

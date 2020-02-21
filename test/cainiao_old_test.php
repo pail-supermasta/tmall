@@ -41,6 +41,8 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
         /*get order details from Ali*/
 
         $orderDetails = findorderbyid($order, $sessionKey);
+        var_dump($orderDetails);
+        die();
 
         $zip = $orderDetails['receipt_address']['zip'];
         $address = $orderDetails['receipt_address']['address2'];
@@ -105,7 +107,7 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
                 'quantity' => $quantity,
                 'hscode' => null,
                 'goodsNameEn' => $goodsNameEn,
-                'price' => 100,
+                'price' => $price,
                 'weight' => $weight,
                 'isAneroidMarkup' => false);
         }
@@ -194,6 +196,8 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
 
         $content = json_encode($sourceArray, JSON_UNESCAPED_UNICODE);
 
+        var_dump($content);
+        die();
 
         /*CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN*/
 
@@ -293,6 +297,6 @@ define('APPKEY', '27862248');
 define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
 $cpCode = 'QXJCQk1QcjJKTkZDbHk4ZVZ4bW11cFQ2L2QreW1XT0lJd2ZlMnEvL2dFZC9NbG5CSklEV2tiY0cxNkRSMWlYcQ==';
 $cnId = '4398985192396';
-$order = '5003096338681748';
-$sessionKey = '50002301042q0OsaZzGzFoxi0th7ccSgMw0CJduh1FqvAlZmPkEo4j1b78c683GYCQw';
+$order = '5003123095252358';
+$sessionKey = '50002300e00k125e1091EPynqa94I0kqyewPdYEDR8rRXcGePIvgr1mGX4SJq7FiFGn';
 deliverCainiao($order, $cnId, $cpCode, $sessionKey);

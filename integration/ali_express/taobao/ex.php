@@ -11,7 +11,7 @@ require_once 'TopSdk.php';
 $buyer_login_id = 'NezabudkaMR@yandex.ru';
 $appkey = '27862248';
 $secret = 'ca6916e55a087b3561b5077fc8b83ee6';
-$sessionKey = '50002500d019m107d8952lqwnRbCyJWdowhxOheBbS8qWWlJDPjyIRu9FnJ4mYvZ01s';
+$sessionKey = '50002500131c0AyToBcTKHT7oGv1Muh8zIyiMSiVOiZ10f0e85ceFQ5kUknvbHIgi2z';
 
 
 $c = new TopClient;
