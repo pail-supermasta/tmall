@@ -30,7 +30,7 @@ function product($post_data, $sessionKey)
 
 
 //$shorten = product('33049309048', '50002701012q0OsaZ5izjnxB1c6971a8swh9hEtfmTvHKEuIYjVSokXFspWEUsi208y');
-$shorten = product('4607947683912', '50002300e00k125e1091EPynqa94I0kqyewPdYEDR8rRXcGePIvgr1mGX4SJq7FiFGn');
+$shorten = product('4607947683912', '50002301419cdaiudiQfUvkfkfueltW1bd07081FHiQGZdRtFEwBpxDxPrTG2jMrE6H');
 //var_dump($shorten);
 echo $shorten;
 

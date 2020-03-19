@@ -28,7 +28,7 @@ function listcategory($post_data, $sessionKey)
 }
 
 
-$shorten = listcategory('', '50002700d259mlqwnwce5l1EixeUuGaDcR5PW19fb431aUDHGPLVIyTGgx4jUXC592o');
+$shorten = listcategory('', '50002700133c0AyTogdvRjyiiHsYsTdA0HvHMQATRiBBF1c793cebxervuYaJGZCr3v');
 
 
 /*$newCategRus = array(

@@ -7,12 +7,24 @@
   <component name="ChangeListManager">
     <list default="true" id="80146bb5-79f6-4afc-a154-c01ae4967d76" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/access/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/access/auth.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_list_finished.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_list_finished.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_paid_state.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_paid_state.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_print.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_print.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/ali_express/printStickerAEImage.log" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/printStickerAEImage.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_print_GCPTEST.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_print_GCPTEST.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/compilation.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/compilation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/ex.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/ex.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/file_processing.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/file_processing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/stock/stockSyncronizer.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/stock/stockSyncronizer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/stock/stockSyncronizer_old.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/stock/stockSyncronizer_old.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/ali_order_details_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/ali_order_details_dynamic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/cainiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/cainiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/cainiao_old_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/cainiao_old_test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/get_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/get_product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/newMethodsCainiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/newMethodsCainiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/textGroups.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/textGroups.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,11 +38,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ali_order_details_dynamic.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/ali_order_details_dynamic.php">
+      <file leaf-file-name="auth.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/access/auth.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+            <state relative-caret-position="119">
+              <caret line="7" column="52" lean-forward="true" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="compilation.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/integration/ali_express/compilation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="67" column="33" lean-forward="true" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -39,14 +60,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>50002501915fmRcspG9ebx7l0tF16c5e2dfifxlwjUWGe3krThQSwqtvXESjeQDT4oK</find>
-      <find>50002500b13gvikAoyOxh94iw14f5c7adGntiwSifchrelU2giDOpYlRW7YWd4cq8Q1</find>
-      <find>500027000432eXbwTucgwQlS7pEQ1QtBaahYHIQBUuH6GiQAospXLaC1f6dc5f0x9qt</find>
-      <find>[&quot;iRobot&quot;]</find>
-      <find>$tmallIndexes</find>
-      <find>group_id</find>
-      <find>telegram</find>
-      <find>description</find>
       <find>regex</find>
       <find>8435484051361</find>
       <find>yes</find>
@@ -69,13 +82,16 @@
       <find>error_log</find>
       <find>$ordersNoSticker</find>
       <find>оплачена</find>
+      <find>50002500114c0AyToBcTKHT7oG1a9a6f36v1Muh8zIyiMSiVOiZeFQ5kUknvbHIgi2z</find>
+      <find>50002500131c0AyToBcTKHT7oGv1Muh8zIyiMSiVOiZ10f0e85ceFQ5kUknvbHIgi2z</find>
+      <find>50002300e00k125e1091EPynqa94I0kqyewPdYEDR8rRXcGePIvgr1mGX4SJq7FiFGn</find>
+      <find>50002500431yXPcbqyGt7pDo4mScackuiLTgtvEZGhw14679d63hls1lHwhbynTgKi0</find>
+      <find>0_XDXpr53D8wZUy0eCHVZpEFuH2403</find>
+      <find>50002501b41seTrdXeCxBLxwfJjNp0Hw1AjyjpRjNrVuuP3WimXq515825fcfvhy5Ww</find>
+      <find>50002500322b04qabswlyhnCqZstidcl2d148bc306orAsRlaeAuCNzUGdZtBBR6hli</find>
+      <find>50002700d259mlqwnwce5l1EixeUuGaDcR5PW19fb431aUDHGPLVIyTGgx4jUXC592o</find>
     </findStrings>
     <replaceStrings>
-      <replace>320614744</replace>
-      <replace>50002500e10kEPynqBacfX146882beFiwgzuCbjAqgpxYFoHtmygVTBcZzz4YHQguxt</replace>
-      <replace>50002301422cdaiudiQfUvkfkfueltWFHi137e3f5bQGZdRtFEwBpxDxPrTG2jMrE6H</replace>
-      <replace>50002700f07CsXpqaf1167cf3bdl0ipRaztFcFeR5MtYHGEvJ1IQXHD3CpkVzlo6zzy</replace>
-      <replace>50002301537b3HwdiqAxRjekju8LsvFIFOnVHqTAiY8rpjwSW11d54902lPHBjVb1lb</replace>
       <replace>50002501b20seTrdXDcT3OUujmlPG0lQ1c55d345tmh2nRxEtuysQNxvhfmWYdVTL6x</replace>
       <replace>50002501204puBbz1f903348gXFkqhvplWEdrhpszGJkLnXgVzGGx9wxCcCqsvPj6As</replace>
       <replace>50002501801wh1496eab7JsasrEejBv6nVzgoixm4exukdZHsrAOxYxMQtreJr4qUVo</replace>
@@ -101,6 +117,11 @@
       <replace>$shop</replace>
       <replace>[$shop]</replace>
       <replace>$categories[&quot;iRobot&quot;]</replace>
+      <replace>50002500114c0AyToBcTKHT7oG1a9a6f36v1Muh8zIyiMSiVOiZeFQ5kUknvbHIgi2z</replace>
+      <replace>50002301419cdaiudiQfUvkfkfueltW1bd07081FHiQGZdRtFEwBpxDxPrTG2jMrE6H</replace>
+      <replace>50002501322seA1guGKsazsdfbDs5OwuiJ1acaac8aHQi2FtXGja9pwjv7JkowYjFuf</replace>
+      <replace>50002500322b04qabswlyhnCqZstidcl2d148bc306orAsRlaeAuCNzUGdZtBBR6hli</replace>
+      <replace>50002700133c0AyTogdvRjyiiHsYsTdA0HvHMQATRiBBF1c793cebxervuYaJGZCr3v</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\User\Documents\aliexpr.avaks.org\integration\class</dir>
@@ -146,8 +167,6 @@
         <option value="$PROJECT_DIR$/test/aliexpress_yml_iRobot.xml" />
         <option value="$PROJECT_DIR$/test/xml/aliexpress_yml_iRobot.xml" />
         <option value="$PROJECT_DIR$/test/generate_yml.php" />
-        <option value="$PROJECT_DIR$/access/auth.php" />
-        <option value="$PROJECT_DIR$/integration/ali_express/compilation.php" />
         <option value="$PROJECT_DIR$/test/textGroups.php" />
         <option value="$PROJECT_DIR$/integration/stock/xml/aliexpress_yml_Morphy Richards.xml" />
         <option value="$PROJECT_DIR$/integration/vendor/mongodb/mongodb/src/Operation/Find.php" />
@@ -166,6 +185,8 @@
         <option value="$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/ali_order_print.php" />
         <option value="$PROJECT_DIR$/test/ali_order_details_dynamic.php" />
+        <option value="$PROJECT_DIR$/access/auth.php" />
+        <option value="$PROJECT_DIR$/integration/ali_express/compilation.php" />
       </list>
     </option>
   </component>
@@ -210,6 +231,17 @@
               <item name="aliexpr.avaks.org" type="b2602c69:ProjectViewProjectNode" />
               <item name="aliexpr.avaks.org" type="462c0819:PsiDirectoryNode" />
               <item name="access" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aliexpr.avaks.org" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aliexpr.avaks.org" type="462c0819:PsiDirectoryNode" />
+              <item name="integration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aliexpr.avaks.org" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aliexpr.avaks.org" type="462c0819:PsiDirectoryNode" />
+              <item name="integration" type="462c0819:PsiDirectoryNode" />
+              <item name="ali_express" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="aliexpr.avaks.org" type="b2602c69:ProjectViewProjectNode" />
@@ -261,26 +293,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Script.ali_order_details_dynamic.php">
+  <component name="RunManager" selected="PHP Script.auth.php">
     <configuration name="ali_order_details_dynamic.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/test/ali_order_details_dynamic.php" />
     <configuration name="ali_order_print.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/ali_express/ali_order_print.php" />
+    <configuration name="auth.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/access/auth.php" />
     <configuration name="cainiao_now.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/ali_express/cainiao_now.php" />
-    <configuration name="cainiao_old_test.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/test/cainiao_old_test.php" />
     <configuration name="newMethodsCainiao.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/test/newMethodsCainiao.php" />
     <list>
-      <item itemvalue="PHP Script.cainiao_old_test.php" />
       <item itemvalue="PHP Script.cainiao_now.php" />
       <item itemvalue="PHP Script.ali_order_details_dynamic.php" />
       <item itemvalue="PHP Script.newMethodsCainiao.php" />
       <item itemvalue="PHP Script.ali_order_print.php" />
+      <item itemvalue="PHP Script.auth.php" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHP Script.auth.php" />
         <item itemvalue="PHP Script.ali_order_details_dynamic.php" />
         <item itemvalue="PHP Script.ali_order_print.php" />
         <item itemvalue="PHP Script.newMethodsCainiao.php" />
         <item itemvalue="PHP Script.cainiao_now.php" />
-        <item itemvalue="PHP Script.cainiao_old_test.php" />
       </list>
     </recent_temporary>
   </component>
@@ -481,11 +513,13 @@
       <workItem from="1583937991728" duration="14000" />
       <workItem from="1583939357243" duration="42000" />
       <workItem from="1584605737918" duration="791000" />
+      <workItem from="1584606864401" duration="40000" />
+      <workItem from="1584606913370" duration="898000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="717075000" />
+    <option name="totallyTimeSpent" value="718013000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="7" y="123" width="1905" height="894" extended-state="0" />
@@ -494,16 +528,16 @@
       <window_info anchor="bottom" id="TODO" order="5" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info active="true" anchor="right" id="Run" order="4" visible="true" weight="0.30840108" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="right" id="Run" order="4" weight="0.30840108" />
       <window_info anchor="right" id="Terminal" order="5" weight="0.300271" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24552846" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25094852" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.39814815" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="10" />
@@ -689,13 +723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/access/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="47" lean-forward="true" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/stock/xml/aliexpress_yml_novinkiooo.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -774,24 +801,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/ali_express/compilation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="45" column="92" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/moi_sklad/ms_post_order_dynamic.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="93" column="56" selection-start-line="93" selection-start-column="53" selection-end-line="93" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/ali_order_list_paid.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="109" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="109" />
         </state>
       </provider>
     </entry>
@@ -877,8 +890,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/ali_order_details_dynamic.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+        <state relative-caret-position="85">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ali_order_list_paid.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/access/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="52" lean-forward="true" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/compilation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="67" column="33" lean-forward="true" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
         </state>
       </provider>
     </entry>
