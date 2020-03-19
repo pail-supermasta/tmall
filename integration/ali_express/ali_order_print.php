@@ -77,14 +77,16 @@ $ordersNoSticker = $orders->getOrdersNoSticker();
 function printCainiaoSticker(OrderMS $orderMS, $sessionKey)
 {
 
+    var_dump($orderMS);
 
     $customs = new \Avaks\Customs();
     $findorderbyidRes = findorderbyid($orderMS->name, $sessionKey);
+    var_dump($findorderbyidRes);
 
 
     $productShortener = $findorderbyidRes['child_order_ext_info_list']['global_aeop_tp_order_product_info_dto'];
     $productDescriptions = array();
-    foreach ($productShortener as $product) {
+    foreach ((array)$productShortener as $product) {
         $productDescriptions[] = $product['product_name'];
     }
 

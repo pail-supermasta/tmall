@@ -354,12 +354,14 @@ function destructResponse(array $shortener, $order, $shop)
                     } else {
                         /*  send email  */
                         $productErrorMsg = "Tmall продал товар, которого нет. Заказ на Tmall № $order";
+                        $err .= $productErrorMsg;
 //                    mail("p.kurskii@avaks.org", "Товар не найден в МС", $productErrorMsg);
 
                         /*  send errors to telegram bot */
                         telegram($productErrorMsg, '-278688533');
                     }
                 }else{
+                    $err .= "No sku_code found for $order";
                     telegram("No sku_code found for $order \n", '-320614744');
                 }
 
@@ -393,7 +395,7 @@ function destructResponse(array $shortener, $order, $shop)
 //    var_dump($orderDetails['productStocks']);
     $orderDetails['err'] = $err;
     if ($orderDetails['err'] != '') {
-        telegram("Нет персональных данных. Причина " . $orderDetails['err'] . ". Заказ на Tmall № $order.", '-278688533');
+        telegram($orderDetails['err'] . ". Заказ на Tmall № $order.", '-278688533');
     };
 
     /*    if ($orderDetails['paid'] != 'PAY_SUCCESS') {

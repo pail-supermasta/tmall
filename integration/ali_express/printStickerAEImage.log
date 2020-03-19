@@ -467,3 +467,9 @@ Stack trace:
 #1 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_print_GCPTEST.php(117): Avaks\Customs_gcp->generateCainiaoSticker(Array)
 #2 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_print_GCPTEST.php(163): printCainiaoSticker(Object(Avaks\MS\OrderMS), '')
 #3 {main}
+2020-03-11 12:29:25 157 Mpdf\MpdfException: Error detected. PDF file generation aborted: Invalid argument supplied for foreach() in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_print.php:89
+Stack trace:
+#0 C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Customs.php(287): Mpdf\Mpdf->Output(NULL, 'S')
+#1 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_print.php(118): Avaks\Customs->generateCainiaoSticker(Array)
+#2 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_print.php(164): printCainiaoSticker(Object(Avaks\MS\OrderMS), '50002300e00k125...')
+#3 {main}

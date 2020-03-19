@@ -3,7 +3,7 @@
 function findorderbyid($post_data, $sessionKey)
 {
 
-
+var_dump($post_data);
     $c = new TopClient;
     $c->format = "json";
     $c->appkey = APPKEY;
@@ -14,6 +14,7 @@ function findorderbyid($post_data, $sessionKey)
     $param1->order_id = $post_data;
     $req->setParam1(json_encode($param1));
     $resp = $c->execute($req, $sessionKey);
+    var_dump($resp);
 
     if (!isset($resp->result)) {
         return false;
