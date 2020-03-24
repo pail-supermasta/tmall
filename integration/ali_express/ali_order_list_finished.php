@@ -126,9 +126,8 @@ function formMasterList($credential)
         $shortener = json_decode($res, true);
         foreach ($shortener as $shorty) {
             if ($shorty['order_status'] == 'FINISH' || $shorty['order_status'] == 'FUND_PROCESSING') {
-                if ($shorty['end_reason'] == 'buyer_cancel_order_in_risk' || $shorty['end_reason'] == 'buyer_cancel_notpay_order' || $shorty['end_reason'] == 'pay_timeout' || $shorty['end_reason'] == 'buyer_cancel_order') {
-                    $orderList[$shorty['order_id']] = $shorty['end_reason'];
-                }
+                $orderList[$shorty['order_id']] = "FINISH";
+
             } elseif ($shorty['order_status'] == 'IN_CANCEL') {
                 $orderList[$shorty['order_id']] = "IN_CANCEL";
             }
@@ -246,6 +245,8 @@ array_walk_recursive($final, function ($item, $key) {
 //    echo "$key holds $item\n";
     getOrderFromMS($item, $key);
 });
+
+var_dump($final);
 
 
 

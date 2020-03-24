@@ -14,11 +14,11 @@ use MongoDB\Client;
 
 
 $tmallIndexes = [
-//    'novinkiooo' => 'e8a40577-77b9-11e9-912f-f3d40003d45d', //32998880655
+    'novinkiooo' => 'e8a40577-77b9-11e9-912f-f3d40003d45d', //32998880655
     'bestgoods' => '0bbcd3e6-81f4-11e9-9109-f8fc0004dec8',// 4000330839485
-//    'Morphy Richards' => '0bbcd991-81f4-11e9-9109-f8fc0004dec9', // 33017680130
+    'Morphy Richards' => '0bbcd991-81f4-11e9-9109-f8fc0004dec9', // 33017680130
     'iRobot' => '0bbcde02-81f4-11e9-9109-f8fc0004deca', //33022490020
-//    'Noerden' => '0bbce15c-81f4-11e9-9109-f8fc0004decb' //33018957808
+    'Noerden' => '0bbce15c-81f4-11e9-9109-f8fc0004decb' //33018957808
 ];
 
 $categoriesAll = [

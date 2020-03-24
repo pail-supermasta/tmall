@@ -19,7 +19,7 @@ require_once '../integration/ali_express/taobao/TopSdk.php';
 define('APPKEY', '27862248');
 define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
 
-$order = '5003200709271748';
+$order = '5003438318331748';
 $sessionKey = '50002301419cdaiudiQfUvkfkfueltW1bd07081FHiQGZdRtFEwBpxDxPrTG2jMrE6H';
 $result_success = getonlinelogisticsservicelistbyorderid ($order, $sessionKey);
 
@@ -30,7 +30,7 @@ function getonlinelogisticsservicelistbyorderid($order, $sessionKey)
 
 
     $c = new TopClient;
-    $c->gatewayUrl = "http://140.205.164.4/top/router/rest";
+//    $c->gatewayUrl = "http://140.205.164.4/top/router/rest";
     $c->format = 'json';
     $c->appkey = APPKEY;
     $c->secretKey = SECRET;
