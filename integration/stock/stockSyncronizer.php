@@ -150,7 +150,7 @@ foreach (LOGINS as $login) {
         }
     }
     if ($test == true) {
-        var_dump(telegram($message, '-391758030'));
+        telegram($message, '-391758030');
         echo $message;
     }
 

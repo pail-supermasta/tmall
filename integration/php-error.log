@@ -9068,3 +9068,12 @@ Stack trace:
 [21-Feb-2020 10:49:01 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
 [21-Feb-2020 10:49:01 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
 [21-Feb-2020 10:49:01 UTC] PHP Notice:  Undefined index: sku_code in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao_now.php on line 90
+[07-Apr-2020 15:23:48 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
+[07-Apr-2020 15:23:58 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
+[07-Apr-2020 15:24:08 UTC] PHP Notice:  Undefined variable: mailNo in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao.php on line 258
+[07-Apr-2020 15:24:21 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
+[07-Apr-2020 15:24:32 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
+[07-Apr-2020 15:24:42 UTC] PHP Notice:  Undefined variable: mailNo in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao.php on line 258
+[07-Apr-2020 15:24:55 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
+[07-Apr-2020 15:25:05 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
+[07-Apr-2020 15:25:15 UTC] PHP Notice:  Undefined variable: mailNo in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao.php on line 258
