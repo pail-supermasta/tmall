@@ -45,7 +45,7 @@ class Product
                             $req->setIpmSkuStock("$stock");
                             $resp = $c->execute($req, $sessionKey);
                             $res = json_encode((array)$resp);
-                            $result['new_stock'] = json_decode($res, true)['result']['modify_count'];
+                            $result['new_stock'] = $stock;
                         }
                     }
                 }
@@ -68,7 +68,7 @@ class Product
                         $req->setIpmSkuStock("$stock");
                         $resp = $c->execute($req, $sessionKey);
                         $res = json_encode((array)$resp);
-                        $result['new_stock'] = json_decode($res, true)['result']['modify_count'];
+                        $result['new_stock'] = $stock;
                     }
                 }
             }
