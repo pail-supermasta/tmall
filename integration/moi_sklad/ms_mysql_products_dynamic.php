@@ -23,11 +23,21 @@ function getProductIdMS($key, $value)
         $row = mysqli_fetch_assoc($result);
 
     } else {
-        $query = "SELECT id, minPrice, salePrices, code FROM `ms_service` WHERE code='$value'";
+        $query = "SELECT id, minPrice, salePrices, code FROM `ms_bundle` WHERE code='$value'";
 
         $result = $sql->query($query);
-        // output data of each row
-        $row = mysqli_fetch_assoc($result);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            $row = mysqli_fetch_assoc($result);
+
+        } else {
+            $query = "SELECT id, minPrice, salePrices, code FROM `ms_service` WHERE code='$value'";
+
+            $result = $sql->query($query);
+            // output data of each row
+            $row = mysqli_fetch_assoc($result);
+        }
     }
 
     try {

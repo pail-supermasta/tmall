@@ -311,7 +311,7 @@ function setTrackToTmall($order, $payTime, $credential)
     /*Комплектуется, На выдаче, Доставляется*/
     $statesToShip = array("8beb227b-6088-11e7-7a6c-d2a9003b81a3",
         "8beb25ab-6088-11e7-7a6c-d2a9003b81a4",
-        "327c03c6-75c5-11e5-7a40-e89700139938",);
+        "327c03c6-75c5-11e5-7a40-e89700139938");
 
 
     if (in_array($delivery['state'], $statesToShip) == 1 && $delivery['track'] != false) {

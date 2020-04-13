@@ -72,7 +72,6 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
             $res = json_encode((array)$resp);
             $shortener = json_decode($res, true);
 
-
             $length = $shortener['result']['package_length'];
             $width = $shortener['result']['package_width'];
             $height = $shortener['result']['package_height'];
@@ -82,8 +81,12 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
             $goodsNameCn = $shortener['result']['product_unit'];
             $quantity = $product['product_count'] ?? 1;
 
+            $price=0;
             $goodsNameEn = preg_replace("/[^а-яёa-z0-9. ]/iu", '', $shortener['result']['subject']);
-            if (isset($shortener['result']['product_price'])) {
+            if (isset($product['product_price']['amount'])){
+                $price = (int)$product['product_price']['amount'];
+
+            }elseif (isset($shortener['result']['product_price']) && (int)$shortener['result']['product_price']!=0) {
                 $price = (int)$shortener['result']['product_price'];
             } elseif (isset($shortener['result']['aeop_ae_product_s_k_us']['global_aeop_ae_product_sku'])) {
                 foreach ($shortener['result']['aeop_ae_product_s_k_us']['global_aeop_ae_product_sku'] as $sku) {
@@ -108,6 +111,7 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
                 'price' => $price,
                 'weight' => $weight,
                 'isAneroidMarkup' => false);
+
         }
         $packageList[0] = array(
             'length' => 1,
