@@ -85,8 +85,9 @@ $productsMS = new Products();
 $bundlesMS = new Bundles();
 $syncErrors = '';
 
-function loggingRes($arr, $product, $syncErrors)
+function loggingRes($arr, $product, $syncErrors,$login)
 {
+    $log_message = '';
     if ($arr == false) {
         $syncErrors .= 'ID Aliexp ' . $product['ali_product_id'] . ' Код МС ' . $product['code'] . ' ошибка сопоставления для магазина ' . $login['login'] . PHP_EOL;
     } else {
@@ -127,7 +128,7 @@ foreach (LOGINS as $login) {
 
         $response = $aliProduct->setStock($stockMS[$product['id']]['available'], $login);
 
-        $syncErrors = loggingRes($response, $product, $syncErrors);
+        $syncErrors = loggingRes($response, $product, $syncErrors,$login);
     }
 
     $bundles = $bundlesMS->findWithFieldTmall($login['login']);
@@ -142,7 +143,7 @@ foreach (LOGINS as $login) {
         $aliProduct = new Product($bundle['ali_product_id'], $bundle['code']);
         $response = $aliProduct->setStock($stockMS[$bundle['id']]['available'], $login);
 
-        $syncErrors = loggingRes($response, $bundle, $syncErrors);
+        $syncErrors = loggingRes($response, $bundle, $syncErrors,$login);
 
 
     }

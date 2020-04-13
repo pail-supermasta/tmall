@@ -6,20 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80146bb5-79f6-4afc-a154-c01ae4967d76" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/integration/src/MS/Bundles.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration/src/MS/MSSync.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration/src/MS/Stocks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_ids/bestgoodsstore@yandex.ru.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/ali_express/cainiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/cainiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/moi_sklad/ms_mysql_products_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/moi_sklad/ms_mysql_products_dynamic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/src/AE/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/src/AE/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/stock/orderInWaitPayment.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/stock/php-error.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/stock/stockSyncronizer.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/stock/stockSyncronizer_dontdelete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/stock/stockSyncronizer_old.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/stock/stockSyncronizer_mongo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/ali_order_details_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/ali_order_details_dynamic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/stock/stockSyncronizer_mongo.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/stock/stockSyncronizer_mongo.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,22 +20,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="stockSyncronizer_dontdelete.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/integration/stock/stockSyncronizer_dontdelete.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="158" column="20" selection-start-line="158" selection-start-column="20" selection-end-line="158" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="stockSyncronizer_mongo.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/integration/stock/stockSyncronizer_mongo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="130" column="5" lean-forward="true" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
+            <state relative-caret-position="-1755">
+              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
               <folding>
-                <element signature="e#325#2343#0#PHP" />
                 <element signature="e#2707#2729#0#PHP" expanded="true" />
               </folding>
             </state>
@@ -59,7 +36,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>5003634447565776</find>
       <find>fucking</find>
       <find>fuck</find>
       <find>sku</find>
@@ -89,6 +65,7 @@
       <find>327c02b4-75c5-11e5-7a40-e89700139937</find>
       <find>_attributes</find>
       <find>$key</find>
+      <find>log_message</find>
     </findStrings>
     <replaceStrings>
       <replace>50002701012q0OsaZ5izjnxB1c6971a8swh9hEtfmTvHKEuIYjVSokXFspWEUsi208y</replace>
@@ -523,12 +500,12 @@
       <workItem from="1586442533047" duration="27000" />
       <workItem from="1586502353933" duration="1955000" />
       <workItem from="1586512012697" duration="14855000" />
-      <workItem from="1586761223103" duration="4771000" />
+      <workItem from="1586761223103" duration="6642000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="777110000" />
+    <option name="totallyTimeSpent" value="778981000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="331" y="109" width="1410" height="859" extended-state="0" />
@@ -541,7 +518,7 @@
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Run" order="12" visible="true" weight="0.25381416" />
+      <window_info anchor="bottom" id="Run" order="12" weight="0.25381416" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Terminal" order="4" weight="0.300271" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -919,10 +896,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/integration/stock/stockSyncronizer_mongo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="130" column="5" lean-forward="true" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
+        <state relative-caret-position="-1755">
+          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
           <folding>
-            <element signature="e#325#2343#0#PHP" />
             <element signature="e#2707#2729#0#PHP" expanded="true" />
           </folding>
         </state>
