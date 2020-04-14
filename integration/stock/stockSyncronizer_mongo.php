@@ -85,22 +85,23 @@ $productsMS = new Products();
 $bundlesMS = new Bundles();
 $syncErrors = '';
 
-function loggingRes($arr, $product, $syncErrors,$login)
+function loggingRes($arr, $product, $syncErrors, $login)
 {
-    $log_message = '';
     if ($arr == false) {
         $syncErrors .= 'ID Aliexp ' . $product['ali_product_id'] . ' Код МС ' . $product['code'] . ' ошибка сопоставления для магазина ' . $login['login'] . PHP_EOL;
     } else {
 
-        if (!isset($product['new_stock']) || $product['new_stock'] === false) {
+
+        if ($arr['new_stock'] == false && is_bool($arr['new_stock'])) {
             $log_message = 'Tmall код МС ' . $product['ali_product_id'] . ' Код МС ' . $product['code'] . ' ' . $arr['old_stock'] . ' без изменений';
         } else {
-            $log_message = 'Tmall код МС ' . $product['ali_product_id'] . ' Код МС ' . $product['code'] . ' Старое значение ' . $arr['old_stock'] . ' Новое значение ' . $product['new_stock'];
+            $log_message = 'Tmall код МС ' . $product['ali_product_id'] . ' Код МС ' . $product['code'] . ' Старое значение ' . $arr['old_stock'] . ' Новое значение ' . $arr['new_stock'];
         }
+        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . ' ' . $log_message . PHP_EOL, 3, $login['login'] . '.log');
+
 
     }
 
-    error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . ' ' . $log_message . PHP_EOL, 3, $login['login'] . '.log');
     return $syncErrors;
 }
 
@@ -123,7 +124,7 @@ foreach (LOGINS as $login) {
         $aliProduct = new Product($product['ali_product_id'], $product['code']);
 
         $response = $aliProduct->setStock($stockMS[$product['id']]['available'], $login);
-        $syncErrors = loggingRes($response, $product, $syncErrors,$login);
+        $syncErrors = loggingRes($response, $product, $syncErrors, $login);
     }
 
     $bundles = $bundlesMS->findWithFieldTmall($login['login']);
@@ -138,7 +139,7 @@ foreach (LOGINS as $login) {
         $aliProduct = new Product($bundle['ali_product_id'], $bundle['code']);
         $response = $aliProduct->setStock($stockMS[$bundle['id']]['available'], $login);
 
-        $syncErrors = loggingRes($response, $bundle, $syncErrors,$login);
+        $syncErrors = loggingRes($response, $bundle, $syncErrors, $login);
 
 
     }
