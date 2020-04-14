@@ -14,6 +14,8 @@ use Avaks\SQL\AvaksSQL;
 class Products
 {
     public $orderPositionsRaw;
+    public $MSTmallFieldName;
+
 
     public function __construct($orderPositions = false)
     {
@@ -43,6 +45,24 @@ class Products
         $products = AvaksSQL::selectAllAssoc($query);
         return $products;
 
+    }
+
+    public function findWithFieldTmall($login)
+    {
+        $searchStack = array(
+            'NezabudkaMR@yandex.ru' => 'TMall ID (Morphy Richards)',
+            'bestgoodsstore@yandex.ru' => 'TMall ID (Best Goods)',
+            'NezabudkaiRobot@yandex.ru' => 'TMall ID (iRobot)',
+            'NezabudkaND@yandex.ru' => 'TMall ID (Noerden)',
+            'novinkiooo@yandex.ru' => 'TMall ID'
+
+        );
+        $collection = (new MSSync())->MSSync;
+
+        $filter = ['_attributes.' . $searchStack[$login] => ['$exists' => true]];
+        $productCursor = $collection->product->find($filter)->toArray();
+        $this->MSTmallFieldName = $searchStack[$login];
+        return $productCursor;
     }
 
     public function getMsStock($product_id, $stores = array())

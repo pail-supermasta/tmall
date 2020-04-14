@@ -21,7 +21,8 @@ class Bundles
             'NezabudkaMR@yandex.ru' => 'TMall ID (Morphy Richards)',
             'bestgoodsstore@yandex.ru' => 'TMall ID (Best Goods)',
             'NezabudkaiRobot@yandex.ru' => 'TMall ID (iRobot)',
-            'NezabudkaND@yandex.ru' => 'TMall ID (Noerden)'
+            'NezabudkaND@yandex.ru' => 'TMall ID (Noerden)',
+            'novinkiooo@yandex.ru' => 'TMall ID'
         );
         $collection = (new MSSync())->MSSync;
 

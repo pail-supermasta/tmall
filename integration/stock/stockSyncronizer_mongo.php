@@ -91,13 +91,11 @@ function loggingRes($arr, $product, $syncErrors,$login)
     if ($arr == false) {
         $syncErrors .= 'ID Aliexp ' . $product['ali_product_id'] . ' Код МС ' . $product['code'] . ' ошибка сопоставления для магазина ' . $login['login'] . PHP_EOL;
     } else {
-        $product = array_merge($product, $arr);
 
-        if ($product['new_stock'] === false) {
+        if (!isset($product['new_stock']) || $product['new_stock'] === false) {
             $log_message = 'Tmall код МС ' . $product['ali_product_id'] . ' Код МС ' . $product['code'] . ' ' . $arr['old_stock'] . ' без изменений';
         } else {
-            $log_message = 'Tmall код МС ' . $product['ali_product_id'] . ' Код МС ' . $product['code'] . ' Старое значение ' . $arr['old_stock'] . ' Новое значение ' . $product['ali_stock'];
-            $product['new_stock'] = $product['ali_stock'];
+            $log_message = 'Tmall код МС ' . $product['ali_product_id'] . ' Код МС ' . $product['code'] . ' Старое значение ' . $arr['old_stock'] . ' Новое значение ' . $product['new_stock'];
         }
 
     }
@@ -114,20 +112,17 @@ foreach (LOGINS as $login) {
     $start = 0;
     $start = microtime(TRUE);
 
-    $products = $productsMS->getTmallProducts($login['field_id']);
+    $products = $productsMS->findWithFieldTmall($login['login']);
 
     foreach ($products as $key => $product) {
 
-        $product['attributes'] = json_decode($product['attributes'], true);
         // Получаем ID товара в Aliexpress
-        $product['ali_product_id'] = $product['attributes'][$login['field_id']];
+        $product['ali_product_id'] = $product['_attributes'][$productsMS->MSTmallFieldName];
         if ($product['ali_product_id'] == '') continue;
-
 
         $aliProduct = new Product($product['ali_product_id'], $product['code']);
 
         $response = $aliProduct->setStock($stockMS[$product['id']]['available'], $login);
-
         $syncErrors = loggingRes($response, $product, $syncErrors,$login);
     }
 
