@@ -9077,3 +9077,15 @@ Stack trace:
 [07-Apr-2020 15:24:55 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
 [07-Apr-2020 15:25:05 UTC] PHP Notice:  Undefined index: request_header in C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Cainiao\Cainiao.php on line 66
 [07-Apr-2020 15:25:15 UTC] PHP Notice:  Undefined variable: mailNo in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\cainiao.php on line 258
+[17-Apr-2020 11:57:10 UTC] PHP Notice:  Undefined index: name in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_list_delivered.php on line 137
+[17-Apr-2020 11:57:51 UTC] PHP Notice:  Undefined index: order_id in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_list_delivered.php on line 137
+[17-Apr-2020 11:57:59 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_list_delivered.php:137
+Stack trace:
+#0 {main}
+  thrown in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_list_delivered.php on line 137
+[17-Apr-2020 11:58:24 UTC] PHP Notice:  Trying to get property 'order_id' of non-object in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_list_delivered.php on line 137
+[17-Apr-2020 13:37:23 UTC] PHP Fatal error:  Uncaught Error: Class 'Avaks\MS\MSSync' not found in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_list_delivered.php:80
+Stack trace:
+#0 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_list_delivered.php(94): getAllDeliveringMS('327c03c6-75c5-1...')
+#1 {main}
+  thrown in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_list_delivered.php on line 80

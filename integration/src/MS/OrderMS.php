@@ -86,6 +86,24 @@ class OrderMS
         return $res;
     }
 
+    public function setStatus()
+    {
+
+        $postdata = '{
+            "state": {
+                "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/metadata/states/'.$this->state.'",
+                    "type": "state",
+                    "mediaType": "application/json"
+                }
+            }
+        }';
+        $res = '';
+        $res = CurlMoiSklad::curlMS('/entity/customerorder/' . $this->id, $postdata, 'put');
+
+        return $res;
+    }
+
     public function setStateProcessManually()
     {
         $postdata = '{

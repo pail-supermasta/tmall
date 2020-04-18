@@ -151,7 +151,7 @@ function fillOrderTemplate(array $orderDetails)
         "applicable": true,
         "owner": {
             "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.1/entity/employee/d95c24ae-6f24-11ea-0a80-039000012102",
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/employee/b37445ea-6ddb-11ea-0a80-014a00329766",
                 "type": "employee",
                 "mediaType": "application/json"
             }
