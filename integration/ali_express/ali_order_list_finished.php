@@ -24,7 +24,7 @@ define('LOGINS', array(
         'name' => 'Незабудка MR',
         'login' => 'NezabudkaMR@yandex.ru',
         'field_id' => '0bbcd991-81f4-11e9-9109-f8fc0004dec9',
-        'sessionKey' => '50002500114c0AyToBcTKHT7oG1a9a6f36v1Muh8zIyiMSiVOiZeFQ5kUknvbHIgi2z',
+        'sessionKey' => '50002500428yXPcbqwfU6Lmo2txf83nTdKufWRlA15757c75Bgs6PSvcIUUwtbSdEo3',
         'cpCode' => 'UTV0a1NLakt5dE9DdzZOdEt1elhnblRnMURQaExvS0w4RVZEVHMyM2o2eTRqUjdiOEdxalpTVjhRN0ZBQldVZA==',
         'cnId' => '4398983084403'
     ),
@@ -32,7 +32,7 @@ define('LOGINS', array(
         'name' => 'bestgoodsstore',
         'login' => 'bestgoodsstore@yandex.ru',
         'field_id' => '0bbcd3e6-81f4-11e9-9109-f8fc0004dec8',
-        'sessionKey' => '50002301419cdaiudiQfUvkfkfueltW1bd07081FHiQGZdRtFEwBpxDxPrTG2jMrE6H',
+        'sessionKey' => '50002300d289mlqwnqAebm1lqueSpe9ECuAKVtDg1b6f0174jvgyezVnDsmJ4OkbLKm',
         'cpCode' => 'QXJCQk1QcjJKTkZDbHk4ZVZ4bW11cFQ2L2QreW1XT0lJd2ZlMnEvL2dFZC9NbG5CSklEV2tiY0cxNkRSMWlYcQ==',
         'cnId' => '4398985192396'
 
@@ -41,7 +41,7 @@ define('LOGINS', array(
         'name' => 'Новинки',
         'login' => 'novinkiooo@yandex.ru',
         'field_id' => 'e8a40577-77b9-11e9-912f-f3d40003d45d',
-        'sessionKey' => '50002501322seA1guGKsazsdfbDs5OwuiJ1acaac8aHQi2FtXGja9pwjv7JkowYjFuf',
+        'sessionKey' => '50003501012q0OsaZcIwdpta182c9ed30oFZdEu4qVXjhkvjakxWAd4HQ7yEr5SZx1z',
         'cpCode' => 'OTQwTzB2T1U3N1Nza0Y3OVRKMHZyVWtPL0RFRjJHczBqUHBDRHBqK05LVXdBc1pJRkk0THo1YUVLR21PNE5IZQ==',
         'cnId' => '4398985964371'
     ),
@@ -49,7 +49,7 @@ define('LOGINS', array(
         'name' => 'Незабудка iRobot',
         'login' => 'NezabudkaiRobot@yandex.ru',
         'field_id' => '0bbcde02-81f4-11e9-9109-f8fc0004deca',
-        'sessionKey' => '50002500322b04qabswlyhnCqZstidcl2d148bc306orAsRlaeAuCNzUGdZtBBR6hli',
+        'sessionKey' => '50002500403yXPc1faa68e8bqNFyEIFqyQvdh3JzliwbSpFffdP8tU1DJbFGQte8yE2',
         'cpCode' => 'czJBM3dFNm9aQ0RuSnhnY0tEK2p2a3g1cEI5aFYwSGw1TlpxTVAyUE1CYk1iYkRCTU1tWENocFo4alU3aFdmUg==',
         'cnId' => '4398985334183'
     ),
@@ -57,7 +57,7 @@ define('LOGINS', array(
         'name' => 'Незабудка ND',
         'login' => 'NezabudkaND@yandex.ru',
         'field_id' => '0bbce15c-81f4-11e9-9109-f8fc0004decb',
-        'sessionKey' => '50002700133c0AyTogdvRjyiiHsYsTdA0HvHMQATRiBBF1c793cebxervuYaJGZCr3v',
+        'sessionKey' => '50002700524VsBdqLktCoFvXnxeB4JxEjRbW111b877fTD7DDviKW1DmhKcqJnlQq9B',
         'cpCode' => 'V1ZDUlZnY09vbHoyQTFpNEZEUElkcGlmUE43Z1hYZEdoVEZwM2huTDlWeWVKUHdIUmY4QmFWV1FOdXVCT3JQeg==',
         'cnId' => '4398983195649'
     )
