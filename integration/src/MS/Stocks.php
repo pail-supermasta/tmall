@@ -31,23 +31,23 @@ class Stocks
         ]];
         $stockCursor = $collection->report_stock_all->find($filter);
         $stockMS = array();
+        $available = 0;
         foreach ($stockCursor as $stock) {
-            $available = 0;
+            $availableOnStock = 0;
 
             if (!isset($stock['reserve']) && $stock['isBundle'] == 1) {
-                $available += $stock['stock'];
+                $availableOnStock = $stock['stock'];
             } else {
-                $available += $stock['stock'] - $stock['reserve'];
-            }
-            if ($available <= 0) {
-                $available += 0;
-            }
-            if (isset($stockMS[$stock['_product']])) {
-                $stockMS[$stock['_product']]['available'] += $available;
-            } else {
-                $stockMS[$stock['_product']] = array('available' => $available, 'updated' => $stock['updated']);
+                $availableOnStock = $stock['stock'] - $stock['reserve'];
             }
 
+            if ($availableOnStock < 0) $availableOnStock = 0;
+            $available += $availableOnStock;
+        }
+        if (isset($stockMS[$stock['_product']])) {
+            $stockMS[$stock['_product']]['available'] = $available;
+        } else {
+            $stockMS[$stock['_product']] = array('available' => $available, 'updated' => $stock['updated']);
         }
 
         return $stockMS;

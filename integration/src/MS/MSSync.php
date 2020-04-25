@@ -13,7 +13,7 @@ use MongoDB\Client;
 
 class MSSync extends Client
 {
-    public function __construct(string $uri = 'mongodb://adminUser:7zh7NnVfYOTB@62.109.13.151:27017/MSSync?authSource=admin', array $uriOptions = [], array $driverOptions = [])
+    public function __construct(string $uri = 'mongodb://adminUser:1oOfSOh3mTbYhLPx8ypJtx@62.109.13.151:27017/MSSync?authSource=admin', array $uriOptions = [], array $driverOptions = [])
     {
         parent::__construct($uri, $uriOptions, $driverOptions);
     }

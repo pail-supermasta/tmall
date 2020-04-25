@@ -135,7 +135,12 @@ function fillOrderTemplate(array $orderDetails)
     $shop = $shopId . '\\n/*Складу - вложить гарантийный талон \\n/*Логистам - Отправить клиенту согласно заполненным полям';
     $markAsPaid = ($paid == true) ? '\\nЗАКАЗ ОПЛАЧЕН' : '';
     $escrowComment = '\\nescrow_fee_rates: ' . $orderDetails['escrow_fee_rates'];
-    $memoComment = isset($orderDetails['memo']) ? '\\n' . htmlspecialchars($orderDetails['memo']) : '';
+
+    /*удалить двойные ковычки*/
+    $vanishMemo = str_replace('"', '', htmlspecialchars($orderDetails['memo']));
+    /*удалить новую строку*/
+    $vanishMemo = preg_replace('/\s+/', ' ', trim($vanishMemo));
+    $memoComment = isset($orderDetails['memo']) ? '\\n' . $vanishMemo : '';
 
     $dshSumComment = isset($orderDetails['dshSum']) ? '\\nКомиссия:' . $orderDetails['dshSum'] : '';
     $couponComment = isset($orderDetails['coupon']) ? '\\nКупон / Доп. скидка:' . $orderDetails['coupon'] : '';
