@@ -42,13 +42,14 @@ class Stocks
             }
 
             if ($availableOnStock < 0) $availableOnStock = 0;
-            $available += $availableOnStock;
+
+            if (isset($stockMS[$stock['_product']])) {
+                $stockMS[$stock['_product']]['available'] += $availableOnStock;
+            } else {
+                $stockMS[$stock['_product']] = array('available' => $availableOnStock, 'updated' => $stock['updated']);
+            }
         }
-        if (isset($stockMS[$stock['_product']])) {
-            $stockMS[$stock['_product']]['available'] = $available;
-        } else {
-            $stockMS[$stock['_product']] = array('available' => $available, 'updated' => $stock['updated']);
-        }
+
 
         return $stockMS;
     }
