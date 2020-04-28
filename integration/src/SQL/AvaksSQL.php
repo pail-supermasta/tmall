@@ -52,6 +52,7 @@ class AvaksSQL
      */
     public static function selectProductById($id = false)
     {
+        /*!!!!LEGACY TO BE DELETED!!!!*/
 
         $sql = new \mysqli(MS_HOST, MS_USER, MS_PASS, MS_DB);
 

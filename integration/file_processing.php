@@ -20,6 +20,7 @@ require_once 'moi_sklad/ms_post_order_dynamic.php';
 require_once 'moi_sklad/ms_mysql_products_dynamic.php';
 require_once 'vendor/autoload.php';
 
+use Avaks\MS\MSSync;
 
 /*TEST PART DELETE ATER*/
 
@@ -107,6 +108,42 @@ die();*/
  3) 3.1 код страны не содержит 7
     3.2 телефон не содержит 7 цифр - формат 999 99 99
 */
+
+
+function getProductByIDMongo($code)
+{
+    $filter = ['code' => $code];
+
+    $collection = (new MSSync())->MSSync;
+    $product = $collection->product->findOne($filter);
+    if (isset($product['_id'])) {
+        $item['id'] = $product['_id'];
+        $item['minPrice'] = $product['minPrice']['value'];
+        $item['salePrices'] = json_encode($product['salePrices']);
+        return $item;
+    } else {
+        $bundle = $collection->bundle->findOne($filter);
+        if (isset($bundle['_id'])) {
+            $item['id'] = $bundle['_id'];
+            $item['minPrice'] = $bundle['minPrice']['value'];
+            $item['salePrices'] = json_encode($bundle['salePrices']);
+            return $item;
+        } else {
+            $service = $collection->service->findOne($filter);
+            if (isset($service['_id'])) {
+                $item['id'] = $service['_id'];
+                $item['minPrice'] = $service['minPrice']['value'];
+                $item['salePrices'] = json_encode($service['salePrices']);
+                return $item;
+            } else {
+                return false;
+            }
+        }
+    }
+
+}
+
+
 
 
 function userDataValidation($address, $order)
@@ -217,7 +254,7 @@ function destructResponse(array $shortener, $order, $shop)
 
                 /*  product result from MS product DB   */
                 if (isset($product['sku_code'])) {
-                    $product_ms = getProductIdMS($orderDetails['field_id'], $product['sku_code']);
+                    $product_ms = getProductByIDMongo($product['sku_code']);
                     $product_id = $product_ms['id'];
                     if ($product_id != '') {
                         /*  BF-5  check if sold price less than minimum sell price in MS product DB   */
@@ -235,13 +272,9 @@ function destructResponse(array $shortener, $order, $shop)
 
                         /*get MS stock*/
 
-                        $stores = array(
-                            // 'f80cdf08-29a0-11e6-7a69-971100124ae8', // Склад-РЦ3
-                            // 'f257b41d-c2d9-11e7-6b01-4b1d00131678', // СКЛАД ХД
-                            '48de3b8e-8b84-11e9-9ff4-34e8001a4ea1',  // MP_NFF
-                        );
+
                         $stockProduct = new \Avaks\MS\Products();
-                        $stocks = $stockProduct->getMsStock($product_id, $stores);
+                        $stocks = $stockProduct->getMsStock($product_id);
                         $avaliable_stock = $stocks[0];
                         $productMSName = $stocks[1];
 
@@ -279,7 +312,7 @@ function destructResponse(array $shortener, $order, $shop)
                             $productsTotal += $prTotal;
                             $orderAmount = $shortener['order_amount']['cent'];
                         }
-                        echo "init_oder_amount ".$shortener['init_oder_amount']['cent'];
+                        echo "init_oder_amount " . $shortener['init_oder_amount']['cent'];
 //
 //                        /*percentage difference btw Tmall price and MS price - applied discount*/
 //                        if ($msPrice > $sellPrice) {
@@ -288,7 +321,7 @@ function destructResponse(array $shortener, $order, $shop)
 //                            $discountDiff = ($price - $sellPrice) * 100 / ($price - $sellPrice + $tmallTotal);
 //                            var_dump('$discountDiff' . $discountDiff);
 //                        } else {
-                            $price = $sellPrice;
+                        $price = $sellPrice;
 //                        }
 //
 //
@@ -360,13 +393,12 @@ function destructResponse(array $shortener, $order, $shop)
                         /*  send errors to telegram bot */
                         telegram($productErrorMsg, '-278688533');
                     }
-                }else{
+                } else {
                     $err .= "No sku_code found for $order";
                     telegram("No sku_code found for $order \n", '-320614744');
                 }
 
             }
-
 
 
         } else {
@@ -388,7 +420,7 @@ function destructResponse(array $shortener, $order, $shop)
     $escrowFee = $escrowFeeSum / sizeof($products) * $productsTotal;
     $orderShipEscrow = isset($shortener['logisitcs_escrow_fee_rate']) ? $shortener['logisitcs_escrow_fee_rate'] * $orderShip : 0;
     $orderDetails['dshSum'] = ($escrowFee + $orderShipEscrow - $couponEscrow) / 100;
-    $orderDetails['coupon'] = $coupon/100;
+    $orderDetails['coupon'] = $coupon / 100;
     var_dump("dsh " . $orderDetails['dshSum']);
     var_dump("coupon " . $orderDetails['coupon']);
 

@@ -57,6 +57,6 @@ function getProductIdMS($key, $value)
 }
 
 
-
+//var_dump(getProductIdMS('d', '999101'));
 
 

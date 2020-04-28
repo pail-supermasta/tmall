@@ -21,8 +21,6 @@ use Avaks\MS\OrderMS;
 
 $ordersMS = new Orders();
 $getWaitPaymentResp = $ordersMS->getWaitPayment();
-//var_dump($getWaitPaymentResp);
-
 
 /*  add 3 hour shift from GMT to RU */
 $offsetNow = 3 * 60 * 60;
@@ -38,25 +36,27 @@ foreach ($getWaitPaymentResp as $orderInWaitPayment) {
     $reset = false;
 
     if ($daysNotPaid >= 24) {
-        $positions = json_decode($orderInWaitPayment['positions'], true);
+        $positions = json_encode($orderInWaitPayment['positions']);
+        $positions = json_decode($positions, true);
 
         $ordersMS = new OrderMS($orderInWaitPayment['id']);
-        /*clear reservation for each product*/
+
         foreach ($positions as $position) {
             if ($position['reserve'] > 0) {
                 $postdata = '{
                   "reserve": 0
                 }';
                 $resetReserveResp = $ordersMS->updatePositions($postdata, $position['id']);
+
                 if (strpos($resetReserveResp, 'обработка-ошибок') > 0 || $resetReserveResp == '') {
-                    telegram("resetReserveResp error found " . $result['mailNo'], '-320614744');
+                    telegram("resetReserveResp error found " . $orderInWaitPayment['id'], '-320614744');
                     error_log($resetReserveResp, 3, "resetReserveResp.log");
                 }
                 $reset = true;
             }
         }
         if ($reset == true) {
-            error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $orderInWaitPayment['name'] . PHP_EOL, 3, "orderInWaitPayment.log");
+            error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . ' ' . $orderInWaitPayment['name'] . PHP_EOL, 3, "orderInWaitPayment.log");
         }
     }
 }

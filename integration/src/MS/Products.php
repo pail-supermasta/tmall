@@ -10,6 +10,7 @@ namespace Avaks\MS;
 
 use Avaks\Customs;
 use Avaks\SQL\AvaksSQL;
+use Avaks\MS\Stocks;
 
 class Products
 {
@@ -24,6 +25,8 @@ class Products
 
     public function getOrderProducts()
     {
+        /*!!!!LEGACY TO BE DELETED!!!!*/
+
         /*parse raw json and get product id*/
 
         $positions = json_decode($this->orderPositionsRaw, true);
@@ -40,6 +43,8 @@ class Products
 
     public function getTmallProducts($field_id)
     {
+
+        /*!!!!LEGACY TO BE DELETED!!!!*/
 
         $query = "SELECT * FROM `ms_product` WHERE `attributes` LIKE '%{$field_id}%'";
         $products = AvaksSQL::selectAllAssoc($query);
@@ -65,22 +70,24 @@ class Products
         return $productCursor;
     }
 
-    public function getMsStock($product_id, $stores = array())
+    public function getMsStock($product_id)
     {
 
 
         $avaliable_stock = 0;
         $product_name = false;
+        $stocks= new Stocks();
+        $stockMS = $stocks->getByProduct($product_id);
 
-        foreach ($stores as $key => $store) {
+        /*foreach ($stores as $key => $store) {
             $query = "SELECT (`stock` - `reserve`) as `avaliable_stock`, product_name FROM `ms_stock_now` WHERE `product_id` = '$product_id' AND `store_id` = '" . $store . "'";
 
             $row = AvaksSQL::selectAllAssoc($query);
             $avaliable_stock = $avaliable_stock + ($row[0]['avaliable_stock'] ?? 0);
             $product_name = $row[0]['product_name'] ?? false;
-        }
+        }*/
 
 
-        return array($avaliable_stock, $product_name);
+        return array($stockMS['avaliable_stock'], $stockMS['product_name']);
     }
 }
