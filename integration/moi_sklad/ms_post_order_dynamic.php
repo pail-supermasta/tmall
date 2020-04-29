@@ -6,7 +6,13 @@
  * Time: 9:43
  */
 
+
+define('MS_USERNAME', 'робот_next@техтрэнд');
+define('MS_PASSWORD', 'Next0913');
+define('MS_PATH', 'https://online.moysklad.ru/api/remap/1.1');
 define('MS_LINK', MS_PATH . '/entity/customerorder');
+define('ID_REGEXP', '/[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}/'); // Регулярка для UUID
+
 
 
 function curlMSCreate($username = false, $post, $memo)
