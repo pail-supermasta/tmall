@@ -4,7 +4,10 @@ ini_set('display_errors', 1);
 
 header('Content-Type: application/json');
 
-
+define('MS_HOST', 'avaks.org');
+define('MS_USER', 'avaks');
+define('MS_PASS', 'SbTZN8L9fCpVDxtc');
+define('MS_DB', 'avaks');
 /*  INCLUDES    */
 
 // Error handlers

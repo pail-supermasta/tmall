@@ -74,7 +74,6 @@ require_once '../class/telegram.php';
 // SQL get track number for orden name from MS
 require_once '../moi_sklad/sql_requests/OrderDetails.php';
 require_once '../moi_sklad/ms_get_orders_dynamic.php';
-//require_once 'ali_order_details_dynamic.php';
 
 require_once 'taobao/TopSdk.php';
 require_once 'cainiao.php';
@@ -115,11 +114,10 @@ function checkTimeFromPaid($order, $payTime, $credential)
 
 
     /*check if order ready for CAINIAO*/
-
+    $order = strval($order);
     $isReady = checkCainiaoReady($order);
 
     if ($isReady == true) {
-
         /*run cainiao delivery process*/
 
         $result = deliverCainiao($order, $cnId, $cpCode, $sessionKey);
@@ -217,7 +215,8 @@ function checkTimeFromPaid($order, $payTime, $credential)
 
             /*check if order has track in MS*/
 
-            $delivery = getOrderTrack($order);
+            $orderMSTemp = new OrderMS(null,strval($order));
+            $delivery = $orderMSTemp->getOrderTrackNew();
             $trackId = $delivery['track'];
 
             /*has no track*/
@@ -306,8 +305,8 @@ function setTrackToTmall($order, $payTime, $credential)
     $sessionKey = $credential['sessionKey'];
 
     /*check if in MS state is Доставляется and has a track number*/
-    $delivery = getOrderTrack($order);
-
+    $orderMSTemp = new OrderMS(null,strval($order));
+    $delivery = $orderMSTemp->getOrderTrackNew();
     /*Комплектуется, На выдаче, Доставляется*/
     $statesToShip = array("8beb227b-6088-11e7-7a6c-d2a9003b81a3",
         "8beb25ab-6088-11e7-7a6c-d2a9003b81a4",
@@ -317,20 +316,19 @@ function setTrackToTmall($order, $payTime, $credential)
     if (in_array($delivery['state'], $statesToShip) == 1 && $delivery['track'] != false) {
         $trackId = $delivery['track'];
         $agentId = $delivery['agent'];
-
         /*set track number in Tmall*/
 
         $serviceName = "OTHER_RU_CITY_RUB";
         switch ($agentId) {
-            case "3e974e59-c2ad-11e6-7a69-8f55000291d8":
+            case "CDEK":
                 $trackingWebsite = "https://cdek.ru/track.html?order_id=$trackId";
                 $serviceName = "OTHER_RU_CITY_RUB";
                 break;
-            case "1da99879-55a8-11e7-7a6c-d2a90009f537":
+            case "IML":
                 $trackingWebsite = "https://iml.ru/status/";
                 $serviceName = "OTHER_RU_CITY_RUB";
                 break;
-            case "3071006a-d2db-11e9-0a80-025a0021cd0d":
+            case "Cainiao":
 //                $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=AEWH000' . $trackId . 'RU4"';
                 $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=' . $trackId . '"';
                 $serviceName = "AE_RU_MP_COURIER_PH3_CITY";
@@ -338,7 +336,8 @@ function setTrackToTmall($order, $payTime, $credential)
                 break;
         }
 
-        if ($agentId == '3071006a-d2db-11e9-0a80-025a0021cd0d') {
+
+        if ($agentId == 'Cainiao') {
             telegram("Трек отправлен в цаняо для $order $trackId $serviceName", '-320614744');
         }
 
@@ -410,7 +409,6 @@ function formMasterList($credential)
         foreach ($shortener as $shorty) {
             if ($shorty['order_status'] == 'WAIT_SELLER_SEND_GOODS') {
                 $orderList[$shorty['order_id']] = $shorty['gmt_pay_time'];
-
 
                 /*check if paid and no track number*/
                 checkTimeFromPaid($shorty['order_id'], $shorty['gmt_pay_time'], $credential);

@@ -8,6 +8,7 @@
 
 namespace Avaks\MS;
 
+use Avaks\MS\MSSync;
 
 class OrderMS
 {
@@ -36,6 +37,20 @@ class OrderMS
     {
         $res = CurlMoiSklad::curlMS('/entity/customerorder/?filter=name=' . $this->name);
         return (json_decode($res, true))['rows'][0];
+    }
+
+    public function getOrderTrackNew()
+    {
+        $collection = (new MSSync())->MSSync;
+
+        $filter = [
+            'name' => $this->name,
+            'deleted' => ['$exists' => false]
+        ];
+        $ordersCursor = $collection->customerorder->findOne($filter);
+        $agent = $ordersCursor['_attributes']['#Логистика: агент'] ?? false;
+        $track = $ordersCursor['_attributes']['Логистика: Трек'] ?? false;
+        return ['agent' => $agent, 'track' => $track, 'state' => $ordersCursor['_state']];
     }
 
     public function setSticker($postdata)

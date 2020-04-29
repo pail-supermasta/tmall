@@ -9,6 +9,11 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ini_set("error_log", "../php-error.log");
 
+define('MS_HOST', 'avaks.org');
+define('MS_USER', 'avaks');
+define('MS_PASS', 'SbTZN8L9fCpVDxtc');
+define('MS_DB', 'avaks');
+
 
 define('MS_USERNAME', 'робот_next@техтрэнд');
 define('MS_PASSWORD', 'Next0913');

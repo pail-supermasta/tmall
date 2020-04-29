@@ -207,7 +207,7 @@ function fillOrderTemplate(array $orderDetails)
                 "value": "' . $orderDetails['phone'] . '"
             },
             {
-                "id": "547ffc2a-ef8e-11e6-7a31-d0fd0021d141",
+                "id": "535dd809-1db1-11ea-0a80-04c00009d6bf",
                 "value": ' . round($orderDetails['dshSum']) . '
             },
             {
