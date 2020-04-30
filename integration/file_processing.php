@@ -20,7 +20,7 @@ require_once 'ali_express/ali_order_details_dynamic.php';
 // Create order in MS
 require_once 'moi_sklad/ms_post_order_dynamic.php';
 // Find product in MS DB by produci_id from ALI
-require_once 'moi_sklad/ms_mysql_products_dynamic.php';
+//require_once 'moi_sklad/ms_mysql_products_dynamic.php';
 require_once 'vendor/autoload.php';
 
 use Avaks\MS\MSSync;
@@ -115,7 +115,7 @@ die();*/
 
 function getProductByIDMongo($code)
 {
-    $filter = ['code' => $code];
+    $filter = ['code' => $code, 'archived' => false];
 
     $collection = (new MSSync())->MSSync;
     $product = $collection->product->findOne($filter);
@@ -145,8 +145,6 @@ function getProductByIDMongo($code)
     }
 
 }
-
-
 
 
 function userDataValidation($address, $order)
@@ -391,6 +389,7 @@ function destructResponse(array $shortener, $order, $shop)
                         /*  send email  */
                         $productErrorMsg = "Tmall продал товар, которого нет. Заказ на Tmall № $order";
                         $err .= $productErrorMsg;
+                        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . " " . json_encode($product) . " " . $order . PHP_EOL, 3, 'sku_code_mismatch.log');
 //                    mail("p.kurskii@avaks.org", "Товар не найден в МС", $productErrorMsg);
 
                         /*  send errors to telegram bot */

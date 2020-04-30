@@ -64,7 +64,7 @@ class Products
         );
         $collection = (new MSSync())->MSSync;
 
-        $filter = ['_attributes.' . $searchStack[$login] => ['$exists' => true]];
+        $filter = ['archived' => false, '_attributes.' . $searchStack[$login] => ['$exists' => true]];
         $productCursor = $collection->product->find($filter)->toArray();
         $this->MSTmallFieldName = $searchStack[$login];
         return $productCursor;
@@ -76,7 +76,7 @@ class Products
 
         $avaliable_stock = 0;
         $product_name = false;
-        $stocks= new Stocks();
+        $stocks = new Stocks();
         $stockMS = $stocks->getByProduct($product_id);
 
         /*foreach ($stores as $key => $store) {

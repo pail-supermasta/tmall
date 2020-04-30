@@ -11,6 +11,9 @@ define('MS_DB', 'avaks');
 
 function getProductIdMS($key, $value)
 {
+
+    /*LEGACY TO BE REMOVED!!!*/
+
     $row = '';
     $sql = new mysqli(MS_HOST, MS_USER, MS_PASS, MS_DB);
     $query = "SELECT id, minPrice, salePrices, code FROM `ms_product` WHERE code='$value'";
