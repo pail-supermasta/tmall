@@ -105,7 +105,7 @@ class Orders
             $orderElem['id'] = $orderCursor['_id'];
             $orderElem['name'] = $orderCursor['name'];
 
-            $orderElem['positions'] = $orderCursor['_positions'];
+            $orderElem['positions'] = $orderCursor['positions']['rows'];
             $orderElem['moment'] = $orderCursor['moment'];
             $ordersWaitPayment[] = $orderElem;
         }
