@@ -14,7 +14,6 @@ define('MS_LINK', MS_PATH . '/entity/customerorder');
 define('ID_REGEXP', '/[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}/'); // Регулярка для UUID
 
 
-
 function curlMSCreate($username = false, $post, $memo)
 {
 
@@ -111,7 +110,7 @@ function fillOrderTemplate(array $orderDetails)
 
 
     /*city - Other now not processed by Cainiao, deliver with other shipper*/
-    if (strpos($orderDetails['fullAddress'],"Other") > 0) {
+    if (strpos($orderDetails['fullAddress'], "Other") > 0) {
         $logisticsProvider = '0 Нужна доставка';
     }
 
@@ -149,11 +148,12 @@ function fillOrderTemplate(array $orderDetails)
     $memoComment = isset($orderDetails['memo']) ? '\\n' . $vanishMemo : '';
 
     $dshSumComment = isset($orderDetails['dshSum']) ? '\\nКомиссия:' . $orderDetails['dshSum'] : '';
+    $affiliateComment = '\\nКомиссия affiliate fee:' . $orderDetails['affiliate_fee'];
     $couponComment = isset($orderDetails['coupon']) ? '\\nКупон / Доп. скидка:' . $orderDetails['coupon'] : '';
 
 
     $comment = '"' . $orderDetails['order'] . '\\n' . $shop . $memoComment . $markAsPaid . $escrowComment .
-        $dshSumComment . $couponComment . '"';
+        $affiliateComment . $dshSumComment . $couponComment . '"';
 
     $postdata = '{
         "name": "' . $orderDetails['order'] . '",
@@ -214,7 +214,7 @@ function fillOrderTemplate(array $orderDetails)
             },
             {
                 "id": "535dd809-1db1-11ea-0a80-04c00009d6bf",
-                "value": ' . round($orderDetails['dshSum']) . '
+                "value": "' . $orderDetails['dshSum'] . '"
             },
             {
                 "id": "4552a58b-46a8-11e7-7a34-5acf002eb7ad",
