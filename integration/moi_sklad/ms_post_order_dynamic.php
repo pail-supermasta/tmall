@@ -214,7 +214,7 @@ function fillOrderTemplate(array $orderDetails)
             },
             {
                 "id": "535dd809-1db1-11ea-0a80-04c00009d6bf",
-                "value": "' . $orderDetails['dshSum'] . '"
+                "value": ' . $orderDetails['dshSum'] . '
             },
             {
                 "id": "4552a58b-46a8-11e7-7a34-5acf002eb7ad",

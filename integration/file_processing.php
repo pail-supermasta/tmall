@@ -425,6 +425,7 @@ function destructResponse(array $shortener, $order, $shop)
     $escrowFee = $escrowFeeSum / sizeof($products) * $productsTotal;
     $orderShipEscrow = isset($shortener['logisitcs_escrow_fee_rate']) ? $shortener['logisitcs_escrow_fee_rate'] * $orderShip : 0;
     $orderDetails['dshSum'] = ($escrowFee + $orderShipEscrow - $couponEscrow) / 100;
+//    $orderDetails['dshSum'] = str_replace('.',',',$orderDetails['dshSum'] );
     $orderDetails['coupon'] = $coupon / 100;
     var_dump("dsh " . $orderDetails['dshSum']);
     var_dump("coupon " . $orderDetails['coupon']);
