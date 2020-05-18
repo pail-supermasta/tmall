@@ -3,7 +3,6 @@ header('Content-Type: application/json');
 function findorderbyid($post_data, $sessionKey)
 {
 
-
     $c = new TopClient;
     $c->format = "json";
     $c->appkey = APPKEY;
@@ -19,10 +18,9 @@ function findorderbyid($post_data, $sessionKey)
         return false;
     } else {
         $result = $resp->result->data;
-
         $res = json_encode((array)$result);
-        return $res;
-//        return json_decode($res, true);
+
+        return json_decode($res, true);
     }
 
 
@@ -33,11 +31,12 @@ function findorderbyid($post_data, $sessionKey)
 require_once '../integration/ali_express/taobao/TopSdk.php';
 define('APPKEY', '27862248');
 define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
-$shorten = findorderbyid('3003966520104358','50002301419cdaiudiQfUvkfkfueltW1bd07081FHiQGZdRtFEwBpxDxPrTG2jMrE6H');
+$shorten = findorderbyid('5004056713565233','50002301419cdaiudiQfUvkfkfueltW1bd07081FHiQGZdRtFEwBpxDxPrTG2jMrE6H');
+var_dump($shorten);
 //var_dump($shorten['logistics_amount']['cent']);
 //var_dump($shorten['order_amount']['cent']);
-$shortener = json_decode($shorten,true);
-$products = $shortener['child_order_list']['global_aeop_tp_child_order_dto'];
-var_dump($products);
+//$shortener = json_decode($shorten,true);
+//$products = $shortener['child_order_list']['global_aeop_tp_child_order_dto'];
+//var_dump($products);
 die();
 echo $products['afflicate_fee_rate'];

@@ -416,8 +416,6 @@ function destructResponse(array $shortener, $order, $shop)
     $orderDetails['escrow_fee_rates'] = str_replace(array('%5D', '%5B'), "", http_build_query($positionsEscrowFee, ' ', ','));
 
 
-    /*Affiliate fee*/
-    $orderDetails['affiliate_fee'] = $products['afflicate_fee_rate'] ?? '';
 
     /*ДШ amount*/
 

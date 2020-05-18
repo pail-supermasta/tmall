@@ -236,8 +236,23 @@ function setNewPositionPrice($order, $credential)
             error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setNewPositionPriceResp . " " . $order . PHP_EOL, 3, "setNewPositionPriceResp.log");
         }
     }
+
+    $productsAli = $findorderbyidRes['child_order_list']['global_aeop_tp_child_order_dto'];
+    $affiliateFeeSum = 0;
+    $affiliateAmount = 0;
+
+    foreach ($productsAli as $productAli){
+        if (isset($productAli['afflicate_fee_rate'])) {
+            $affiliateFeeSum += $productAli['afflicate_fee_rate'];
+        }
+    }
+
+    /*Affiliate fee*/
+    $affiliateFee = $affiliateFeeSum / sizeof($products);
+    $affiliateAmount = $pay_amount_by_settlement_cur * $affiliateFee;
+
     /*update comment*/
-    $newLines = " Всего скидок для заказа: $diff Сумма была: $orderMSSum, Сумма оплачена $pay_amount_by_settlement_cur, Сумма доставки " . $logistics_amount / 100;
+    $newLines = " Affiliate fee: $affiliateAmount. Всего скидок для заказа: $diff Сумма была: $orderMSSum, Сумма оплачена $pay_amount_by_settlement_cur, Сумма доставки " . $logistics_amount / 100;
     $oldDescription = $res['description'];
     /*удалить двойные ковычки*/
     $oldDescription = str_replace('"', '', $oldDescription);

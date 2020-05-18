@@ -278,8 +278,24 @@ function setNewPositionPrice($order, $credential)
             error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setNewPositionPriceResp . " " . $order . PHP_EOL, 3, "setNewPositionPriceResp.log");
         }
     }
+
+    $productsAli = $findorderbyidRes['child_order_list']['global_aeop_tp_child_order_dto'];
+    $affiliateFeeSum = 0;
+    $affiliateAmount = 0;
+
+    foreach ($productsAli as $productAli){
+        if (isset($productAli['afflicate_fee_rate'])) {
+            $affiliateFeeSum += $productAli['afflicate_fee_rate'];
+        }
+    }
+
+    /*Affiliate fee*/
+    $affiliateFee = $affiliateFeeSum / sizeof($products);
+    $affiliateAmount = $pay_amount_by_settlement_cur * $affiliateFee;
+
+
     /*update comment*/
-    $newLines = " Всего скидок для заказа: $diff Сумма была: $orderMSSum, Сумма оплачена $pay_amount_by_settlement_cur, Сумма доставки " . $logistics_amount / 100;
+    $newLines = " Affiliate fee: $affiliateAmount. Всего скидок для заказа: $diff Сумма была: $orderMSSum, Сумма оплачена $pay_amount_by_settlement_cur, Сумма доставки " . $logistics_amount / 100;
     $oldDescription = $res['description'];
     /*удалить двойные ковычки*/
     $oldDescription = str_replace('"', '', $oldDescription);
@@ -428,6 +444,18 @@ function formMasterList($credential)
 foreach (LOGINS as $credential) {
     formMasterList($credential);
 }
+
+/*$order = '5004056713565233';
+$credential = array(
+    'name' => 'bestgoodsstore',
+    'login' => 'bestgoodsstore@yandex.ru',
+    'field_id' => '0bbcd3e6-81f4-11e9-9109-f8fc0004dec8',
+    'sessionKey' => '50002301b21seTrdXcBvgrz2lkiuhxGTU1b8bba12EjWmoPbPQvsmvYZfkFlqTKVgPr',
+    'cpCode' => 'QXJCQk1QcjJKTkZDbHk4ZVZ4bW11cFQ2L2QreW1XT0lJd2ZlMnEvL2dFZC9NbG5CSklEV2tiY0cxNkRSMWlYcQ==',
+    'cnId' => '4398985192396'
+
+);
+setNewPositionPrice($order, $credential);*/
 
 
 
