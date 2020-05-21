@@ -148,12 +148,10 @@ function fillOrderTemplate(array $orderDetails)
     $memoComment = isset($orderDetails['memo']) ? '\\n' . $vanishMemo : '';
 
     $dshSumComment = isset($orderDetails['dshSum']) ? '\\nКомиссия:' . $orderDetails['dshSum'] : '';
-    $affiliateComment = '\\nКомиссия affiliate fee:' . $orderDetails['affiliate_fee'];
     $couponComment = isset($orderDetails['coupon']) ? '\\nКупон / Доп. скидка:' . $orderDetails['coupon'] : '';
 
 
-    $comment = '"' . $orderDetails['order'] . '\\n' . $shop . $memoComment . $markAsPaid . $escrowComment .
-        $affiliateComment . $dshSumComment . $couponComment . '"';
+    $comment = '"' . $orderDetails['order'] . '\\n' . $shop . $memoComment . $markAsPaid . $escrowComment . $dshSumComment . $couponComment . '"';
 
     $postdata = '{
         "name": "' . $orderDetails['order'] . '",
