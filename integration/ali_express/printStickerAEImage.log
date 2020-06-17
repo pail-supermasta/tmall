@@ -1,0 +1,12 @@
+2020-06-02 19:05:08 5004318269139291 Mpdf\MpdfException: Error detected. PDF file generation aborted: Undefined index: mobile_no in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_print.php:103
+Stack trace:
+#0 C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Customs.php(287): Mpdf\Mpdf->Output(NULL, 'S')
+#1 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_print.php(118): Avaks\Customs->generateCainiaoSticker(Array)
+#2 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_print.php(164): printCainiaoSticker(Object(Avaks\MS\OrderMS), '50002301b21seTr...')
+#3 {main}
+2020-06-02 19:06:14 5004318269139291 Mpdf\MpdfException: Error detected. PDF file generation aborted: Undefined index: mobile_no in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_print.php:101
+Stack trace:
+#0 C:\Users\User\Documents\aliexpr.avaks.org\integration\src\Customs.php(287): Mpdf\Mpdf->Output(NULL, 'S')
+#1 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_print.php(116): Avaks\Customs->generateCainiaoSticker(Array)
+#2 C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_print.php(162): printCainiaoSticker(Object(Avaks\MS\OrderMS), '50002301b21seTr...')
+#3 {main}

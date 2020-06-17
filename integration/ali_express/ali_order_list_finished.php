@@ -78,7 +78,6 @@ require_once '../moi_sklad/ms_change_order_dynamic.php';
 require_once 'taobao/TopSdk.php';
 
 
-
 /*Search for an error*/
 function strpos_recursive($haystack, $needle, $offset = 0, &$results = array())
 {
@@ -230,8 +229,11 @@ function getOrderFromMS($reason, $order)
                         telegram($messageCancelUrgent, '-278688533', 'Markdown');
                     }
 
-                    /*pass order id from MS to update to Canceled*/
-                    fillOrderTemplate($row['id'], 'cancel');
+                    if ($reason == 'IN_CANCEL') {
+                        /*pass order id from MS to update to Canceled*/
+                        fillOrderTemplate($row['id'], 'cancel');
+                    }
+
                 }
             }
         }

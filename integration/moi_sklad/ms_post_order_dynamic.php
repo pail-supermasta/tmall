@@ -14,7 +14,7 @@ define('MS_LINK', MS_PATH . '/entity/customerorder');
 define('ID_REGEXP', '/[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}/'); // Регулярка для UUID
 
 
-function curlMSCreate($username = false, $post, $memo)
+function curlMSCreate($username = false, $post, $memo, $order = false)
 {
 
     $curl = curl_init();
@@ -35,7 +35,7 @@ function curlMSCreate($username = false, $post, $memo)
     $result = curl_exec($curl);
     $curl_errno = curl_errno($curl);
     if (strpos($result, 'обработка-ошибок') > 0 || $result == '') {
-        telegram("Ошибка создания заказа в МС.", '-320614744');
+        telegram("Ошибка создания заказа в МС. $order", '-320614744');
         error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . "Return error " . $result . " POST BODY IS " . $post . PHP_EOL, 3, "orderCreateErr.log");
     }
 
@@ -230,7 +230,7 @@ function fillOrderTemplate(array $orderDetails)
         "positions": ' . $orderDetails['positions'] . '
     }';
 
-    curlMSCreate('робот_next@техтрэнд', $postdata, $orderDetails['memo'] ?? '');
+    curlMSCreate('робот_next@техтрэнд', $postdata, $orderDetails['memo'] ?? '', $orderDetails['order']);
 
 
 }

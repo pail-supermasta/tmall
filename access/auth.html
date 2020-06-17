@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Получение Токена API для синхронизации МойСклад - AliExpress</title>
 </head>
 <body>
-<a href="https://oauth.aliexpress.com/authorize?response_type=code&client_id=27862248&redirect_uri=http://aliexpr.avaks.org/access/auth.html&state=1212&view=web&sp=ae">Ccskrf</a>
+<h3>Получение Токена API для синхронизации МойСклад - AliExpress</h3>
+<ol>
+    <li>Перейдите по <a
+            href="https://oauth.aliexpress.com/authorize?response_type=code&client_id=27862248&redirect_uri=http://aliexpr.avaks.org/access/auth.html&state=1212&view=web&sp=ae">ссылке</a>
+    </li>
+    <li>В открывшемся окне Войдите в ЛК магазина и предоставьте доступ Приложению к данным магазина</li>
+    <li>Скопируйте полученный токен <input type="text"> в поле "Токен API AliExpress" в приложении "МойСклад - AliExpress"</li>
+</ol>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(function () {
+        $.get("auth.php?code=" + getQueryVariable("code")).then(response => $('input').val(response.access_token));
+    });
+
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == variable) {
+                return pair[1];
+            }
+        }
+        return (false);
+    }
+
+</script>
 </body>
 </html>

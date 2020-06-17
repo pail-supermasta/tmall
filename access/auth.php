@@ -1,11 +1,13 @@
 <?php
-/*During testing, replace values of test parameters with the actual data of the developer's own application.*/
+$code = $_GET['code'];
+header("Content-Type: application/json; charset=UTF-8");
+
 
 $url = 'https://oauth.aliexpress.com/token';
 $postfields = array('grant_type' => 'authorization_code',
     'client_id' => '27862248', //appKey
     'client_secret' => 'ca6916e55a087b3561b5077fc8b83ee6', //appSecret
-    'code' => '0_OXHiWpTOBI7b7SZzTTzaSazU18955', //nd
+    'code' => $code, //nd
     'sp' => 'ae',
     'redirect_uri' => 'http://aliexpr.avaks.org/access/auth.html');
 $post_data = '';
@@ -26,8 +28,8 @@ curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, substr($post_data, 0, -1));
 $output = curl_exec($ch);
 $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-echo $httpStatusCode;
+//echo $httpStatusCode;
 curl_close($ch);
-var_dump($output);
+echo $output;
 
 ?>

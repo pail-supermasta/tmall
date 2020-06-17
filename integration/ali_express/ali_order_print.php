@@ -77,11 +77,9 @@ $ordersNoSticker = $orders->getOrdersNoSticker();
 function printCainiaoSticker(OrderMS $orderMS, $sessionKey)
 {
 
-    var_dump($orderMS);
 
     $customs = new \Avaks\Customs();
     $findorderbyidRes = findorderbyid($orderMS->name, $sessionKey);
-    var_dump($findorderbyidRes);
 
 
     $productShortener = $findorderbyidRes['child_order_ext_info_list']['global_aeop_tp_order_product_info_dto'];
@@ -100,7 +98,7 @@ function printCainiaoSticker(OrderMS $orderMS, $sessionKey)
     $address2 = isset($address['address2']) ? $address['address2'] : '';
     $fullAddress = $address['zip'] . ", " . $country . ", " . $address['province'] . ", " . $address['city'] . ", " . $address['detail_address'] . ", " . $address2;
     $receiverName = $address['contact_person'];
-    $receiverPhone = $address['mobile_no'];
+    $receiverPhone = $address['mobile_no'] ?? '';
     $otgruzkaDate = date('Y-m-d', strtotime($findorderbyidRes['gmt_create']));
 //    $lpNum = 'LP00141041126618';
     $lpNum = 'LP00' . $orderMS->lpNumber;
@@ -162,7 +160,6 @@ foreach ($ordersNoSticker as $orderNoSticker) {
     $sessionKey = getOrderShop($orderNoSticker['description']);
 
     var_dump(printCainiaoSticker($orderMS, $sessionKey));
-
 
 }
 
