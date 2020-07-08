@@ -157,7 +157,7 @@ function getProducts($tmallIndex, $categories)
 //    $regex = new Regex($tmallIndex);
     $regex = new Regex($tmallIndex.'","value":"yes"');
 
-    $collection = (new Client('mongodb://admin:kmNqjyDM8o7U@62.109.5.225:27017/mysales?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false'))->mysales->products;
+    $collection = (new Client('mongodb://MSSync-read:1547e70be122dc285a2d24ad@23.105.225.41:27017/?authSource=MSSync&readPreference=primary&appname=MongoDB%20Compass&ssl=false'))->mysales->products;
 
 
     /*    $cursor = $collection->find(

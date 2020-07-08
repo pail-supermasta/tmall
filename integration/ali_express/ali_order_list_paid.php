@@ -324,12 +324,13 @@ function setTrackToTmall($order, $payTime, $credential)
     $orderMSTemp = new OrderMS(null,strval($order));
     $delivery = $orderMSTemp->getOrderTrackNew();
     /*Комплектуется, На выдаче, Доставляется*/
-    $statesToShip = array("8beb227b-6088-11e7-7a6c-d2a9003b81a3",
+    /*$statesToShip = array("8beb227b-6088-11e7-7a6c-d2a9003b81a3",
         "8beb25ab-6088-11e7-7a6c-d2a9003b81a4",
-        "327c03c6-75c5-11e5-7a40-e89700139938");
+        "327c03c6-75c5-11e5-7a40-e89700139938");*/
 
 
-    if (in_array($delivery['state'], $statesToShip) == 1 && $delivery['track'] != false) {
+//    if (in_array($delivery['state'], $statesToShip) == 1 && $delivery['track'] != false) {
+    if ($delivery['track'] != false) {
         $trackId = $delivery['track'];
         $agentId = $delivery['agent'];
         /*set track number in Tmall*/
@@ -429,7 +430,7 @@ function formMasterList($credential)
                 /*check if paid and no track number*/
                 checkTimeFromPaid($shorty['order_id'], $shorty['gmt_pay_time'], $credential);
 
-                /*check if Доставляется in MS and has track num*/
+                /*check if  has track num*/
                 setTrackToTmall($shorty['order_id'], $shorty['gmt_pay_time'], $credential);
 
 
