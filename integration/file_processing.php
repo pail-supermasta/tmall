@@ -412,6 +412,29 @@ function destructResponse(array $shortener, $order, $shop)
         telegram("Caught $e in order $order \n", '-320614744');
     }
 
+    if(isset($shortener['logistics_amount']['cent']) && $shortener['logistics_amount']['cent'] > 0){
+        $logistic_product = array(
+            "quantity" => 1,
+            "price" => $shortener['logistics_amount']['cent'],
+            "vat" => 0,
+            "assortment" =>
+                array(
+                    "meta" =>
+                        array(
+                            "href" => "https://online.moysklad.ru/api/remap/1.1/entity/service/655b68a8-7695-11e5-90a2-8ecb002886e7",
+                            "type" => "service",
+                            "mediaType" => "application/json"
+                        ),
+                ),
+            "reserve" => 1
+        );
+
+        array_push($positions, $logistic_product);
+
+    }
+
+
+
     $orderDetails['positions'] = json_encode($positions, JSON_UNESCAPED_SLASHES);
     $orderDetails['escrow_fee_rates'] = str_replace(array('%5D', '%5B'), "", http_build_query($positionsEscrowFee, ' ', ','));
 
@@ -425,8 +448,8 @@ function destructResponse(array $shortener, $order, $shop)
     $orderDetails['dshSum'] = ($escrowFee + $orderShipEscrow - $couponEscrow) / 100;
 //    $orderDetails['dshSum'] = str_replace('.',',',$orderDetails['dshSum'] );
     $orderDetails['coupon'] = $coupon / 100;
-    var_dump("dsh " . $orderDetails['dshSum']);
-    var_dump("coupon " . $orderDetails['coupon']);
+//    var_dump("dsh " . $orderDetails['dshSum']);
+//    var_dump("coupon " . $orderDetails['coupon']);
 
 //    var_dump($orderDetails['productStocks']);
     $orderDetails['err'] = $err;

@@ -241,15 +241,22 @@ function setNewPositionPrice($order, $credential)
     $affiliateFeeSum = 0;
     $affiliateAmount = 0;
 
-    foreach ($productsAli as $productAli){
+    foreach ($productsAli as $productAli) {
         if (isset($productAli['afflicate_fee_rate'])) {
             $affiliateFeeSum += $productAli['afflicate_fee_rate'];
         }
     }
 
     /*Affiliate fee*/
-    $affiliateFee = $affiliateFeeSum / sizeof($products);
-    $affiliateAmount = $pay_amount_by_settlement_cur * $affiliateFee;
+    $affiliateFee = $affiliateFeeSum / sizeof($productsAli);
+    $affiliateAmount = ($pay_amount_by_settlement_cur - $logistics_amount / 100) * $affiliateFee;
+
+    foreach ($res['attributes'] as $attribute){
+        if ($attribute['id']=='535dd809-1db1-11ea-0a80-04c00009d6bf'){
+            $dshSum = $attribute['value'] + $affiliateAmount;
+            break;
+        }
+    }
 
     /*update comment*/
     $newLines = " Affiliate fee: $affiliateAmount. Всего скидок для заказа: $diff Сумма была: $orderMSSum, Сумма оплачена $pay_amount_by_settlement_cur, Сумма доставки " . $logistics_amount / 100;
@@ -258,10 +265,14 @@ function setNewPositionPrice($order, $credential)
     $oldDescription = str_replace('"', '', $oldDescription);
     /*удалить новую строку*/
     $oldDescription = preg_replace('/\s+/', ' ', trim($oldDescription));
-    $updateComment = '{
-                  "description": "' . $oldDescription . $newLines . '"
+    $postdata2 = '{
+                  "description": "' . $oldDescription . $newLines . '",
+                  "attributes": [{
+                        "id": "535dd809-1db1-11ea-0a80-04c00009d6bf",
+                        "value": ' . $dshSum . '
+                  }]
                 }';
-    $updateOrderResp = $orderMS->updateOrder($updateComment);
+    $updateOrderResp = $orderMS->updateOrder($postdata2);
     if (strpos($updateOrderResp, 'обработка-ошибок') > 0 || $updateOrderResp == '') {
         telegram("updateOrderResp error found " . $order, '-320614744');
         error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $updateOrderResp . " " . $order . PHP_EOL, 3, "updateOrderResp.log");
@@ -320,6 +331,18 @@ foreach (LOGINS as $credential) {
     }
 
 }
+
+/*$order = '3004746280722679';
+$credential = array(
+    'name' => 'bestgoodsstore',
+    'login' => 'bestgoodsstore@yandex.ru',
+    'field_id' => '0bbcd3e6-81f4-11e9-9109-f8fc0004dec8',
+    'sessionKey' => '50002300a27NiS9iAoWsSgg7oyhIqbUREbiAT3L1a0922e9szEfgKpYHRon7CwFb0op',
+    'cpCode' => 'QXJCQk1QcjJKTkZDbHk4ZVZ4bW11cFQ2L2QreW1XT0lJd2ZlMnEvL2dFZC9NbG5CSklEV2tiY0cxNkRSMWlYcQ==',
+    'cnId' => '4398985192396'
+
+);
+setNewPositionPrice($order, $credential);*/
 
 
 

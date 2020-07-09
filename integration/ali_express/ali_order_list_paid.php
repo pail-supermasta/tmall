@@ -215,7 +215,7 @@ function checkTimeFromPaid($order, $payTime, $credential)
 
             /*check if order has track in MS*/
 
-            $orderMSTemp = new OrderMS(null,strval($order));
+            $orderMSTemp = new OrderMS(null, strval($order));
             $delivery = $orderMSTemp->getOrderTrackNew();
             $trackId = $delivery['track'];
 
@@ -283,16 +283,22 @@ function setNewPositionPrice($order, $credential)
     $affiliateFeeSum = 0;
     $affiliateAmount = 0;
 
-    foreach ($productsAli as $productAli){
+    foreach ($productsAli as $productAli) {
         if (isset($productAli['afflicate_fee_rate'])) {
             $affiliateFeeSum += $productAli['afflicate_fee_rate'];
         }
     }
 
     /*Affiliate fee*/
-    $affiliateFee = $affiliateFeeSum / sizeof($products);
-    $affiliateAmount = $pay_amount_by_settlement_cur * $affiliateFee;
+    $affiliateFee = $affiliateFeeSum / sizeof($productsAli);
+    $affiliateAmount = ($pay_amount_by_settlement_cur - $logistics_amount / 100) * $affiliateFee;
 
+    foreach ($res['attributes'] as $attribute){
+        if ($attribute['id']=='535dd809-1db1-11ea-0a80-04c00009d6bf'){
+            $dshSum = $attribute['value'] + $affiliateAmount;
+            break;
+        }
+    }
 
     /*update comment*/
     $newLines = " Affiliate fee: $affiliateAmount. Всего скидок для заказа: $diff Сумма была: $orderMSSum, Сумма оплачена $pay_amount_by_settlement_cur, Сумма доставки " . $logistics_amount / 100;
@@ -301,10 +307,15 @@ function setNewPositionPrice($order, $credential)
     $oldDescription = str_replace('"', '', $oldDescription);
     /*удалить новую строку*/
     $oldDescription = preg_replace('/\s+/', ' ', trim($oldDescription));
-    $updateComment = '{
-                  "description": "' . $oldDescription . $newLines . '"
+
+    $postdata2 = '{
+                  "description": "' . $oldDescription . $newLines . '",
+                  "attributes": [{
+                        "id": "535dd809-1db1-11ea-0a80-04c00009d6bf",
+                        "value": ' . $dshSum . '
+                  }]
                 }';
-    $updateOrderResp = $orderMS->updateOrder($updateComment);
+    $updateOrderResp = $orderMS->updateOrder($postdata2);
     if (strpos($updateOrderResp, 'обработка-ошибок') > 0 || $updateOrderResp == '') {
         telegram("updateOrderResp error found " . $order, '-320614744');
         error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $updateOrderResp . " " . $order . PHP_EOL, 3, "updateOrderResp.log");
@@ -321,7 +332,7 @@ function setTrackToTmall($order, $payTime, $credential)
     $sessionKey = $credential['sessionKey'];
 
     /*check if in MS state is Доставляется and has a track number*/
-    $orderMSTemp = new OrderMS(null,strval($order));
+    $orderMSTemp = new OrderMS(null, strval($order));
     $delivery = $orderMSTemp->getOrderTrackNew();
     /*Комплектуется, На выдаче, Доставляется*/
     /*$statesToShip = array("8beb227b-6088-11e7-7a6c-d2a9003b81a3",
@@ -442,11 +453,11 @@ function formMasterList($credential)
 }
 
 
-foreach (LOGINS as $credential) {
+/*foreach (LOGINS as $credential) {
     formMasterList($credential);
-}
+}*/
 
-/*$order = '5004056713565233';
+$order = '3004746280722679';
 $credential = array(
     'name' => 'bestgoodsstore',
     'login' => 'bestgoodsstore@yandex.ru',
@@ -456,7 +467,7 @@ $credential = array(
     'cnId' => '4398985192396'
 
 );
-setNewPositionPrice($order, $credential);*/
+setNewPositionPrice($order, $credential);
 
 
 

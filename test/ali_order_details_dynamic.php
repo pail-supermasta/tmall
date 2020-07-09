@@ -20,22 +20,16 @@ function findorderbyid($post_data, $sessionKey)
         $result = $resp->result->data;
         $res = json_encode((array)$result);
 
-        return json_decode($res, true);
+//        return json_decode($res, true);
     }
 
 
-//    return $res;
+    return $res;
 }
 
 
 require_once '../integration/ali_express/taobao/TopSdk.php';
 define('APPKEY', '27862248');
 define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
-$shorten = findorderbyid('3004746280722679','50002301419cdaiudiQfUvkfkfueltW1bd07081FHiQGZdRtFEwBpxDxPrTG2jMrE6H');
+$shorten = findorderbyid('3004787806123471','50002301419cdaiudiQfUvkfkfueltW1bd07081FHiQGZdRtFEwBpxDxPrTG2jMrE6H');
 var_dump($shorten);
-//var_dump($shorten['logistics_amount']['cent']);
-//var_dump($shorten['order_amount']['cent']);
-//$shortener = json_decode($shorten,true);
-//$products = $shortener['child_order_list']['global_aeop_tp_child_order_dto'];
-//var_dump($products);
-die();

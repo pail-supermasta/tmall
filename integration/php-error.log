@@ -1,0 +1,7 @@
+[08-Jul-2020 12:52:01 UTC] PHP Notice:  Undefined variable: affiliateFee in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_list_paid.php on line 293
+[08-Jul-2020 12:52:01 UTC] PHP Notice:  Array to string conversion in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_list_paid.php on line 293
+[08-Jul-2020 12:52:01 UTC] PHP Notice:  Undefined variable: affiliateFee in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_list_paid.php on line 294
+[08-Jul-2020 13:08:47 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\aliexpr.avaks.org\integration\moi_sklad\ms_get_orders_dynamic.php on line 10
+[08-Jul-2020 13:08:47 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\aliexpr.avaks.org\integration\moi_sklad\ms_get_orders_dynamic.php on line 11
+[08-Jul-2020 13:08:47 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\aliexpr.avaks.org\integration\moi_sklad\ms_get_orders_dynamic.php on line 12
+[09-Jul-2020 09:02:02 UTC] PHP Warning:  var_dump() expects at least 1 parameter, 0 given in C:\Users\User\Documents\aliexpr.avaks.org\integration\ali_express\ali_order_list_paid.php on line 296
