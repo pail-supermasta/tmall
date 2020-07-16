@@ -252,7 +252,7 @@ function setNewPositionPrice($order, $credential)
     $orderMS = new OrderMS($res['id']);
 
 
-    $pay_amount_by_settlement_cur = (int)$findorderbyidRes['pay_amount_by_settlement_cur'];
+    $pay_amount_by_settlement_cur = $findorderbyidRes['pay_amount_by_settlement_cur'];
     $logistics_amount = $findorderbyidRes['logistics_amount']['cent'] ?? 0;
     $diff = $orderMSSum - $pay_amount_by_settlement_cur + round($logistics_amount / 100);
 
@@ -453,11 +453,11 @@ function formMasterList($credential)
 }
 
 
-/*foreach (LOGINS as $credential) {
+foreach (LOGINS as $credential) {
     formMasterList($credential);
-}*/
+}
 
-$order = '3004746280722679';
+/*$order = '3004746280722679';
 $credential = array(
     'name' => 'bestgoodsstore',
     'login' => 'bestgoodsstore@yandex.ru',
@@ -467,7 +467,7 @@ $credential = array(
     'cnId' => '4398985192396'
 
 );
-setNewPositionPrice($order, $credential);
+setNewPositionPrice($order, $credential);*/
 
 
 

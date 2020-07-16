@@ -125,7 +125,10 @@ function formMasterList($credential)
         $shortener = json_decode($res, true);
         foreach ($shortener as $shorty) {
             if ($shorty['order_status'] == 'FINISH' || $shorty['order_status'] == 'FUND_PROCESSING') {
-                $orderList[$shorty['order_id']] = "FINISH";
+                $orderList[$shorty['order_id']] = [
+                    'order_status' => $shorty['order_status'],
+                    'end_reason' => $shorty['end_reason']
+                ];
 
             } elseif ($shorty['order_status'] == 'IN_CANCEL') {
                 $orderList[$shorty['order_id']] = "IN_CANCEL";
@@ -212,29 +215,26 @@ function getOrderFromMS($reason, $order)
 
         $orderSearchResultArrays = json_decode($res, true);
         if ($orderSearchResultArrays['rows']) {
-            foreach ($orderSearchResultArrays['rows'] as $row) {
-                /*get state of order in MS*/
-                preg_match(ID_REGEXP, $row['state']['meta']['href'], $matches);
-                $state_id = $matches[0];
-                /*if not equals Отменен или Возврат*/
-                if ($state_id != '327c070c-75c5-11e5-7a40-e8970013993b' && $state_id != '327c05fe-75c5-11e5-7a40-e8970013993a') {
-                    $attributesArray = $row['attributes'];
-                    if (isset($row['name'])) {
-                        $orderId = $row['name'];
-                        $orderLinkMS = $row['meta']['uuidHref'];
-                    }
-                    /*look if has tracking number in MS*/
-                    if (recursive_array_search('8a500683-10fc-11ea-0a80-0533000590c8', $res)) {
-                        $messageCancelUrgent = "ОТМЕНЕН заказ #[$orderId]($orderLinkMS)";
-                        telegram($messageCancelUrgent, '-278688533', 'Markdown');
-                    }
-
-                    if ($reason == 'IN_CANCEL') {
+            $row = $orderSearchResultArrays['rows'][0];
+            /*get state of order in MS*/
+            preg_match(ID_REGEXP, $row['state']['meta']['href'], $matches);
+            $state_id = $matches[0];
+            /*if not equals Отменен или Возврат*/
+            if ($state_id != '327c070c-75c5-11e5-7a40-e8970013993b' && $state_id != '327c05fe-75c5-11e5-7a40-e8970013993a') {
+                $attributesArray = $row['attributes'];
+                if (isset($row['name'])) {
+                    $orderId = $row['name'];
+                    $orderLinkMS = $row['meta']['uuidHref'];
+                    if ($reason['order_status'] == 'IN_CANCEL' || ($reason['order_status'] == 'FINISH' && $reason['end_reason'] == 'send_goods_timeout')) {
                         /*pass order id from MS to update to Canceled*/
                         fillOrderTemplate($row['id'], 'cancel');
                     }
-
                 }
+                /*look if has tracking number in MS*/
+                /*if (recursive_array_search('8a500683-10fc-11ea-0a80-0533000590c8', $res)) {
+                    $messageCancelUrgent = "ОТМЕНЕН заказ #[$orderId]($orderLinkMS)";
+                    telegram($messageCancelUrgent, '-278688533', 'Markdown');
+                }*/
             }
         }
 
@@ -243,12 +243,14 @@ function getOrderFromMS($reason, $order)
 }
 
 //item is cancel reason,key is order id
-array_walk_recursive($final, function ($item, $key) {
-//    echo "$key holds $item\n";
-    getOrderFromMS($item, $key);
-});
+foreach ($final as $shop => $orders) {
+    foreach ($orders as $order => $details) {
+        getOrderFromMS($details, $order);
+    }
 
-var_dump($final);
+}
+
+//var_dump($final);
 
 
 
