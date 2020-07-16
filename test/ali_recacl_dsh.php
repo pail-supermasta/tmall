@@ -14,8 +14,6 @@ define('APPKEY', '27862248');
 define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
 
 
-
-
 function getOrderShop($attributes)
 {
     $sessionKey = '';
@@ -46,11 +44,17 @@ function getMonth()
     $collection = (new Client('mongodb://MSSync-read:1547e70be122dc285a2d24ad@23.105.225.41:27017/?authSource=MSSync&readPreference=primary&appname=MongoDB%20Compass&ssl=false'))->MSSync->customerorder;
 
     $cursor = $collection->find([
-        'name' => '3004746280722679',
-        /*'moment' => [
+        'moment' => [
             '$gte' => '2020-07-01',
             '$lte' => '2020-07-15'
-        ],*/
+        ],
+        '_state'=> [
+            '$nin' => array(
+                '552a994e-2905-11e7-7a31-d0fd002c3df2',
+                '327c0111-75c5-11e5-7a40-e89700139936',
+                '327c070c-75c5-11e5-7a40-e8970013993b'
+            )
+        ],
         '_agent' => '1b33fbc1-5539-11e9-9ff4-315000060bc8'
     ]);
 
@@ -59,6 +63,7 @@ function getMonth()
         $orders[$order['id']] = array('moment' => $order['moment'],
             'positions' => $order['_positions'],
             'description' => $order['description'],
+            'id' => $order['id'],
             'name' => $order['name']
         );
     }
@@ -94,33 +99,99 @@ function findorderbyid($post_data, $sessionKey)
 }
 
 
-
-
-
 // get orders from MS for 1 month
 $ordersMS = getMonth();
+$positions = [];
+
 // foreach get details from ali
 foreach ($ordersMS as $orderMS) {
     $sessionKey = getOrderShop($orderMS['description']);
     $findorderbyidRes = findorderbyid($orderMS['name'], $sessionKey);
+    $findorderbyidRes = json_decode($findorderbyidRes, true);
 
-    $dshSum = calcDSH(json_decode($findorderbyidRes, true));
-    die();
+    $dshSum = calcDSH($findorderbyidRes);
+    if (is_bool($dshSum )) continue;
+
+    // check if no 200 logistic product in MS
+    $logisticProductFound = false;
+    foreach ($orderMS['positions'] as $position) {
+        if ($position['id'] == '655b68a8-7695-11e5-90a2-8ecb002886e7') {
+            $logisticProductFound = true;
+        }
+        $id = $position['id'];
+        $oldPosition = array(
+            "quantity" => $position['quantity'],
+            "price" => $position['price'],
+            "vat" => 0,
+            "assortment" =>
+                array(
+                    "meta" =>
+                        array(
+                            "href" => "https://online.moysklad.ru/api/remap/1.1/entity/product/$id",
+                            "type" => "product",
+                            "mediaType" => "application/json"
+                        ),
+                ),
+            "reserve" => $position['reserve']
+        );
+        array_push($positions, $oldPosition);
+
+    }
+    if (!$logisticProductFound &&
+        isset($findorderbyidRes['logistics_amount']['cent']) &&
+        $findorderbyidRes['logistics_amount']['cent'] > 0) {
+        $logistic_product = array(
+            "quantity" => 1,
+            "price" => $findorderbyidRes['logistics_amount']['cent'],
+            "vat" => 0,
+            "assortment" =>
+                array(
+                    "meta" =>
+                        array(
+                            "href" => "https://online.moysklad.ru/api/remap/1.1/entity/service/655b68a8-7695-11e5-90a2-8ecb002886e7",
+                            "type" => "service",
+                            "mediaType" => "application/json"
+                        ),
+                ),
+            "reserve" => 1
+        );
+
+        array_push($positions, $logistic_product);
+
+    }
+    $orderDetails['positions'] = json_encode($positions, JSON_UNESCAPED_SLASHES);
+
+    if (!$logisticProductFound) {
+        $postPositions = ',
+                  "positions": ' . $orderDetails['positions'] . '';
+    } else{
+        $postPositions = '';
+    }
+    $postdata = '{
+                  "attributes": [{
+                        "id": "535dd809-1db1-11ea-0a80-04c00009d6bf",
+                        "value": ' . $dshSum . '
+                  }]' . $postPositions . '
+                }';
+
+    $orderMSInstance = new \Avaks\MS\OrderMS($orderMS['id']);
+
+    $updateOrderResp = $orderMSInstance->updateOrder($postdata);
 }
 // calc comission
 function calcDSH($findorderbyidRes)
 {
+//    var_dump($findorderbyidRes);
     /*ДШ amount*/
     $coupon = 0;
     $escrowFeeSum = 0;
     $positionsEscrowFee = array();
 
 
-
     $products = $findorderbyidRes['child_order_list']['global_aeop_tp_child_order_dto'];
 
     if (is_array($products)) {
-
+        $productDSHS = 0;
         foreach ($products as $product) {
             $productsTotal = 0;
             $orderAmount = 0;
@@ -131,9 +202,16 @@ function calcDSH($findorderbyidRes)
                 $prTotal = $prPrice * $prCo;
                 $productsTotal += $prTotal;
                 $orderAmount = $findorderbyidRes['order_amount']['cent'];
-
             }
-            $orderShip = $shortener['logistics_amount']['cent'] ?? 0;
+            // product dsh
+            if (!isset($product['escrow_fee_rate'])){
+                var_dump($findorderbyidRes["id"]);
+                return false;
+            }
+            $productDSH =  $product['product_price']['cent'] * $product['escrow_fee_rate'] * $product['product_count'];
+
+            $productDSHS +=$productDSH;
+            $orderShip = $findorderbyidRes['logistics_amount']['cent'] ?? 0;
 
             $coupon = $productsTotal + $orderShip - $orderAmount;
             /*  gather escrow fee for each product id   */
@@ -146,11 +224,16 @@ function calcDSH($findorderbyidRes)
         }
     }
 
+//    var_dump($positionsEscrowFee);
 
     $couponEscrow = $coupon * $escrowFeeSum / sizeof($products);
     $escrowFee = $escrowFeeSum / sizeof($products) * $productsTotal;
-    $orderShipEscrow = isset($findorderbyidRes['logisitcs_escrow_fee_rate']) ? $findorderbyidRes['logisitcs_escrow_fee_rate'] * $orderShip : 0;
-    $orderDetails['dshSum'] = ($escrowFee + $orderShipEscrow - $couponEscrow) / 100;
+//    echo "$escrowFeeSum / sizeof($products) * $productsTotal";
+//    var_dump($escrowFee);
+    $orderShipEscrow = isset($findorderbyidRes['logisitcs_escrow_fee_rate']) ? $findorderbyidRes['logisitcs_escrow_fee_rate'] * $findorderbyidRes['logistics_amount']['cent'] : 0;
+//    var_dump($findorderbyidRes['logisitcs_escrow_fee_rate'] * $findorderbyidRes['logistics_amount']['cent']);
+//    echo "(($escrowFee + $orderShipEscrow - $couponEscrow) / 100)";
+    $orderDetails['dshSum'] = ($productDSHS + $orderShipEscrow - $couponEscrow) / 100;
 
     /*Affiliate amount*/
 
@@ -167,14 +250,11 @@ function calcDSH($findorderbyidRes)
     }
 
     $affiliateFee = $affiliateFeeSum / sizeof($productsAli);
-    echo "$affiliateFeeSum / sizeof($productsAli)".PHP_EOL;
-    echo "($pay_amount_by_settlement_cur - $logistics_amount / 100) * $affiliateFee".PHP_EOL;
     $affiliateAmount = ($pay_amount_by_settlement_cur - $logistics_amount / 100) * $affiliateFee;
 
     $dshSum = $orderDetails['dshSum'] + $affiliateAmount;
     return $dshSum;
 }
 
-// check if no 200 logistic product in MS
-// add producd add comission
+
 
