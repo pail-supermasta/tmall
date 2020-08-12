@@ -19,19 +19,19 @@ function getOrderShop($attributes)
     $sessionKey = '';
     switch (true) {
         case stripos($attributes, "novinkiooo (ID 4901001)") !== false :
-            $sessionKey = '50002501201pu1cabc58aBbzgXFkqhvplWEdrhpszGJkLnXgVzGGx9wxCcCqsvPj6As';
+            $sessionKey = '50002500501Vs15192a4fBdqLHT9iHrwvpCb0JydnTDyqj8eFwAOsukoFc4qg0Vxn2C';
             break;
         case  stripos($attributes, "BESTGOODS (ID 5041091)") !== false :
-            $sessionKey = "50002300a27NiS9iAoWsSgg7oyhIqbUREbiAT3L1a0922e9szEfgKpYHRon7CwFb0op";
+            $sessionKey = "50002301005q0OsaZ16afcaa0zGzFoxi0th7ccSgMw0CJduh1FqvAlZmPkEo4jGYCQw";
             break;
         case  stripos($attributes, "Noerden (ID 5012047)") !== false :
-            $sessionKey = "50002700f09CsXpqaf1l0159ee5e1ipRaztFcFeR5MtYHGEvJ1IQXHD3CpkVzlo6zzy";
+            $sessionKey = "50002701a33kuBupddegw9sTukkGPKzFsUBHbjPQDPTVU16922027tN2z5kWwXYAwTx";
             break;
         case  stripos($attributes, "Morphy Richards (ID 5017058)") !== false :
-            $sessionKey = "50002500427yXPcbqwfU6Lmo2txf83nTdKufWRl134c668aABgs6PSvcIUUwtbSdEo3";
+            $sessionKey = "50002500435yXPcbqwfU6Lmo2txf83nTdKufWRlABgs6PSv10e2657ccIUUwtbSdEo3";
             break;
         case  stripos($attributes, "iRobot (ID 5016030)") !== false :
-            $sessionKey = "50002500614qeCsLetipHO1psD19f649cde2oyGnyayqDXEjt6Kw2FnExerDL8xslku";
+            $sessionKey = "50002500111c0AyTocCxSEw142e6ac49kntzvuDe7g0eIqC0sf6gjSBLVrYF8ZUBSSy";
             break;
     }
     return $sessionKey;
@@ -44,11 +44,12 @@ function getMonth()
     $collection = (new Client('mongodb://MSSync-read:1547e70be122dc285a2d24ad@23.105.225.41:27017/?authSource=MSSync&readPreference=primary&appname=MongoDB%20Compass&ssl=false'))->MSSync->customerorder;
 
     $cursor = $collection->find([
+//        'name'=>'8016972740385301',
         'moment' => [
-            '$gte' => '2020-07-01',
-            '$lte' => '2020-07-15'
+            '$gte' => '2020-07-15',
+            '$lte' => '2020-07-18'
         ],
-        '_state'=> [
+        '_state' => [
             '$nin' => array(
                 '552a994e-2905-11e7-7a31-d0fd002c3df2',
                 '327c0111-75c5-11e5-7a40-e89700139936',
@@ -101,16 +102,20 @@ function findorderbyid($post_data, $sessionKey)
 
 // get orders from MS for 1 month
 $ordersMS = getMonth();
-$positions = [];
 
 // foreach get details from ali
 foreach ($ordersMS as $orderMS) {
+    $orderDetails['positions'] = '';
+    $positions = [];
+
+
+
     $sessionKey = getOrderShop($orderMS['description']);
     $findorderbyidRes = findorderbyid($orderMS['name'], $sessionKey);
     $findorderbyidRes = json_decode($findorderbyidRes, true);
 
     $dshSum = calcDSH($findorderbyidRes);
-    if (is_bool($dshSum )) continue;
+    if (is_bool($dshSum)) continue;
 
     // check if no 200 logistic product in MS
     $logisticProductFound = false;
@@ -164,7 +169,7 @@ foreach ($ordersMS as $orderMS) {
     if (!$logisticProductFound) {
         $postPositions = ',
                   "positions": ' . $orderDetails['positions'] . '';
-    } else{
+    } else {
         $postPositions = '';
     }
     $postdata = '{
@@ -204,13 +209,13 @@ function calcDSH($findorderbyidRes)
                 $orderAmount = $findorderbyidRes['order_amount']['cent'];
             }
             // product dsh
-            if (!isset($product['escrow_fee_rate'])){
+            if (!isset($product['escrow_fee_rate'])) {
                 var_dump($findorderbyidRes["id"]);
                 return false;
             }
-            $productDSH =  $product['product_price']['cent'] * $product['escrow_fee_rate'] * $product['product_count'];
+            $productDSH = $product['product_price']['cent'] * $product['escrow_fee_rate'] * $product['product_count'];
 
-            $productDSHS +=$productDSH;
+            $productDSHS += $productDSH;
             $orderShip = $findorderbyidRes['logistics_amount']['cent'] ?? 0;
 
             $coupon = $productsTotal + $orderShip - $orderAmount;

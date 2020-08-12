@@ -15,7 +15,7 @@ define('LOGINS', array(
         'name' => 'Незабудка MR',
         'login' => 'NezabudkaMR@yandex.ru',
         'field_id' => '0bbcd991-81f4-11e9-9109-f8fc0004dec9',
-        'sessionKey' => '50002500427yXPcbqwfU6Lmo2txf83nTdKufWRl134c668aABgs6PSvcIUUwtbSdEo3',
+        'sessionKey' => '50002500435yXPcbqwfU6Lmo2txf83nTdKufWRlABgs6PSv10e2657ccIUUwtbSdEo3',
         'cpCode' => 'UTV0a1NLakt5dE9DdzZOdEt1elhnblRnMURQaExvS0w4RVZEVHMyM2o2eTRqUjdiOEdxalpTVjhRN0ZBQldVZA==',
         'cnId' => '4398983084403'
     ),
@@ -32,7 +32,7 @@ define('LOGINS', array(
         'name' => 'Новинки',
         'login' => 'novinkiooo@yandex.ru',
         'field_id' => 'e8a40577-77b9-11e9-912f-f3d40003d45d',
-        'sessionKey' => '50002501201pu1cabc58aBbzgXFkqhvplWEdrhpszGJkLnXgVzGGx9wxCcCqsvPj6As',
+        'sessionKey' => '50002500501Vs15192a4fBdqLHT9iHrwvpCb0JydnTDyqj8eFwAOsukoFc4qg0Vxn2C',
         'cpCode' => 'OTQwTzB2T1U3N1Nza0Y3OVRKMHZyVWtPL0RFRjJHczBqUHBDRHBqK05LVXdBc1pJRkk0THo1YUVLR21PNE5IZQ==',
         'cnId' => '4398985964371'
     ),
@@ -40,7 +40,7 @@ define('LOGINS', array(
         'name' => 'Незабудка iRobot',
         'login' => 'NezabudkaiRobot@yandex.ru',
         'field_id' => '0bbcde02-81f4-11e9-9109-f8fc0004deca',
-        'sessionKey' => '50002500614qeCsLetipHO1psD19f649cde2oyGnyayqDXEjt6Kw2FnExerDL8xslku',
+        'sessionKey' => '50002500111c0AyTocCxSEw142e6ac49kntzvuDe7g0eIqC0sf6gjSBLVrYF8ZUBSSy',
         'cpCode' => 'czJBM3dFNm9aQ0RuSnhnY0tEK2p2a3g1cEI5aFYwSGw1TlpxTVAyUE1CYk1iYkRCTU1tWENocFo4alU3aFdmUg==',
         'cnId' => '4398985334183'
     ),
@@ -48,7 +48,7 @@ define('LOGINS', array(
         'name' => 'Незабудка ND',
         'login' => 'NezabudkaND@yandex.ru',
         'field_id' => '0bbce15c-81f4-11e9-9109-f8fc0004decb',
-        'sessionKey' => '50002700f09CsXpqaf1l0159ee5e1ipRaztFcFeR5MtYHGEvJ1IQXHD3CpkVzlo6zzy',
+        'sessionKey' => '50002701a33kuBupddegw9sTukkGPKzFsUBHbjPQDPTVU16922027tN2z5kWwXYAwTx',
         'cpCode' => 'V1ZDUlZnY09vbHoyQTFpNEZEUElkcGlmUE43Z1hYZEdoVEZwM2huTDlWeWVKUHdIUmY4QmFWV1FOdXVCT3JQeg==',
         'cnId' => '4398983195649'
     )
@@ -94,7 +94,7 @@ function findOrderSessionKey($deliveringAliOrder)
 
     if (preg_match('/Avax store/', $deliveringAliOrder['description'], $matches)) {
 
-        $sessionKey = '50002501201pu1cabc58aBbzgXFkqhvplWEdrhpszGJkLnXgVzGGx9wxCcCqsvPj6As';
+        $sessionKey = '50002500501Vs15192a4fBdqLHT9iHrwvpCb0JydnTDyqj8eFwAOsukoFc4qg0Vxn2C';
 
     } elseif (preg_match('/BESTGOODS/', $deliveringAliOrder['description'], $matches)) {
 
@@ -102,15 +102,15 @@ function findOrderSessionKey($deliveringAliOrder)
 
     } elseif (preg_match('/Noerden/', $deliveringAliOrder['description'], $matches)) {
 
-        $sessionKey = '50002700f09CsXpqaf1l0159ee5e1ipRaztFcFeR5MtYHGEvJ1IQXHD3CpkVzlo6zzy';
+        $sessionKey = '50002701a33kuBupddegw9sTukkGPKzFsUBHbjPQDPTVU16922027tN2z5kWwXYAwTx';
 
     } elseif (preg_match('/Morphy Richards/', $deliveringAliOrder['description'], $matches)) {
 
-        $sessionKey = '50002500427yXPcbqwfU6Lmo2txf83nTdKufWRl134c668aABgs6PSvcIUUwtbSdEo3';
+        $sessionKey = '50002500435yXPcbqwfU6Lmo2txf83nTdKufWRlABgs6PSv10e2657ccIUUwtbSdEo3';
 
     } elseif (preg_match('/iRobot/', $deliveringAliOrder['description'], $matches)) {
 
-        $sessionKey = '50002500614qeCsLetipHO1psD19f649cde2oyGnyayqDXEjt6Kw2FnExerDL8xslku';
+        $sessionKey = '50002500111c0AyTocCxSEw142e6ac49kntzvuDe7g0eIqC0sf6gjSBLVrYF8ZUBSSy';
     }
 
     return $sessionKey;
