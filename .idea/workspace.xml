@@ -7,7 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="80146bb5-79f6-4afc-a154-c01ae4967d76" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/ali_express/CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/CAINIAO_GLOBAL_OPEN_DISTRIBUTION_CONSIGN.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_list_delivered.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_list_delivered.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_list_finished.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_list_finished.php" afterDir="false" />
@@ -16,7 +15,6 @@
       <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_print.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_print.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/ali_express/compilation.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/compilation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/file_processing.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/file_processing.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/php-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/integration/php-error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/stock/stockSyncronizer_dontdelete.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/stock/stockSyncronizer_dontdelete.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/stock/stockSyncronizer_mongo.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/stock/stockSyncronizer_mongo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/ali_order_details_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/ali_order_details_dynamic.php" afterDir="false" />
@@ -34,42 +32,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ali_order_details_dynamic.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/ali_order_details_dynamic.php">
+      <file leaf-file-name="compilation.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/integration/ali_express/compilation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="429">
+              <caret line="41" column="10" lean-forward="true" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+              <folding>
+                <element signature="e#429#496#0#PHP" />
+                <element signature="n#strpos_recursive#0;n#!!top" />
+                <element signature="e#2900#3076#0#PHP" />
+                <element signature="e#2956#3076#0#PHP" />
+                <element signature="n#formMasterList#0;n#!!top" />
+                <element signature="e#4241#4363#0#PHP" />
+                <element signature="n#recursiveFind#0;n#!!top" />
+                <element signature="e#5172#5587#0#PHP" />
+                <element signature="e#5221#5581#0#PHP" />
+                <element signature="e#5325#5571#0#PHP" />
+                <element signature="e#5672#6074#0#PHP" />
+                <element signature="e#5719#6072#0#PHP" />
+                <element signature="e#5733#5868#0#PHP" />
+                <element signature="e#5818#5868#0#PHP" />
+                <element signature="e#5876#6072#0#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ali_order_list_paid.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php">
+      <file leaf-file-name="ali_order_paid_state.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_paid_state.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="122" column="17" lean-forward="true" selection-start-line="122" selection-start-column="17" selection-end-line="122" selection-end-column="17" />
-              <folding>
-                <element signature="e#3024#3339#0#PHP" />
-                <element signature="e#3161#3337#0#PHP" />
-                <element signature="e#3217#3337#0#PHP" />
-                <element signature="e#9821#10772#0#PHP" />
-                <element signature="e#10400#10766#0#PHP" />
-                <element signature="e#10923#11101#0#PHP" />
-                <element signature="e#10971#11095#0#PHP" />
-                <element signature="e#11289#11500#0#PHP" />
-                <element signature="e#11341#11494#0#PHP" />
-                <element signature="e#12310#12629#0#PHP" />
-                <element signature="e#12636#15361#0#PHP" />
-                <element signature="e#12964#13126#0#PHP" />
-                <element signature="e#13226#15357#0#PHP" />
-                <element signature="e#13430#14240#0#PHP" />
-                <element signature="e#13462#13632#0#PHP" />
-                <element signature="e#13645#13792#0#PHP" />
-                <element signature="e#13805#14230#0#PHP" />
-                <element signature="e#14251#14384#0#PHP" />
-                <element signature="e#14867#15357#0#PHP" />
-                <element signature="e#15241#15351#0#PHP" />
-              </folding>
+            <state relative-caret-position="754">
+              <caret line="64" column="92" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="92" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ali_order_list_delivered.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_delivered.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -85,12 +87,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>escrow_fee_rate</find>
-      <find>name</find>
-      <find>_organi</find>
-      <find>[&quot;id&quot;]=&gt;</find>
-      <find>3004673834333842</find>
-      <find>[&quot;id&quot;]</find>
       <find>die</find>
       <find>$productDSHS</find>
       <find>var</find>
@@ -115,13 +111,14 @@
       <find>DistributionConsignResponse</find>
       <find>checkTimeFromPaid</find>
       <find>&quot;street&quot;:&quot;С</find>
+      <find>50002500435yXPcbqwfU6Lmo2txf83nTdKufWRlABgs6PSv10e2657ccIUUwtbSdEo3</find>
+      <find>50002301419cdaiudiQfUvkfkfueltW1bd07081FHiQGZdRtFEwBpxDxPrTG2jMrE6H</find>
+      <find>50002301005q0OsaZ16afcaa0zGzFoxi0th7ccSgMw0CJduh1FqvAlZmPkEo4jGYCQw</find>
+      <find>50002500501Vs15192a4fBdqLHT9iHrwvpCb0JydnTDyqj8eFwAOsukoFc4qg0Vxn2C</find>
+      <find>50002500111c0AyTocCxSEw142e6ac49kntzvuDe7g0eIqC0sf6gjSBLVrYF8ZUBSSy</find>
+      <find>50002701a33kuBupddegw9sTukkGPKzFsUBHbjPQDPTVU16922027tN2z5kWwXYAwTx</find>
     </findStrings>
     <replaceStrings>
-      <replace>modify_count</replace>
-      <replace>$stock</replace>
-      <replace>d95c24ae-6f24-11ea-0a80-039000012102</replace>
-      <replace>$aliOrders</replace>
-      <replace>fc4f96d3-d5fe-11e9-0a80-046b000e7e4d</replace>
       <replace>50002300d289mlqwnqAebm1lqueSpe9ECuAKVtDg1b6f0174jvgyezVnDsmJ4OkbLKm</replace>
       <replace>50002501105yrRcZz182e0004HvGhTCsvjehAuBKsWhlIwpZDwvCHXAoRRU4tnNX07B</replace>
       <replace>50002500428yXPcbqwfU6Lmo2txf83nTdKufWRlA15757c75Bgs6PSvcIUUwtbSdEo3</replace>
@@ -147,6 +144,11 @@
       <replace>50002500435yXPcbqwfU6Lmo2txf83nTdKufWRlABgs6PSv10e2657ccIUUwtbSdEo3</replace>
       <replace>50002500111c0AyTocCxSEw142e6ac49kntzvuDe7g0eIqC0sf6gjSBLVrYF8ZUBSSy</replace>
       <replace>50002701a33kuBupddegw9sTukkGPKzFsUBHbjPQDPTVU16922027tN2z5kWwXYAwTx</replace>
+      <replace>50002500501Vs151ac533BdqLFskhnQwtwheYk1CiSexTFfFAv6nWUefGArBboUuh8F</replace>
+      <replace>50002301b00s17916ea4eTrdXcBvgrz2lkiuhxGTUEjWmoPbPQvsmvYZfkFlqTKVgPr</replace>
+      <replace>50002500c15tBJCowQScZ6julhS1dea01bfctShXhETAmyVfKkQKwey1lvK3ryD7z1t</replace>
+      <replace>50002500901sP1b7f673cFt7iCP3uQfb1JzgquDxxdddBqgtvwCkmwoWHooj7Cw4dCP</replace>
+      <replace>50002700811duwgr7oCt2sx1edacab6BZ6kWiLtBtQeBGBQfNxYCKlunzemnpZpP21d</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\User\Documents\aliexpr.avaks.org\integration\class</dir>
@@ -175,7 +177,6 @@
         <option value="$PROJECT_DIR$/integration/stock/stockSyncronizer.php" />
         <option value="$PROJECT_DIR$/integration/src/AE/Product.php" />
         <option value="$PROJECT_DIR$/integration/src/MS/Bundles.php" />
-        <option value="$PROJECT_DIR$/integration/ali_express/ali_order_list_delivered.php" />
         <option value="$PROJECT_DIR$/integration/src/SQL/AvaksSQL.php" />
         <option value="$PROJECT_DIR$/integration/src/MS/Services.php" />
         <option value="$PROJECT_DIR$/integration/src/MS/Stocks.php" />
@@ -200,18 +201,19 @@
         <option value="$PROJECT_DIR$/test/MS/OrderMS.php" />
         <option value="$PROJECT_DIR$/integration/stock/generate_yml.php" />
         <option value="$PROJECT_DIR$/integration/stock/ali_recacl_dsh.php" />
-        <option value="$PROJECT_DIR$/integration/ali_express/ali_order_paid_state.php" />
         <option value="$PROJECT_DIR$/integration/file_processing.php" />
         <option value="$PROJECT_DIR$/test/ali_recacl_dsh.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/ali_order_print.php" />
         <option value="$PROJECT_DIR$/integration/src/MS/Orders.php" />
-        <option value="$PROJECT_DIR$/integration/ali_express/compilation.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/ali_order_list_finished.php" />
         <option value="$PROJECT_DIR$/test/ali_order_details_dynamic.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/cainiao.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid_lim.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/cainiao_lim.php" />
+        <option value="$PROJECT_DIR$/integration/ali_express/ali_order_list_delivered.php" />
+        <option value="$PROJECT_DIR$/integration/ali_express/compilation.php" />
+        <option value="$PROJECT_DIR$/integration/ali_express/ali_order_paid_state.php" />
       </list>
     </option>
   </component>
@@ -236,15 +238,15 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
-    <option name="y" value="1" />
     <option name="width" value="1036" />
-    <option name="height" value="773" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -271,19 +273,6 @@
             <path>
               <item name="tmall" type="b2602c69:ProjectViewProjectNode" />
               <item name="tmall" type="462c0819:PsiDirectoryNode" />
-              <item name="integration" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tmall" type="462c0819:PsiDirectoryNode" />
-              <item name="integration" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="SQL" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tmall" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -296,7 +285,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -645,12 +633,13 @@
       <workItem from="1596637390033" duration="155000" />
       <workItem from="1596804975610" duration="1736000" />
       <workItem from="1597076855267" duration="599000" />
-      <workItem from="1597229550450" duration="3452000" />
+      <workItem from="1597229550450" duration="4211000" />
+      <workItem from="1597652060616" duration="3119000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1041770000" />
+    <option name="totallyTimeSpent" value="1045648000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2064" height="1056" extended-state="6" />
@@ -659,16 +648,16 @@
       <window_info anchor="bottom" id="TODO" order="5" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.2657952" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="right" id="Run" order="5" visible="true" weight="0.3483034" />
       <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="right" id="Run" order="5" weight="0.3483034" />
       <window_info anchor="right" id="Terminal" order="4" weight="0.300271" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20159681" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2035928" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="2" weight="0.39814815" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.39814815" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="10" />
@@ -764,13 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="11" column="52" lean-forward="true" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_delivered.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="42" column="92" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="92" />
         </state>
       </provider>
     </entry>
@@ -934,37 +916,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/ali_express/compilation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1040">
-          <caret line="68" column="43" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
-          <folding>
-            <element signature="e#429#496#0#PHP" />
-            <element signature="n#strpos_recursive#0;n#!!top" />
-            <element signature="e#2900#3076#0#PHP" />
-            <element signature="e#2956#3076#0#PHP" />
-            <element signature="n#formMasterList#0;n#!!top" />
-            <element signature="e#4241#4363#0#PHP" />
-            <element signature="n#recursiveFind#0;n#!!top" />
-            <element signature="e#5172#5587#0#PHP" />
-            <element signature="e#5221#5581#0#PHP" />
-            <element signature="e#5325#5571#0#PHP" />
-            <element signature="e#5672#6074#0#PHP" />
-            <element signature="e#5719#6072#0#PHP" />
-            <element signature="e#5733#5868#0#PHP" />
-            <element signature="e#5818#5868#0#PHP" />
-            <element signature="e#5876#6072#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_paid_state.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="324" column="5" selection-start-line="324" selection-start-column="5" selection-end-line="324" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/file_processing.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
@@ -1000,13 +951,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/ali_order_details_dynamic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/ali_express/cainiao.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="505">
@@ -1014,49 +958,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid_lim.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="123" column="27" selection-start-line="123" selection-start-column="27" selection-end-line="123" selection-end-column="27" />
-          <folding>
-            <element signature="e#441#2459#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/integration/ali_express/cainiao_lim.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="202" column="52" lean-forward="true" selection-start-line="202" selection-start-column="52" selection-end-line="202" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid_lim.php" />
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/cainiao_lim.php" />
     <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="122" column="17" lean-forward="true" selection-start-line="122" selection-start-column="17" selection-end-line="122" selection-end-column="17" />
+        <state relative-caret-position="838">
+          <caret line="402" column="36" selection-start-line="402" selection-start-column="36" selection-end-line="402" selection-end-column="36" />
           <folding>
-            <element signature="e#3024#3339#0#PHP" />
-            <element signature="e#3161#3337#0#PHP" />
-            <element signature="e#3217#3337#0#PHP" />
-            <element signature="e#9821#10772#0#PHP" />
-            <element signature="e#10400#10766#0#PHP" />
-            <element signature="e#10923#11101#0#PHP" />
-            <element signature="e#10971#11095#0#PHP" />
-            <element signature="e#11289#11500#0#PHP" />
-            <element signature="e#11341#11494#0#PHP" />
-            <element signature="e#12310#12629#0#PHP" />
-            <element signature="e#12636#15361#0#PHP" />
-            <element signature="e#12964#13126#0#PHP" />
-            <element signature="e#13226#15357#0#PHP" />
-            <element signature="e#13430#14240#0#PHP" />
-            <element signature="e#13462#13632#0#PHP" />
-            <element signature="e#13645#13792#0#PHP" />
-            <element signature="e#13805#14230#0#PHP" />
-            <element signature="e#14251#14384#0#PHP" />
-            <element signature="e#14867#15357#0#PHP" />
-            <element signature="e#15241#15351#0#PHP" />
+            <element signature="e#3969#9052#0#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ali_order_details_dynamic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_delivered.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/compilation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="41" column="10" lean-forward="true" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+          <folding>
+            <element signature="e#429#496#0#PHP" />
+            <element signature="n#strpos_recursive#0;n#!!top" />
+            <element signature="e#2900#3076#0#PHP" />
+            <element signature="e#2956#3076#0#PHP" />
+            <element signature="n#formMasterList#0;n#!!top" />
+            <element signature="e#4241#4363#0#PHP" />
+            <element signature="n#recursiveFind#0;n#!!top" />
+            <element signature="e#5172#5587#0#PHP" />
+            <element signature="e#5221#5581#0#PHP" />
+            <element signature="e#5325#5571#0#PHP" />
+            <element signature="e#5672#6074#0#PHP" />
+            <element signature="e#5719#6072#0#PHP" />
+            <element signature="e#5733#5868#0#PHP" />
+            <element signature="e#5818#5868#0#PHP" />
+            <element signature="e#5876#6072#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_paid_state.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="64" column="92" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="92" />
         </state>
       </provider>
     </entry>

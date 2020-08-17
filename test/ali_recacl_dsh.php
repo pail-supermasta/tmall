@@ -19,19 +19,19 @@ function getOrderShop($attributes)
     $sessionKey = '';
     switch (true) {
         case stripos($attributes, "novinkiooo (ID 4901001)") !== false :
-            $sessionKey = '50002500501Vs15192a4fBdqLHT9iHrwvpCb0JydnTDyqj8eFwAOsukoFc4qg0Vxn2C';
+            $sessionKey = '50002500c15tBJCowQScZ6julhS1dea01bfctShXhETAmyVfKkQKwey1lvK3ryD7z1t';
             break;
         case  stripos($attributes, "BESTGOODS (ID 5041091)") !== false :
-            $sessionKey = "50002301005q0OsaZ16afcaa0zGzFoxi0th7ccSgMw0CJduh1FqvAlZmPkEo4jGYCQw";
+            $sessionKey = "50002301b00s17916ea4eTrdXcBvgrz2lkiuhxGTUEjWmoPbPQvsmvYZfkFlqTKVgPr";
             break;
         case  stripos($attributes, "Noerden (ID 5012047)") !== false :
-            $sessionKey = "50002701a33kuBupddegw9sTukkGPKzFsUBHbjPQDPTVU16922027tN2z5kWwXYAwTx";
+            $sessionKey = "50002700811duwgr7oCt2sx1edacab6BZ6kWiLtBtQeBGBQfNxYCKlunzemnpZpP21d";
             break;
         case  stripos($attributes, "Morphy Richards (ID 5017058)") !== false :
-            $sessionKey = "50002500435yXPcbqwfU6Lmo2txf83nTdKufWRlABgs6PSv10e2657ccIUUwtbSdEo3";
+            $sessionKey = "50002500501Vs151ac533BdqLFskhnQwtwheYk1CiSexTFfFAv6nWUefGArBboUuh8F";
             break;
         case  stripos($attributes, "iRobot (ID 5016030)") !== false :
-            $sessionKey = "50002500111c0AyTocCxSEw142e6ac49kntzvuDe7g0eIqC0sf6gjSBLVrYF8ZUBSSy";
+            $sessionKey = "50002500901sP1b7f673cFt7iCP3uQfb1JzgquDxxdddBqgtvwCkmwoWHooj7Cw4dCP";
             break;
     }
     return $sessionKey;
