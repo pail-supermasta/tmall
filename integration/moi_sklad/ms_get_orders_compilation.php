@@ -59,7 +59,7 @@ function curlMS($link = false, $data = false, $username = false)
 header('Content-Type: application/json');
 
 
-$fn = fopen("../ali_express/orders.txt","r");
+$fn = fopen(realpath(dirname(__FILE__) . '/..') . "/ali_express/orders.txt","r");
 
 while(! feof($fn))  {
     $result = fgets($fn);

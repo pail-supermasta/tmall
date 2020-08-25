@@ -63,11 +63,11 @@ $stores = array(
 
 
 // Telegram err logs integration
-require_once '../class/telegram.php';
+require_once realpath(dirname(__FILE__) . '/..') . '/class/telegram.php';
 
-require_once '../ali_express/taobao/TopSdk.php';
+require_once realpath(dirname(__FILE__) . '/..') . '/ali_express/taobao/TopSdk.php';
 
-require_once '../vendor/autoload.php';
+require_once realpath(dirname(__FILE__) . '/..') . '/vendor/autoload.php';
 
 
 use Avaks\MS\MSSync;

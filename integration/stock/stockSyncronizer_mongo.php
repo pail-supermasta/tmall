@@ -69,11 +69,11 @@ $stores = array(
 
 
 // Telegram err logs integration
-require_once '../class/telegram.php';
+require_once realpath(dirname(__FILE__) . '/..') . '/class/telegram.php';
 
-require_once '../ali_express/taobao/TopSdk.php';
+require_once realpath(dirname(__FILE__) . '/..') . '/ali_express/taobao/TopSdk.php';
 
-require_once '../vendor/autoload.php';
+require_once realpath(dirname(__FILE__) . '/..') . '/vendor/autoload.php';
 
 
 use Avaks\MS\Products;
@@ -97,7 +97,7 @@ function loggingRes($arr, $product, $syncErrors, $login)
         } else {
             $log_message = 'Tmall код МС ' . $product['ali_product_id'] . ' Код МС ' . $product['code'] . ' Старое значение ' . $arr['old_stock'] . ' Новое значение ' . $arr['new_stock'];
         }
-        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . ' ' . $log_message . PHP_EOL, 3, $login['login'] . '.log');
+//        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . ' ' . $log_message . PHP_EOL, 3, $login['login'] . '.log');
 
 
     }

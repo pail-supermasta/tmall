@@ -14,7 +14,7 @@ use Avaks\MS\OrderMS;
 use Avaks\MS\Products;
 use Avaks\MS\MSSync;
 
-class Orders
+class Orders_213
 {
 
     /**
@@ -48,6 +48,7 @@ class Orders
         $filter = [
             '_attributes.#Логистика: агент' => 'Cainiao',
             '_agent' => '1b33fbc1-5539-11e9-9ff4-315000060bc8',
+            '_id' => '5d0a6e84-0578-11ea-0a80-022d00097505',
             '_attributes.Накладная логистики' => ['$exists' => false],
             '_attributes.Логистика: Трек' => ['$exists' => true],
             'deleted' => ['$exists' => false]
