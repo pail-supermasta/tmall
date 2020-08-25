@@ -9,11 +9,11 @@
 
 ini_set('display_errors', 1);
 
-ini_set("error_log", "../php-error.log");
+ini_set("error_log", "php-error.log");
 header('Content-Type: application/json');
 
 
-require_once '../vendor/autoload.php';
+require_once realpath(dirname(__FILE__) . '/..') . '/vendor/autoload.php';
 require_once 'taobao/TopSdk.php';
 
 

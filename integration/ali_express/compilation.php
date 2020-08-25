@@ -7,18 +7,18 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-ini_set("error_log", "../php-error.log");
+ini_set("error_log", "php-error.log");
 
 /*  INCLUDES    */
 
 // Error handlers
-include_once '../class/error.php';
+include_once realpath(dirname(__FILE__) . '/..') . '/class/error.php';
 
 // Telegram err logs integration
-require_once '../class/telegram.php';
+require_once realpath(dirname(__FILE__) . '/..') . '/class/telegram.php';
 
 // Process orders in files
-require_once('../file_processing.php');
+require_once realpath(dirname(__FILE__) . '/..') . '/file_processing.php';
 
 //create_date_start - PST (pacific time 10 hours moscow difference)
 // russian time
@@ -140,7 +140,7 @@ $lookFor = 'order_id';
 function recursiveFind($key, array $searchStack, $lookFor)
 {
     // open file ready to write
-    $fp = fopen('ali_order_ids/' . $key . '.txt', 'w');
+    $fp = fopen(realpath(dirname(__FILE__)) . '/ali_order_ids/' . $key . '.txt', 'w');
     /*clear all existing content*/
 
     // write date to file

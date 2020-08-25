@@ -12,9 +12,9 @@ ini_set("error_log", "php-error.log");
 
 
 // Telegram err logs integration
-require_once '../class/telegram.php';
+require_once realpath(dirname(__FILE__) . '/..') . '/class/telegram.php';
 
-require_once '../vendor/autoload.php';
+require_once realpath(dirname(__FILE__) . '/..') . '/vendor/autoload.php';
 
 use Avaks\MS\Orders;
 use Avaks\MS\OrderMS;

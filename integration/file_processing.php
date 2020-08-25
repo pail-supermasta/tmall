@@ -472,7 +472,7 @@ function assembleOrderDetails($order, $filename)
 {
     //          then -> get order details from ali_express/ali_order_details.php
 
-    $login = str_replace((array('.txt', 'ali_order_ids/')), "", $filename);
+    $login = str_replace((array('.txt', realpath(dirname(__FILE__)) . "/ali_express/ali_order_ids/")), "", $filename);
     $sessionKey = '';
     foreach (LOGINS as $constant) {
         if ($constant['login'] == $login) {
@@ -496,7 +496,7 @@ function assembleOrderDetails($order, $filename)
 
 
 // Foreach FILE in folder ali_express/ali_order_ids
-define("DIRECTORY", "ali_order_ids/");
+define("DIRECTORY", realpath(dirname(__FILE__)) . "/ali_express/ali_order_ids/");
 
 //$files = scandir(DIRECTORY);
 $files = preg_grep('/^([^.])/', scandir(DIRECTORY));

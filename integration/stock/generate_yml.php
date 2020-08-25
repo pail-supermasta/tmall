@@ -5,8 +5,8 @@ ini_set("display_errors", 1);
 date_default_timezone_set('Europe/Moscow');
 
 
-require_once "../vendor/autoload.php";
-require_once '../class/telegram.php';
+require_once realpath(dirname(__FILE__) . '/..') . "/vendor/autoload.php";
+require_once realpath(dirname(__FILE__) . '/..') . '/class/telegram.php';
 
 
 use MongoDB\BSON\Regex;

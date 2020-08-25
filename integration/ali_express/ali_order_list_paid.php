@@ -7,7 +7,7 @@ header('Content-Type: application/json');
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-ini_set("error_log", "../php-error.log");
+ini_set("error_log", realpath(dirname(__FILE__) . '/..') . "/php-error.log");
 
 define('MS_HOST', 'avaks.org');
 define('MS_USER', 'avaks');
@@ -66,18 +66,18 @@ define('ID_REGEXP', '/[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{1
 /*  INCLUDES    */
 
 // Error handlers
-require_once '../class/error.php';
+require_once realpath(dirname(__FILE__) . '/..') . '/class/error.php';
 
 // Telegram err logs integration
-require_once '../class/telegram.php';
+require_once realpath(dirname(__FILE__) . '/..') . '/class/telegram.php';
 
 // SQL get track number for orden name from MS
-require_once '../moi_sklad/sql_requests/OrderDetails.php';
-require_once '../moi_sklad/ms_get_orders_dynamic.php';
+require_once realpath(dirname(__FILE__) . '/..') . '/moi_sklad/sql_requests/OrderDetails.php';
+require_once realpath(dirname(__FILE__) . '/..') . '/moi_sklad/ms_get_orders_dynamic.php';
 
 require_once 'taobao/TopSdk.php';
 require_once 'cainiao.php';
-require_once '../vendor/autoload.php';
+require_once realpath(dirname(__FILE__) . '/..') . '/vendor/autoload.php';
 
 
 use Avaks\MS\OrderMS;
