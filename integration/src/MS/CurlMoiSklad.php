@@ -21,7 +21,7 @@ class CurlMoiSklad
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_FOLLOWLOCATION, false);
-        curl_setopt($curl, CURLOPT_URL, 'https://online.moysklad.ru/api/remap/1.1/' . $link);
+        curl_setopt($curl, CURLOPT_URL, 'https://online.moysklad.ru/api/remap/1.1' . $link);
         curl_setopt($curl, CURLOPT_USERPWD, 'робот_next@техтрэнд:Next0913');
 
 
