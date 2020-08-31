@@ -7,7 +7,207 @@
   <component name="ChangeListManager">
     <list default="true" id="80146bb5-79f6-4afc-a154-c01ae4967d76" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/src/MS/CurlMoiSklad.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/src/MS/CurlMoiSklad.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/QimenCloud/QimenCloudClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/QimenCloud/QimenCloudClient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/aliyun/AliyunClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/aliyun/AliyunClient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/dingtalk/DingTalkClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/dingtalk/DingTalkClient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AccountResultDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AccountResultDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AddressDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AddressDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Addressdtos.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Addressdtos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeCurrentLevelInfoDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeCurrentLevelInfoDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeCurrentLevelInfoResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeCurrentLevelInfoResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeDisputeProductDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeDisputeProductDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeServiceIndexDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeServiceIndexDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeServiceScoreDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeServiceScoreDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeServiceScoreInfoDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeServiceScoreInfoDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeServiceScoreWeightDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeServiceScoreWeightDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAeMultimedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAeMultimedia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAeProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAeProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAeProductChildGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAeProductChildGroup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAeProductGroupIdHolder.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAeProductGroupIdHolder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAeProductListQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAeProductListQuery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAeProductProperty.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAeProductProperty.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAeProductSku.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAeProductSku.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAeProductTreeGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAeProductTreeGroup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAeVideo.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAeVideo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAttrValueDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAttrValueDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAttributeDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAttributeDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAttributeResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopAttributeResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopBundleItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopBundleItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopBundleItemSku.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopBundleItemSku.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopBundleSubItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopBundleSubItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopCloudPrintDataResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopCloudPrintDataResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopDeleteImageRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopDeleteImageRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopDeleteImageResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopDeleteImageResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopFindModuleResultDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopFindModuleResultDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopFindProductResultDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopFindProductResultDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopFreightSelfdefine.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopFreightSelfdefine.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopFreightSetting.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopFreightSetting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopFreightTemplate.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopFreightTemplate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopImagePaginationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopImagePaginationRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopImagePaginationResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopImagePaginationResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopImageResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopImageResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopLimitedDiscInputDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopLimitedDiscInputDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopLogisticsServiceResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopLogisticsServiceResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopMessageFaqContent.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopMessageFaqContent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopMessageFaqQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopMessageFaqQuery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopMessageFaqSubjectDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopMessageFaqSubjectDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopMessageFaqWelcomeDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopMessageFaqWelcomeDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopModifyProductResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopModifyProductResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopOfferBundle.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopOfferBundle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopOfferBundleFindResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopOfferBundleFindResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopOfferBundleQueryResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopOfferBundleQueryResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopOfferBundleSaveResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopOfferBundleSaveResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopOrderCancelRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopOrderCancelRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopOrderItemDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopOrderItemDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopOrderProductDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopOrderProductDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopOrderQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopOrderQuery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopPageResultDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopPageResultDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopPhotoBankImageGroupDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopPhotoBankImageGroupDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopPhotoBankImageResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopPhotoBankImageResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopPhotoBankInfoResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopPhotoBankInfoResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopPostCategoryDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopPostCategoryDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopPostCategoryResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopPostCategoryResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopPostProductResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopPostProductResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopProductDiscountInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopProductDiscountInfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopProductWindowResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopProductWindowResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopPromotionDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopPromotionDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopResultDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopResultDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopShipmentDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopShipmentDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopSkuInventoryInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopSkuInventoryInfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopSkuProperty.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopSkuProperty.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopStorePromProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopStorePromProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpAddressDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpAddressDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpChildOrderDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpChildOrderDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpIssueInfoDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpIssueInfoDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpLoanInfoDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpLoanInfoDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpLogisticInfoDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpLogisticInfoDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpOperationLogDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpOperationLogDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpOrderDetailDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpOrderDetailDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpOrderMsgDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpOrderMsgDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpOrderProductInfoDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpOrderProductInfoDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpPersonDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpPersonDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpRefundInfoDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpRefundInfoDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpSingleOrderQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopTpSingleOrderQuery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopUnit.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopUnit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopUploadImageResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopUploadImageResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopWindowProductResultDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopWindowProductResultDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopWlDeclareAddressDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AeopWlDeclareAddressDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Aeopdetailmodulelist.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Aeopdetailmodulelist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Aeopfreighttemplatedtolist.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Aeopfreighttemplatedtolist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ApiAttachmentDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ApiAttachmentDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ApiIssueProcessDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ApiIssueProcessDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AttributeDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/AttributeDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/BaseResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/BaseResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/BatchOperationJobDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/BatchOperationJobDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/BrandQualificationDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/BrandQualificationDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/CategoryInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/CategoryInfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ChildOrderDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ChildOrderDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/CloudPrintData.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/CloudPrintData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/CloudPrintDataGetResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/CloudPrintDataGetResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/CreateDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/CreateDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Currency.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Currency.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/DetailSource.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/DetailSource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Details.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Details.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ErrorDetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ErrorDetail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/EvaluationFeedbackDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/EvaluationFeedbackDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/FilePath.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/FilePath.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/FundLoanListVo.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/FundLoanListVo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/FundloanRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/FundloanRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopAeMultimedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopAeMultimedia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopAeProductSku.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopAeProductSku.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopAeVideo.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopAeVideo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopSkuProperty.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopSkuProperty.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopTpAddressDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopTpAddressDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopTpChildOrderDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopTpChildOrderDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopTpIssueInfoDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopTpIssueInfoDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopTpLoanInfoDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopTpLoanInfoDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopTpOrderMsgDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopTpOrderMsgDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopTpPersonDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopTpPersonDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopTpRefundInfoDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalAeopTpRefundInfoDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalDescription.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalDescription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalMoneyStr.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalMoneyStr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalSubject.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/GlobalSubject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/HsfResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/HsfResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/IssueApiIssueDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/IssueApiIssueDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/IssueApiListQueryDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/IssueApiListQueryDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/IssueDetailOpenApiDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/IssueDetailOpenApiDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ItemDisplayDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ItemDisplayDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ItemListQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ItemListQuery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ItemListResultDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ItemListResultDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/KfcSearchResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/KfcSearchResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/MarketImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/MarketImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/MerchantProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/MerchantProfile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/MessageDetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/MessageDetail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Money.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Money.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/MoneyStr.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/MoneyStr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OpenApiRelationResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OpenApiRelationResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OpenParcelOrderDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OpenParcelOrderDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OrderAddressDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OrderAddressDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OrderBaseInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OrderBaseInfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OrderDetailQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OrderDetailQuery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OrderDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OrderDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OrderListRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OrderListRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OrderLoanItemVo.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OrderLoanItemVo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OrderProductDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OrderProductDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OrderQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OrderQuery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OrderTradeInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/OrderTradeInfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Otherfees.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Otherfees.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/PaginationResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/PaginationResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/PickupDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/PickupDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Pickupselleraddresslist.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Pickupselleraddresslist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/PostItemResponseDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/PostItemResponseDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/PostProductRequestDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/PostProductRequestDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ProductSchemaDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ProductSchemaDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ProhibitedWord.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ProhibitedWord.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/PromotionProductQueryDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/PromotionProductQueryDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/PromotionQueryDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/PromotionQueryDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/PromotionSimpleInfoDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/PromotionSimpleInfoDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Refundselleraddresslist.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Refundselleraddresslist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/RelationQueryDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/RelationQueryDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/RelationResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/RelationResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/RemoteQueryOpenResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/RemoteQueryOpenResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Result.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Result.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ResultDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ResultDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ReturnerDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/ReturnerDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/RmaLogisticOrderState.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/RmaLogisticOrderState.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/RmaState.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/RmaState.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/RmaStateUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/RmaStateUpdateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SellerCouponActivity.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SellerCouponActivity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SellerCouponActivityList.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SellerCouponActivityList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Senderselleraddresslist.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Senderselleraddresslist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Shipmentlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Shipmentlist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SimpleMoney.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SimpleMoney.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SimpleOrderItemVo.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SimpleOrderItemVo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SimpleOrderListVo.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SimpleOrderListVo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SimpleOrderProductVo.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SimpleOrderProductVo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SingleCountryPriceDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SingleCountryPriceDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SingleItemRequestDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SingleItemRequestDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SingleItemResponseDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SingleItemResponseDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SingleLanguageTitleDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SingleLanguageTitleDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SingleOrderQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SingleOrderQuery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Sizechartdtolist.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Sizechartdtolist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SkuAttributeDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SkuAttributeDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SkuInfoDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SkuInfoDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SkuValueSimplifiedInfoDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SkuValueSimplifiedInfoDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SolutionApiDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SolutionApiDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SonOrderLoanVo.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SonOrderLoanVo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Subject.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Subject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Subtradeorderlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Subtradeorderlist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Summary.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Summary.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SupportedSkuAttributeDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SupportedSkuAttributeDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SynchronizeSkuRequestDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/SynchronizeSkuRequestDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Templatelist.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Templatelist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/TopDownloadRecordDo.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/TopDownloadRecordDo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/TpOpenAddressDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/TpOpenAddressDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/TpOpenSingleOrderQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/TpOpenSingleOrderQuery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/TradeEvaluationOpenDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/TradeEvaluationOpenDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/TradeEvaluationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/TradeEvaluationRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Windowproducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/taobao/top/domain/Windowproducts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ali_order_details_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/ali_order_details_dynamic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/newMethodsCainiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/newMethodsCainiao.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,62 +221,85 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="compilation.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/integration/ali_express/compilation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="116" column="35" selection-start-line="116" selection-start-column="35" selection-end-line="116" selection-end-column="35" />
-              <folding>
-                <element signature="e#533#600#0#PHP" />
-                <element signature="e#828#2838#0#PHP" />
-                <element signature="e#839#1232#1#PHP" />
-                <element signature="e#1238#1637#1#PHP" />
-                <element signature="e#1643#2030#1#PHP" />
-                <element signature="e#2036#2437#1#PHP" />
-                <element signature="e#2443#2836#1#PHP" />
-                <element signature="n#strpos_recursive#0;n#!!top" />
-                <element signature="e#3004#3180#0#PHP" />
-                <element signature="e#3060#3180#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stockSyncronizer_mongo.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/integration/stock/stockSyncronizer_mongo.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="115" column="33" selection-start-line="115" selection-start-column="33" selection-end-line="115" selection-end-column="33" />
-              <folding>
-                <element signature="e#325#2335#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CurlMoiSklad.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/integration/src/MS/CurlMoiSklad.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="file_processing.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/integration/file_processing.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7584">
-              <caret line="474" column="97" selection-start-line="474" selection-start-column="84" selection-end-line="474" selection-end-column="97" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ali_order_list_paid.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1152">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
+            <state relative-caret-position="153">
+              <caret line="210" column="12" lean-forward="true" selection-start-line="210" selection-start-column="12" selection-end-line="210" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cainiao.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/integration/ali_express/cainiao.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="265" column="22" selection-start-line="265" selection-start-column="22" selection-end-line="265" selection-end-column="22" />
+              <folding>
+                <element signature="e#5062#5716#1#PHP" />
+                <element signature="e#5921#6671#1#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cainiao.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/cainiao.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-268">
+              <caret line="118" column="10" lean-forward="true" selection-start-line="118" selection-start-column="10" selection-end-line="118" selection-end-column="10" />
+              <folding>
+                <element signature="e#6414#7164#1#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newMethodsCainiao.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/newMethodsCainiao.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+              <folding>
+                <element signature="e#1207#1313#0#PHP" />
+                <element signature="e#1404#7655#0#PHP" />
+                <element signature="e#1709#1743#0#PHP" />
+                <element signature="e#3607#3639#0#PHP" />
+                <element signature="e#6189#6754#0#PHP" />
+                <element signature="e#7609#7653#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AliyunClient.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/integration/ali_express/taobao/aliyun/AliyunClient.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="Cainiao.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/integration/src/Cainiao/Cainiao.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="75" column="32" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ali_order_details_dynamic.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/ali_order_details_dynamic.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderMS.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/integration/src/MS/OrderMS.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -92,15 +315,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>checkTimeFromPaid</find>
-      <find>&quot;street&quot;:&quot;С</find>
-      <find>50002500435yXPcbqwfU6Lmo2txf83nTdKufWRlABgs6PSv10e2657ccIUUwtbSdEo3</find>
-      <find>50002301419cdaiudiQfUvkfkfueltW1bd07081FHiQGZdRtFEwBpxDxPrTG2jMrE6H</find>
-      <find>50002301005q0OsaZ16afcaa0zGzFoxi0th7ccSgMw0CJduh1FqvAlZmPkEo4jGYCQw</find>
-      <find>50002500501Vs15192a4fBdqLHT9iHrwvpCb0JydnTDyqj8eFwAOsukoFc4qg0Vxn2C</find>
-      <find>50002500111c0AyTocCxSEw142e6ac49kntzvuDe7g0eIqC0sf6gjSBLVrYF8ZUBSSy</find>
-      <find>50002701a33kuBupddegw9sTukkGPKzFsUBHbjPQDPTVU16922027tN2z5kWwXYAwTx</find>
-      <find>mongodb://adminUser</find>
       <find>.pdf</find>
       <find>printCainiaoSticker</find>
       <find>Логистика: Трек</find>
@@ -122,6 +336,15 @@
       <find>_cons</find>
       <find>https://online.moysklad.ru/api/remap/1.1/</find>
       <find>curlMS(</find>
+      <find>AE_RU_MP_COURIER_PH3</find>
+      <find>http://gw.api.taobao.com</find>
+      <find>seller_address_query</find>
+      <find>getlogisticsselleraddresses</find>
+      <find>cainiao.global.logistic.order.create</find>
+      <find>logisti</find>
+      <find>get</find>
+      <find>AE_RU_MP_COURIER</find>
+      <find>r.create</find>
     </findStrings>
     <replaceStrings>
       <replace>50002501105yrRcZz182e0004HvGhTCsvjehAuBKsWhlIwpZDwvCHXAoRRU4tnNX07B</replace>
@@ -169,10 +392,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid_now.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/cainiao_now.php" />
         <option value="$PROJECT_DIR$/test/cainiao_now.php" />
-        <option value="$PROJECT_DIR$/test/newMethodsCainiao.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/taobao/top/TopClient.php" />
         <option value="$PROJECT_DIR$/integration/src/MS/Product.php" />
         <option value="$PROJECT_DIR$/integration/stock/stockSyncronizer.php" />
@@ -200,7 +421,6 @@
         <option value="$PROJECT_DIR$/test/MS/OrderMS.php" />
         <option value="$PROJECT_DIR$/integration/stock/ali_recacl_dsh.php" />
         <option value="$PROJECT_DIR$/test/ali_recacl_dsh.php" />
-        <option value="$PROJECT_DIR$/test/ali_order_details_dynamic.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid_lim.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/cainiao_lim.php" />
         <option value="$PROJECT_DIR$/integration/src/MS/Orders.php" />
@@ -220,6 +440,9 @@
         <option value="$PROJECT_DIR$/integration/file_processing.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/compilation.php" />
         <option value="$PROJECT_DIR$/integration/src/MS/CurlMoiSklad.php" />
+        <option value="$PROJECT_DIR$/test/ali_order_details_dynamic.php" />
+        <option value="$PROJECT_DIR$/test/cainiao.php" />
+        <option value="$PROJECT_DIR$/test/newMethodsCainiao.php" />
       </list>
     </option>
   </component>
@@ -269,7 +492,14 @@
               <item name="tmall" type="b2602c69:ProjectViewProjectNode" />
               <item name="tmall" type="462c0819:PsiDirectoryNode" />
               <item name="integration" type="462c0819:PsiDirectoryNode" />
-              <item name="stock" type="462c0819:PsiDirectoryNode" />
+              <item name="ali_express" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tmall" type="462c0819:PsiDirectoryNode" />
+              <item name="integration" type="462c0819:PsiDirectoryNode" />
+              <item name="ali_express" type="462c0819:PsiDirectoryNode" />
+              <item name="taobao" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -287,7 +517,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -317,7 +547,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Script.ali_order_print_213.php">
+  <component name="RunManager" selected="PHP Script.ali_order_details_dynamic.php">
     <configuration name="Orders_213.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/src/MS/Orders_213.php" />
     <configuration name="ali_order_details_dynamic.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/test/ali_order_details_dynamic.php" />
     <configuration name="ali_order_list_finished.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/integration/ali_express/ali_order_list_finished.php" />
@@ -332,10 +562,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHP Script.ali_order_details_dynamic.php" />
         <item itemvalue="PHP Script.ali_order_print_213.php" />
         <item itemvalue="PHP Script.Orders_213.php" />
         <item itemvalue="PHP Script.ali_order_list_paid.php" />
-        <item itemvalue="PHP Script.ali_order_details_dynamic.php" />
         <item itemvalue="PHP Script.ali_order_list_finished.php" />
       </list>
     </recent_temporary>
@@ -628,12 +858,12 @@
       <workItem from="1597652060616" duration="3712000" />
       <workItem from="1597941399881" duration="102000" />
       <workItem from="1598254444790" duration="22147000" />
-      <workItem from="1598435187280" duration="1372000" />
+      <workItem from="1598435187280" duration="7143000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1069862000" />
+    <option name="totallyTimeSpent" value="1075633000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -643,9 +873,9 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.2657952" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="right" id="Run" order="5" weight="0.32142857" />
+      <window_info anchor="right" id="Run" order="5" visible="true" weight="0.32142857" />
       <window_info anchor="right" id="Terminal" order="4" weight="0.300271" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21002132" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19083156" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -677,37 +907,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/integration/ali_express/orderCreateErr.log" />
-    <entry file="file://$PROJECT_DIR$/alik01/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/alik01/logs/.logs-here">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/alik01/vendor-endpoint.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/alik01/config.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/alik01/logs/log.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/integration/src/SQL/AvaksSQL.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="52" lean-forward="true" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/ali_orders.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -814,13 +1013,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid_lim.php" />
     <entry file="file://$PROJECT_DIR$/integration/ali_express/cainiao_lim.php" />
-    <entry file="file://$PROJECT_DIR$/test/ali_order_details_dynamic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/src/MS/MSSync.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -887,13 +1079,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/src/MS/OrderMS.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_print_213.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1221">
@@ -912,6 +1097,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="530">
           <caret line="56" column="28" lean-forward="true" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
+          <folding>
+            <element signature="e#110#133#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -939,24 +1127,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/ali_express/cainiao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2251">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
           <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1152">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
         </state>
       </provider>
     </entry>
@@ -974,10 +1148,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/integration/src/MS/CurlMoiSklad.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/taobao/top/request/AliexpressLogisticsRedefiningGetlogisticsselleraddressesRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="69" lean-forward="true" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/taobao/top/TopClient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/src/MS/OrderMS.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ali_order_details_dynamic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/stock/stockSyncronizer_mongo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="115" column="33" selection-start-line="115" selection-start-column="33" selection-end-line="115" selection-end-column="33" />
+          <folding>
+            <element signature="e#325#2335#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/integration/ali_express/compilation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="116" column="35" selection-start-line="116" selection-start-column="35" selection-end-line="116" selection-end-column="35" />
+          <caret line="116" column="35" lean-forward="true" selection-start-line="116" selection-start-column="35" selection-end-line="116" selection-end-column="35" />
           <folding>
             <element signature="e#533#600#0#PHP" />
             <element signature="e#828#2838#0#PHP" />
@@ -993,22 +1212,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/stock/stockSyncronizer_mongo.php">
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_order_list_paid.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="115" column="33" selection-start-line="115" selection-start-column="33" selection-end-line="115" selection-end-column="33" />
+        <state relative-caret-position="153">
+          <caret line="210" column="12" lean-forward="true" selection-start-line="210" selection-start-column="12" selection-end-line="210" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/cainiao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="265" column="22" selection-start-line="265" selection-start-column="22" selection-end-line="265" selection-end-column="22" />
           <folding>
-            <element signature="e#325#2335#0#PHP" />
+            <element signature="e#5062#5716#1#PHP" />
+            <element signature="e#5921#6671#1#PHP" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/src/MS/CurlMoiSklad.php">
+    <entry file="file://$PROJECT_DIR$/integration/src/Cainiao/Cainiao.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="297">
+          <caret line="75" column="32" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/cainiao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-268">
+          <caret line="118" column="10" lean-forward="true" selection-start-line="118" selection-start-column="10" selection-end-line="118" selection-end-column="10" />
+          <folding>
+            <element signature="e#6414#7164#1#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/taobao/top/request/AliexpressLogisticsRedefiningGetonlinelogisticsservicelistbyorderidRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-704">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/newMethodsCainiao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+          <folding>
+            <element signature="e#1207#1313#0#PHP" />
+            <element signature="e#1404#7655#0#PHP" />
+            <element signature="e#1709#1743#0#PHP" />
+            <element signature="e#3607#3639#0#PHP" />
+            <element signature="e#6189#6754#0#PHP" />
+            <element signature="e#7609#7653#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/ali_express/taobao/aliyun/AliyunClient.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

@@ -3,7 +3,7 @@
  * TOP API: aliexpress.logistics.sellershipmentfortop request
  * 
  * @author auto create
- * @since 1.0, 2019.08.19
+ * @since 1.0, 2020.05.27
  */
 class AliexpressLogisticsSellershipmentfortopRequest
 {
@@ -21,6 +21,11 @@ class AliexpressLogisticsSellershipmentfortopRequest
 	 * 交易订单号
 	 **/
 	private $outRef;
+	
+	/** 
+	 * 包裹类型
+	 **/
+	private $packageType;
 	
 	/** 
 	 * 声明发货类型，all表示全部发货，part表示部分声明发货。
@@ -70,6 +75,17 @@ class AliexpressLogisticsSellershipmentfortopRequest
 	public function getOutRef()
 	{
 		return $this->outRef;
+	}
+
+	public function setPackageType($packageType)
+	{
+		$this->packageType = $packageType;
+		$this->apiParas["package_type"] = $packageType;
+	}
+
+	public function getPackageType()
+	{
+		return $this->packageType;
 	}
 
 	public function setSendType($sendType)

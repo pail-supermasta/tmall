@@ -38,6 +38,11 @@ class TpOpenAddressDto
 	public $country_name;
 	
 	/** 
+	 * 个人税号
+	 **/
+	public $cpf_no;
+	
+	/** 
 	 * 街道详细地址
 	 **/
 	public $detail_address;

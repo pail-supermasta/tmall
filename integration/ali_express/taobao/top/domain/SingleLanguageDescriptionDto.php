@@ -8,7 +8,7 @@ class SingleLanguageDescriptionDto
 {
 	
 	/** 
-	 * language
+	 * Support: en(English) ru(Russian) es(Spanish) fr(French) it(Italian) tr(Turkish) pt(Portuguese) de(German) nl(Dutch) in(Indonesian) ar(Arabic) ja(Japanese) ko(Korean) th(Thai) vi(Vietnamese) iw(Hebrew)
 	 **/
 	public $language;
 	

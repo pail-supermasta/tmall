@@ -8,7 +8,7 @@ class PostProductRequestDto
 {
 	
 	/** 
-	 * If the merchant/ISVs has done the category mapping by himself, this field should be filled with the aliexpress category id.
+	 * Aliexpress leaf category ID obtained through https://developers.aliexpress.com/en/doc.htm?docId=46042&docType=2
 	 **/
 	public $aliexpress_category_id;
 	
@@ -28,11 +28,6 @@ class PostProductRequestDto
 	public $category_id;
 	
 	/** 
-	 * merchant's category name
-	 **/
-	public $category_name;
-	
-	/** 
 	 * freight template ID. After the merchant has created an freight template in the backend: freighttemplate.aliexpress.com, the id could be obtained in the backend directly or thourgh the API: aliexpress.freight.redefining.listfreighttemplate
 	 **/
 	public $freight_template_id;
@@ -48,7 +43,7 @@ class PostProductRequestDto
 	public $inventory_deduction_strategy;
 	
 	/** 
-	 * Maximum 6 images. Main images to be displayed for the product. The urls needs to be accessible. The url could be in the merchant's server or obtained by uploading the pictures to merchant's Aliexpress photobank, by using the API: aliexpress.photobank.redefining.uploadimageforsdk
+	 * Main image that represents the product. The url should be accesible and there is a meximum of 6 pictures. The url can point to a seller's server or to AliExpress photobank. In order to obtain more information about the photobank and how to upload images, please visit the following page: https://developers.aliexpress.com/en/doc.htm?docId=30186&docType=2
 	 **/
 	public $main_image_urls_list;
 	
@@ -68,17 +63,17 @@ class PostProductRequestDto
 	public $multi_language_subject_list;
 	
 	/** 
-	 * product height in unit of "cm", maximum 700
+	 * Package height measured in centimeters (cm). Maximum 700 cm, minumum: 0.01cm
 	 **/
 	public $package_height;
 	
 	/** 
-	 * product length in unit of "cm", maximum 700
+	 * Package length, measured in centimeters (cm). Maximum 700 cm, minumum: 0.01cm
 	 **/
 	public $package_length;
 	
 	/** 
-	 * product width in unit of "cm", maximum 700
+	 * Package width measured in centimeters (cm). Maximum 700 cm, minumum: 0.01cm
 	 **/
 	public $package_width;
 	
@@ -103,12 +98,12 @@ class PostProductRequestDto
 	public $size_chart_id;
 	
 	/** 
-	 * All the skus included in one product.
+	 * If specified this field, all the previous skus will be replaced by the new skus.
 	 **/
 	public $sku_info_list;
 	
 	/** 
-	 * weight for the product, including the package.Maximum 500
+	 * Weight of the product, including package. Measured in Kilograms (Kg) with a maximum 500 and minumum 0.001
 	 **/
 	public $weight;	
 }

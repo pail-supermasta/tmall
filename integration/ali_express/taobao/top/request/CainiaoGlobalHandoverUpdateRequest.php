@@ -3,19 +3,29 @@
  * TOP API: cainiao.global.handover.update request
  * 
  * @author auto create
- * @since 1.0, 2019.10.25
+ * @since 1.0, 2020.06.05
  */
 class CainiaoGlobalHandoverUpdateRequest
 {
+	/** 
+	 * ISV名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
+	 **/
+	private $client;
+	
 	/** 
 	 * 交接单id
 	 **/
 	private $handoverOrderId;
 	
 	/** 
-	 * 关联小包列表
+	 * 多语言
 	 **/
-	private $parcelList;
+	private $locale;
+	
+	/** 
+	 * 要创建交接单的小包编码集合，数量上限200
+	 **/
+	private $orderCodeList;
 	
 	/** 
 	 * 揽收信息
@@ -33,9 +43,14 @@ class CainiaoGlobalHandoverUpdateRequest
 	private $returnInfo;
 	
 	/** 
-	 * 交接单类型，菜鸟揽收或自寄
+	 * 交接单类型，菜鸟揽收(cainiao_pickup)或自寄(self_post)，默认菜鸟揽收
 	 **/
 	private $type;
+	
+	/** 
+	 * 用户信息
+	 **/
+	private $userInfo;
 	
 	/** 
 	 * 大包重量
@@ -43,12 +58,23 @@ class CainiaoGlobalHandoverUpdateRequest
 	private $weight;
 	
 	/** 
-	 * 大包重量单位，默认g
+	 * 重量单位，克:g, 千克:kg，默认g
 	 **/
 	private $weightUnit;
 	
 	private $apiParas = array();
 	
+	public function setClient($client)
+	{
+		$this->client = $client;
+		$this->apiParas["client"] = $client;
+	}
+
+	public function getClient()
+	{
+		return $this->client;
+	}
+
 	public function setHandoverOrderId($handoverOrderId)
 	{
 		$this->handoverOrderId = $handoverOrderId;
@@ -60,15 +86,26 @@ class CainiaoGlobalHandoverUpdateRequest
 		return $this->handoverOrderId;
 	}
 
-	public function setParcelList($parcelList)
+	public function setLocale($locale)
 	{
-		$this->parcelList = $parcelList;
-		$this->apiParas["parcel_list"] = $parcelList;
+		$this->locale = $locale;
+		$this->apiParas["locale"] = $locale;
 	}
 
-	public function getParcelList()
+	public function getLocale()
 	{
-		return $this->parcelList;
+		return $this->locale;
+	}
+
+	public function setOrderCodeList($orderCodeList)
+	{
+		$this->orderCodeList = $orderCodeList;
+		$this->apiParas["order_code_list"] = $orderCodeList;
+	}
+
+	public function getOrderCodeList()
+	{
+		return $this->orderCodeList;
 	}
 
 	public function setPickupInfo($pickupInfo)
@@ -115,6 +152,17 @@ class CainiaoGlobalHandoverUpdateRequest
 		return $this->type;
 	}
 
+	public function setUserInfo($userInfo)
+	{
+		$this->userInfo = $userInfo;
+		$this->apiParas["user_info"] = $userInfo;
+	}
+
+	public function getUserInfo()
+	{
+		return $this->userInfo;
+	}
+
 	public function setWeight($weight)
 	{
 		$this->weight = $weight;
@@ -150,10 +198,10 @@ class CainiaoGlobalHandoverUpdateRequest
 	public function check()
 	{
 		
+		RequestCheckUtil::checkNotNull($this->client,"client");
 		RequestCheckUtil::checkNotNull($this->handoverOrderId,"handoverOrderId");
-		RequestCheckUtil::checkNotNull($this->parcelList,"parcelList");
-		RequestCheckUtil::checkMaxListSize($this->parcelList,200,"parcelList");
-		RequestCheckUtil::checkNotNull($this->weight,"weight");
+		RequestCheckUtil::checkNotNull($this->orderCodeList,"orderCodeList");
+		RequestCheckUtil::checkMaxListSize($this->orderCodeList,200,"orderCodeList");
 	}
 	
 	public function putOtherTextParam($key, $value) {

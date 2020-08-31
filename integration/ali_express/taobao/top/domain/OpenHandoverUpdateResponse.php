@@ -8,7 +8,7 @@ class OpenHandoverUpdateResponse
 {
 	
 	/** 
-	 * 取消结果
+	 * 更新结果
 	 **/
 	public $result;	
 }

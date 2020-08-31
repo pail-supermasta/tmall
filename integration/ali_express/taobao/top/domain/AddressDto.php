@@ -18,11 +18,6 @@ class AddressDto
 	public $country;
 	
 	/** 
-	 * 国家二字码
-	 **/
-	public $country_code;
-	
-	/** 
 	 * 详细地址
 	 **/
 	public $detail_address;
@@ -31,11 +26,6 @@ class AddressDto
 	 * 区
 	 **/
 	public $district;
-	
-	/** 
-	 * 菜鸟地址统一编码
-	 **/
-	public $division_id;
 	
 	/** 
 	 * 省

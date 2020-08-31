@@ -8,6 +8,11 @@ class AeopPostCategoryDto
 {
 	
 	/** 
+	 * 类目特征的map
+	 **/
+	public $features;
+	
+	/** 
 	 * 发布类目id
 	 **/
 	public $id;

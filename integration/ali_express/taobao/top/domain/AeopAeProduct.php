@@ -18,7 +18,7 @@ class AeopAeProduct
 	public $add_weight;
 	
 	/** 
-	 * 商品多媒体信息，该属性主要包含商品的视频列表
+	 * 商品多媒体信息，该属性主要包含商品的视频列表。商品再商家上传了视频的，通过接口编辑时必须按格式回传商品视频，不传默认删除该商品视频。
 	 **/
 	public $aeop_a_e_multimedia;
 	
@@ -33,7 +33,7 @@ class AeopAeProduct
 	public $aeop_ae_product_s_k_us;
 	
 	/** 
-	 * 商品分国家定价规则数据，建议使用新格式，请参考：https://developers.aliexpress.com/doc.htm?docId=109575&docType=1
+	 * 商品分国家定价规则数据，建议使用新格式，请参考：https://developers.aliexpress.com/doc.htm?docId=109575&docType=1。另外，商品本身设置了分国家报价的，编辑是也必须回传分国家报价数据，不传默认删除分国家报价。
 	 **/
 	public $aeop_national_quote_configuration;
 	
@@ -68,7 +68,7 @@ class AeopAeProduct
 	public $coupon_start_date;
 	
 	/** 
-	 * 货币单位。如果不提供该值信息，则默认为"USD"；非俄罗斯卖家这个属性值可以不提供。对于俄罗斯海外卖家，该单位值必须提供，如: "RUB"。
+	 * 货币单位，USD、RUB、EUR，必填，可通过aliexpress.merchant.profile.get( 查询卖家资料 )查商家币种。https://developers.aliexpress.com/doc.htm?docId=43062&docType=2
 	 **/
 	public $currency_code;
 	

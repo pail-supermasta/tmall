@@ -3,7 +3,7 @@
  * TOP API: aliexpress.postproduct.redefining.editproductcidattidsku request
  * 
  * @author auto create
- * @since 1.0, 2019.06.20
+ * @since 1.0, 2020.05.20
  */
 class AliexpressPostproductRedefiningEditproductcidattidskuRequest
 {

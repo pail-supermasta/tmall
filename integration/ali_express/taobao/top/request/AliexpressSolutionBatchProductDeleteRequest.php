@@ -3,12 +3,12 @@
  * TOP API: aliexpress.solution.batch.product.delete request
  * 
  * @author auto create
- * @since 1.0, 2019.12.04
+ * @since 1.0, 2020.02.11
  */
 class AliexpressSolutionBatchProductDeleteRequest
 {
 	/** 
-	 * maximum 20
+	 * maximum 100
 	 **/
 	private $productIds;
 	
@@ -38,7 +38,7 @@ class AliexpressSolutionBatchProductDeleteRequest
 	public function check()
 	{
 		
-		RequestCheckUtil::checkMaxListSize($this->productIds,20,"productIds");
+		RequestCheckUtil::checkMaxListSize($this->productIds,100,"productIds");
 	}
 	
 	public function putOtherTextParam($key, $value) {

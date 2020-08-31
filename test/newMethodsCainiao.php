@@ -154,22 +154,7 @@ function createwarehouseorder($order,$sessionKey)
 
     $req->setAddressDTOs(json_encode($address_d_t_os,JSON_UNESCAPED_UNICODE));
     $declare_product_d_t_os = new AeopWlDeclareProductForTopDto;
-/*    $declare_product_d_t_os->aneroid_markup = false;
-    $declare_product_d_t_os->breakable = false;
-    $declare_product_d_t_os->category_cn_desc = "";
-    $declare_product_d_t_os->category_en_desc = "";
-    $declare_product_d_t_os->contains_battery = false;
-    $declare_product_d_t_os->hs_code = null;
-    $declare_product_d_t_os->only_battery = false;
-    $declare_product_d_t_os->product_declare_amount = "1.3";
-    $declare_product_d_t_os->product_id = "4000229833868";
-    $declare_product_d_t_os->product_num = "2";
-    $declare_product_d_t_os->product_weight = "1.5";
-    $declare_product_d_t_os->sc_item_code = "";
-    $declare_product_d_t_os->sc_item_id = "4000229833868";
-    $declare_product_d_t_os->sc_item_name = "";
-    $declare_product_d_t_os->sku_code = "4607947683912";
-    $declare_product_d_t_os->sku_value = ""; */
+
 
     $declare_product_d_t_os->aneroid_markup = false;
     $declare_product_d_t_os->breakable = false;

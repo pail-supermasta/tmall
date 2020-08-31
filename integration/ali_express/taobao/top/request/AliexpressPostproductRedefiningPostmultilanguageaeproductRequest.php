@@ -3,7 +3,7 @@
  * TOP API: aliexpress.postproduct.redefining.postmultilanguageaeproduct request
  * 
  * @author auto create
- * @since 1.0, 2019.05.23
+ * @since 1.0, 2020.01.03
  */
 class AliexpressPostproductRedefiningPostmultilanguageaeproductRequest
 {

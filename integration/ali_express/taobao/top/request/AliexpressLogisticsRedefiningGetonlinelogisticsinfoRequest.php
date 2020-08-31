@@ -3,7 +3,7 @@
  * TOP API: aliexpress.logistics.redefining.getonlinelogisticsinfo request
  * 
  * @author auto create
- * @since 1.0, 2018.07.25
+ * @since 1.0, 2020.07.01
  */
 class AliexpressLogisticsRedefiningGetonlinelogisticsinfoRequest
 {
@@ -31,6 +31,11 @@ class AliexpressLogisticsRedefiningGetonlinelogisticsinfoRequest
 	 * international tracking number
 	 **/
 	private $internationalLogisticsId;
+	
+	/** 
+	 * logistics order id
+	 **/
+	private $logisticsOrderId;
 	
 	/** 
 	 * status of the logistics order (INIT, WAIT, PICKUP, PICKUP, WAREHOUSE, WAREHOUSE, REROUTE, WAREHOUSE, WAIT, LOGISTICS, OUT, OUT, SEND, SEND, ORDER, ORDER, CLOSED)
@@ -107,6 +112,17 @@ class AliexpressLogisticsRedefiningGetonlinelogisticsinfoRequest
 	public function getInternationalLogisticsId()
 	{
 		return $this->internationalLogisticsId;
+	}
+
+	public function setLogisticsOrderId($logisticsOrderId)
+	{
+		$this->logisticsOrderId = $logisticsOrderId;
+		$this->apiParas["logistics_order_id"] = $logisticsOrderId;
+	}
+
+	public function getLogisticsOrderId()
+	{
+		return $this->logisticsOrderId;
 	}
 
 	public function setLogisticsStatus($logisticsStatus)

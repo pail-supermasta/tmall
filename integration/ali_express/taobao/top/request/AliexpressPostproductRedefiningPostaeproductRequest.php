@@ -3,7 +3,7 @@
  * TOP API: aliexpress.postproduct.redefining.postaeproduct request
  * 
  * @author auto create
- * @since 1.0, 2019.11.28
+ * @since 1.0, 2020.03.26
  */
 class AliexpressPostproductRedefiningPostaeproductRequest
 {

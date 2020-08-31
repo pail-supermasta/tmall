@@ -3,7 +3,7 @@
  * TOP API: aliexpress.postproduct.redefining.editmutilpleskustocks request
  * 
  * @author auto create
- * @since 1.0, 2019.06.20
+ * @since 1.0, 2020.02.24
  */
 class AliexpressPostproductRedefiningEditmutilpleskustocksRequest
 {

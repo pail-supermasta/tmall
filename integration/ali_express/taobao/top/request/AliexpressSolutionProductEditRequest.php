@@ -3,7 +3,7 @@
  * TOP API: aliexpress.solution.product.edit request
  * 
  * @author auto create
- * @since 1.0, 2019.12.02
+ * @since 1.0, 2020.08.12
  */
 class AliexpressSolutionProductEditRequest
 {

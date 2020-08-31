@@ -23,6 +23,11 @@ class AeopAttributeDto
 	public $customized_pic;
 	
 	/** 
+	 * feature的map
+	 **/
+	public $features;
+	
+	/** 
 	 * 属性id
 	 **/
 	public $id;

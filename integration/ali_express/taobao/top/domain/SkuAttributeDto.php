@@ -13,12 +13,12 @@ class SkuAttributeDto
 	public $sku_attribute_name;
 	
 	/** 
-	 * sku attribute value
+	 * sku attribute value, which could be obtained through aliexpress.solution.sku.attribute.query or customized by sellers. When customized by sellers, do not include these 4 symbols #:=,
 	 **/
 	public $sku_attribute_value;
 	
 	/** 
-	 * The url needs to be accessible. The url could be located in the merchant's server or obtained by uploading the pictures to merchant's Aliexpress photobank, by using the API: aliexpress.photobank.redefining.uploadimageforsdk
+	 * Image that will represent the variation of the product. The url can point to a seller's server or to AliExpress photobank. In order to obtain more information about the photobank and how to upload images, please visit the following page: https://developers.aliexpress.com/en/doc.htm?docId=30186&docType=2
 	 **/
 	public $sku_image;	
 }

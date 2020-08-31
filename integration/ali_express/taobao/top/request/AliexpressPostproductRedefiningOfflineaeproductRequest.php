@@ -3,7 +3,7 @@
  * TOP API: aliexpress.postproduct.redefining.offlineaeproduct request
  * 
  * @author auto create
- * @since 1.0, 2019.06.20
+ * @since 1.0, 2020.06.01
  */
 class AliexpressPostproductRedefiningOfflineaeproductRequest
 {

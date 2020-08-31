@@ -3,7 +3,7 @@
  * TOP API: aliexpress.logistics.redefining.getonlinelogisticsservicelistbyorderid request
  * 
  * @author auto create
- * @since 1.0, 2018.07.25
+ * @since 1.0, 2020.07.01
  */
 class AliexpressLogisticsRedefiningGetonlinelogisticsservicelistbyorderidRequest
 {
@@ -26,6 +26,11 @@ class AliexpressLogisticsRedefiningGetonlinelogisticsservicelistbyorderidRequest
 	 * 包裹宽度
 	 **/
 	private $goodsWidth;
+	
+	/** 
+	 * 多语言，zh_CN：中文、en_US：英语、ru_RU：俄语
+	 **/
+	private $locale;
 	
 	/** 
 	 * 交易订单号
@@ -76,6 +81,17 @@ class AliexpressLogisticsRedefiningGetonlinelogisticsservicelistbyorderidRequest
 	public function getGoodsWidth()
 	{
 		return $this->goodsWidth;
+	}
+
+	public function setLocale($locale)
+	{
+		$this->locale = $locale;
+		$this->apiParas["locale"] = $locale;
+	}
+
+	public function getLocale()
+	{
+		return $this->locale;
 	}
 
 	public function setOrderId($orderId)

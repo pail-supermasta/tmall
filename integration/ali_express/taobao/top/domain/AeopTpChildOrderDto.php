@@ -170,6 +170,11 @@ class AeopTpChildOrderDto
 	/** 
 	 * 产品快照的图片路径
 	 **/
-	public $snapshot_small_photo_path;	
+	public $snapshot_small_photo_path;
+	
+	/** 
+	 * 子订单中的各种标
+	 **/
+	public $tags;	
 }
 ?>

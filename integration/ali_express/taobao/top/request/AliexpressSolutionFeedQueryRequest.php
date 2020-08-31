@@ -3,7 +3,7 @@
  * TOP API: aliexpress.solution.feed.query request
  * 
  * @author auto create
- * @since 1.0, 2019.06.05
+ * @since 1.0, 2020.08.11
  */
 class AliexpressSolutionFeedQueryRequest
 {

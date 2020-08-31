@@ -3,7 +3,7 @@
  * TOP API: aliexpress.offer.product.post request
  * 
  * @author auto create
- * @since 1.0, 2019.11.28
+ * @since 1.0, 2020.01.03
  */
 class AliexpressOfferProductPostRequest
 {

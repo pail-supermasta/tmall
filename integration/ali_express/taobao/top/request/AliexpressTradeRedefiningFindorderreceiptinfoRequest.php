@@ -3,7 +3,7 @@
  * TOP API: aliexpress.trade.redefining.findorderreceiptinfo request
  * 
  * @author auto create
- * @since 1.0, 2019.01.02
+ * @since 1.0, 2019.12.17
  */
 class AliexpressTradeRedefiningFindorderreceiptinfoRequest
 {

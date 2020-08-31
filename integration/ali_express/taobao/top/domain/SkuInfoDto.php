@@ -1,7 +1,7 @@
 <?php
 
 /**
- * All the skus included in one product.
+ * If specified this field, all the previous skus will be replaced by the new skus.
  * @author auto create
  */
 class SkuInfoDto
@@ -13,12 +13,12 @@ class SkuInfoDto
 	public $discount_price;
 	
 	/** 
-	 * inventory
+	 * stock. Maximum:999999, minumum:1
 	 **/
 	public $inventory;
 	
 	/** 
-	 * price
+	 * price. Maximum:999999, minumum:0.01
 	 **/
 	public $price;
 	

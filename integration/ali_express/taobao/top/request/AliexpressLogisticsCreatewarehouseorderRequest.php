@@ -3,7 +3,7 @@
  * TOP API: aliexpress.logistics.createwarehouseorder request
  * 
  * @author auto create
- * @since 1.0, 2019.10.14
+ * @since 1.0, 2020.08.03
  */
 class AliexpressLogisticsCreatewarehouseorderRequest
 {
@@ -33,6 +33,11 @@ class AliexpressLogisticsCreatewarehouseorderRequest
 	private $domesticTrackingNo;
 	
 	/** 
+	 * 包裹保额
+	 **/
+	private $insuranceCoverage;
+	
+	/** 
 	 * 发票号（可空）
 	 **/
 	private $invoiceNumber;
@@ -41,6 +46,11 @@ class AliexpressLogisticsCreatewarehouseorderRequest
 	 * 包裹数量： 创建国家小包订单时非必填，创建国家快递订单时必填
 	 **/
 	private $packageNum;
+	
+	/** 
+	 * ISV用户唯一标识，一般为userId,最大长度为16个字符
+	 **/
+	private $topUserKey;
 	
 	/** 
 	 * 订单来源
@@ -119,6 +129,17 @@ class AliexpressLogisticsCreatewarehouseorderRequest
 		return $this->domesticTrackingNo;
 	}
 
+	public function setInsuranceCoverage($insuranceCoverage)
+	{
+		$this->insuranceCoverage = $insuranceCoverage;
+		$this->apiParas["insurance_coverage"] = $insuranceCoverage;
+	}
+
+	public function getInsuranceCoverage()
+	{
+		return $this->insuranceCoverage;
+	}
+
 	public function setInvoiceNumber($invoiceNumber)
 	{
 		$this->invoiceNumber = $invoiceNumber;
@@ -139,6 +160,17 @@ class AliexpressLogisticsCreatewarehouseorderRequest
 	public function getPackageNum()
 	{
 		return $this->packageNum;
+	}
+
+	public function setTopUserKey($topUserKey)
+	{
+		$this->topUserKey = $topUserKey;
+		$this->apiParas["top_user_key"] = $topUserKey;
+	}
+
+	public function getTopUserKey()
+	{
+		return $this->topUserKey;
 	}
 
 	public function setTradeOrderFrom($tradeOrderFrom)
@@ -200,6 +232,7 @@ class AliexpressLogisticsCreatewarehouseorderRequest
 		
 		RequestCheckUtil::checkNotNull($this->domesticLogisticsCompanyId,"domesticLogisticsCompanyId");
 		RequestCheckUtil::checkNotNull($this->domesticTrackingNo,"domesticTrackingNo");
+		RequestCheckUtil::checkMaxLength($this->topUserKey,16,"topUserKey");
 		RequestCheckUtil::checkNotNull($this->tradeOrderFrom,"tradeOrderFrom");
 		RequestCheckUtil::checkNotNull($this->tradeOrderId,"tradeOrderId");
 		RequestCheckUtil::checkNotNull($this->warehouseCarrierService,"warehouseCarrierService");

@@ -33,6 +33,11 @@ class GlobalAeopTpOrderDetailDto
 	public $child_order_list;
 	
 	/** 
+	 * cpf  number of order
+	 **/
+	public $cpf_number;
+	
+	/** 
 	 * escrow fee (deprecated)
 	 **/
 	public $escrow_fee;

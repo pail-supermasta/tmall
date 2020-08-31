@@ -38,9 +38,19 @@ class AeopLogisticsOrderDetailDto
 	public $logistics_fee;
 	
 	/** 
+	 * 多币种运费list
+	 **/
+	public $logistics_fee_list;
+	
+	/** 
 	 * 物流订单号
 	 **/
 	public $logistics_order_id;
+	
+	/** 
+	 * 物流服务列表
+	 **/
+	public $logistics_service_list;
 	
 	/** 
 	 * 物流订单状态
@@ -51,6 +61,11 @@ class AeopLogisticsOrderDetailDto
 	 * outOrderCode(Lpnumber)
 	 **/
 	public $out_order_code;
+	
+	/** 
+	 * 解决方案code
+	 **/
+	public $solution_code;
 	
 	/** 
 	 * tradeOrderId

@@ -13,13 +13,18 @@ class OpenParcelOrderDto
 	public $exception_code;
 	
 	/** 
-	 * 小包的LP号
+	 * 小包物流订单编码
 	 **/
-	public $logistics_order_code;
+	public $order_code;
 	
 	/** 
-	 * 小包状态
+	 * 小包状态code
 	 **/
-	public $status;	
+	public $status;
+	
+	/** 
+	 * 小包状态名称
+	 **/
+	public $status_name;	
 }
 ?>

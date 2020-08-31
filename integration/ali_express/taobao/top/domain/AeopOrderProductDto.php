@@ -163,6 +163,11 @@ class AeopOrderProductDto
 	public $son_order_status;
 	
 	/** 
+	 * 子订单中的各种标
+	 **/
+	public $tags;
+	
+	/** 
 	 * 全部商品金额
 	 **/
 	public $total_product_amount;	
