@@ -9,10 +9,8 @@
 namespace Avaks\MS;
 
 
-use Avaks\SQL\AvaksSQL;
-use Avaks\MS\OrderMS;
-use Avaks\MS\Products;
-use Avaks\MS\MSSync;
+use Avaks\BackendAPI;
+
 
 class Orders
 {
@@ -104,5 +102,66 @@ class Orders
 
         return $ordersWaitPayment;
 
+    }
+
+    public function getOrdersInWork()
+    {
+        $backendAPI = new BackendAPI();
+        $filter = [
+            '_agent' => '1b33fbc1-5539-11e9-9ff4-315000060bc8',
+            '_state' => 'ecf45f89-f518-11e6-7a69-9711000ff0c4',
+            'applicable' => true,
+            '_attributes.#Логистика: агент' => 'Cainiao',
+            '_attributes.Логистика: Трек' => ['$exists' => false]
+        ];
+
+        $data['filter'] = json_encode($filter);
+        $data['limit'] = 9999;
+        $data['offset'] = 0;
+
+        $orderCursor = $backendAPI->getData($backendAPI->urlOrder, $data);
+        $orderCursor = $orderCursor['rows'];
+
+        return $orderCursor;
+
+    }
+
+    public function getOrdersOnLoad()
+    {
+        $backendAPI = new BackendAPI();
+        $filter = [
+            '_agent' => '1b33fbc1-5539-11e9-9ff4-315000060bc8',
+            '_state' => '8beb25ab-6088-11e7-7a6c-d2a9003b81a4',
+            'applicable' => true,
+            '_attributes.#Логистика: агент' => 'Cainiao',
+            '_attributes.Логистика: Трек' => ['$exists' => true]
+        ];
+
+        $data['filter'] = json_encode($filter);
+        $data['limit'] = 9999;
+        $data['offset'] = 0;
+
+        $orderCursor = $backendAPI->getData($backendAPI->urlOrder, $data);
+        $orderCursor = $orderCursor['rows'];
+
+        return $orderCursor;
+
+    }
+
+    public function getOrderTEST()
+    {
+        $backendAPI = new BackendAPI();
+        $filter = [
+            'name' => '5005385181882110'
+        ];
+
+        $data['filter'] = json_encode($filter);
+        $data['limit'] = 9999;
+        $data['offset'] = 0;
+
+        $orderCursor = $backendAPI->getData($backendAPI->urlOrder, $data);
+        $orderCursor = $orderCursor['rows'];
+
+        return $orderCursor;
     }
 }

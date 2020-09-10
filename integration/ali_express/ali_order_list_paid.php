@@ -293,8 +293,8 @@ function setNewPositionPrice($order, $credential)
     $affiliateFee = $affiliateFeeSum / sizeof($productsAli);
     $affiliateAmount = ($pay_amount_by_settlement_cur - $logistics_amount / 100) * $affiliateFee;
 
-    foreach ($res['attributes'] as $attribute){
-        if ($attribute['id']=='535dd809-1db1-11ea-0a80-04c00009d6bf'){
+    foreach ($res['attributes'] as $attribute) {
+        if ($attribute['id'] == '535dd809-1db1-11ea-0a80-04c00009d6bf') {
             $dshSum = $attribute['value'] + $affiliateAmount;
             break;
         }
@@ -366,7 +366,7 @@ function setTrackToTmall($order, $payTime, $credential)
 
 
         if ($agentId == 'Cainiao') {
-            telegram("Трек отправлен в цаняо для $order $trackId $serviceName", '-320614744');
+//            telegram("Трек отправлен в цаняо для $order $trackId $serviceName", '-320614744');
         }
 
 
