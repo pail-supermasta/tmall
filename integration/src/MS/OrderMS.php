@@ -176,7 +176,7 @@ class OrderMS
         $postdata['attributes'][] = $attributea;
 
         // sticker
-        $content = file_get_contents('/home/tmall-service/public_html/integration/ali_express/files/labels' . $this->name . '.pdf');
+        $content = file_get_contents('/home/tmall-service/public_html/integration/ali_express/files/labels/' . $this->name . '.pdf');
         $content = base64_encode($content);
         $attribute['id'] = 'b8a8f6d6-5782-11e8-9ff4-34e800181bf6';
         $attribute['file']['filename'] = "$this->name.pdf";

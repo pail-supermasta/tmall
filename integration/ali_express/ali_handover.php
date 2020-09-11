@@ -190,12 +190,20 @@ foreach ($shopsOrders as $key => $shopOrders) {
 
             $printHandoverListResp = printHandoverList($shopOrders['sessionKey'], $handoverContentId);
             echo 'лист передачи' . PHP_EOL;
+            if (!isset($printHandoverListResp->result->data)) {
+                sleep(5);
+                $printHandoverListResp = printHandoverList($shopOrders['sessionKey'], $handoverContentId);
+                if (!isset($printHandoverListResp->result->data)) {
+                    telegram("ОШИБКА!! получения листа передачи $key", '-320614744', 'Markdown');
+                    continue;
+                }
+            }
             $b64 = json_decode($printHandoverListResp->result->data)->body;
             $bin = base64_decode($b64, true);
             file_put_contents("/home/tmall-service/public_html/integration/ali_express/files/handover/$key" . "лист_передачи_$handoverContentId.pdf", $bin);
             $receptionLink = "https://tmall-service.a3w.ru/integration/ali_express/files/handover/$key" . "лист_передачи_$handoverContentId.pdf";
             $date = date('d-m-yy');
-            telegram("Акт приема передачи отправлений $key [$date]($receptionLink)", '-320614744', 'Markdown');
+            telegram("Акт приема передачи отправлений $key [$date]($receptionLink)", '-385044014', 'Markdown');
 
             foreach ($shopOrders['orders'] as $shopOrder) {
 
