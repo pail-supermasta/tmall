@@ -407,6 +407,15 @@ foreach ($ordersInWork as $orderInWork) {
 
     $printInfoResp = printInfo($internationallogistics_id, $sessionKey);
     echo 'наклейка' . PHP_EOL;
+    if (!isset(json_decode($printInfoResp->result)->body)) {
+        sleep(5);
+        $printInfoResp = printInfo($internationallogistics_id, $sessionKey);
+        if (!isset(json_decode($printInfoResp->result)->body)) {
+            telegram("ОШИБКА!! получения наклейки $internationallogistics_id", '-320614744', 'Markdown');
+            continue;
+        }
+    }
+
     $b64 = json_decode($printInfoResp->result)->body;
 
     $bin = base64_decode($b64, true);

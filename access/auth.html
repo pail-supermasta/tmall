@@ -6,13 +6,28 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-    <style>h2 {
-        font-family: 'Montserrat', sans-serif;
-    }</style>
+    <style>
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .phonealie {
+            height: 211px;
+            transition: .3s;
+        }
+
+        .phonealie:hover {
+            transform: scale(2);
+        }
+
+        li {
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
-<div style="background: #FBFBFB;height: 100vh;position: relative;">
-    <div class="row" style="position: absolute;top: 50%;transform: translateY(-50%);width: 100%;">
+<div style="background: #FBFBFB;padding: 100px 0;position: relative;">
+    <div class="row" style="width: 100%;">
         <div class="col-sm-1
             "></div>
         <div class="col-sm-4"><h2>Получение Токена API для синхронизации <br><span style="font-weight: 600;"><span
@@ -20,11 +35,27 @@
         </div>
         <div class="col-sm-5" style="font-family: 'Montserrat', sans-serif;">
             <ol>
+                <li>Какой магазин обновляете?
+                    <select name="" id="">
+                        <option value="BESTGOODS">BESTGOODS</option>
+                        <option value="novinkiooo">novinkiooo</option>
+                        <option value="Noerden">Noerden</option>
+                        <option value="Morphy Richards">Morphy Richards</option>
+                        <option value="iRobot">iRobot</option>
+                    </select>
+                </li>
                 <li>Перейдите по <a
-                        href="https://oauth.aliexpress.com/authorize?response_type=code&amp;client_id=27862248&amp;redirect_uri=http://aliexpr.avaks.org/access/auth.html&amp;state=1212&amp;view=web&amp;sp=ae"
+                        href="https://oauth.aliexpress.com/authorize?response_type=code&amp;client_id=27862248&amp;redirect_uri=https://tmall-service.a3w.ru/access/auth.html&amp;state=1212&amp;view=web&amp;sp=ae"
                         style="text-decoration: none;">ссылке</a>
                 </li>
-                <li>В открывшемся окне войдите в ЛК магазина и предоставьте доступ Приложению к данным магазина</li>
+                <li>Войдите в приложение AliExpress для настройки разрешения приложения (необходимо ввести логин и
+                    пароль от магазина который вы хотите подключить к Моему складу)
+                </li>
+                <li>Если у вас настроена аутентификация через телефон, получите смс и введите ее в диалоговое поле:<img
+                        class="phonealie" src="../public/assets/images/phonealie.png"></li>
+                <li>Далее вас автоматически перенаправит на текущую страницу и в поле Токен появится ключ, который
+                    необходимо будет перенести в настройки приложения
+                </li>
                 <li>Скопируйте полученный токен <input class="form-control form-control-sm" type="text" placeholder="">
                     в поле "Токен API AliExpress" в приложение МойСклад - AliExpress
                 </li>
@@ -38,7 +69,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(function () {
-        $.get("auth.php?code=" + getQueryVariable("code")).then(response => $('input').val(response.access_token));
+        let shopName = $("select option:selected").text();
+        $.get("auth.php?shopName=" + shopName + "&code=" + getQueryVariable("code")).then(response => $('input').val(response.access_token));
     });
 
     function getQueryVariable(variable) {

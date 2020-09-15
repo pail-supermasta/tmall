@@ -203,7 +203,7 @@ foreach ($shopsOrders as $key => $shopOrders) {
             file_put_contents("/home/tmall-service/public_html/integration/ali_express/files/handover/$key" . "лист_передачи_$handoverContentId.pdf", $bin);
             $receptionLink = "https://tmall-service.a3w.ru/integration/ali_express/files/handover/$key" . "лист_передачи_$handoverContentId.pdf";
             $date = date('d-m-yy');
-            telegram("Акт приема передачи отправлений $key [$date]($receptionLink)", '-385044014', 'Markdown');
+            telegramReception("TMALL Акт приема передачи отправлений $key [$date]($receptionLink)", '-385044014', 'Markdown');
 
             foreach ($shopOrders['orders'] as $shopOrder) {
 

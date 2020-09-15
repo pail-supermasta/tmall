@@ -9,7 +9,7 @@ $postfields = array('grant_type' => 'authorization_code',
     'client_secret' => 'ca6916e55a087b3561b5077fc8b83ee6', //appSecret
     'code' => $code, //nd
     'sp' => 'ae',
-    'redirect_uri' => 'http://aliexpr.avaks.org/access/auth.html');
+    'redirect_uri' => 'https://tmall-service.a3w.ru/access/auth.html');
 $post_data = '';
 
 foreach ($postfields as $key => $value) {

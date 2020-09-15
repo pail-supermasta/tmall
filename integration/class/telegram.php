@@ -626,6 +626,14 @@ function telegram($message = '', $chat_id, $format = 'HTML'){
     $bot = new Telegram($settings['telegram_bot_token']);
     return $bot->sendMessage($chat_id, $message, $format);
 }
+function telegramReception($message = '', $chat_id, $format = 'HTML'){
+    $settings['telegram_bot_token'] = '345217125:AAE4o7Bs-QeQnusf3SQ-xSuSBm2RGMVH97w';
+    if (is_array($message)){
+        $message = json_encode($message, JSON_UNESCAPED_UNICODE);
+    }
+    $bot = new Telegram($settings['telegram_bot_token']);
+    return $bot->sendMessage($chat_id, $message, $format);
+}
 
 
 ?>
