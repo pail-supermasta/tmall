@@ -28,7 +28,7 @@ function getOrderShop($description)
             $sessionKey = "50002500c15tBJCowQScZ6julhS1dea01bfctShXhETAmyVfKkQKwey1lvK3ryD7z1t";
             break;
         case  stripos($description, "BESTGOODS (ID 5041091)") !== false :
-            $sessionKey = "50002301b00s17916ea4eTrdXcBvgrz2lkiuhxGTUEjWmoPbPQvsmvYZfkFlqTKVgPr";
+            $sessionKey = "50002301021q0OsaZzGzFoxi0th7ccSgM1add461cw0CJduh1FqvAlZmPkEo4jGYCQw";
             break;
         case  stripos($description, "Noerden (ID 5012047)") !== false :
             $sessionKey = "50002700811duwgr7oCt2sx1edacab6BZ6kWiLtBtQeBGBQfNxYCKlunzemnpZpP21d";

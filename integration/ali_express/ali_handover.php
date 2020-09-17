@@ -136,7 +136,7 @@ foreach ($ordersOnLoad as $orderOnLoad) {
             break;
         case stripos($orderOnLoad['description'], "BESTGOODS (ID 5041091)") !== false :
             $shopName = 'BESTGOODS';
-            $shopsOrders[$shopName]['sessionKey'] = "50002301b00s17916ea4eTrdXcBvgrz2lkiuhxGTUEjWmoPbPQvsmvYZfkFlqTKVgPr";
+            $shopsOrders[$shopName]['sessionKey'] = "50002301021q0OsaZzGzFoxi0th7ccSgM1add461cw0CJduh1FqvAlZmPkEo4jGYCQw";
             $shopsOrders[$shopName] = buildShopOrders($orderOnLoad, $shopsOrders[$shopName]);
             break;
         case stripos($orderOnLoad['description'], "Noerden (ID 5012047)") !== false :
