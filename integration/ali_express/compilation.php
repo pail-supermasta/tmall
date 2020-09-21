@@ -2,6 +2,7 @@
 
 // display results as json
 //header('Content-Type: application/json');
+set_time_limit(600);
 
 
 ini_set('display_errors', 1);
@@ -31,14 +32,14 @@ define('APPKEY', '27862248');
 define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
 
 define('LOGINS', array(
-    array(
+    /*array(
         'name' => 'Незабудка MR',
         'login' => 'NezabudkaMR@yandex.ru',
         'field_id' => '0bbcd991-81f4-11e9-9109-f8fc0004dec9',
         'sessionKey' => '50002500501Vs151ac533BdqLFskhnQwtwheYk1CiSexTFfFAv6nWUefGArBboUuh8F',
         'cpCode' => 'UTV0a1NLakt5dE9DdzZOdEt1elhnblRnMURQaExvS0w4RVZEVHMyM2o2eTRqUjdiOEdxalpTVjhRN0ZBQldVZA==',
         'cnId' => '4398983084403'
-    ),
+    ),*/
     array(
         'name' => 'bestgoodsstore',
         'login' => 'bestgoodsstore@yandex.ru',
@@ -47,7 +48,7 @@ define('LOGINS', array(
         'cpCode' => 'QXJCQk1QcjJKTkZDbHk4ZVZ4bW11cFQ2L2QreW1XT0lJd2ZlMnEvL2dFZC9NbG5CSklEV2tiY0cxNkRSMWlYcQ==',
         'cnId' => '4398985192396'
 
-    ),
+    )/*,
     array(
         'name' => 'Новинки',
         'login' => 'novinkiooo@yandex.ru',
@@ -71,7 +72,7 @@ define('LOGINS', array(
         'sessionKey' => '50002700811duwgr7oCt2sx1edacab6BZ6kWiLtBtQeBGBQfNxYCKlunzemnpZpP21d',
         'cpCode' => 'V1ZDUlZnY09vbHoyQTFpNEZEUElkcGlmUE43Z1hYZEdoVEZwM2huTDlWeWVKUHdIUmY4QmFWV1FOdXVCT3JQeg==',
         'cnId' => '4398983195649'
-    )
+    )*/
 ));
 
 

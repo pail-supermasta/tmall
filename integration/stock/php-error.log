@@ -1,0 +1,3 @@
+[18-Sep-2020 11:23:17 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 4096 bytes) in C:\Users\User\Documents\tmall\integration\vendor\mongodb\mongodb\src\Model\BSONDocument.php on line 96
+[18-Sep-2020 11:35:08 UTC] PHP Notice:  Undefined variable: startTime in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 118
+[18-Sep-2020 11:37:24 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 4198400 bytes) in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 121

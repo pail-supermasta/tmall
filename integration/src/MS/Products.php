@@ -55,11 +55,11 @@ class Products
     public function findWithFieldTmall($login)
     {
         $searchStack = array(
-            'NezabudkaMR@yandex.ru' => 'TMall ID (Morphy Richards)',
+//            'NezabudkaMR@yandex.ru' => 'TMall ID (Morphy Richards)',
             'bestgoodsstore@yandex.ru' => 'TMall ID (Best Goods)',
-            'NezabudkaiRobot@yandex.ru' => 'TMall ID (iRobot)',
-            'NezabudkaND@yandex.ru' => 'TMall ID (Noerden)',
-            'novinkiooo@yandex.ru' => 'TMall ID'
+//            'NezabudkaiRobot@yandex.ru' => 'TMall ID (iRobot)',
+//            'NezabudkaND@yandex.ru' => 'TMall ID (Noerden)',
+//            'novinkiooo@yandex.ru' => 'TMall ID'
 
         );
         $collection = (new MSSync())->MSSync;
