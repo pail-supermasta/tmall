@@ -6,7 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80146bb5-79f6-4afc-a154-c01ae4967d76" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_create_logistic_order.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_create_logistic_order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_handover.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_handover.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_details_dynamic.php" afterDir="false" />
@@ -17,11 +16,7 @@
       <change beforePath="$PROJECT_DIR$/integration/ali_express/ali_order_print.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/ali_order_print.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/ali_express/compilation.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/ali_express/compilation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/file_processing.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/file_processing.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/src/AE/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/src/AE/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/src/MS/MSSync.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/src/MS/MSSync.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/stock/stockSyncronizer_mongo.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/stock/stockSyncronizer_mongo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/vendor/mongodb/mongodb/tests/Operation/WatchFunctionalTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/vendor/mongodb/mongodb/tests/Operation/WatchFunctionalTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/ali_order_details_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/ali_order_details_dynamic.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,8 +47,8 @@
       <file leaf-file-name="ali_handover.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_handover.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="154" column="33" lean-forward="true" selection-start-line="154" selection-start-column="33" selection-end-line="154" selection-end-column="33" />
+            <state relative-caret-position="169">
+              <caret line="135" column="18" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -96,7 +91,6 @@
       <find>BackendAPI()</find>
       <find>mongodb://MSSync-read:1547e70be122dc285a2d24ad@23.105.225.41:27017/?authSource=MSSync&amp;readPreference=primary&amp;appname=MongoDB%20Compass&amp;ssl=false</find>
       <find>die</find>
-      <find>die()</find>
       <find>Адрес, ошибка в заказе</find>
       <find>ОШИБКА!! получения накле</find>
       <find>s</find>
@@ -106,8 +100,9 @@
       <find>internationallogistics_id</find>
       <find>state&quot;</find>
       <find>$shopsOrders</find>
-      <find>sessionKey</find>
       <find>50002301021q0OsaZzGzFoxi0th7ccSgM1add461cw0CJduh1FqvAlZmPkEo4jGYCQw</find>
+      <find>sessionKey</find>
+      <find>die()</find>
     </findStrings>
     <replaceStrings>
       <replace>50002501340seA1guGKsazsdfbDs5OwuiJHQi2FtXGja9pwjv7Jk14e8e956owYjFuf</replace>
@@ -645,12 +640,12 @@
       <workItem from="1601626464664" duration="8000" />
       <workItem from="1601976369799" duration="744000" />
       <workItem from="1602054066320" duration="9000" />
-      <workItem from="1603092514146" duration="345000" />
+      <workItem from="1603092514146" duration="1298000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1242174000" />
+    <option name="totallyTimeSpent" value="1243127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1018,8 +1013,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_handover.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="154" column="33" lean-forward="true" selection-start-line="154" selection-start-column="33" selection-end-line="154" selection-end-column="33" />
+        <state relative-caret-position="169">
+          <caret line="135" column="18" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
         </state>
       </provider>
     </entry>
