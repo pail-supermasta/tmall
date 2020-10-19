@@ -168,7 +168,7 @@ function userDataValidation($address, $order)
     $cityLen = strlen($address['city']);
     $streetLen = strlen($address['detail_address']);
     $address2Len = isset($address['address2']) ? strlen($address['address2']) : 0;
-    if ($indexLen != 6 || $cityLen == 0 || $streetLen == 0 || $address2Len == 0) {
+    if ($indexLen != 6 || $cityLen == 0 || $streetLen == 0) {
         $message .= "\nАдрес, ошибка в заказе #$order";
     }
 

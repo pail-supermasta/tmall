@@ -27,9 +27,6 @@ $login = array(
 );
 
 
-$stores = array(
-    '48de3b8e-8b84-11e9-9ff4-34e8001a4ea1',  // MP_NFF
-);
 
 
 // Telegram err logs integration
@@ -41,7 +38,6 @@ require_once realpath(dirname(__FILE__) . '/..') . '/vendor/autoload.php';
 
 
 use Avaks\MS\Products;
-use Avaks\MS\Stocks;
 use Avaks\AE\Product;
 use Avaks\MS\Bundles;
 
@@ -49,71 +45,169 @@ $productsMS = new Products();
 $bundlesMS = new Bundles();
 $syncErrors = '';
 
-function loggingRes($arr, $product, $syncErrors, $login)
+$urlLogin = 'https://api.backendserver.ru/api/v1/auth/login';
+$userData = array("username" => "mongodb@техтрэнд", "password" => "!!@th9247t924");
+
+$urlProduct = 'https://api.backendserver.ru/api/v1/product';
+$urlBundle = 'https://api.backendserver.ru/api/v1/bundle';
+$urlStock = 'https://api.backendserver.ru/api/v1/report_stock_all';
+
+
+function getToken($url, $data)
 {
-    if ($arr == false) {
-        $syncErrors .= 'ID Aliexp ' . $product['ali_product_id'] . ' Код МС ' . $product['code'] . ' ошибка сопоставления для магазина ' . $login['login'] . PHP_EOL;
-    } else {
-
-
-        if ($arr['new_stock'] == false && is_bool($arr['new_stock'])) {
-            $log_message = 'Tmall код МС ' . $product['ali_product_id'] . ' Код МС ' . $product['code'] . ' ' . $arr['old_stock'] . ' без изменений';
-        } else {
-            $log_message = 'Tmall код МС ' . $product['ali_product_id'] . ' Код МС ' . $product['code'] . ' Старое значение ' . $arr['old_stock'] . ' Новое значение ' . $arr['new_stock'];
-        }
-//        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . ' ' . $log_message . PHP_EOL, 3, $login['login'] . '.log');
-
-
-    }
-
-    return $syncErrors;
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+    $res = curl_exec($ch);
+    $result = json_decode($res, true);
+    curl_close($ch);
+    return $result['token'];
 }
 
-//report_stock_all
-$stocks = new Stocks();
-$stockMS = $stocks->getAll();
+function getData($urlProduct, $data, $token)
+{
+    $headers = array(
+        'Content-Type: application/x-www-form-urlencoded',
+        sprintf('Authorization: Bearer %s', $token)
+    );
 
-$start = 0;
+    $data_string = http_build_query($data);
+
+    $ch = curl_init($urlProduct);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+    curl_setopt($ch, CURLOPT_URL, $urlProduct . '/?' . $data_string);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    $res = curl_exec($ch);
+    $result = json_decode($res, true);
+    curl_close($ch);
+
+    return $result;
+}
+
+function getQuantity($urlProduct, $token)
+{
+
+    $data['limit'] = 999999;
+    $data['offset'] = 0;
+    $data['project'] = json_encode(array(
+            '_id' => true,
+            '_product' => true,
+            'quantity' => true,
+            'reserve' => true,
+            'stock' => true,
+            'updated' => true
+        )
+    );
+
+    $data['filter'] = json_encode(array('_store' => '48de3b8e-8b84-11e9-9ff4-34e8001a4ea1'));
+
+    $headers = array(
+        'Content-Type: application/x-www-form-urlencoded',
+        sprintf('Authorization: Bearer %s', $token)
+    );
+
+    $data_string = http_build_query($data);
+    $ch = curl_init($urlProduct);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+    curl_setopt($ch, CURLOPT_URL, $urlProduct . '/?' . $data_string);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+    $res = curl_exec($ch);
+    $result = json_decode($res, true);
+    curl_close($ch);
+
+    return $result;
+}
+
 $start = microtime(TRUE);
 
-$products = $productsMS->findWithFieldTmall($login['login']);
+$token = getToken($urlLogin, $userData);
 
-$duration = microtime(true) - $start;
-echo $duration;
-var_export($login);
-var_export($products);
-die();
-foreach ($products as $key => $product) {
+/**************STOCK*****************/
+$stocks = getQuantity($urlStock, $token);
+$stockMS = [];
 
-    // Получаем ID товара в Aliexpress
-    $product['ali_product_id'] = $product['_attributes'][$productsMS->MSTmallFieldName];
-    if ($product['ali_product_id'] == '') continue;
+if ($stocks['rows']) {
+    foreach ($stocks['rows'] as $k => $stock) {
 
-    $aliProduct = new Product($product['ali_product_id'], $product['code']);
+        if (!isset($stock['reserve'])) {
+            $available = $stock['stock'];
+        } else {
+            $available = $stock['stock'] - $stock['reserve'];
+        }
 
-    $response = $aliProduct->setStock($stockMS[$product['id']]['available'], $login);
-    $syncErrors = loggingRes($response, $product, $syncErrors, $login);
+        if ($available <= 0) {
+            $available = 0;
+        }
+        $stockMS[$stock['_product']] = array('available' => $available, 'updated' => $stock['updated']);
+    }
 }
 
-$bundles = $bundlesMS->findWithFieldTmall($login['login']);
+/**************PRODUCT*****************/
 
-foreach ($bundles as $key => $bundle) {
+$data['filter'] = json_encode(array('_attributes.TMall ID (Best Goods)' => ['$exists'=>true]));
 
+$data['limit'] = 9999;
+$data['offset'] = 0;
+$data['project'] = json_encode(array(
+        '_id' => true,
+        '_attributes.TMall ID (Best Goods)' => true,
+        'code' => true,
+    )
+);
+
+$products = getData($urlProduct, $data, $token);
+
+foreach ($products['rows'] as $key => $product) {
 
     // Получаем ID товара в Aliexpress
-    $bundle['ali_product_id'] = $bundle['_attributes'][$bundlesMS->MSTmallFieldName];
-    if ($bundle['ali_product_id'] == '') continue;
+    if (!isset($product['_attributes']['TMall ID (Best Goods)']) || $product['_attributes']['TMall ID (Best Goods)'] == '') continue;
 
-    $aliProduct = new Product($bundle['ali_product_id'], $bundle['code']);
-    $response = $aliProduct->setStock($stockMS[$bundle['id']]['available'], $login);
+    $aliProduct = new Product($product['_attributes']['TMall ID (Best Goods)'], $product['code']);
 
-    $syncErrors = loggingRes($response, $bundle, $syncErrors, $login);
-
-
+    $response = $aliProduct->setStock($stockMS[$product['_id']]['available'], $login);
+    var_export($response);
 }
+$end = microtime(TRUE);
 
-$duration = microtime(true) - $start;
-echo $duration;
-telegram('Обновлен остаток для ' . $login['name'], '-391758030');
+/**************BUNDLE*****************/
 
 
+$data['filter'] = json_encode(array('_attributes.TMall ID (Best Goods)' => ['$exists'=>true]));
+
+$data['limit'] = 9999;
+$data['offset'] = 0;
+$data['project'] = json_encode(array(
+        '_id' => true,
+        '_attributes.TMall ID (Best Goods)' => true,
+        'code' => true,
+    )
+);
+
+$bundles = getData($urlBundle, $data, $token);
+
+foreach ($bundles['rows'] as $key => $bundle) {
+
+    // Получаем ID товара в Aliexpress
+    if (!isset($bundle['_attributes']['TMall ID (Best Goods)']) || $bundle['_attributes']['TMall ID (Best Goods)'] == '') continue;
+
+    $aliProduct = new Product($bundle['_attributes']['TMall ID (Best Goods)'], $bundle['code']);
+
+    $response = $aliProduct->setStock($stockMS[$bundle['_id']]['available'], $login);
+}
+$end = microtime(TRUE);
+echo round(($end - $start), 2) . " seconds.";
+
+telegram('Обновлен остаток для bestgoods time:'.round(($end - $start), 2), '-391758030');

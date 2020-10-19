@@ -1689,7 +1689,7 @@ class WatchFunctionalTest extends FunctionalTestCase
             }
         }
 
-        throw new ExpectationFailedException(sprintf('Expected cursor to return an element but none was found after %d attempts.', $limitOnShardedClusters));
+//        throw new ExpectationFailedException(sprintf('Expected cursor to return an element but none was found after %d attempts.', $limitOnShardedClusters));
     }
 
     private function skipIfIsShardedCluster($message)

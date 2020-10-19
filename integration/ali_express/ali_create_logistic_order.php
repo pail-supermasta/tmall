@@ -390,7 +390,7 @@ foreach ($ordersInWork as $orderInWork) {
         continue;
     }
     $logistics_order_id = $cainiaoGlobalLogisticOrderCreate->result->logistics_order_id;
-    sleep(2);
+    sleep(5);
     var_dump($logistics_order_id);
 //    $logistics_order_id = 20130226187;
     $order = $orderInWork['name'];
@@ -400,6 +400,21 @@ foreach ($ordersInWork as $orderInWork) {
     $getLogisticOrderInfoRes = getLogisticOrderInfo($order, $logistics_order_id, $sessionKey);
     if (isset($getLogisticOrderInfoRes->result_list->result[0])) {
         $lp_number = $getLogisticOrderInfoRes->result_list->result[0]->lp_number;
+
+        if (!isset($getLogisticOrderInfoRes->result_list->result[0]->internationallogistics_id)) {
+            sleep(5);
+            $getLogisticOrderInfoRes = getLogisticOrderInfo($order, $logistics_order_id, $sessionKey);
+
+            if (!isset($getLogisticOrderInfoRes->result_list->result[0]->internationallogistics_id)) {
+                sleep(5);
+                $getLogisticOrderInfoRes = getLogisticOrderInfo($order, $logistics_order_id, $sessionKey);
+
+                if (!isset($getLogisticOrderInfoRes->result_list->result[0]->internationallogistics_id)) {
+                    telegram("ОШИБКА!! получения наклейки $order", '-320614744', 'Markdown');
+                    continue;
+                }
+            }
+        }
         $internationallogistics_id = $getLogisticOrderInfoRes->result_list->result[0]->internationallogistics_id;
     }
 
@@ -411,7 +426,7 @@ foreach ($ordersInWork as $orderInWork) {
         sleep(5);
         $printInfoResp = printInfo($internationallogistics_id, $sessionKey);
         if (!isset(json_decode($printInfoResp->result)->body)) {
-            telegram("ОШИБКА!! получения наклейки $internationallogistics_id", '-320614744', 'Markdown');
+            telegram("ОШИБКА!! получения наклейки $order", '-320614744', 'Markdown');
             continue;
         }
     }

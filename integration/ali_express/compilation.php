@@ -2,7 +2,7 @@
 
 // display results as json
 //header('Content-Type: application/json');
-set_time_limit(600);
+set_time_limit(800);
 
 
 ini_set('display_errors', 1);

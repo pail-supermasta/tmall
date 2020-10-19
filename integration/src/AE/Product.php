@@ -77,6 +77,17 @@ class Product
         return $result ?? false;
     }
 
+    public function setMultipleStock($skuStocks,$sessionKey){
+        $c = new \TopClient;
+        $c->appkey = APPKEY;
+        $c->secretKey = SECRET;
+        $req = new \AliexpressPostproductRedefiningEditmutilpleskustocksRequest;
+        $req->setProductId("$this->id");
+        $req->setSkuStocks("$skuStocks");
+        $resp = $c->execute($req, $sessionKey);
+        return $resp;
+    }
+
 // Берём из Алиэкспресс информацию о продукте, по ID товара в Алиэкспресс
     public function getById($sessionKey)
     {
