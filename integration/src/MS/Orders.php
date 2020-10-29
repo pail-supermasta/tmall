@@ -26,7 +26,6 @@ class Orders
     {
 
 
-
         /*{
             '_attributes.#Логистика: агент': "Cainiao",
             _agent: '1b33fbc1-5539-11e9-9ff4-315000060bc8',
@@ -51,9 +50,9 @@ class Orders
             'deleted' => ['$exists' => false]
         ];
         $ordersCursor = $collection->customerorder->find($filter);
-        $ordersNoSticker=[];
+        $ordersNoSticker = [];
 
-        foreach ($ordersCursor as $orderCursor){
+        foreach ($ordersCursor as $orderCursor) {
             $orderElem['trackNum'] = $orderCursor['_attributes']['Логистика: Трек'];
             $orderElem['name'] = $orderCursor['name'];
             $orderElem['externalCode'] = $orderCursor['externalCode'];
@@ -89,9 +88,9 @@ class Orders
             'deleted' => ['$exists' => false]
         ];
         $ordersCursor = $collection->customerorder->find($filter);
-        $ordersWaitPayment=[];
+        $ordersWaitPayment = [];
 
-        foreach ($ordersCursor as $orderCursor){
+        foreach ($ordersCursor as $orderCursor) {
             $orderElem['id'] = $orderCursor['_id'];
             $orderElem['name'] = $orderCursor['name'];
 
@@ -131,7 +130,12 @@ class Orders
         $backendAPI = new BackendAPI();
         $filter = [
             '_agent' => '1b33fbc1-5539-11e9-9ff4-315000060bc8',
-            '_state' => '8beb25ab-6088-11e7-7a6c-d2a9003b81a4',
+            '_state' => ['$in' => [
+                'ecf45f89-f518-11e6-7a69-9711000ff0c4',
+                '327c02b4-75c5-11e5-7a40-e89700139937',
+                '8beb227b-6088-11e7-7a6c-d2a9003b81a3',
+                '8beb25ab-6088-11e7-7a6c-d2a9003b81a4'
+            ]],
             'applicable' => true,
             '_attributes.#Логистика: агент' => 'Cainiao',
             '_attributes.Логистика: Трек' => ['$exists' => true]

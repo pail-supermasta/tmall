@@ -19,14 +19,6 @@ define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
 
 define('LOGINS', array(
     array(
-        'name' => 'Незабудка MR',
-        'login' => 'NezabudkaMR@yandex.ru',
-        'field_id' => '0bbcd991-81f4-11e9-9109-f8fc0004dec9',
-        'sessionKey' => '50002500501Vs151ac533BdqLFskhnQwtwheYk1CiSexTFfFAv6nWUefGArBboUuh8F',
-        'cpCode' => 'UTV0a1NLakt5dE9DdzZOdEt1elhnblRnMURQaExvS0w4RVZEVHMyM2o2eTRqUjdiOEdxalpTVjhRN0ZBQldVZA==',
-        'cnId' => '4398983084403'
-    ),
-    array(
         'name' => 'bestgoodsstore',
         'login' => 'bestgoodsstore@yandex.ru',
         'field_id' => '0bbcd3e6-81f4-11e9-9109-f8fc0004dec8',
@@ -35,30 +27,6 @@ define('LOGINS', array(
         'cnId' => '4398985192396'
 
     ),
-    array(
-        'name' => 'Новинки',
-        'login' => 'novinkiooo@yandex.ru',
-        'field_id' => 'e8a40577-77b9-11e9-912f-f3d40003d45d',
-        'sessionKey' => '50002500c15tBJCowQScZ6julhS1dea01bfctShXhETAmyVfKkQKwey1lvK3ryD7z1t',
-        'cpCode' => 'OTQwTzB2T1U3N1Nza0Y3OVRKMHZyVWtPL0RFRjJHczBqUHBDRHBqK05LVXdBc1pJRkk0THo1YUVLR21PNE5IZQ==',
-        'cnId' => '4398985964371'
-    ),
-    array(
-        'name' => 'Незабудка iRobot',
-        'login' => 'NezabudkaiRobot@yandex.ru',
-        'field_id' => '0bbcde02-81f4-11e9-9109-f8fc0004deca',
-        'sessionKey' => '50002500901sP1b7f673cFt7iCP3uQfb1JzgquDxxdddBqgtvwCkmwoWHooj7Cw4dCP',
-        'cpCode' => 'czJBM3dFNm9aQ0RuSnhnY0tEK2p2a3g1cEI5aFYwSGw1TlpxTVAyUE1CYk1iYkRCTU1tWENocFo4alU3aFdmUg==',
-        'cnId' => '4398985334183'
-    ),
-    array(
-        'name' => 'Незабудка ND',
-        'login' => 'NezabudkaND@yandex.ru',
-        'field_id' => '0bbce15c-81f4-11e9-9109-f8fc0004decb',
-        'sessionKey' => '50002700811duwgr7oCt2sx1edacab6BZ6kWiLtBtQeBGBQfNxYCKlunzemnpZpP21d',
-        'cpCode' => 'V1ZDUlZnY09vbHoyQTFpNEZEUElkcGlmUE43Z1hYZEdoVEZwM2huTDlWeWVKUHdIUmY4QmFWV1FOdXVCT3JQeg==',
-        'cnId' => '4398983195649'
-    )
 ));
 
 define('ID_REGEXP', '/[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}/'); // Регулярка для UUID
@@ -76,7 +44,7 @@ require_once realpath(dirname(__FILE__) . '/..') . '/moi_sklad/sql_requests/Orde
 require_once realpath(dirname(__FILE__) . '/..') . '/moi_sklad/ms_get_orders_dynamic.php';
 
 require_once 'taobao/TopSdk.php';
-require_once 'cainiao.php';
+//require_once 'cainiao.php';
 require_once realpath(dirname(__FILE__) . '/..') . '/vendor/autoload.php';
 
 
@@ -95,141 +63,141 @@ function strpos_recursive($haystack, $needle, $offset = 0, &$results = array())
     }
 }
 
-
-function checkTimeFromPaid($order, $payTime, $credential)
-{
-
-    $sessionKey = $credential['sessionKey'];
-    $cpCode = $credential['cpCode'];
-    $cnId = $credential['cnId'];
-
-
-    /*  add 3 hour shift from GMT to RU */
-    $offsetNow = 3 * 60 * 60;
-    $now = strtotime(gmdate("Y-m-d H:i:s")) + $offsetNow;
-    /*  add 10 hour shift from PST to RU */
-    $offsetAli = 10 * 60 * 60;
-    $timeFromPayment = (strtotime($payTime) + $offsetAli) - $now;
-    $timeFromPayment = $timeFromPayment / 60 / 60 * (-1);
-
-
-    /*check if order ready for CAINIAO*/
-    $order = strval($order);
-    $isReady = checkCainiaoReady($order);
-
-    if ($isReady == true) {
-        /*run cainiao delivery process*/
-
-        $result = deliverCainiao($order, $cnId, $cpCode, $sessionKey);
-
-        if ($result['result_success'] == true) {
-
-
-            $orderMS = new OrderMS('', $order, '');
-            $orderMSDetails = $orderMS->getByName();
-            $orderMS->id = $orderMSDetails['id'];
-
-            /*get order state in MS*/
-            preg_match(ID_REGEXP, $orderMSDetails['state']['meta']['href'], $matches);
-            $state_id = $matches[0];
-            $orderMS->state = $state_id;
-//            $result['mailNo'] = str_replace(['AEWH', 'RU4'], "", $result['mailNo']);
-
-
-            /*check if stripped mailno 6 chars long*/
-            if (strlen($result['mailNo']) >= 6) {
-                $setTrackNumRes = $orderMS->setTrackNum($result['mailNo']);
-                if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
-
-                    /*try again*/
-                    sleep(5);
-                    $setTrackNumRes = $orderMS->setTrackNum($result['mailNo']);
-                    if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
-                        telegram("setTrackNum error found " . $orderMS->name, '-320614744');
-                        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setTrackNumRes . " " . $orderMS->name . PHP_EOL, 3, "setTrackNum.log");
-                    } else {
-                        $setToPackRes = $orderMS->setToPack();
-                        if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
-
-                            /*try again*/
-                            sleep(5);
-                            $setToPackRes = $orderMS->setToPack();
-                            if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
-                                telegram("setToPack error found $orderMS->name", '-320614744');
-                                error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
-
-                            } else {
-                                $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
-                                telegram($message, '-278688533');
-                                /*set new position price*/
-                                setNewPositionPrice($orderMS->name, $credential);
-                            }
-
-                        } else {
-                            $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
-                            telegram($message, '-278688533');
-                            /*set new position price*/
-                            setNewPositionPrice($orderMS->name, $credential);
-                        }
-                    }
-
-
-                } else {
-
-                    $setToPackRes = $orderMS->setToPack();
-                    if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
-
-                        /*try again*/
-                        sleep(5);
-                        $setToPackRes = $orderMS->setToPack();
-                        if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
-                            telegram("setToPack error found $orderMS->name", '-320614744');
-                            error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
-                        } else {
-                            $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
-                            telegram($message, '-278688533');
-                            /*set new position price*/
-                            setNewPositionPrice($orderMS->name, $credential);
-                        }
-                    } else {
-                        $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
-                        telegram($message, '-278688533');
-                        /*set new position price*/
-                        setNewPositionPrice($orderMS->name, $credential);
-                    }
-                }
-            }
-
-
-        } else {
-            $message = "CAINIAO ОШИБКА $order см ali_order_list_paid.log";
-            telegram($message, '-320614744');
-            error_log('ali_order_list_paid err' . json_encode($result), 3, 'ali_order_list_paid.log');
-        }
-
-
-    } else {
-
-        /*if not then go next*/
-        if ($timeFromPayment >= 2) {
-
-            /*check if order has track in MS*/
-
-            $orderMSTemp = new OrderMS(null, strval($order));
-            $delivery = $orderMSTemp->getOrderTrackNew();
-            $trackId = $delivery['track'];
-
-            /*has no track*/
-            if ($trackId == false) {
-                var_dump($timeFromPayment . PHP_EOL);
-//                telegram("Трек не заполнен, заказ #$order", '-278688533');
-            }
-        }
-
-    }
-
-
-}
+//LEGACY TO DELETE
+//function checkTimeFromPaid($order, $payTime, $credential)
+//{
+//
+//    $sessionKey = $credential['sessionKey'];
+//    $cpCode = $credential['cpCode'];
+//    $cnId = $credential['cnId'];
+//
+//
+//    /*  add 3 hour shift from GMT to RU */
+//    $offsetNow = 3 * 60 * 60;
+//    $now = strtotime(gmdate("Y-m-d H:i:s")) + $offsetNow;
+//    /*  add 10 hour shift from PST to RU */
+//    $offsetAli = 10 * 60 * 60;
+//    $timeFromPayment = (strtotime($payTime) + $offsetAli) - $now;
+//    $timeFromPayment = $timeFromPayment / 60 / 60 * (-1);
+//
+//
+//    /*check if order ready for CAINIAO*/
+//    $order = strval($order);
+//    $isReady = checkCainiaoReady($order);
+//
+//    if ($isReady == true) {
+//        /*run cainiao delivery process*/
+//
+//        $result = deliverCainiao($order, $cnId, $cpCode, $sessionKey);
+//
+//        if ($result['result_success'] == true) {
+//
+//
+//            $orderMS = new OrderMS('', $order, '');
+//            $orderMSDetails = $orderMS->getByName();
+//            $orderMS->id = $orderMSDetails['id'];
+//
+//            /*get order state in MS*/
+//            preg_match(ID_REGEXP, $orderMSDetails['state']['meta']['href'], $matches);
+//            $state_id = $matches[0];
+//            $orderMS->state = $state_id;
+////            $result['mailNo'] = str_replace(['AEWH', 'RU4'], "", $result['mailNo']);
+//
+//
+//            /*check if stripped mailno 6 chars long*/
+//            if (strlen($result['mailNo']) >= 6) {
+//                $setTrackNumRes = $orderMS->setTrackNum($result['mailNo']);
+//                if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
+//
+//                    /*try again*/
+//                    sleep(5);
+//                    $setTrackNumRes = $orderMS->setTrackNum($result['mailNo']);
+//                    if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
+//                        telegram("setTrackNum error found " . $orderMS->name, '-320614744');
+//                        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setTrackNumRes . " " . $orderMS->name . PHP_EOL, 3, "setTrackNum.log");
+//                    } else {
+//                        $setToPackRes = $orderMS->setToPack();
+//                        if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
+//
+//                            /*try again*/
+//                            sleep(5);
+//                            $setToPackRes = $orderMS->setToPack();
+//                            if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
+//                                telegram("setToPack error found $orderMS->name", '-320614744');
+//                                error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
+//
+//                            } else {
+//                                $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
+//                                telegram($message, '-278688533');
+//                                /*set new position price*/
+//                                setNewPositionPrice($orderMS->name, $credential);
+//                            }
+//
+//                        } else {
+//                            $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
+//                            telegram($message, '-278688533');
+//                            /*set new position price*/
+//                            setNewPositionPrice($orderMS->name, $credential);
+//                        }
+//                    }
+//
+//
+//                } else {
+//
+//                    $setToPackRes = $orderMS->setToPack();
+//                    if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
+//
+//                        /*try again*/
+//                        sleep(5);
+//                        $setToPackRes = $orderMS->setToPack();
+//                        if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
+//                            telegram("setToPack error found $orderMS->name", '-320614744');
+//                            error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
+//                        } else {
+//                            $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
+//                            telegram($message, '-278688533');
+//                            /*set new position price*/
+//                            setNewPositionPrice($orderMS->name, $credential);
+//                        }
+//                    } else {
+//                        $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
+//                        telegram($message, '-278688533');
+//                        /*set new position price*/
+//                        setNewPositionPrice($orderMS->name, $credential);
+//                    }
+//                }
+//            }
+//
+//
+//        } else {
+//            $message = "CAINIAO ОШИБКА $order см ali_order_list_paid.log";
+//            telegram($message, '-320614744');
+//            error_log('ali_order_list_paid err' . json_encode($result), 3, 'ali_order_list_paid.log');
+//        }
+//
+//
+//    } else {
+//
+//        /*if not then go next*/
+//        if ($timeFromPayment >= 2) {
+//
+//            /*check if order has track in MS*/
+//
+//            $orderMSTemp = new OrderMS(null, strval($order));
+//            $delivery = $orderMSTemp->getOrderTrackNew();
+//            $trackId = $delivery['track'];
+//
+//            /*has no track*/
+//            if ($trackId == false) {
+//                var_dump($timeFromPayment . PHP_EOL);
+////                telegram("Трек не заполнен, заказ #$order", '-278688533');
+//            }
+//        }
+//
+//    }
+//
+//
+//}
 
 function setNewPositionPrice($order, $credential)
 {
@@ -346,7 +314,7 @@ function setTrackToTmall($order, $payTime, $credential)
         $agentId = $delivery['agent'];
         /*set track number in Tmall*/
 
-        $serviceName = "OTHER_RU_CITY_RUB";
+        $serviceName = "";
         switch ($agentId) {
             case "CDEK":
                 $trackingWebsite = "https://cdek.ru/track.html?order_id=$trackId";
@@ -356,46 +324,49 @@ function setTrackToTmall($order, $payTime, $credential)
                 $trackingWebsite = "https://iml.ru/status/";
                 $serviceName = "OTHER_RU_CITY_RUB";
                 break;
-            case "Cainiao":
-//                $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=AEWH000' . $trackId . 'RU4"';
-                $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=' . $trackId . '"';
-                $serviceName = "AE_RU_MP_COURIER_PH3_CITY";
-//                $trackId = "AEWH000" . $trackId . "RU4";
-                break;
+//            case "Cainiao":
+////                $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=AEWH000' . $trackId . 'RU4"';
+//                $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=' . $trackId . '"';
+//                $serviceName = "AE_RU_MP_COURIER_PH3_CITY";
+////                $trackId = "AEWH000" . $trackId . "RU4";
+//                break;
         }
 
 
-        if ($agentId == 'Cainiao') {
+//        if ($agentId == 'Cainiao') {
 //            telegram("Трек отправлен в цаняо для $order $trackId $serviceName", '-320614744');
+//        }
+
+
+        if ($serviceName!==""){
+            $c = new TopClient;
+            $c->appkey = APPKEY;
+            $c->secretKey = SECRET;
+            $req = new AliexpressSolutionOrderFulfillRequest;
+            $req->setServiceName($serviceName);
+            $req->setTrackingWebsite("$trackingWebsite");
+            $req->setOutRef("$order");
+            $req->setSendType("all");
+    //            $req->setDescription("memo");
+            $req->setLogisticsNo("$trackId");
+            $resp = $c->execute($req, $sessionKey);
+            var_dump($resp);
         }
 
-
-        $c = new TopClient;
-        $c->appkey = APPKEY;
-        $c->secretKey = SECRET;
-        $req = new AliexpressSolutionOrderFulfillRequest;
-        $req->setServiceName($serviceName);
-        $req->setTrackingWebsite("$trackingWebsite");
-        $req->setOutRef("$order");
-        $req->setSendType("all");
-//            $req->setDescription("memo");
-        $req->setLogisticsNo("$trackId");
-        $resp = $c->execute($req, $sessionKey);
-        var_dump($resp);
-
-    } else {
-        /*  add 3 hour shift from GMT to RU */
-        $offsetNow = 3 * 60 * 60;
-        $now = strtotime(gmdate("Y-m-d H:i:s")) + $offsetNow;
-        /*  add 10 hour shift from PST to RU */
-        $offsetAli = 10 * 60 * 60;
-        $timeFromPayment = (strtotime($payTime) + $offsetAli) - $now;
-        $timeFromPayment = $timeFromPayment / 60 / 60 * (-1);
-
-        if ($timeFromPayment >= 9) {
-            telegram("ЗАДЕРЖКА отправки заказа #$order", '-278688533');
-        }
     }
+//    else {
+//        /*  add 3 hour shift from GMT to RU */
+//        $offsetNow = 3 * 60 * 60;
+//        $now = strtotime(gmdate("Y-m-d H:i:s")) + $offsetNow;
+//        /*  add 10 hour shift from PST to RU */
+//        $offsetAli = 10 * 60 * 60;
+//        $timeFromPayment = (strtotime($payTime) + $offsetAli) - $now;
+//        $timeFromPayment = $timeFromPayment / 60 / 60 * (-1);
+//
+//        if ($timeFromPayment >= 9) {
+//            telegram("ЗАДЕРЖКА отправки заказа #$order", '-278688533');
+//        }
+//    }
 
 
 }
@@ -439,7 +410,7 @@ function formMasterList($credential)
                 $orderList[$shorty['order_id']] = $shorty['gmt_pay_time'];
 
                 /*check if paid and no track number*/
-                checkTimeFromPaid($shorty['order_id'], $shorty['gmt_pay_time'], $credential);
+//                checkTimeFromPaid($shorty['order_id'], $shorty['gmt_pay_time'], $credential);
 
                 /*check if  has track num*/
                 setTrackToTmall($shorty['order_id'], $shorty['gmt_pay_time'], $credential);

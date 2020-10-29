@@ -90,7 +90,7 @@ function fillOrderTemplate(array $orderDetails)
     if (!isset($orderDetails['productStocks'])) {
         /*отработать*/
         $state = '552a994e-2905-11e7-7a31-d0fd002c3df2';
-        $logisticsProvider = '1 Не нужна доставка';
+        $logisticsProvider = 'Cainiao';
     } elseif ($availableMS == true && $orderDetails['err'] == '' && $orderDetails['paid'] == 'PAY_SUCCESS') {
         $paid = true;
         /*в работе*/
@@ -100,12 +100,12 @@ function fillOrderTemplate(array $orderDetails)
         $paid = false;
         /*ждем оплаты*/
         $state = '327c0111-75c5-11e5-7a40-e89700139936';
-        $logisticsProvider = '1 Не нужна доставка';
+        $logisticsProvider = 'Cainiao';
     } else {
         $paid = false;
         /*отработать*/
         $state = '552a994e-2905-11e7-7a31-d0fd002c3df2';
-        $logisticsProvider = '1 Не нужна доставка';
+        $logisticsProvider = 'Cainiao';
     }
 
 
