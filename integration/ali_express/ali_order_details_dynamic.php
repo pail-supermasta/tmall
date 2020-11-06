@@ -29,9 +29,9 @@ function findorderbyid($post_data, $sessionKey)
 
 /*
 require_once 'taobao/TopSdk.php';
-define('APPKEY', '27862248');
-define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
-$shorten = findorderbyid('5000456496969609','50002301229puBbzguDnSgzxlbgBq5NUVhmDxgWew150ba36bU9fxHRSBFSQ5ZDiLZp');
+define('APPKEY', '30833672');
+define('SECRET', '1021396785b2eaa1497b7a58dddf19b3');
+$shorten = findorderbyid('5000456496969609','50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x');
 //var_dump($shorten['logistics_amount']['cent']);
 //var_dump($shorten['order_amount']['cent']);
 var_dump($shorten);*/

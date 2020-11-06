@@ -14,8 +14,8 @@ require_once 'taobao/TopSdk.php';
 
 use Avaks\MS\Orders;
 
-define('APPKEY', '27862248');
-define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
+define('APPKEY', '30833672');
+define('SECRET', '1021396785b2eaa1497b7a58dddf19b3');
 
 
 /*ALIEX*/
@@ -136,7 +136,7 @@ foreach ($ordersOnLoad as $orderOnLoad) {
             break;
         case stripos($orderOnLoad['description'], "BESTGOODS (ID 5041091)") !== false :
             $shopName = 'BESTGOODS';
-            $shopsOrders[$shopName]['sessionKey'] = "50002301229puBbzguDnSgzxlbgBq5NUVhmDxgWew150ba36bU9fxHRSBFSQ5ZDiLZp";
+            $shopsOrders[$shopName]['sessionKey'] = "50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x";
             $shopsOrders[$shopName] = buildShopOrders($orderOnLoad, $shopsOrders[$shopName]);
             break;
         case stripos($orderOnLoad['description'], "Noerden (ID 5012047)") !== false :

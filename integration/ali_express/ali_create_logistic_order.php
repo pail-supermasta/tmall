@@ -16,8 +16,8 @@ require_once 'taobao/TopSdk.php';
 use Avaks\MS\Orders;
 use Avaks\MS\OrderMS;
 
-define('APPKEY', '27862248');
-define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
+define('APPKEY', '30833672');
+define('SECRET', '1021396785b2eaa1497b7a58dddf19b3');
 
 
 function getOrderShop($description)
@@ -28,7 +28,7 @@ function getOrderShop($description)
             $sessionKey = "50002500c15tBJCowQScZ6julhS1dea01bfctShXhETAmyVfKkQKwey1lvK3ryD7z1t";
             break;
         case  stripos($description, "BESTGOODS (ID 5041091)") !== false :
-            $sessionKey = "50002301229puBbzguDnSgzxlbgBq5NUVhmDxgWew150ba36bU9fxHRSBFSQ5ZDiLZp";
+            $sessionKey = "50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x";
             break;
         case  stripos($description, "Noerden (ID 5012047)") !== false :
             $sessionKey = "50002700811duwgr7oCt2sx1edacab6BZ6kWiLtBtQeBGBQfNxYCKlunzemnpZpP21d";

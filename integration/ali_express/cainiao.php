@@ -291,6 +291,6 @@ function sellerShipmentForTop($order, $logisticsNo, $sessionKey)
 }
 
 
-/*define('APPKEY', '27862248');
-define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
+/*define('APPKEY', '30833672');
+define('SECRET', '1021396785b2eaa1497b7a58dddf19b3');
 deliverCainiao('5000281306086387', $sessionKey);*/
