@@ -6,10 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80146bb5-79f6-4afc-a154-c01ae4967d76" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/moi_sklad/ms_post_order_dynamic.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/moi_sklad/ms_post_order_dynamic.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration/src/MS/MSSync.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/src/MS/MSSync.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/src/MS/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/src/MS/Orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/stock/generate_yml.php" beforeDir="false" afterPath="$PROJECT_DIR$/integration/stock/generate_yml.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,20 +35,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ali_handover.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_handover.php">
+      <file leaf-file-name="generate_yml.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/integration/stock/generate_yml.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3232">
-              <caret line="207" column="59" selection-start-line="207" selection-start-column="59" selection-end-line="207" selection-end-column="59" />
+            <state relative-caret-position="158">
+              <caret line="151" lean-forward="true" selection-start-line="151" selection-end-line="151" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ms_get_orders_compilation.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/integration/moi_sklad/ms_get_orders_compilation.php">
+      <file leaf-file-name="MSSync.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/integration/src/MS/MSSync.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+            <state relative-caret-position="208">
+              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -66,9 +64,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>buildShopOrders</find>
-      <find />
-      <find />
+      <find>Не нужна доставка</find>
+      <find>1 Не нужна доставка</find>
       <find>Cainiao</find>
       <find>checkTimeFromPaid</find>
       <find>cainiao</find>
@@ -82,9 +79,9 @@
       <find>userda</find>
       <find>getT</find>
       <find>getOrdersOnLoad</find>
-      <find />
+      <find>Ошибка создания заказа в МС.</find>
       <find>moment</find>
-      <find />
+      <find>ФИО, ошибка</find>
       <find>mongodb://admin:4ae61abd-e1b1-4212-b6a4-1547e70</find>
       <find>organization</find>
       <find>326d65ca-75c5-11e5-7a40-e8970013991b</find>
@@ -95,7 +92,8 @@
       <find>4070</find>
       <find>die</find>
       <find>робот</find>
-      <find />
+      <find>не нужна доставка</find>
+      <find>mongodb:</find>
     </findStrings>
     <replaceStrings>
       <replace>50002501201pu1cabc58aBbzgXFkqhvplWEdrhpszGJkLnXgVzGGx9wxCcCqsvPj6As</replace>
@@ -153,7 +151,6 @@
         <option value="$PROJECT_DIR$/integration/ali_express/ali_order_list_paid_lim.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/cainiao_lim.php" />
         <option value="$PROJECT_DIR$/integration/moi_sklad/ms_get_orders_compilation.php" />
-        <option value="$PROJECT_DIR$/integration/stock/generate_yml.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/cainiao.php" />
         <option value="$PROJECT_DIR$/integration/stock/cancelReserve.php" />
         <option value="$PROJECT_DIR$/integration/src/MS/Orders_213.php" />
@@ -191,10 +188,11 @@
         <option value="$PROJECT_DIR$/integration/file_processing.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/ali_order_print.php" />
         <option value="$PROJECT_DIR$/integration/src/BackendAPI.php" />
-        <option value="$PROJECT_DIR$/integration/src/MS/MSSync.php" />
         <option value="$PROJECT_DIR$/integration/moi_sklad/ms_post_order_dynamic.php" />
         <option value="$PROJECT_DIR$/integration/ali_express/ali_handover.php" />
         <option value="$PROJECT_DIR$/integration/src/MS/Orders.php" />
+        <option value="$PROJECT_DIR$/integration/stock/generate_yml.php" />
+        <option value="$PROJECT_DIR$/integration/src/MS/MSSync.php" />
       </list>
     </option>
   </component>
@@ -227,7 +225,31 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="tmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tmall" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tmall" type="462c0819:PsiDirectoryNode" />
+              <item name="integration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tmall" type="462c0819:PsiDirectoryNode" />
+              <item name="integration" type="462c0819:PsiDirectoryNode" />
+              <item name="stock" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -619,15 +641,16 @@
       <workItem from="1607417925480" duration="1622000" />
       <workItem from="1607425750874" duration="699000" />
       <workItem from="1607681009622" duration="210000" />
-      <workItem from="1607927338131" duration="1215000" />
+      <workItem from="1607927338131" duration="1969000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1270586000" />
+    <option name="totallyTimeSpent" value="1271340000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="923" y="29" width="1010" height="1066" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="5" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.2657952" />
@@ -635,7 +658,7 @@
       <window_info anchor="right" id="Run" order="5" weight="0.5221053" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="right" id="Terminal" order="4" weight="0.300271" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.52526313" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.5250533" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -850,13 +873,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/stock/generate_yml.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="282" column="61" selection-start-line="282" selection-start-column="52" selection-end-line="282" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/ali_express/taobao/top/request/AliexpressPostproductRedefiningEditmutilpleskustocksRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -875,13 +891,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="79" column="60" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/integration/stock/stockSyncronizer_mongo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="181" column="1" lean-forward="true" selection-start-line="181" selection-start-column="1" selection-end-line="181" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -958,13 +967,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration/src/MS/MSSync.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration/file_processing.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -1009,8 +1011,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/integration/ali_express/ali_handover.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3232">
-          <caret line="207" column="59" selection-start-line="207" selection-start-column="59" selection-end-line="207" selection-end-column="59" />
+        <state relative-caret-position="151">
+          <caret line="193" column="25" lean-forward="true" selection-start-line="193" selection-start-column="25" selection-end-line="193" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1018,6 +1020,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/src/MS/MSSync.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/stock/stockSyncronizer_mongo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="50" column="60" lean-forward="true" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration/stock/generate_yml.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="151" lean-forward="true" selection-start-line="151" selection-end-line="151" />
         </state>
       </provider>
     </entry>
