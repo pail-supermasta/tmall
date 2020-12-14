@@ -35,7 +35,7 @@ function curlMSCreate($username = false, $post, $memo, $order = false)
     $result = curl_exec($curl);
     $curl_errno = curl_errno($curl);
     if (strpos($result, 'обработка-ошибок') > 0 || $result == '') {
-        telegram("Ошибка создания заказа в МС. $order", '-320614744');
+//        telegram("Ошибка создания заказа в МС. $order", '-320614744');
         error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . "Return error " . $result . " POST BODY IS " . $post . PHP_EOL, 3, "orderCreateErr.log");
     }
 
@@ -117,7 +117,8 @@ function fillOrderTemplate(array $orderDetails)
 
     // указываем магазин в котором купили на ALI
     $shopId = '';
-    $organization = '326d65ca-75c5-11e5-7a40-e8970013991b';
+    $organization = '2d916f14-3e6b-11e8-9107-5048000ceb7a'; // "ООО \"ИПА\""
+//    $organization = '326d65ca-75c5-11e5-7a40-e8970013991b'; //"ООО \"НЗ\""
     switch ($orderDetails['shop']) {
         case "novinkiooo@yandex.ru":
             $shopId = "Avax store (ID 4901001)";
@@ -175,6 +176,13 @@ function fillOrderTemplate(array $orderDetails)
                 "mediaType": "application/json"
             }
         },
+        "organizationAccount": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/organization/2d916f14-3e6b-11e8-9107-5048000ceb7a/accounts/08e8d50e-fca4-11ea-0a80-033400049ed9",
+                "type": "account",
+                "mediaType": "application/json"
+            }
+        },
         "agent": {
             "meta": {
                 "href": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/1b33fbc1-5539-11e9-9ff4-315000060bc8",
@@ -196,6 +204,15 @@ function fillOrderTemplate(array $orderDetails)
                 "type": "store",
                 "mediaType": "application/json",
                 "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=48de3b8e-8b84-11e9-9ff4-34e8001a4ea1"
+            }
+        },
+        "contract": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/contract/59313308-3604-11eb-0a80-09730004c48f",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/contract/metadata",
+                "type": "contract",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#contract/edit?id=59313308-3604-11eb-0a80-09730004c48f"
             }
         },
         "attributes": [{
