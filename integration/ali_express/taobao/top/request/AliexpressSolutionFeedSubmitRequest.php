@@ -3,7 +3,7 @@
  * TOP API: aliexpress.solution.feed.submit request
  * 
  * @author auto create
- * @since 1.0, 2020.07.28
+ * @since 1.0, 2020.12.02
  */
 class AliexpressSolutionFeedSubmitRequest
 {

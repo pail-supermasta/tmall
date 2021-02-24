@@ -8,6 +8,11 @@ class OpenParcelOrderQueryResponse
 {
 	
 	/** 
+	 * 是否能组包
+	 **/
+	public $can_create_handover;
+	
+	/** 
 	 * 关联的大包的编码
 	 **/
 	public $handover_content_code;

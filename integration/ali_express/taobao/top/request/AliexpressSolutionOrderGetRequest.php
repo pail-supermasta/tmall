@@ -3,7 +3,7 @@
  * TOP API: aliexpress.solution.order.get request
  * 
  * @author auto create
- * @since 1.0, 2019.07.22
+ * @since 1.0, 2020.09.08
  */
 class AliexpressSolutionOrderGetRequest
 {

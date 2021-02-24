@@ -3,7 +3,7 @@
  * TOP API: aliexpress.solution.seller.category.tree.query request
  * 
  * @author auto create
- * @since 1.0, 2019.09.05
+ * @since 1.0, 2021.01.19
  */
 class AliexpressSolutionSellerCategoryTreeQueryRequest
 {

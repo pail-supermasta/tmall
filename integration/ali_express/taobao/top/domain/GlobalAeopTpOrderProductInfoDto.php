@@ -8,6 +8,11 @@ class GlobalAeopTpOrderProductInfoDto
 {
 	
 	/** 
+	 * Leaf category Id of the product
+	 **/
+	public $category_id;
+	
+	/** 
 	 * product id
 	 **/
 	public $product_id;

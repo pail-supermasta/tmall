@@ -108,6 +108,11 @@ class OrderDto
 	public $logistics_status;
 	
 	/** 
+	 * pickup type of order
+	 **/
+	public $offline_pickup_type;
+	
+	/** 
 	 * order detail url
 	 **/
 	public $order_detail_url;

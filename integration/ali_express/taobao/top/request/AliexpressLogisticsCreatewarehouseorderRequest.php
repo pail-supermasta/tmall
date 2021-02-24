@@ -3,7 +3,7 @@
  * TOP API: aliexpress.logistics.createwarehouseorder request
  * 
  * @author auto create
- * @since 1.0, 2020.08.03
+ * @since 1.0, 2020.09.17
  */
 class AliexpressLogisticsCreatewarehouseorderRequest
 {

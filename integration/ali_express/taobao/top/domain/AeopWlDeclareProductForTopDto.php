@@ -33,6 +33,11 @@ class AeopWlDeclareProductForTopDto
 	public $contains_battery;
 	
 	/** 
+	 * 是否特货
+	 **/
+	public $contains_special_goods;
+	
+	/** 
 	 * 海关编码
 	 **/
 	public $hs_code;

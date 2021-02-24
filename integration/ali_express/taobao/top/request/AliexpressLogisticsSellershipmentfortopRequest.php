@@ -3,10 +3,15 @@
  * TOP API: aliexpress.logistics.sellershipmentfortop request
  * 
  * @author auto create
- * @since 1.0, 2020.05.27
+ * @since 1.0, 2021.02.02
  */
 class AliexpressLogisticsSellershipmentfortopRequest
 {
+	/** 
+	 * 实际承运商
+	 **/
+	private $actualCarrier;
+	
 	/** 
 	 * memo
 	 **/
@@ -44,6 +49,17 @@ class AliexpressLogisticsSellershipmentfortopRequest
 	
 	private $apiParas = array();
 	
+	public function setActualCarrier($actualCarrier)
+	{
+		$this->actualCarrier = $actualCarrier;
+		$this->apiParas["actual_carrier"] = $actualCarrier;
+	}
+
+	public function getActualCarrier()
+	{
+		return $this->actualCarrier;
+	}
+
 	public function setDescription($description)
 	{
 		$this->description = $description;

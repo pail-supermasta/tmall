@@ -133,6 +133,16 @@ class GlobalAeopTpOrderDetailDto
 	public $memo;
 	
 	/** 
+	 * pickup point code of the specific order
+	 **/
+	public $offline_pickup_point_code;
+	
+	/** 
+	 * pick-up type of order
+	 **/
+	public $offline_pickup_type;
+	
+	/** 
 	 * operation details list
 	 **/
 	public $opr_log_dto_list;
@@ -141,6 +151,11 @@ class GlobalAeopTpOrderDetailDto
 	 * order amount
 	 **/
 	public $order_amount;
+	
+	/** 
+	 * Order discount total amount (sum of the platform and seller discounts)
+	 **/
+	public $order_discount_info;
 	
 	/** 
 	 * order end reason

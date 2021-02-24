@@ -58,6 +58,16 @@ class SubDistributeOrderList
 	public $ship_time;
 	
 	/** 
+	 * 采购子单号
+	 **/
+	public $sub_distributor_order_id;
+	
+	/** 
+	 * 前台交易子单号
+	 **/
+	public $sub_sale_order_id;
+	
+	/** 
 	 * 快递单号
 	 **/
 	public $tracking_number;	

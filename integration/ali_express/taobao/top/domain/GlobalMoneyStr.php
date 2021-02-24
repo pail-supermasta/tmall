@@ -1,7 +1,7 @@
 <?php
 
 /**
- * escrow fee (deprecated)
+ * Order discount total amount (sum of the platform and seller discounts)
  * @author auto create
  */
 class GlobalMoneyStr
@@ -28,7 +28,7 @@ class GlobalMoneyStr
 	public $currency;
 	
 	/** 
-	 * Currency code
+	 * currency code
 	 **/
 	public $currency_code;	
 }

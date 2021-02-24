@@ -1,21 +1,16 @@
 <?php
 /**
- * TOP API: cainiao.global.logistic.order.create request
+ * TOP API: cainiao.global.logistics.carrier.querylist request
  * 
  * @author auto create
- * @since 1.0, 2020.10.09
+ * @since 1.0, 2021.01.28
  */
-class CainiaoGlobalLogisticOrderCreateRequest
+class CainiaoGlobalLogisticsCarrierQuerylistRequest
 {
 	/** 
-	 * 多语言
+	 * 多语言(暂不支持，保留入参)
 	 **/
 	private $locale;
-	
-	/** 
-	 * 订单参数
-	 **/
-	private $orderParam;
 	
 	private $apiParas = array();
 	
@@ -30,20 +25,9 @@ class CainiaoGlobalLogisticOrderCreateRequest
 		return $this->locale;
 	}
 
-	public function setOrderParam($orderParam)
-	{
-		$this->orderParam = $orderParam;
-		$this->apiParas["order_param"] = $orderParam;
-	}
-
-	public function getOrderParam()
-	{
-		return $this->orderParam;
-	}
-
 	public function getApiMethodName()
 	{
-		return "cainiao.global.logistic.order.create";
+		return "cainiao.global.logistics.carrier.querylist";
 	}
 	
 	public function getApiParas()

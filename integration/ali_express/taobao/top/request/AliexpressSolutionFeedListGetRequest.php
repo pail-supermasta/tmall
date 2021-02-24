@@ -3,7 +3,7 @@
  * TOP API: aliexpress.solution.feed.list.get request
  * 
  * @author auto create
- * @since 1.0, 2019.11.26
+ * @since 1.0, 2020.12.02
  */
 class AliexpressSolutionFeedListGetRequest
 {
@@ -26,6 +26,16 @@ class AliexpressSolutionFeedListGetRequest
 	 * status of the job, currently there are 3 types: FINISH, PROCESSING, QUEUEING
 	 **/
 	private $status;
+	
+	/** 
+	 * Search for feeds submitted before a specific time, format: yyyy-MM-dd hh:mm:ss. Timezone:America/Los_Angeles
+	 **/
+	private $submittedTimeEnd;
+	
+	/** 
+	 * Search for feeds submitted after a specific time, format: yyyy-MM-dd hh:mm:ss  .Timezone:America/Los_Angeles
+	 **/
+	private $submittedTimeStart;
 	
 	private $apiParas = array();
 	
@@ -71,6 +81,28 @@ class AliexpressSolutionFeedListGetRequest
 	public function getStatus()
 	{
 		return $this->status;
+	}
+
+	public function setSubmittedTimeEnd($submittedTimeEnd)
+	{
+		$this->submittedTimeEnd = $submittedTimeEnd;
+		$this->apiParas["submitted_time_end"] = $submittedTimeEnd;
+	}
+
+	public function getSubmittedTimeEnd()
+	{
+		return $this->submittedTimeEnd;
+	}
+
+	public function setSubmittedTimeStart($submittedTimeStart)
+	{
+		$this->submittedTimeStart = $submittedTimeStart;
+		$this->apiParas["submitted_time_start"] = $submittedTimeStart;
+	}
+
+	public function getSubmittedTimeStart()
+	{
+		return $this->submittedTimeStart;
 	}
 
 	public function getApiMethodName()

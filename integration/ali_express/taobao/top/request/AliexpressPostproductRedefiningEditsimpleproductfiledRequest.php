@@ -3,7 +3,7 @@
  * TOP API: aliexpress.postproduct.redefining.editsimpleproductfiled request
  * 
  * @author auto create
- * @since 1.0, 2019.06.20
+ * @since 1.0, 2020.11.11
  */
 class AliexpressPostproductRedefiningEditsimpleproductfiledRequest
 {

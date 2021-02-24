@@ -23,6 +23,21 @@ class GlobalAeopTpChildOrderDto
 	public $child_issue_info;
 	
 	/** 
+	 * An amount to adjust the product price on, for example, if the seller wants to give buyer a personal discount by the "Adjust price"  button in order management backend.
+	 **/
+	public $child_order_adjust_amount;
+	
+	/** 
+	 * discount detail list for each child order
+	 **/
+	public $child_order_discount_detail_list;
+	
+	/** 
+	 * discount amount of child order
+	 **/
+	public $child_order_discount_info;
+	
+	/** 
 	 * child order ID
 	 **/
 	public $child_order_id;
