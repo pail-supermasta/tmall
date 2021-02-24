@@ -133,7 +133,8 @@ function getQuantity($urlProduct, $token)
 
 $start = microtime(TRUE);
 
-$token = getToken($urlLogin, $userData);
+//$token = getToken($urlLogin, $userData);
+$token = "bW9uZ29kYkDRgtC10YXRgtGA0Y3QvdC0OiEhQHRoOTI0N3Q5MjQ=";
 
 /**************STOCK*****************/
 $stocks = getQuantity($urlStock, $token);

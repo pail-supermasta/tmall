@@ -25,7 +25,9 @@ class BackendAPI
         $this->urlProduct = 'https://api.backendserver.ru/api/v1/product';
         $this->urlStock = 'https://api.backendserver.ru/api/v1/report_stock_all';
         $this->userData = array("username" => "mongodb@техтрэнд", "password" => "!!@th9247t924");
-        $this->token = $this->getToken();
+//        $this->token = $this->getToken();
+        $this->token = "bW9uZ29kYkDRgtC10YXRgtGA0Y3QvdC0OiEhQHRoOTI0N3Q5MjQ=";
+
     }
 
     private function getToken()
