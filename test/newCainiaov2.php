@@ -478,8 +478,8 @@ switch ($findorderbyidRes) {
     case strpos($findorderbyidRes, 'AE_RU_MP_OVERSIZE_PH3') > 0:
         $logistics_type = 'AE_RU_MP_OVERSIZE_PH3';
         break;
-    case strpos($findorderbyidRes, 'AE_RU_MP_RUPOST_PH3') > 0:
-        $logistics_type = 'AE_RU_MP_RUPOST_PH3';
+    case strpos($findorderbyidRes, 'AE_RU_MP_RUPOST_PH3_FR_FR') > 0:
+        $logistics_type = 'AE_RU_MP_RUPOST_PH3_FR_FR';
         break;
 }
 
@@ -565,7 +565,7 @@ file_put_contents("наклейка_$order.pdf", $bin);
 
 
 /*9. Отметка заказа как отгруженного в системе AliExpress*/
-$logistics_type = "AE_RU_MP_RUPOST_PH3";
+$logistics_type = "AE_RU_MP_RUPOST_PH3_FR_FR";
 
 if ($logistics_type == "AE_RU_MP_COURIER_PH3") {
     $logistics_type = "AE_RU_MP_COURIER_PH3_CITY";

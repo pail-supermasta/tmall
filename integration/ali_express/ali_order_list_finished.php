@@ -66,7 +66,7 @@ function formMasterList($credential)
     $sessionKey = $credential['sessionKey'];
 
     /*catch all for previous 24 hours*/
-    $offset = 72 * 60 * 60;
+    $offset = 560 * 60 * 60;
     $create_day = date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) - $offset);
 
 
@@ -80,7 +80,7 @@ function formMasterList($credential)
     $param_aeop_order_query->create_date_start = $create_day;
     $param_aeop_order_query->current_page = "1";
     $param_aeop_order_query->order_status_list = array('FINISH', 'FUND_PROCESSING', 'IN_CANCEL');
-    $param_aeop_order_query->page_size = "20";
+    $param_aeop_order_query->page_size = "60";
     $req->setParamAeopOrderQuery(json_encode($param_aeop_order_query));
     $resp = $c->execute($req, $sessionKey);
 

@@ -618,21 +618,21 @@ class Telegram
 }
 
 
-function telegram($message = '', $chat_id, $format = 'HTML'){
+function telegram($message = '', $chat_id, $format = 'HTML',$disable_web_page_preview = false){
     $settings['telegram_bot_token'] = '817857952:AAEK3qQjeBMA0NIP8X8FkMQqZu5OhVOfM5M';
     if (is_array($message)){
         $message = json_encode($message, JSON_UNESCAPED_UNICODE);
     }
     $bot = new Telegram($settings['telegram_bot_token']);
-    return $bot->sendMessage($chat_id, $message, $format);
+    return $bot->sendMessage($chat_id, $message, $format,$disable_web_page_preview);
 }
-function telegramReception($message = '', $chat_id, $format = 'HTML'){
+function telegramReception($message = '', $chat_id, $format = 'HTML',$disable_web_page_preview = false){
     $settings['telegram_bot_token'] = '345217125:AAE4o7Bs-QeQnusf3SQ-xSuSBm2RGMVH97w';
     if (is_array($message)){
         $message = json_encode($message, JSON_UNESCAPED_UNICODE);
     }
     $bot = new Telegram($settings['telegram_bot_token']);
-    return $bot->sendMessage($chat_id, $message, $format);
+    return $bot->sendMessage($chat_id, $message, $format,$disable_web_page_preview = false);
 }
 
 

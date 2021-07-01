@@ -179,8 +179,29 @@ foreach ($shopsOrders as $key => $shopOrders) {
 
         $createHandoverListResp = createHandoverList($shopOrders['refund'], $shopOrders['pickup'], $order_code_list, $shopOrders['sessionKey']);
         if (!isset($createHandoverListResp->result->data->handover_content_id)) {
-            telegram("$key createHandoverList error found $order_code_list", '-320614744');
             var_export($createHandoverListResp);
+            $sub_msg = ((array)$createHandoverListResp)['sub_msg'];
+            telegram("$key createHandoverList error found $order_code_list", '-320614744');
+            telegramReception("ТМОЛ. Ошибка создания листа передачи. ", '-385044014');
+
+
+            preg_match_all(
+                '~(?<=LP).+?(?= )~',
+                $sub_msg,
+                $matches
+            );
+
+
+            $externalCode = "LP".$matches[0][0];
+            foreach ($shopOrders['orders'] as $index => $shopOrder) {
+                if ($shopOrder['externalCode'] === $externalCode) {
+                    echo $shopOrder['name'];
+                    telegramReception("ТМОЛ. Для заказа ".$shopOrder['name'] ." уже есть лист передачи. Переведите его в статус Доставляется и перейдите по [ссылке](http://tmall-service.a3w.ru/integration/ali_express/ali_handover.php)", '-385044014','Markdown',true);
+
+                    break;
+                }
+            }
+
             continue;
         } else {
 
@@ -191,11 +212,15 @@ foreach ($shopsOrders as $key => $shopOrders) {
             $printHandoverListResp = printHandoverList($shopOrders['sessionKey'], $handoverContentId);
             echo 'лист передачи' . PHP_EOL;
             if (!isset($printHandoverListResp->result->data)) {
-                sleep(5);
+                sleep(15);
                 $printHandoverListResp = printHandoverList($shopOrders['sessionKey'], $handoverContentId);
                 if (!isset($printHandoverListResp->result->data)) {
-                    telegram("ОШИБКА!! получения листа передачи $key", '-320614744', 'Markdown');
-                    continue;
+                    sleep(15);
+                    $printHandoverListResp = printHandoverList($shopOrders['sessionKey'], $handoverContentId);
+                    if (!isset($printHandoverListResp->result->data)) {
+                        telegram("ОШИБКА!! получения листа передачи $key", '-320614744', 'Markdown');
+                        die();
+                    }
                 }
             }
             $b64 = json_decode($printHandoverListResp->result->data)->body;
@@ -219,8 +244,8 @@ foreach ($shopsOrders as $key => $shopOrders) {
                     case  stripos($shopOrder['description'], "AE_RU_MP_OVERSIZE_PH3") !== false :
                         $logistics_type = "AE_RU_MP_OVERSIZE_PH3";
                         break;
-                    case  stripos($shopOrder['description'], "AE_RU_MP_RUPOST_PH3") !== false :
-                        $logistics_type = "AE_RU_MP_RUPOST_PH3";
+                    case  stripos($shopOrder['description'], "AE_RU_MP_RUPOST_PH3_FR_FR") !== false :
+                        $logistics_type = "AE_RU_MP_RUPOST_PH3_FR_FR";
                         break;
                 }
                 $sellerShipmentForTopResp = logisticsSellershipmentfortop($logistics_type, $shopOrder['name'], $shopOrder['_attributes']['Логистика: Трек'], $shopOrders['sessionKey']);

@@ -142,11 +142,11 @@ function userDataValidation($address, $order)
 
     /*AF3 3.1 код страны не содержит 7*/
     /*AF3 3.2 телефон не содержит 7 цифр - формат 999 99 99*/
-    $countryCode = substr_count($address['phone_country'], "7");
+    /*$countryCode = substr_count($address['phone_country'], "7");
     if ($countryCode < 1 || strlen($cleanPhone) < 10) {
         $message .= "\nТелефонный номер, ошибка в заказе #$order";
         $err .= 'номер телефона err';
-    }
+    }*/
 
     /*  send errors to telegram bot */
     telegram($message, '-278688533');

@@ -138,7 +138,8 @@ class Orders
             ]],
             'applicable' => true,
             '_attributes.#Логистика: агент' => 'Cainiao',
-            '_attributes.Логистика: Трек' => ['$exists' => true]
+            '_attributes.Логистика: Трек' => ['$exists' => true],
+            'description' => ['$not' => ['$regex' => 'handover_sheet_passed']]
         ];
 
         $data['filter'] = json_encode($filter);

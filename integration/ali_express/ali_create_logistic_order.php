@@ -367,8 +367,8 @@ foreach ($ordersInWork as $orderInWork) {
         case strpos($findorderbyidRes, 'AE_RU_MP_OVERSIZE_PH3') > 0:
             $logistics_type = 'AE_RU_MP_OVERSIZE_PH3';
             break;
-        case strpos($findorderbyidRes, 'AE_RU_MP_RUPOST_PH3') > 0:
-            $logistics_type = 'AE_RU_MP_RUPOST_PH3';
+        case strpos($findorderbyidRes, 'AE_RU_MP_RUPOST_PH3_FR') > 0:
+            $logistics_type = 'AE_RU_MP_RUPOST_PH3_FR';
             break;
     }
 

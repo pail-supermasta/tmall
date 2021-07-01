@@ -27,11 +27,11 @@ function findorderbyid($post_data, $sessionKey)
 //    return $res;
 }
 
-/*
+
 require_once 'taobao/TopSdk.php';
 define('APPKEY', '30833672');
 define('SECRET', '1021396785b2eaa1497b7a58dddf19b3');
-$shorten = findorderbyid('5000456496969609','50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x');
+$shorten = findorderbyid('5010560597302624','50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x');
 //var_dump($shorten['logistics_amount']['cent']);
 //var_dump($shorten['order_amount']['cent']);
-var_dump($shorten);*/
+var_dump($shorten);
