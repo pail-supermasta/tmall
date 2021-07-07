@@ -5,8 +5,8 @@ header("Content-Type: application/json; charset=UTF-8");
 
 $url = 'https://oauth.aliexpress.com/token';
 $postfields = array('grant_type' => 'authorization_code',
-    'client_id' => '27862248', //appKey
-    'client_secret' => 'ca6916e55a087b3561b5077fc8b83ee6', //appSecret
+    'client_id' => '32817975', //appKey
+    'client_secret' => 'fc3e140009f59832442d5c195c807fc0', //appSecret
     'code' => $code, //nd
     'sp' => 'ae',
     'redirect_uri' => 'https://tmall-service.a3w.ru/access/auth.html');
