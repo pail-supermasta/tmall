@@ -35,9 +35,7 @@ class Orders
             '_attributes.Логистика: Трек': {
                 $exists: true
             },
-            deleted: {
-                $exists: false
-            }
+            applicable: true
         }*/
 
         $collection = (new MSSync())->MSSync;
@@ -47,7 +45,7 @@ class Orders
             '_agent' => '1b33fbc1-5539-11e9-9ff4-315000060bc8',
             '_attributes.Накладная логистики' => ['$exists' => false],
             '_attributes.Логистика: Трек' => ['$exists' => true],
-            'deleted' => ['$exists' => false]
+            'applicable' => true
         ];
         $ordersCursor = $collection->customerorder->find($filter);
         $ordersNoSticker = [];

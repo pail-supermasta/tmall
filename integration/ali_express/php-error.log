@@ -1,0 +1,254 @@
+[12-Jul-2021 07:51:29 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 07:51:29 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 07:51:29 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 07:51:29 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:51:29 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:51:29 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:51:29 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:51:30 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:51:30 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:51:30 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:51:30 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:51:30 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:51:31 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:51:31 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:51:31 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:51:31 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:51:31 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:51:31 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:51:31 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:51:31 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:51:31 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:51:31 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:51:32 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:51:32 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:51:32 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:51:32 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:51:32 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:51:33 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:51:33 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:51:33 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:51:33 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:51:33 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:51:33 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:51:33 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:51:33 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:51:33 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:51:33 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:51:34 UTC] PHP Warning:  fopen(/tmp/logs/top_biz_err_*_2021-07-12.log): failed to open stream: No error in C:\Users\User\Documents\tmall\integration\ali_express\taobao\top\TopLogger.php on line 24
+[12-Jul-2021 07:51:34 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in C:\Users\User\Documents\tmall\integration\ali_express\taobao\top\TopLogger.php on line 40
+[12-Jul-2021 07:51:34 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:51:34 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:51:34 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:51:34 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:51:34 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:51:35 UTC] PHP Warning:  fopen(/tmp/logs/top_biz_err_*_2021-07-12.log): failed to open stream: No error in C:\Users\User\Documents\tmall\integration\ali_express\taobao\top\TopLogger.php on line 24
+[12-Jul-2021 07:51:35 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in C:\Users\User\Documents\tmall\integration\ali_express\taobao\top\TopLogger.php on line 40
+[12-Jul-2021 07:51:35 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:51:35 UTC] PHP Warning:  fopen(C:\Users\User\Documents\tmall\integration\ali_express/ali_order_ids/*.txt): failed to open stream: No error in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 122
+[12-Jul-2021 07:51:35 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 128
+[12-Jul-2021 07:51:35 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 155
+[12-Jul-2021 07:51:35 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:51:35 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:51:35 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:51:35 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:51:35 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:51:35 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:51:35 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:51:35 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:53:56 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 07:53:56 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 07:53:56 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 07:53:56 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:53:56 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:53:56 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:53:56 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:53:56 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:53:56 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:53:56 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:53:56 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:53:56 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:53:57 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:53:57 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:53:57 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:53:57 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:53:57 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:53:58 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:53:58 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:53:58 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:53:58 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:53:58 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:53:59 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:53:59 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:53:59 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:53:59 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:53:59 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:53:59 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:53:59 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:53:59 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:53:59 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:53:59 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:54:00 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:54:00 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:54:00 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:54:00 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:54:00 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  fopen(/tmp/logs/top_biz_err_*_2021-07-12.log): failed to open stream: No error in C:\Users\User\Documents\tmall\integration\ali_express\taobao\top\TopLogger.php on line 24
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in C:\Users\User\Documents\tmall\integration\ali_express\taobao\top\TopLogger.php on line 40
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  fopen(/tmp/logs/top_biz_err_*_2021-07-12.log): failed to open stream: No error in C:\Users\User\Documents\tmall\integration\ali_express\taobao\top\TopLogger.php on line 24
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in C:\Users\User\Documents\tmall\integration\ali_express\taobao\top\TopLogger.php on line 40
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  fopen(C:\Users\User\Documents\tmall\integration\ali_express/ali_order_ids/*.txt): failed to open stream: No error in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 122
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 128
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 155
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:01 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:02 UTC] PHP Notice:  Undefined variable: shopEmail in C:\Users\User\Documents\tmall\integration\file_processing.php on line 410
+[12-Jul-2021 07:54:03 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:03 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:03 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:03 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:03 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:03 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:03 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:03 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:04 UTC] PHP Notice:  Undefined variable: shopEmail in C:\Users\User\Documents\tmall\integration\file_processing.php on line 410
+[12-Jul-2021 07:54:04 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:04 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:04 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:04 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:04 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:04 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:04 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:04 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\file_processing.php on line 395
+[12-Jul-2021 07:54:05 UTC] PHP Notice:  Undefined variable: shopEmail in C:\Users\User\Documents\tmall\integration\file_processing.php on line 410
+[12-Jul-2021 07:54:52 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 07:54:52 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 07:54:52 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 07:54:52 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:54:52 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:54:52 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:54:52 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:54:52 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:54:52 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:54:52 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:54:52 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:54:52 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:54:53 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:54:53 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:54:53 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:54:53 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:54:53 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:54:54 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:54:54 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:54:54 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:54:54 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:54:54 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:54:55 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:54:55 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:54:55 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:54:55 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:54:55 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:54:55 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:54:55 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:54:55 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:54:55 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:54:55 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:54:56 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:54:56 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:54:56 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:54:56 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:54:56 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:54:57 UTC] PHP Warning:  fopen(/tmp/logs/top_biz_err_*_2021-07-12.log): failed to open stream: No error in C:\Users\User\Documents\tmall\integration\ali_express\taobao\top\TopLogger.php on line 24
+[12-Jul-2021 07:54:57 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in C:\Users\User\Documents\tmall\integration\ali_express\taobao\top\TopLogger.php on line 40
+[12-Jul-2021 07:54:57 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 108
+[12-Jul-2021 07:54:57 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:54:57 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:54:57 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:54:57 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:55:24 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 07:55:24 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 07:55:24 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 07:55:24 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:55:24 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:55:24 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:55:24 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:55:45 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 07:55:45 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 07:55:45 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 07:55:45 UTC] PHP Warning:  Illegal string offset 'login' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 72
+[12-Jul-2021 07:55:45 UTC] PHP Warning:  Illegal string offset 'sessionKey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 73
+[12-Jul-2021 07:55:45 UTC] PHP Warning:  Illegal string offset 'appkey' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 74
+[12-Jul-2021 07:55:45 UTC] PHP Warning:  Illegal string offset 'secret' in C:\Users\User\Documents\tmall\integration\ali_express\compilation.php on line 75
+[12-Jul-2021 07:56:38 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 07:56:38 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 07:56:38 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 08:17:50 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 08:17:50 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 08:17:50 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 08:17:51 UTC] PHP Notice:  Undefined variable: shopEmail in C:\Users\User\Documents\tmall\integration\file_processing.php on line 410
+[12-Jul-2021 08:17:53 UTC] PHP Notice:  Undefined variable: shopEmail in C:\Users\User\Documents\tmall\integration\file_processing.php on line 410
+[12-Jul-2021 08:17:54 UTC] PHP Notice:  Undefined variable: shopEmail in C:\Users\User\Documents\tmall\integration\file_processing.php on line 410
+[12-Jul-2021 08:22:28 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 08:22:28 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 08:22:28 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 08:22:29 UTC] PHP Notice:  Undefined variable: shopEmail in C:\Users\User\Documents\tmall\integration\file_processing.php on line 402
+[12-Jul-2021 08:22:41 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 08:22:41 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 08:22:41 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 08:24:25 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 08:24:25 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 08:24:25 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 08:24:26 UTC] PHP Notice:  Undefined variable: shopEmail in C:\Users\User\Documents\tmall\integration\file_processing.php on line 411
+[12-Jul-2021 08:24:27 UTC] PHP Notice:  Undefined variable: shopEmail in C:\Users\User\Documents\tmall\integration\file_processing.php on line 411
+[12-Jul-2021 08:24:28 UTC] PHP Notice:  Undefined variable: shopEmail in C:\Users\User\Documents\tmall\integration\file_processing.php on line 411
+[12-Jul-2021 08:32:54 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 08:32:54 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 08:32:54 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 08:41:36 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 08:41:36 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 08:41:36 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 08:45:02 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 08:45:02 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 08:45:02 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 08:45:05 UTC] PHP Notice:  Undefined index: escrow_fee_rate in C:\Users\User\Documents\tmall\integration\file_processing.php on line 296
+[12-Jul-2021 08:45:05 UTC] PHP Notice:  Undefined index: memo in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 146
+[12-Jul-2021 08:46:26 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 08:46:26 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 08:46:26 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 08:47:00 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 08:47:00 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 08:47:00 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 08:48:31 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 08:48:31 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 08:48:31 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 08:48:34 UTC] PHP Notice:  Undefined index: escrow_fee_rate in C:\Users\User\Documents\tmall\integration\file_processing.php on line 296
+[12-Jul-2021 08:58:29 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 08:58:29 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 08:58:29 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 08:58:32 UTC] PHP Notice:  Undefined index: escrow_fee_rate in C:\Users\User\Documents\tmall\integration\file_processing.php on line 296
+[12-Jul-2021 08:58:32 UTC] PHP Notice:  Undefined index: memo in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 146
+[12-Jul-2021 09:23:05 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 09:23:05 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 09:23:05 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 09:23:12 UTC] PHP Notice:  Undefined index: escrow_fee_rate in C:\Users\User\Documents\tmall\integration\file_processing.php on line 296
+[12-Jul-2021 09:23:12 UTC] PHP Notice:  Undefined index: memo in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 151
+[12-Jul-2021 09:24:58 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 09:24:58 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 09:24:58 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 09:25:02 UTC] PHP Notice:  Undefined index: escrow_fee_rate in C:\Users\User\Documents\tmall\integration\file_processing.php on line 296
+[12-Jul-2021 09:25:02 UTC] PHP Notice:  Undefined index: memo in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 151
+[12-Jul-2021 09:54:13 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
+[12-Jul-2021 09:54:13 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
+[12-Jul-2021 09:54:13 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12

@@ -79,6 +79,9 @@ function findOrderSessionKey($deliveringAliOrder)
     } elseif (preg_match('/iRobot/', $deliveringAliOrder['description'], $matches)) {
 
         $sessionKey = '50002500901sP1b7f673cFt7iCP3uQfb1JzgquDxxdddBqgtvwCkmwoWHooj7Cw4dCP';
+    } elseif (preg_match('/orion/', $deliveringAliOrder['description'], $matches)) {
+
+        $sessionKey = '50002201211qy8OzguEiR9T194d19ebvE7Girftw0dmHtGxmyX9d28OxEySXGK37wpOd';
     }
 
     return $sessionKey;

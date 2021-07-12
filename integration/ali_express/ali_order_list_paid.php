@@ -19,6 +19,8 @@ define('SECRET', '1021396785b2eaa1497b7a58dddf19b3');
 
 define('LOGINS', array(
     array(
+//        'appkey'=>'30833672',
+//        'secret'=>'1021396785b2eaa1497b7a58dddf19b3',
         'name' => 'bestgoodsstore',
         'login' => 'bestgoodsstore@yandex.ru',
         'field_id' => '0bbcd3e6-81f4-11e9-9109-f8fc0004dec8',
@@ -26,7 +28,18 @@ define('LOGINS', array(
         'cpCode' => 'QXJCQk1QcjJKTkZDbHk4ZVZ4bW11cFQ2L2QreW1XT0lJd2ZlMnEvL2dFZC9NbG5CSklEV2tiY0cxNkRSMWlYcQ==',
         'cnId' => '4398985192396'
 
-    ),
+    )
+   /* ,array(
+        'appkey'=>'32817975', //aliexpr app key orion
+        'secret'=>'fc3e140009f59832442d5c195c807fc0', //aliexpr app secret orion
+        'name' => 'orion',
+        'login' => 'orionstore360@gmail.com',
+        'field_id' => '0bbcde02-81f4-11e9-9109-f8fc0004deca', // get once from product field id MS
+        'sessionKey' => '50002201211qy8OzguEiR9T194d19ebvE7Girftw0dmHtGxmyX9d28OxEySXGK37wpOd', // get after auth for ali api app
+        'cpCode' => '***', // get once
+        'cnId' => '****' // get once
+
+    ),*/
 ));
 
 define('ID_REGEXP', '/[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}/'); // Регулярка для UUID
@@ -63,149 +76,16 @@ function strpos_recursive($haystack, $needle, $offset = 0, &$results = array())
     }
 }
 
-//LEGACY TO DELETE
-//function checkTimeFromPaid($order, $payTime, $credential)
-//{
-//
-//    $sessionKey = $credential['sessionKey'];
-//    $cpCode = $credential['cpCode'];
-//    $cnId = $credential['cnId'];
-//
-//
-//    /*  add 3 hour shift from GMT to RU */
-//    $offsetNow = 3 * 60 * 60;
-//    $now = strtotime(gmdate("Y-m-d H:i:s")) + $offsetNow;
-//    /*  add 10 hour shift from PST to RU */
-//    $offsetAli = 10 * 60 * 60;
-//    $timeFromPayment = (strtotime($payTime) + $offsetAli) - $now;
-//    $timeFromPayment = $timeFromPayment / 60 / 60 * (-1);
-//
-//
-//    /*check if order ready for CAINIAO*/
-//    $order = strval($order);
-//    $isReady = checkCainiaoReady($order);
-//
-//    if ($isReady == true) {
-//        /*run cainiao delivery process*/
-//
-//        $result = deliverCainiao($order, $cnId, $cpCode, $sessionKey);
-//
-//        if ($result['result_success'] == true) {
-//
-//
-//            $orderMS = new OrderMS('', $order, '');
-//            $orderMSDetails = $orderMS->getByName();
-//            $orderMS->id = $orderMSDetails['id'];
-//
-//            /*get order state in MS*/
-//            preg_match(ID_REGEXP, $orderMSDetails['state']['meta']['href'], $matches);
-//            $state_id = $matches[0];
-//            $orderMS->state = $state_id;
-////            $result['mailNo'] = str_replace(['AEWH', 'RU4'], "", $result['mailNo']);
-//
-//
-//            /*check if stripped mailno 6 chars long*/
-//            if (strlen($result['mailNo']) >= 6) {
-//                $setTrackNumRes = $orderMS->setTrackNum($result['mailNo']);
-//                if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
-//
-//                    /*try again*/
-//                    sleep(5);
-//                    $setTrackNumRes = $orderMS->setTrackNum($result['mailNo']);
-//                    if (strpos($setTrackNumRes, 'обработка-ошибок') > 0 || $setTrackNumRes == '') {
-//                        telegram("setTrackNum error found " . $orderMS->name, '-320614744');
-//                        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setTrackNumRes . " " . $orderMS->name . PHP_EOL, 3, "setTrackNum.log");
-//                    } else {
-//                        $setToPackRes = $orderMS->setToPack();
-//                        if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
-//
-//                            /*try again*/
-//                            sleep(5);
-//                            $setToPackRes = $orderMS->setToPack();
-//                            if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
-//                                telegram("setToPack error found $orderMS->name", '-320614744');
-//                                error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
-//
-//                            } else {
-//                                $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
-//                                telegram($message, '-278688533');
-//                                /*set new position price*/
-//                                setNewPositionPrice($orderMS->name, $credential);
-//                            }
-//
-//                        } else {
-//                            $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
-//                            telegram($message, '-278688533');
-//                            /*set new position price*/
-//                            setNewPositionPrice($orderMS->name, $credential);
-//                        }
-//                    }
-//
-//
-//                } else {
-//
-//                    $setToPackRes = $orderMS->setToPack();
-//                    if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
-//
-//                        /*try again*/
-//                        sleep(5);
-//                        $setToPackRes = $orderMS->setToPack();
-//                        if (strpos($setToPackRes, 'обработка-ошибок') > 0 || $setToPackRes == '') {
-//                            telegram("setToPack error found $orderMS->name", '-320614744');
-//                            error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setToPackRes . " " . $orderMS->name . PHP_EOL, 3, "setToPack.log");
-//                        } else {
-//                            $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
-//                            telegram($message, '-278688533');
-//                            /*set new position price*/
-//                            setNewPositionPrice($orderMS->name, $credential);
-//                        }
-//                    } else {
-//                        $message = "Заказ №$order - оформлен в Цайняо и отправлен в Отгрузку";
-//                        telegram($message, '-278688533');
-//                        /*set new position price*/
-//                        setNewPositionPrice($orderMS->name, $credential);
-//                    }
-//                }
-//            }
-//
-//
-//        } else {
-//            $message = "CAINIAO ОШИБКА $order см ali_order_list_paid.log";
-//            telegram($message, '-320614744');
-//            error_log('ali_order_list_paid err' . json_encode($result), 3, 'ali_order_list_paid.log');
-//        }
-//
-//
-//    } else {
-//
-//        /*if not then go next*/
-//        if ($timeFromPayment >= 2) {
-//
-//            /*check if order has track in MS*/
-//
-//            $orderMSTemp = new OrderMS(null, strval($order));
-//            $delivery = $orderMSTemp->getOrderTrackNew();
-//            $trackId = $delivery['track'];
-//
-//            /*has no track*/
-//            if ($trackId == false) {
-//                var_dump($timeFromPayment . PHP_EOL);
-////                telegram("Трек не заполнен, заказ #$order", '-278688533');
-//            }
-//        }
-//
-//    }
-//
-//
-//}
 
 function setNewPositionPrice($order, $credential)
 {
     $sessionKey = $credential['sessionKey'];
+    $appkey = $credential['appkey'];
+    $secret = $credential['secret'];
 
     /*get order details from Aliexp*/
 
-    $findorderbyidRes = findorderbyid($order, $sessionKey);
+    $findorderbyidRes = findorderbyid($order, $sessionKey, $appkey, $secret);
 
 
     /*get order Итого in MS*/
@@ -324,18 +204,10 @@ function setTrackToTmall($order, $payTime, $credential)
                 $trackingWebsite = "https://iml.ru/status/";
                 $serviceName = "OTHER_RU_CITY_RUB";
                 break;
-//            case "Cainiao":
-////                $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=AEWH000' . $trackId . 'RU4"';
-//                $trackingWebsite = '"https://cse.ru/track.php?order=waybill&city_uri=mosrus&lang=rus&number=' . $trackId . '"';
-//                $serviceName = "AE_RU_MP_COURIER_PH3_CITY";
-////                $trackId = "AEWH000" . $trackId . "RU4";
-//                break;
+
         }
 
 
-//        if ($agentId == 'Cainiao') {
-//            telegram("Трек отправлен в цаняо для $order $trackId $serviceName", '-320614744');
-//        }
 
 
         if ($serviceName!==""){
@@ -347,26 +219,12 @@ function setTrackToTmall($order, $payTime, $credential)
             $req->setTrackingWebsite("$trackingWebsite");
             $req->setOutRef("$order");
             $req->setSendType("all");
-    //            $req->setDescription("memo");
             $req->setLogisticsNo("$trackId");
             $resp = $c->execute($req, $sessionKey);
             var_dump($resp);
         }
 
     }
-//    else {
-//        /*  add 3 hour shift from GMT to RU */
-//        $offsetNow = 3 * 60 * 60;
-//        $now = strtotime(gmdate("Y-m-d H:i:s")) + $offsetNow;
-//        /*  add 10 hour shift from PST to RU */
-//        $offsetAli = 10 * 60 * 60;
-//        $timeFromPayment = (strtotime($payTime) + $offsetAli) - $now;
-//        $timeFromPayment = $timeFromPayment / 60 / 60 * (-1);
-//
-//        if ($timeFromPayment >= 9) {
-//            telegram("ЗАДЕРЖКА отправки заказа #$order", '-278688533');
-//        }
-//    }
 
 
 }
@@ -427,18 +285,6 @@ function formMasterList($credential)
 foreach (LOGINS as $credential) {
     formMasterList($credential);
 }
-
-/*$order = '3004746280722679';
-$credential = array(
-    'name' => 'bestgoodsstore',
-    'login' => 'bestgoodsstore@yandex.ru',
-    'field_id' => '0bbcd3e6-81f4-11e9-9109-f8fc0004dec8',
-    'sessionKey' => '50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x',
-    'cpCode' => 'QXJCQk1QcjJKTkZDbHk4ZVZ4bW11cFQ2L2QreW1XT0lJd2ZlMnEvL2dFZC9NbG5CSklEV2tiY0cxNkRSMWlYcQ==',
-    'cnId' => '4398985192396'
-
-);
-setNewPositionPrice($order, $credential);*/
 
 
 

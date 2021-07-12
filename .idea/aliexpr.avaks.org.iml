@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/orders/src/MS" isTestSource="false" packagePrefix="Avaks\MS\" />
       <sourceFolder url="file://$MODULE_DIR$/orders/src" isTestSource="false" packagePrefix="Avaks\" />
       <excludeFolder url="file://$MODULE_DIR$/orders/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/test" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

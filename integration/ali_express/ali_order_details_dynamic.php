@@ -1,12 +1,12 @@
 <?php
 
-function findorderbyid($post_data, $sessionKey)
+function findorderbyid($post_data, $sessionKey,$appkey,$secret)
 {
 
     $c = new TopClient;
     $c->format = "json";
-    $c->appkey = APPKEY;
-    $c->secretKey = SECRET;
+    $c->appkey = $appkey;
+    $c->secretKey = $secret;
     $req = new AliexpressSolutionOrderInfoGetRequest;
     $param1 = new OrderDetailQuery;
 //$param1->ext_info_bit_flag="11111";
@@ -22,16 +22,6 @@ function findorderbyid($post_data, $sessionKey)
 
         return json_decode($res, true);
     }
-
-
-//    return $res;
 }
 
 
-require_once 'taobao/TopSdk.php';
-define('APPKEY', '30833672');
-define('SECRET', '1021396785b2eaa1497b7a58dddf19b3');
-$shorten = findorderbyid('5010560597302624','50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x');
-//var_dump($shorten['logistics_amount']['cent']);
-//var_dump($shorten['order_amount']['cent']);
-var_dump($shorten);

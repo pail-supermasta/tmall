@@ -159,10 +159,12 @@ function recursive_array_search($needle, $haystack)
 function setNewPositionPrice($order, $credential)
 {
     $sessionKey = $credential['sessionKey'];
+    $appkey = $credential['appkey'];
+    $secret = $credential['secret'];
 
     /*get order details from Aliexp*/
 
-    $findorderbyidRes = findorderbyid($order, $sessionKey);
+    $findorderbyidRes = findorderbyid($order, $sessionKey, $appkey, $secret);
 
 
     /*get order Итого in MS*/
@@ -299,17 +301,6 @@ foreach (LOGINS as $credential) {
 
 }
 
-/*$order = '3004746280722679';
-$credential = array(
-    'name' => 'bestgoodsstore',
-    'login' => 'bestgoodsstore@yandex.ru',
-    'field_id' => '0bbcd3e6-81f4-11e9-9109-f8fc0004dec8',
-    'sessionKey' => '50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x',
-    'cpCode' => 'QXJCQk1QcjJKTkZDbHk4ZVZ4bW11cFQ2L2QreW1XT0lJd2ZlMnEvL2dFZC9NbG5CSklEV2tiY0cxNkRSMWlYcQ==',
-    'cnId' => '4398985192396'
-
-);
-setNewPositionPrice($order, $credential);*/
 
 
 

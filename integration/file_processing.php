@@ -25,60 +25,7 @@ require_once 'vendor/autoload.php';
 
 use Avaks\MS\MSSync;
 
-/*TEST PART DELETE ATER*/
 
-/*define('APPKEY', '30833672');
-define('SECRET', '1021396785b2eaa1497b7a58dddf19b3');
-require_once 'ali_express/taobao/TopSdk.php';
-// Telegram err logs integration
-require_once 'class/telegram.php';
-
-
-
-define('LOGINS', array(
-    array(
-        'name' => 'bestgoodsstore',
-        'login' => 'bestgoodsstore@yandex.ru',
-        'field_id' => '0bbcd3e6-81f4-11e9-9109-f8fc0004dec8',
-        'sessionKey' => '50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x',
-        'cpCode' => 'QXJCQk1QcjJKTkZDbHk4ZVZ4bW11cFQ2L2QreW1XT0lJd2ZlMnEvL2dFZC9NbG5CSklEV2tiY0cxNkRSMWlYcQ==',
-        'cnId' => '4398985192396'
-
-    ),
-));
-//$order = '5000620116289901'; //0
-//$order = '5000481033994782'; //2
-//$order = '8003767178094779'; //1
-$order = '5000712847875450'; //BG
-//$order = '5001720021532591'; //mr
-
-
-//$order = '5000550696796183';
-$sessionKey = '50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x';
-//$sessionKey = '50002500501Vs151ac533BdqLFskhnQwtwheYk1CiSexTFfFAv6nWUefGArBboUuh8F';
-//$sessionKey = '50002700811duwgr7oCt2sx1edacab6BZ6kWiLtBtQeBGBQfNxYCKlunzemnpZpP21d';
-$login = 'bestgoodsstore@yandex.ru';
-//$login = 'NezabudkaMR@yandex.ru';
-//$login = 'NezabudkaND@yandex.ru';
-
-$res = findorderbyid($order, $sessionKey);
-
-destructResponse($res, $order, $login);
-
-die();*/
-
-/*TEST PART DELETE ATER*/
-
-
-/*  Data validation according https://docs.google.com/document/d/1jzyjiFzT44BoxQCnYYeg2TmOz40yIe4C/edit */
-
-/*  AF-3
- 1) отсутствует 3 обязательных ФИО
- 2) 2.1 индекс не соответствует формату -  6 цифр где первые три цифры между 100 и 999
-    2.2 не указано одно из - Index, City, Street
- 3) 3.1 код страны не содержит 7
-    3.2 телефон не содержит 7 цифр - формат 999 99 99
-*/
 
 
 function getProductByIDMongo($code)
@@ -442,16 +389,21 @@ function assembleOrderDetails($order, $filename)
 
     $login = str_replace((array('.txt', realpath(dirname(__FILE__)) . "/ali_express/ali_order_ids/")), "", $filename);
     $sessionKey = '';
+    $appkey = '';
+    $secret = '';
     foreach (LOGINS as $constant) {
         if ($constant['login'] == $login) {
             $sessionKey = $constant['sessionKey'];
+            $appkey = $constant['appkey'];
+            $secret = $constant['secret'];
             $shopEmail = $login;
         }
     }
+    var_dump($login);
 
     /*  request details from ALI by order id    */
 
-    $res = findorderbyid($order, $sessionKey);
+    $res = findorderbyid($order, $sessionKey,$appkey,$secret);
     if ($res != false) {
         destructResponse($res, $order, $login);
     } else {

@@ -23,18 +23,29 @@ require_once 'taobao/TopSdk.php';
 //error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . "1" . PHP_EOL, 3, "cronrunend.log");
 
 
-define('APPKEY', '30833672');
-define('SECRET', '1021396785b2eaa1497b7a58dddf19b3');
+/*define('APPKEY', '30833672');
+define('SECRET', '1021396785b2eaa1497b7a58dddf19b3');*/
 define('LOGINS', array(
     array(
+        'appkey' => '30833672',
+        'secret' => '1021396785b2eaa1497b7a58dddf19b3',
         'name' => 'bestgoodsstore',
         'login' => 'bestgoodsstore@yandex.ru',
         'field_id' => '0bbcd3e6-81f4-11e9-9109-f8fc0004dec8',
         'sessionKey' => '50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x',
         'cpCode' => 'QXJCQk1QcjJKTkZDbHk4ZVZ4bW11cFQ2L2QreW1XT0lJd2ZlMnEvL2dFZC9NbG5CSklEV2tiY0cxNkRSMWlYcQ==',
         'cnId' => '4398985192396'
-
     ),
+    array(
+        'appkey' => '32817975', //aliexpr app key orion
+        'secret' => 'fc3e140009f59832442d5c195c807fc0', //aliexpr app secret orion
+        'name' => 'orion',
+        'login' => 'orionstore360@gmail.com',
+        'field_id' => '0bbcde02-81f4-11e9-9109-f8fc0004deca', // get once from product field id MS
+        'sessionKey' => '50002201211qy8OzguEiR9T194d19ebvE7Girftw0dmHtGxmyX9d28OxEySXGK37wpOd', // get after auth for ali api app
+        'cpCode' => '***', // get once
+        'cnId' => '****' // get once
+    )
 ));
 
 
@@ -42,12 +53,12 @@ $orders = new Orders();
 $ordersNoSticker = $orders->getOrdersNoSticker();
 
 
-function printCainiaoSticker(OrderMS $orderMS, $sessionKey)
+function printCainiaoSticker(OrderMS $orderMS, $sessionKey,$appkey,$secret)
 {
 
 
     $customs = new \Avaks\Customs();
-    $findorderbyidRes = findorderbyid($orderMS->name, $sessionKey);
+    $findorderbyidRes = findorderbyid($orderMS->name, $sessionKey,$appkey,$secret);
 
 
     $productShortener = $findorderbyidRes['child_order_ext_info_list']['global_aeop_tp_order_product_info_dto'];
@@ -100,24 +111,21 @@ function printCainiaoSticker(OrderMS $orderMS, $sessionKey)
 function getOrderShop($attributes)
 {
     $sessionKey = '';
+    $appkey = '';
+    $secret = '';
     switch (true) {
-        case stripos($attributes, "novinkiooo (ID 4901001)") !== false :
-            $sessionKey = '50002500c15tBJCowQScZ6julhS1dea01bfctShXhETAmyVfKkQKwey1lvK3ryD7z1t';
-            break;
         case  stripos($attributes, "BESTGOODS (ID 5041091)") !== false :
             $sessionKey = "50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x";
+            $appkey = '30833672';
+            $secret = '1021396785b2eaa1497b7a58dddf19b3';
             break;
-        case  stripos($attributes, "Noerden (ID 5012047)") !== false :
-            $sessionKey = "50002700811duwgr7oCt2sx1edacab6BZ6kWiLtBtQeBGBQfNxYCKlunzemnpZpP21d";
-            break;
-        case  stripos($attributes, "Morphy Richards (ID 5017058)") !== false :
-            $sessionKey = "50002500501Vs151ac533BdqLFskhnQwtwheYk1CiSexTFfFAv6nWUefGArBboUuh8F";
-            break;
-        case  stripos($attributes, "iRobot (ID 5016030)") !== false :
-            $sessionKey = "50002500901sP1b7f673cFt7iCP3uQfb1JzgquDxxdddBqgtvwCkmwoWHooj7Cw4dCP";
+        case  stripos($attributes, "orion (ID 911725024)") !== false :
+            $sessionKey = "50002201211qy8OzguEiR9T194d19ebvE7Girftw0dmHtGxmyX9d28OxEySXGK37wpOd";
+            $appkey = '32817975';
+            $secret = 'fc3e140009f59832442d5c195c807fc0';
             break;
     }
-    return $sessionKey;
+    return [$sessionKey, $appkey, $secret];
 }
 
 foreach ($ordersNoSticker as $orderNoSticker) {
@@ -125,9 +133,12 @@ foreach ($ordersNoSticker as $orderNoSticker) {
     $orderMS = new OrderMS($orderNoSticker['id'], $orderNoSticker['name']);
     $orderMS->lpNumber = $orderNoSticker['externalCode'];
     $orderMS->trackNum =  $orderNoSticker['trackNum'];
-    $sessionKey = getOrderShop($orderNoSticker['description']);
+    $getOrderShopArr = getOrderShop($orderNoSticker['description']);
+    $sessionKey=$getOrderShopArr[0];
+    $appkey =$getOrderShopArr[1];
+    $secret =$getOrderShopArr[2];
 
-    var_dump(printCainiaoSticker($orderMS, $sessionKey));
+    var_dump(printCainiaoSticker($orderMS, $sessionKey,$appkey,$secret));
 
 }
 

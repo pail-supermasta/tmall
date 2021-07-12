@@ -39,6 +39,9 @@ function getOrderShop($description)
         case  stripos($description, "iRobot (ID 5016030)") !== false :
             $sessionKey = "50002500901sP1b7f673cFt7iCP3uQfb1JzgquDxxdddBqgtvwCkmwoWHooj7Cw4dCP";
             break;
+        case  stripos($description, "orion (ID 911725024)") !== false :
+            $sessionKey = "50002201211qy8OzguEiR9T194d19ebvE7Girftw0dmHtGxmyX9d28OxEySXGK37wpOd";
+            break;
     }
     return $sessionKey;
 }

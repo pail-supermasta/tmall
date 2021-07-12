@@ -299,19 +299,3 @@ $cnId = '4398985192396';
 $order = '5002727219496387';
 $sessionKey = '50002300d289mlqwnqAebm1lqueSpe9ECuAKVtDg1b6f0174jvgyezVnDsmJ4OkbLKm';
 deliverCainiao($order, $cnId, $cpCode, $sessionKey);
-
-
-//$sourceArray = array(
-//    'orderId' => '165391200165', //Digits that follow the LP# (received in the response to DISTRIBUTION_CONSIGN)
-//    'cnId' => $cnId //Cainiao user ID of the store
-//);
-//
-//$curlCai = new Cainiao($cpCode);
-//$content = json_encode($sourceArray, JSON_UNESCAPED_UNICODE);
-//$res = $curlCai->MAILNO_QUERY_SERVICE($content);
-//$mailNoResponse = json_decode($res, true);
-//var_dump($mailNoResponse);
-//if (isset($mailNoResponse['mailNo']) && $mailNoResponse['mailNo'] != '') {
-//    $mailNo = $mailNoResponse['mailNo'];
-//}
-//var_dump(sellerShipmentForTop($order, 'AEWH0002663350RU2', $sessionKey));

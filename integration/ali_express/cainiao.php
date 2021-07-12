@@ -23,7 +23,7 @@ use Avaks\Cainiao\Cainiao;
 require_once 'ali_order_details_dynamic.php';
 
 
-function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
+function deliverCainiao($order, $cnId, $cpCode, $sessionKey, $appkey, $secret)
 {
 
 
@@ -40,7 +40,7 @@ function deliverCainiao($order, $cnId, $cpCode, $sessionKey)
 
         /*get order details from Ali*/
 
-        $orderDetails = findorderbyid($order, $sessionKey);
+        $orderDetails = findorderbyid($order, $sessionKey, $appkey, $secret);
 
         $zip = $orderDetails['receipt_address']['zip'];
         $address = $orderDetails['receipt_address']['address2'];
@@ -289,8 +289,3 @@ function sellerShipmentForTop($order, $logisticsNo, $sessionKey)
 
     return array('mailNo' => $logisticsNo, 'result_success' => $result_success);
 }
-
-
-/*define('APPKEY', '30833672');
-define('SECRET', '1021396785b2eaa1497b7a58dddf19b3');
-deliverCainiao('5000281306086387', $sessionKey);*/

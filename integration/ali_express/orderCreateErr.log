@@ -18162,3 +18162,187 @@
         ],
         "positions": [{"quantity":1,"price":785000,"discount":0,"vat":0,"assortment":{"meta":{"href":"https://online.moysklad.ru/api/remap/1.1/entity/product/76850e7f-b37f-11e9-9107-504800114acb","type":"product","mediaType":"application/json"}},"reserve":1}]
     }
+2021-07-12 11:45:06Return error  POST BODY IS {
+        "name": "5011759183834475",
+        "moment": "2021-06-28 20:59:01",
+        "deliveryPlannedMoment": "2021-06-29 00:59:01",
+        "applicable": true,
+        "owner": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/employee/fc4f96d3-d5fe-11e9-0a80-046b000e7e4d",
+                "type": "employee",
+                "mediaType": "application/json"
+            }
+        },
+        "description": "5011759183834475\n\n/*Складу - вложить гарантийный талон \n/*Логистам - Отправить клиенту согласно заполненным полям\nЗАКАЗ ОПЛАЧЕН\nescrow_fee_rates: \nКомиссия:0\nКупон / Доп. скидка:0",
+        "vatEnabled": false,
+        "shared": true,
+        "organization": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/organization/2d916f14-3e6b-11e8-9107-5048000ceb7a",
+                "type": "organization",
+                "mediaType": "application/json"
+            }
+        },
+        "organizationAccount": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/organization/2d916f14-3e6b-11e8-9107-5048000ceb7a/accounts/08e8d50e-fca4-11ea-0a80-033400049ed9",
+                "type": "account",
+                "mediaType": "application/json"
+            }
+        },
+        "agent": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/1b33fbc1-5539-11e9-9ff4-315000060bc8",
+                "type": "counterparty",
+                "mediaType": "application/json"
+            }
+        },	
+        "state": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/metadata/states/ecf45f89-f518-11e6-7a69-9711000ff0c4",
+                "type": "state",
+                "mediaType": "application/json"
+            }
+        },
+        "store": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/store/48de3b8e-8b84-11e9-9ff4-34e8001a4ea1",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/store/metadata",
+                "type": "store",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=48de3b8e-8b84-11e9-9ff4-34e8001a4ea1"
+            }
+        },
+        "contract": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/contract/59313308-3604-11eb-0a80-09730004c48f",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/contract/metadata",
+                "type": "contract",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#contract/edit?id=59313308-3604-11eb-0a80-09730004c48f"
+            }
+        },
+        "attributes": [{
+                "id": "5b766cb9-ef7e-11e6-7a31-d0fd001e5310",
+                "value": "Zavadskiy Alexander Yurievich"
+            },
+            {
+                "id": "547ff930-ef8e-11e6-7a31-d0fd0021d13e",
+                "value": "125124, РФ, Moscow, Moscow, г. Москва, Расковой ул., дом 14 (Отделение Почты России), "
+            },
+            {
+                "id": "1bf09429-ef77-11e6-7a31-d0fd001c9667",
+                "value": "+79036835123"
+            },
+            {
+                "id": "535dd809-1db1-11ea-0a80-04c00009d6bf",
+                "value": 0
+            },
+            {
+                "id": "4552a58b-46a8-11e7-7a34-5acf002eb7ad",
+                "value": {
+                    "name": "Cainiao"
+                }
+            },
+            {
+                "id": "c4e03fe6-46f3-11e8-9ff4-34e8002246bf",
+                "value": {
+                    "name": "--"
+                }
+            }
+        ],
+        "positions": [{"quantity":1,"price":1795000,"discount":0,"vat":0,"assortment":{"meta":{"href":"https://online.moysklad.ru/api/remap/1.1/entity/product/ae45c9c3-405e-11eb-0a80-098100311db5","type":"product","mediaType":"application/json"}},"reserve":1}]
+    }
+2021-07-12 11:58:33Return error  POST BODY IS {
+        "name": "5011759183834475",
+        "moment": "2021-06-28 20:59:01",
+        "deliveryPlannedMoment": "2021-06-29 00:59:01",
+        "applicable": true,
+        "owner": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/employee/fc4f96d3-d5fe-11e9-0a80-046b000e7e4d",
+                "type": "employee",
+                "mediaType": "application/json"
+            }
+        },
+        "description": "5011759183834475\n\n/*Складу - вложить гарантийный талон \n/*Логистам - Отправить клиенту согласно заполненным полям\nЗАКАЗ ОПЛАЧЕН\nescrow_fee_rates: \nКомиссия:0\nКупон / Доп. скидка:0",
+        "vatEnabled": false,
+        "shared": true,
+        "organization": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/organization/2d916f14-3e6b-11e8-9107-5048000ceb7a",
+                "type": "organization",
+                "mediaType": "application/json"
+            }
+        },
+        "organizationAccount": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/organization/2d916f14-3e6b-11e8-9107-5048000ceb7a/accounts/08e8d50e-fca4-11ea-0a80-033400049ed9",
+                "type": "account",
+                "mediaType": "application/json"
+            }
+        },
+        "agent": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/1b33fbc1-5539-11e9-9ff4-315000060bc8",
+                "type": "counterparty",
+                "mediaType": "application/json"
+            }
+        },	
+        "state": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/metadata/states/ecf45f89-f518-11e6-7a69-9711000ff0c4",
+                "type": "state",
+                "mediaType": "application/json"
+            }
+        },
+        "store": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/store/48de3b8e-8b84-11e9-9ff4-34e8001a4ea1",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/store/metadata",
+                "type": "store",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=48de3b8e-8b84-11e9-9ff4-34e8001a4ea1"
+            }
+        },
+        "contract": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/contract/59313308-3604-11eb-0a80-09730004c48f",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/contract/metadata",
+                "type": "contract",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#contract/edit?id=59313308-3604-11eb-0a80-09730004c48f"
+            }
+        },
+        "attributes": [{
+                "id": "5b766cb9-ef7e-11e6-7a31-d0fd001e5310",
+                "value": "Zavadskiy Alexander Yurievich"
+            },
+            {
+                "id": "547ff930-ef8e-11e6-7a31-d0fd0021d13e",
+                "value": "125124, РФ, Moscow, Moscow, г. Москва, Расковой ул., дом 14 (Отделение Почты России), "
+            },
+            {
+                "id": "1bf09429-ef77-11e6-7a31-d0fd001c9667",
+                "value": "+79036835123"
+            },
+            {
+                "id": "535dd809-1db1-11ea-0a80-04c00009d6bf",
+                "value": 0
+            },
+            {
+                "id": "4552a58b-46a8-11e7-7a34-5acf002eb7ad",
+                "value": {
+                    "name": "Cainiao"
+                }
+            },
+            {
+                "id": "c4e03fe6-46f3-11e8-9ff4-34e8002246bf",
+                "value": {
+                    "name": "--"
+                }
+            }
+        ],
+        "positions": [{"quantity":1,"price":1795000,"discount":0,"vat":0,"assortment":{"meta":{"href":"https://online.moysklad.ru/api/remap/1.1/entity/product/ae45c9c3-405e-11eb-0a80-098100311db5","type":"product","mediaType":"application/json"}},"reserve":1}]
+    }

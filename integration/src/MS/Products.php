@@ -57,6 +57,7 @@ class Products
         $searchStack = array(
 //            'NezabudkaMR@yandex.ru' => 'TMall ID (Morphy Richards)',
             'bestgoodsstore@yandex.ru' => 'TMall ID (Best Goods)',
+            'orionstore360@gmail.com' => 'TMall ID (Orion)',
 //            'NezabudkaiRobot@yandex.ru' => 'TMall ID (iRobot)',
 //            'NezabudkaND@yandex.ru' => 'TMall ID (Noerden)',
 //            'novinkiooo@yandex.ru' => 'TMall ID'

@@ -136,6 +136,9 @@ function fillOrderTemplate(array $orderDetails)
         case "NezabudkaiRobot@yandex.ru":
             $shopId = "iRobot (ID 5016030)";
             break;
+        case "orionstore360@gmail.com":
+            $shopId = "orion (ID 911725024)"; //id можно увидеть когда переходишь на страницу магазина в алике в урле
+            break;
     }
 
     $shop = $shopId . '\\n/*Складу - вложить гарантийный талон \\n/*Логистам - Отправить клиенту согласно заполненным полям';
