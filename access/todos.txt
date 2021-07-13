@@ -3,5 +3,21 @@
 50002201211qy8OzguEiR9T194d19ebvE7Girftw0dmHtGxmyX9d28OxEySXGK37wpOd
 
 
+findorderbyid($order, $sessionKey, $appkey, $secret)
 
+$organization = '2d916f14-3e6b-11e8-9107-5048000ceb7a'; - set specific organization
+ООО Орион
+
+duplicate for bestgoods same for orion
 bestgoodsstore@yandex.ru
+BESTGOODS
+
+APPKEY
+
+order create
+print sticker
+finished orders
+paid state
+stockSync
+
+delivered - skip

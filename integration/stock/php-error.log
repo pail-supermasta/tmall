@@ -1,3 +1,27 @@
 [18-Sep-2020 11:23:17 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 4096 bytes) in C:\Users\User\Documents\tmall\integration\vendor\mongodb\mongodb\src\Model\BSONDocument.php on line 96
 [18-Sep-2020 11:35:08 UTC] PHP Notice:  Undefined variable: startTime in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 118
 [18-Sep-2020 11:37:24 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 4198400 bytes) in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 121
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:00:07 UTC] PHP Notice:  Undefined index: updated in C:\Users\User\Documents\tmall\integration\stock\stockSyncronizer_mongo.php on line 187
+[13-Jul-2021 10:03:27 UTC] PHP Warning:  Use of undefined constant APPKEY - assumed 'APPKEY' (this will throw an Error in a future version of PHP) in C:\Users\User\Documents\tmall\integration\src\AE\Product.php on line 87
+[13-Jul-2021 10:03:27 UTC] PHP Warning:  Use of undefined constant SECRET - assumed 'SECRET' (this will throw an Error in a future version of PHP) in C:\Users\User\Documents\tmall\integration\src\AE\Product.php on line 88

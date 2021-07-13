@@ -252,3 +252,9 @@
 [12-Jul-2021 09:54:13 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 10
 [12-Jul-2021 09:54:13 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 11
 [12-Jul-2021 09:54:13 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_post_order_dynamic.php on line 12
+[12-Jul-2021 13:52:29 UTC] PHP Notice:  Constant MS_USERNAME already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_get_orders_dynamic.php on line 10
+[12-Jul-2021 13:52:29 UTC] PHP Notice:  Constant MS_PASSWORD already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_get_orders_dynamic.php on line 11
+[12-Jul-2021 13:52:29 UTC] PHP Notice:  Constant MS_PATH already defined in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_get_orders_dynamic.php on line 12
+[12-Jul-2021 14:25:04 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_delivered.php on line 64
+[12-Jul-2021 14:25:47 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in C:\Users\User\Documents\tmall\integration\vendor\mongodb\mongodb\src\Model\BSONDocument.php on line 95
+[13-Jul-2021 07:46:10 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_delivered.php on line 64

@@ -21,11 +21,13 @@ class Product
     }
 
 
-    public function setStock($stock, $login)
+    public function setStock($stock, $credential)
     {
 
-        $sessionKey = $login['sessionKey'];
-        $getByIdres = $this->getById($sessionKey);
+        $sessionKey = $credential['sessionKey'];
+        $appkey = $credential['appkey'];
+        $secret = $credential['secret'];
+        $getByIdres = $this->getById($sessionKey,$appkey,$secret);
         $skuList = $getByIdres['aeop_ae_product_s_k_us']['aeop_ae_product_sku'];
         if (isset($skuList[1]['sku_code'])) {
             foreach ($skuList as $skuItem) {
@@ -37,8 +39,8 @@ class Product
                             $result['new_stock'] = false;
                         } else {
                             $c = new \TopClient;
-                            $c->appkey = APPKEY;
-                            $c->secretKey = SECRET;
+                            $c->appkey = $appkey;
+                            $c->secretKey = $secret;
                             $req = new \AliexpressPostproductRedefiningEditsingleskustockRequest;
                             $req->setProductId("$this->id");
                             $req->setSkuId("$sku_id");
@@ -60,8 +62,8 @@ class Product
                         $result['new_stock'] = false;
                     } else {
                         $c = new \TopClient;
-                        $c->appkey = APPKEY;
-                        $c->secretKey = SECRET;
+                        $c->appkey = $appkey;
+                        $c->secretKey = $secret;
                         $req = new \AliexpressPostproductRedefiningEditsingleskustockRequest;
                         $req->setProductId("$this->id");
                         $req->setSkuId("$sku_id");
@@ -77,23 +79,13 @@ class Product
         return $result ?? false;
     }
 
-    public function setMultipleStock($skuStocks,$sessionKey){
-        $c = new \TopClient;
-        $c->appkey = APPKEY;
-        $c->secretKey = SECRET;
-        $req = new \AliexpressPostproductRedefiningEditmutilpleskustocksRequest;
-        $req->setProductId("$this->id");
-        $req->setSkuStocks("$skuStocks");
-        $resp = $c->execute($req, $sessionKey);
-        return $resp;
-    }
 
 // Берём из Алиэкспресс информацию о продукте, по ID товара в Алиэкспресс
-    public function getById($sessionKey)
+    public function getById($sessionKey,$appkey,$secret)
     {
         $c = new \TopClient();
-        $c->appkey = APPKEY;
-        $c->secretKey = SECRET;
+        $c->appkey = $appkey;
+        $c->secretKey = $secret;
         $req = new \AliexpressPostproductRedefiningFindaeproductbyidRequest;
         $req->setProductId("$this->id");
         $resp = $c->execute($req, $sessionKey);

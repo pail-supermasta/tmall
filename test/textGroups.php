@@ -128,23 +128,6 @@ foreach ($newCategRus as $parent => $childs) {
 
 
 
-/*
-function getcategory($post_data, $sessionKey)
-{
-    $c = new TopClient;
-    $c->appkey = APPKEY;
-    $c->secretKey = SECRET;
-    $req = new AliexpressSolutionSellerCategoryTreeQueryRequest;
-    $req->setCategoryId("0");
-    $req->setFilterNoPermission("true");
-    $resp = $c->execute($req, $sessionKey);
-    return $resp;
-}
-
-$shorten = getcategory('516652310', '50002500e10kEPynqBacfX146882beFiwgzuCbjAqgpxYFoHtmygVTBcZzz4YHQguxt');
-var_dump($shorten);*/
-
-
 
 
 

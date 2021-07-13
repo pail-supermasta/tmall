@@ -14,32 +14,30 @@ define('MS_USER', 'avaks');
 define('MS_PASS', 'SbTZN8L9fCpVDxtc');
 define('MS_DB', 'avaks');
 
-define('APPKEY', '30833672');
-define('SECRET', '1021396785b2eaa1497b7a58dddf19b3');
+/*define('APPKEY', '30833672');
+define('SECRET', '1021396785b2eaa1497b7a58dddf19b3');*/
 
 define('LOGINS', array(
     array(
-//        'appkey'=>'30833672',
-//        'secret'=>'1021396785b2eaa1497b7a58dddf19b3',
+        'appkey' => '30833672',
+        'secret' => '1021396785b2eaa1497b7a58dddf19b3',
         'name' => 'bestgoodsstore',
         'login' => 'bestgoodsstore@yandex.ru',
         'field_id' => '0bbcd3e6-81f4-11e9-9109-f8fc0004dec8',
         'sessionKey' => '50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x',
         'cpCode' => 'QXJCQk1QcjJKTkZDbHk4ZVZ4bW11cFQ2L2QreW1XT0lJd2ZlMnEvL2dFZC9NbG5CSklEV2tiY0cxNkRSMWlYcQ==',
         'cnId' => '4398985192396'
-
-    )
-   /* ,array(
-        'appkey'=>'32817975', //aliexpr app key orion
-        'secret'=>'fc3e140009f59832442d5c195c807fc0', //aliexpr app secret orion
+    ),
+    array(
+        'appkey' => '32817975', //aliexpr app key orion
+        'secret' => 'fc3e140009f59832442d5c195c807fc0', //aliexpr app secret orion
         'name' => 'orion',
         'login' => 'orionstore360@gmail.com',
         'field_id' => '0bbcde02-81f4-11e9-9109-f8fc0004deca', // get once from product field id MS
         'sessionKey' => '50002201211qy8OzguEiR9T194d19ebvE7Girftw0dmHtGxmyX9d28OxEySXGK37wpOd', // get after auth for ali api app
         'cpCode' => '***', // get once
         'cnId' => '****' // get once
-
-    ),*/
+    )
 ));
 
 define('ID_REGEXP', '/[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}/'); // Регулярка для UUID
@@ -178,6 +176,8 @@ function setTrackToTmall($order, $payTime, $credential)
 {
 
     $sessionKey = $credential['sessionKey'];
+    $appkey = $credential['appkey'];
+    $secret = $credential['secret'];
 
     /*check if in MS state is Доставляется and has a track number*/
     $orderMSTemp = new OrderMS(null, strval($order));
@@ -212,8 +212,8 @@ function setTrackToTmall($order, $payTime, $credential)
 
         if ($serviceName!==""){
             $c = new TopClient;
-            $c->appkey = APPKEY;
-            $c->secretKey = SECRET;
+            $c->appkey = $appkey;
+            $c->secretKey = $secret;
             $req = new AliexpressSolutionOrderFulfillRequest;
             $req->setServiceName($serviceName);
             $req->setTrackingWebsite("$trackingWebsite");
@@ -235,6 +235,8 @@ function formMasterList($credential)
 
     $buyer_login_id = $credential['login'];
     $sessionKey = $credential['sessionKey'];
+    $appkey = $credential['appkey'];
+    $secret = $credential['secret'];
 
 
     /*additional - 3 hours for RU shift*/
@@ -243,8 +245,8 @@ function formMasterList($credential)
 
     $c = new TopClient;
     $c->format = "json";
-    $c->appkey = APPKEY;
-    $c->secretKey = SECRET;
+    $c->appkey = $appkey;
+    $c->secretKey = $secret;
     $req = new AliexpressTradeSellerOrderlistGetRequest;
     $param_aeop_order_query = new AeopOrderQuery;
     $param_aeop_order_query->buyer_login_id = $buyer_login_id;
