@@ -129,33 +129,10 @@ foreach ($ordersOnLoad as $orderOnLoad) {
 
 
     switch (true) {
-        case stripos($orderOnLoad['description'], "novinkiooo (ID 4901001)") !== false :
-            $shopName = 'novinkiooo';
-            $shopsOrders[$shopName]['sessionKey'] = "50002500c15tBJCowQScZ6julhS1dea01bfctShXhETAmyVfKkQKwey1lvK3ryD7z1t";
-            $shopsOrders[$shopName] = buildShopOrders($orderOnLoad, $shopsOrders[$shopName]);
-            break;
         case stripos($orderOnLoad['description'], "BESTGOODS (ID 5041091)") !== false :
             $shopName = 'BESTGOODS';
             $shopsOrders[$shopName]['sessionKey'] = "50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x";
             $shopsOrders[$shopName] = buildShopOrders($orderOnLoad, $shopsOrders[$shopName]);
-            break;
-        case stripos($orderOnLoad['description'], "Noerden (ID 5012047)") !== false :
-            $shopName = 'Noerden';
-            $shopsOrders[$shopName]['sessionKey'] = "50002700811duwgr7oCt2sx1edacab6BZ6kWiLtBtQeBGBQfNxYCKlunzemnpZpP21d";
-            $shopsOrders[$shopName] = buildShopOrders($orderOnLoad, $shopsOrders[$shopName]);
-
-            break;
-        case stripos($orderOnLoad['description'], "Morphy Richards (ID 5017058)") !== false :
-            $shopName = 'Morphy Richards';
-            $shopsOrders[$shopName]['sessionKey'] = "50002500501Vs151ac533BdqLFskhnQwtwheYk1CiSexTFfFAv6nWUefGArBboUuh8F";
-            $shopsOrders[$shopName] = buildShopOrders($orderOnLoad, $shopsOrders[$shopName]);
-
-            break;
-        case stripos($orderOnLoad['description'], "iRobot (ID 5016030)") !== false :
-            $shopName = 'iRobot';
-            $shopsOrders[$shopName]['sessionKey'] = "50002500901sP1b7f673cFt7iCP3uQfb1JzgquDxxdddBqgtvwCkmwoWHooj7Cw4dCP";
-            $shopsOrders[$shopName] = buildShopOrders($orderOnLoad, $shopsOrders[$shopName]);
-
             break;
         case stripos($orderOnLoad['description'], "orion (ID 911725024)") !== false :
             $shopName = 'orion';

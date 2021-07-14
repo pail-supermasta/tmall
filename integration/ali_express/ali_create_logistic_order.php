@@ -24,20 +24,9 @@ function getOrderShop($description)
 {
     $sessionKey = '';
     switch (true) {
-        case stripos($description, "novinkiooo (ID 4901001)") !== false :
-            $sessionKey = "50002500c15tBJCowQScZ6julhS1dea01bfctShXhETAmyVfKkQKwey1lvK3ryD7z1t";
-            break;
+
         case  stripos($description, "BESTGOODS (ID 5041091)") !== false :
             $sessionKey = "50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x";
-            break;
-        case  stripos($description, "Noerden (ID 5012047)") !== false :
-            $sessionKey = "50002700811duwgr7oCt2sx1edacab6BZ6kWiLtBtQeBGBQfNxYCKlunzemnpZpP21d";
-            break;
-        case  stripos($description, "Morphy Richards (ID 5017058)") !== false :
-            $sessionKey = "50002500501Vs151ac533BdqLFskhnQwtwheYk1CiSexTFfFAv6nWUefGArBboUuh8F";
-            break;
-        case  stripos($description, "iRobot (ID 5016030)") !== false :
-            $sessionKey = "50002500901sP1b7f673cFt7iCP3uQfb1JzgquDxxdddBqgtvwCkmwoWHooj7Cw4dCP";
             break;
         case  stripos($description, "orion (ID 911725024)") !== false :
             $sessionKey = "50002201211qy8OzguEiR9T194d19ebvE7Girftw0dmHtGxmyX9d28OxEySXGK37wpOd";

@@ -117,27 +117,18 @@ function fillOrderTemplate(array $orderDetails)
 
     // указываем магазин в котором купили на ALI
     $shopId = '';
-    $organization = '2d916f14-3e6b-11e8-9107-5048000ceb7a'; // "ООО \"ИПА\""
-//    $organization = '326d65ca-75c5-11e5-7a40-e8970013991b'; //"ООО \"НЗ\""
+    $organization = '';
+    $organizationAccount = '';
     switch ($orderDetails['shop']) {
-        case "novinkiooo@yandex.ru":
-            $shopId = "Avax store (ID 4901001)";
-            $organization = "b2c9e371-1b98-11e6-7a69-93a700176cab";
-            break;
         case "bestgoodsstore@yandex.ru":
             $shopId = "BESTGOODS (ID 5041091)";
-            break;
-        case "NezabudkaND@yandex.ru":
-            $shopId = "Noerden (ID 5012047)";
-            break;
-        case "NezabudkaMR@yandex.ru":
-            $shopId = "Morphy Richards (ID 5017058)";
-            break;
-        case "NezabudkaiRobot@yandex.ru":
-            $shopId = "iRobot (ID 5016030)";
+            $organization = '2d916f14-3e6b-11e8-9107-5048000ceb7a'; // "ООО \"ИПА\""
+            $organizationAccount = '08e8d50e-fca4-11ea-0a80-033400049ed9';
             break;
         case "orionstore360@gmail.com":
             $shopId = "orion (ID 911725024)"; //id можно увидеть когда переходишь на страницу магазина в алике в урле
+            $organization = '20118958-cc01-11ea-0a80-019e0006076a';
+            $organizationAccount = '20118e45-cc01-11ea-0a80-019e0006076b';
             break;
     }
 
@@ -181,7 +172,7 @@ function fillOrderTemplate(array $orderDetails)
         },
         "organizationAccount": {
             "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.1/entity/organization/2d916f14-3e6b-11e8-9107-5048000ceb7a/accounts/08e8d50e-fca4-11ea-0a80-033400049ed9",
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/organization/' . $organization . '/accounts/' . $organizationAccount . '",
                 "type": "account",
                 "mediaType": "application/json"
             }
