@@ -11,3 +11,5 @@ finished orders
 paid state
 stockSync
 delivered - skip
+
+alihandover

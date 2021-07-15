@@ -54,16 +54,3 @@ function curlMS($link = false, $data = false, $username = false)
     }
 
 }
-
-//header('Content-Type: application/json');
-
-
-
-
-
-//$orderId = '6444';
-//$link = MS_PATH . "/entity/customerorder/?search=" . $orderId;
-//$res = curlMS($link, false, MS_USERNAME);
-
-
-//echo($res);

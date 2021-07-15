@@ -14,18 +14,18 @@ require_once 'taobao/TopSdk.php';
 
 use Avaks\MS\Orders;
 
-define('APPKEY', '30833672');
-define('SECRET', '1021396785b2eaa1497b7a58dddf19b3');
+/*define('APPKEY', '30833672');
+define('SECRET', '1021396785b2eaa1497b7a58dddf19b3');*/
 
 
 /*ALIEX*/
 
-function getLogisticAddresses($sessionKey)
+function getLogisticAddresses($sessionKey,$appkey,$secret)
 {
     $c = new TopClient;
     $c->format = "json";
-    $c->appkey = APPKEY;
-    $c->secretKey = SECRET;
+    $c->appkey = $appkey;
+    $c->secretKey = $secret;
     $req = new AliexpressLogisticsRedefiningGetlogisticsselleraddressesRequest;
     $req->setSellerAddressQuery('sender,pickup,refund');
     $resp = $c->execute($req, $sessionKey);
@@ -34,12 +34,12 @@ function getLogisticAddresses($sessionKey)
 
 }
 
-function logisticsSellershipmentfortop($serviceName, $order, $logisticsNo, $sessionKey)
+function logisticsSellershipmentfortop($serviceName, $order, $logisticsNo, $sessionKey,$appkey,$secret)
 {
     $c = new TopClient;
     $c->format = 'json';
-    $c->appkey = APPKEY;
-    $c->secretKey = SECRET;
+    $c->appkey = $appkey;
+    $c->secretKey = $secret;
     $req = new AliexpressLogisticsSellershipmentfortopRequest;
     $req->setLogisticsNo("$logisticsNo");
     $req->setSendType("all");
@@ -57,7 +57,7 @@ function buildShopOrders($orderOnLoad, $shopsOrders)
 
     $shopsOrders['orders'][] = $orderOnLoad;
     if (count($shopsOrders['orders']) > 0 && !isset($shopsOrders['sender'])) {
-        $getLogisticAddressesRes = getLogisticAddresses($shopsOrders['sessionKey']);
+        $getLogisticAddressesRes = getLogisticAddresses($shopsOrders['sessionKey'],$shopsOrders['appkey'],$shopsOrders['secret']);
         $shopsOrders['sender'] = $getLogisticAddressesRes->sender_seller_address_list->senderselleraddresslist[0]->address_id ?? -1;
         $shopsOrders['pickup'] = $getLogisticAddressesRes->pickup_seller_address_list->pickupselleraddresslist[0]->address_id ?? -1;
         $shopsOrders['refund'] = $getLogisticAddressesRes->refund_seller_address_list->refundselleraddresslist[0]->address_id ?? -1;
@@ -68,12 +68,12 @@ function buildShopOrders($orderOnLoad, $shopsOrders)
 
 /*CAINIAO*/
 
-function createHandoverList($refund, $pickup, $order_code_list, $sessionKey)
+function createHandoverList($refund, $pickup, $order_code_list, $sessionKey, $appkey, $secret)
 {
 
     $c = new TopClient;
-    $c->appkey = APPKEY;
-    $c->secretKey = SECRET;
+    $c->appkey = $appkey;
+    $c->secretKey = $secret;
     $c->format = "json";
 
     $req = new CainiaoGlobalHandoverCommitRequest;
@@ -96,7 +96,7 @@ function createHandoverList($refund, $pickup, $order_code_list, $sessionKey)
     return $resp;
 }
 
-function printHandoverList($sessionKey, $handoverContentId)
+function printHandoverList($sessionKey,$appkey,$secret, $handoverContentId)
 {
 
     /*1 - наклейка на контейнер*/
@@ -104,8 +104,8 @@ function printHandoverList($sessionKey, $handoverContentId)
 
     $c = new TopClient;
     $c->format = 'json';
-    $c->appkey = APPKEY;
-    $c->secretKey = SECRET;
+    $c->appkey = $appkey;
+    $c->secretKey = $secret;
 
     $req = new CainiaoGlobalHandoverPdfGetRequest;
     $user_info = new UserInfoDto;
@@ -126,17 +126,19 @@ $ordersOnLoad = $ordersMSInstance->getOrdersOnLoad();
 
 $shopsOrders = [];
 foreach ($ordersOnLoad as $orderOnLoad) {
-
-
     switch (true) {
         case stripos($orderOnLoad['description'], "BESTGOODS (ID 5041091)") !== false :
             $shopName = 'BESTGOODS';
             $shopsOrders[$shopName]['sessionKey'] = "50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x";
+            $shopsOrders[$shopName]['appkey'] = "30833672";
+            $shopsOrders[$shopName]['secret'] = "1021396785b2eaa1497b7a58dddf19b3";
             $shopsOrders[$shopName] = buildShopOrders($orderOnLoad, $shopsOrders[$shopName]);
             break;
         case stripos($orderOnLoad['description'], "orion (ID 911725024)") !== false :
             $shopName = 'orion';
             $shopsOrders[$shopName]['sessionKey'] = "50002201211qy8OzguEiR9T194d19ebvE7Girftw0dmHtGxmyX9d28OxEySXGK37wpOd";
+            $shopsOrders[$shopName]['appkey'] = "32817975";
+            $shopsOrders[$shopName]['secret'] = "fc3e140009f59832442d5c195c807fc0";
             $shopsOrders[$shopName] = buildShopOrders($orderOnLoad, $shopsOrders[$shopName]);
 
             break;
@@ -161,7 +163,7 @@ foreach ($shopsOrders as $key => $shopOrders) {
 
         }
 
-        $createHandoverListResp = createHandoverList($shopOrders['refund'], $shopOrders['pickup'], $order_code_list, $shopOrders['sessionKey']);
+        $createHandoverListResp = createHandoverList($shopOrders['refund'], $shopOrders['pickup'], $order_code_list, $shopOrders['sessionKey'], $shopOrders['appkey'], $shopOrders['secret']);
         if (!isset($createHandoverListResp->result->data->handover_content_id)) {
             var_export($createHandoverListResp);
             $sub_msg = ((array)$createHandoverListResp)['sub_msg'];
@@ -193,14 +195,14 @@ foreach ($shopsOrders as $key => $shopOrders) {
 
             /*8. Получение этикетки контейнера (паллеты) и листа передачи */
 
-            $printHandoverListResp = printHandoverList($shopOrders['sessionKey'], $handoverContentId);
+            $printHandoverListResp = printHandoverList($shopOrders['sessionKey'],$shopOrders['appkey'],$shopOrders['secret'], $handoverContentId);
             echo 'лист передачи' . PHP_EOL;
             if (!isset($printHandoverListResp->result->data)) {
                 sleep(15);
-                $printHandoverListResp = printHandoverList($shopOrders['sessionKey'], $handoverContentId);
+                $printHandoverListResp = printHandoverList($shopOrders['sessionKey'],$shopOrders['appkey'],$shopOrders['secret'], $handoverContentId);
                 if (!isset($printHandoverListResp->result->data)) {
                     sleep(15);
-                    $printHandoverListResp = printHandoverList($shopOrders['sessionKey'], $handoverContentId);
+                    $printHandoverListResp = printHandoverList($shopOrders['sessionKey'],$shopOrders['appkey'],$shopOrders['secret'], $handoverContentId);
                     if (!isset($printHandoverListResp->result->data)) {
                         telegram("ОШИБКА!! получения листа передачи $key", '-320614744', 'Markdown');
                         die();
@@ -232,7 +234,7 @@ foreach ($shopsOrders as $key => $shopOrders) {
                         $logistics_type = "AE_RU_MP_RUPOST_PH3_FR_FR";
                         break;
                 }
-                $sellerShipmentForTopResp = logisticsSellershipmentfortop($logistics_type, $shopOrder['name'], $shopOrder['_attributes']['Логистика: Трек'], $shopOrders['sessionKey']);
+                $sellerShipmentForTopResp = logisticsSellershipmentfortop($logistics_type, $shopOrder['name'], $shopOrder['_attributes']['Логистика: Трек'], $shopOrders['sessionKey'],$shopOrders['appkey'],$shopOrders['secret']);
                 var_dump($sellerShipmentForTopResp);
             }
 
