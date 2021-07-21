@@ -214,8 +214,11 @@ foreach ($shopsOrders as $key => $shopOrders) {
             file_put_contents("/home/tmall-service/public_html/integration/ali_express/files/handover/$key" . "лист_передачи_$handoverContentId.pdf", $bin);
             $receptionLink = "https://tmall-service.a3w.ru/integration/ali_express/files/handover/$key" . "лист_передачи_$handoverContentId.pdf";
             $date = date('d-m-yy');
-            telegramReception("TMALL Акт приема передачи отправлений $key [$date]($receptionLink)", '-385044014', 'Markdown');
+            $ordersSent = sizeof($shopOrders['orders']);
+            telegramReception("TMALL Акт приема передачи $ordersSent отправлений $key [$date]($receptionLink)", '-385044014', 'Markdown');
 
+            $trackNumsUnset = 0;
+            $failedOrders = "";
             foreach ($shopOrders['orders'] as $shopOrder) {
 
                 /*9. Отметка заказа как отгруженного в системе AliExpress*/
@@ -235,8 +238,14 @@ foreach ($shopsOrders as $key => $shopOrders) {
                         break;
                 }
                 $sellerShipmentForTopResp = logisticsSellershipmentfortop($logistics_type, $shopOrder['name'], $shopOrder['_attributes']['Логистика: Трек'], $shopOrders['sessionKey'],$shopOrders['appkey'],$shopOrders['secret']);
-                var_dump($sellerShipmentForTopResp);
+//                var_dump($sellerShipmentForTopResp);
+                if ($sellerShipmentForTopResp->result_success === false){
+                    $trackNumsUnset++;
+                    $failedOrders .= $shopOrder['name'] . " " ;
+                }
             }
+            telegramReception("TMALL. Ошибки установки трек номеров для заказов $failedOrders", '-385044014');
+
 
         }
     }
