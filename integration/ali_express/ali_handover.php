@@ -233,18 +233,20 @@ foreach ($shopsOrders as $key => $shopOrders) {
                     case  stripos($shopOrder['description'], "AE_RU_MP_OVERSIZE_PH3") !== false :
                         $logistics_type = "AE_RU_MP_OVERSIZE_PH3";
                         break;
-                    case  stripos($shopOrder['description'], "AE_RU_MP_RUPOST_PH3_FR_FR") !== false :
-                        $logistics_type = "AE_RU_MP_RUPOST_PH3_FR_FR";
+                    case  stripos($shopOrder['description'], "AE_RU_MP_RUPOST_PH3_FR") !== false :
+                        $logistics_type = "AE_RU_MP_RUPOST_PH3_FR";
                         break;
                 }
                 $sellerShipmentForTopResp = logisticsSellershipmentfortop($logistics_type, $shopOrder['name'], $shopOrder['_attributes']['Логистика: Трек'], $shopOrders['sessionKey'],$shopOrders['appkey'],$shopOrders['secret']);
 //                var_dump($sellerShipmentForTopResp);
                 if ($sellerShipmentForTopResp->result_success === false){
-                    $trackNumsUnset++;
                     $failedOrders .= $shopOrder['name'] . " " ;
                 }
             }
-            telegramReception("TMALL. Ошибки установки трек номеров для заказов $failedOrders", '-385044014');
+            if (strlen($failedOrders)>1){
+                telegramReception("TMALL. Ошибки установки трек номеров для заказов $failedOrders", '-385044014');
+            }
+
 
 
         }
