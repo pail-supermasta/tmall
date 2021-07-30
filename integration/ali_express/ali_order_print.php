@@ -27,12 +27,12 @@ require_once 'taobao/TopSdk.php';
 define('SECRET', '1021396785b2eaa1497b7a58dddf19b3');*/
 define('LOGINS', array(
     array(
-        'appkey' => '30833672',
-        'secret' => '1021396785b2eaa1497b7a58dddf19b3',
+        'appkey' => '32817975', //aliexpr app key orion
+        'secret' => 'fc3e140009f59832442d5c195c807fc0', //aliexpr app secret orion
         'name' => 'bestgoodsstore',
         'login' => 'bestgoodsstore@yandex.ru',
         'field_id' => '0bbcd3e6-81f4-11e9-9109-f8fc0004dec8',
-        'sessionKey' => '50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x',
+        'sessionKey' => '50002301029r4LfaZzIzGMtdxRiWieuBmz1cGhQJ41a449a01ITXlFanTOWxJBdCZLQ5',
         'cpCode' => 'QXJCQk1QcjJKTkZDbHk4ZVZ4bW11cFQ2L2QreW1XT0lJd2ZlMnEvL2dFZC9NbG5CSklEV2tiY0cxNkRSMWlYcQ==',
         'cnId' => '4398985192396'
     ),
@@ -115,9 +115,9 @@ function getOrderShop($attributes)
     $secret = '';
     switch (true) {
         case  stripos($attributes, "BESTGOODS (ID 5041091)") !== false :
-            $sessionKey = "50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x";
-            $appkey = '30833672';
-            $secret = '1021396785b2eaa1497b7a58dddf19b3';
+            $sessionKey = "50002301029r4LfaZzIzGMtdxRiWieuBmz1cGhQJ41a449a01ITXlFanTOWxJBdCZLQ5";
+            $appkey = '32817975';
+            $secret = 'fc3e140009f59832442d5c195c807fc0';
             break;
         case  stripos($attributes, "orion (ID 911725024)") !== false :
             $sessionKey = "50002201211qy8OzguEiR9T194d19ebvE7Girftw0dmHtGxmyX9d28OxEySXGK37wpOd";

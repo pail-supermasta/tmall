@@ -129,9 +129,9 @@ foreach ($ordersOnLoad as $orderOnLoad) {
     switch (true) {
         case stripos($orderOnLoad['description'], "BESTGOODS (ID 5041091)") !== false :
             $shopName = 'BESTGOODS';
-            $shopsOrders[$shopName]['sessionKey'] = "50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x";
-            $shopsOrders[$shopName]['appkey'] = "30833672";
-            $shopsOrders[$shopName]['secret'] = "1021396785b2eaa1497b7a58dddf19b3";
+            $shopsOrders[$shopName]['sessionKey'] = "50002301029r4LfaZzIzGMtdxRiWieuBmz1cGhQJ41a449a01ITXlFanTOWxJBdCZLQ5";
+            $shopsOrders[$shopName]['appkey'] = "32817975";
+            $shopsOrders[$shopName]['secret'] = "fc3e140009f59832442d5c195c807fc0";
             $shopsOrders[$shopName] = buildShopOrders($orderOnLoad, $shopsOrders[$shopName]);
             break;
         case stripos($orderOnLoad['description'], "orion (ID 911725024)") !== false :

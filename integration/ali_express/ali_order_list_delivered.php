@@ -15,7 +15,7 @@ define('LOGINS', array(
         'name' => 'bestgoodsstore',
         'login' => 'bestgoodsstore@yandex.ru',
         'field_id' => '0bbcd3e6-81f4-11e9-9109-f8fc0004dec8',
-        'sessionKey' => '50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x',
+        'sessionKey' => '50002301029r4LfaZzIzGMtdxRiWieuBmz1cGhQJ41a449a01ITXlFanTOWxJBdCZLQ5',
         'cpCode' => 'QXJCQk1QcjJKTkZDbHk4ZVZ4bW11cFQ2L2QreW1XT0lJd2ZlMnEvL2dFZC9NbG5CSklEV2tiY0cxNkRSMWlYcQ==',
         'cnId' => '4398985192396'
 
@@ -66,7 +66,7 @@ function findOrderSessionKey($deliveringAliOrder)
 
     } elseif (preg_match('/BESTGOODS/', $deliveringAliOrder['description'], $matches)) {
 
-        $sessionKey = '50002300413yAdDbqygrAkmv21cf1a94bsqga2hwEpqARrGXkfThpxxhkZxBBRHfZ7x';
+        $sessionKey = '50002301029r4LfaZzIzGMtdxRiWieuBmz1cGhQJ41a449a01ITXlFanTOWxJBdCZLQ5';
 
     } elseif (preg_match('/Noerden/', $deliveringAliOrder['description'], $matches)) {
 
