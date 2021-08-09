@@ -119,6 +119,29 @@ function printHandoverList($sessionKey,$appkey,$secret, $handoverContentId)
     return $resp;
 }
 
+function printHandoverSticker($sessionKey,$appkey,$secret, $handoverContentId)
+{
+
+    /*1 - наклейка на контейнер*/
+    /*512 - лист - используем его*/
+
+    $c = new TopClient;
+    $c->format = 'json';
+    $c->appkey = $appkey;
+    $c->secretKey = $secret;
+
+    $req = new CainiaoGlobalHandoverPdfGetRequest;
+    $user_info = new UserInfoDto;
+    $req->setUserInfo(json_encode($user_info));
+    $req->setClient("ISV-aliekspress_kompaniya");
+    $req->setHandoverContentId("$handoverContentId");
+    $req->setType("1");
+    $req->setLocale("ru_RU");
+    $resp = $c->execute($req, $sessionKey);
+
+    return $resp;
+}
+
 
 // get orders from MS на выдаче
 $ordersMSInstance = new Orders();
@@ -193,7 +216,7 @@ foreach ($shopsOrders as $key => $shopOrders) {
 
             $handoverContentId = $createHandoverListResp->result->data->handover_content_id;
 
-            /*8. Получение этикетки контейнера (паллеты) и листа передачи */
+            /*8.1. Получение листа передачи */
 
             $printHandoverListResp = printHandoverList($shopOrders['sessionKey'],$shopOrders['appkey'],$shopOrders['secret'], $handoverContentId);
             echo 'лист передачи' . PHP_EOL;
@@ -216,6 +239,30 @@ foreach ($shopsOrders as $key => $shopOrders) {
             $date = date('d-m-yy');
             $ordersSent = sizeof($shopOrders['orders']);
             telegramReception("TMALL Акт приема передачи $ordersSent отправлений $key [$date]($receptionLink)", '-385044014', 'Markdown');
+
+            /*8.2. Получение этикетки контейнера (паллеты)*/
+
+            $printHandoverStickerResp = printHandoverSticker($shopOrders['sessionKey'],$shopOrders['appkey'],$shopOrders['secret'], $handoverContentId);
+            echo 'этикетка контейнера' . PHP_EOL;
+            if (!isset($printHandoverStickerResp->result->data)) {
+                sleep(15);
+                $printHandoverStickerResp = printHandoverSticker($shopOrders['sessionKey'],$shopOrders['appkey'],$shopOrders['secret'], $handoverContentId);
+                if (!isset($printHandoverStickerResp->result->data)) {
+                    sleep(15);
+                    $printHandoverStickerResp = printHandoverSticker($shopOrders['sessionKey'],$shopOrders['appkey'],$shopOrders['secret'], $handoverContentId);
+                    if (!isset($printHandoverStickerResp->result->data)) {
+                        telegram("ОШИБКА!! получения этикетки контейнера $key", '-320614744', 'Markdown');
+                        die();
+                    }
+                }
+            }
+            $b64 = json_decode($printHandoverStickerResp->result->data)->body;
+            $bin = base64_decode($b64, true);
+            file_put_contents("/home/tmall-service/public_html/integration/ali_express/files/handover/$key" . "этикетка_контейнера_$handoverContentId.pdf", $bin);
+            $receptionLink = "https://tmall-service.a3w.ru/integration/ali_express/files/handover/$key" . "этикетка_контейнера_$handoverContentId.pdf";
+            $date = date('d-m-yy');
+            $ordersSent = sizeof($shopOrders['orders']);
+            telegramReception("TMALL Этикетка контейнера $ordersSent отправлений $key [$date]($receptionLink)", '-385044014', 'Markdown');
 
             $trackNumsUnset = 0;
             $failedOrders = "";
