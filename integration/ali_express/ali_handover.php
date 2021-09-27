@@ -236,7 +236,7 @@ foreach ($shopsOrders as $key => $shopOrders) {
             $bin = base64_decode($b64, true);
             file_put_contents("/home/tmall-service/public_html/integration/ali_express/files/handover/$key" . "лист_передачи_$handoverContentId.pdf", $bin);
             $receptionLink = "https://tmall-service.a3w.ru/integration/ali_express/files/handover/$key" . "лист_передачи_$handoverContentId.pdf";
-            $date = date('d-m-yy');
+            $date = date('d-m-y');
             $ordersSent = sizeof($shopOrders['orders']);
             telegramReception("TMALL Акт приема передачи $ordersSent отправлений $key [$date]($receptionLink)", '-385044014', 'Markdown');
 
@@ -260,7 +260,7 @@ foreach ($shopsOrders as $key => $shopOrders) {
             $bin = base64_decode($b64, true);
             file_put_contents("/home/tmall-service/public_html/integration/ali_express/files/handover/$key" . "этикетка_контейнера_$handoverContentId.pdf", $bin);
             $receptionLink = "https://tmall-service.a3w.ru/integration/ali_express/files/handover/$key" . "этикетка_контейнера_$handoverContentId.pdf";
-            $date = date('d-m-yy');
+            $date = date('d-m-y');
             $ordersSent = sizeof($shopOrders['orders']);
             telegramReception("TMALL Этикетка контейнера $ordersSent отправлений $key [$date]($receptionLink)", '-385044014', 'Markdown');
 
