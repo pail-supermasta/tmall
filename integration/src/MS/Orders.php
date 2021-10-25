@@ -83,7 +83,8 @@ class Orders
         $filter = [
             '_state' => '327c0111-75c5-11e5-7a40-e89700139936',
             '_agent' => '1b33fbc1-5539-11e9-9ff4-315000060bc8',
-            'deleted' => ['$exists' => false]
+            'applicable' => true,
+            'deleted'=>null
         ];
         $ordersCursor = $collection->customerorder->find($filter);
         $ordersWaitPayment = [];
@@ -94,6 +95,7 @@ class Orders
 
             $orderElem['positions'] = $orderCursor['positions']['rows'];
             $orderElem['moment'] = $orderCursor['moment'];
+            $orderElem['description'] = $orderCursor['description'];
             $ordersWaitPayment[] = $orderElem;
         }
 

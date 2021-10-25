@@ -16,8 +16,6 @@ define('MS_PATH', 'https://online.moysklad.ru/api/remap/1.1');
 define('MS_LINK', MS_PATH . '/entity/customerorder');
 define('ID_REGEXP', '/[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}/'); // Регулярка для UUID
 
-/*define('APPKEY', '30833672');
-define('SECRET', '1021396785b2eaa1497b7a58dddf19b3');*/
 
 define('LOGINS', array(
     array(
@@ -45,91 +43,127 @@ define('LOGINS', array(
 
 /*  INCLUDES    */
 
-// Error handlers
-require_once realpath(dirname(__FILE__) . '/..') . '/class/error.php';
-
-// Telegram err logs integration
-require_once realpath(dirname(__FILE__) . '/..') . '/class/telegram.php';
-
-// Cancel order in MS
+require_once 'taobao/TopSdk.php';
+require_once realpath(dirname(__FILE__) . '/..') . '/vendor/autoload.php';
 require_once realpath(dirname(__FILE__) . '/..') . '/moi_sklad/ms_change_order_dynamic.php';
 
-require_once 'taobao/TopSdk.php';
 
+use Avaks\MS\Orders;
 
-/*Search for an error*/
-function strpos_recursive($haystack, $needle, $offset = 0, &$results = array())
-{
-    $offset = strpos($haystack, $needle, $offset);
-    if ($offset === false) {
-        return $results;
-    } else {
-        $results[] = $offset;
-        return strpos_recursive($haystack, $needle, ($offset + 1), $results);
-    }
-}
+$ordersMS = new Orders();
+$ordersWaitPayment = $ordersMS->getWaitPayment();
 
+//get Ждет оплаты из МС
 
-function formMasterList($credential)
-{
+foreach ($ordersWaitPayment as $order) {
+    var_dump($order["name"]) ;
 
-    $buyer_login_id = $credential['login'];
-    $sessionKey = $credential['sessionKey'];
-    $appkey = $credential['appkey'];
-    $secret = $credential['secret'];
+    //check if order exists in MS because this Mongo arent up to date
+    $link = MS_PATH . "/entity/customerorder/?filter=name=" . $order["name"];
+    $res = curlGetOrderMS($link, false, MS_USERNAME);
 
-    /*catch all for previous 24 hours*/
-    $offset = 560 * 60 * 60;
-    $create_day = date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) - $offset);
+    $res = json_decode($res, true);
+    /*    if search result exists */
+    if (sizeof($res['rows']) > 0) {
 
+        switch (true) {
+            case stripos($order['description'], "BESTGOODS (ID 5041091)") !== false :
+                $shopName = 'BESTGOODS';
+                $sessionKey = "50002301029r4LfaZzIzGMtdxRiWieuBmz1cGhQJ41a449a01ITXlFanTOWxJBdCZLQ5";
+                $appkey = "32817975";
+                $secret = "fc3e140009f59832442d5c195c807fc0";
+                break;
+            case stripos($order['description'], "orion (ID 911725024)") !== false :
+                $shopName = 'orion';
+                $sessionKey = "50002201211qy8OzguEiR9T194d19ebvE7Girftw0dmHtGxmyX9d28OxEySXGK37wpOd";
+                $appkey = "32817975";
+                $secret = "fc3e140009f59832442d5c195c807fc0";
 
-    $c = new TopClient;
-    $c->format = "json";
-    $c->appkey = $appkey;
-    $c->secretKey = $secret;
-    $req = new AliexpressTradeSellerOrderlistGetRequest;
-    $param_aeop_order_query = new AeopOrderQuery;
-    $param_aeop_order_query->buyer_login_id = $buyer_login_id;
-    $param_aeop_order_query->create_date_start = $create_day;
-    $param_aeop_order_query->current_page = "1";
-    $param_aeop_order_query->order_status_list = array('FINISH', 'FUND_PROCESSING', 'IN_CANCEL');
-    $param_aeop_order_query->page_size = "60";
-    $req->setParamAeopOrderQuery(json_encode($param_aeop_order_query));
-    $resp = $c->execute($req, $sessionKey);
+                break;
 
-
-    $final = $resp->result->target_list->aeop_order_item_dto ?? "";
-
-    $orderList = array();
-    if ($final != "") {
-        $res = json_encode((array)$final);
-        $shortener = json_decode($res, true);
-        foreach ($shortener as $shorty) {
-            if ($shorty['order_status'] == 'FINISH' || $shorty['order_status'] == 'FUND_PROCESSING') {
-                $orderList[$shorty['order_id']] = [
-                    'order_status' => $shorty['order_status'],
-                    'end_reason' => $shorty['end_reason']
-                ];
-
-            } elseif ($shorty['order_status'] == 'IN_CANCEL') {
-                $orderList[$shorty['order_id']] = "IN_CANCEL";
-            }
         }
+        $tmallOrder = findorderbyid($order['name'], $sessionKey, $appkey, $secret);
+
+        var_dump($tmallOrder['order_end_reason']);
+        $oldDescription = $order['description'];
+        /*удалить двойные ковычки*/
+        $oldDescription = str_replace('"', '', $oldDescription);
+        /*удалить новую строку*/
+        $oldDescription = preg_replace('/\s+/', ' ', trim($oldDescription));
+        $order_end_reason = $tmallOrder['order_end_reason'] ? '\n Причина завершения заказа: ' . $tmallOrder['order_end_reason'] : '';
+        $update = false;
+
+        if ($tmallOrder['order_status'] == 'IN_CANCEL' ||
+            ($tmallOrder['order_status'] == 'FINISH' && $tmallOrder['order_end_reason'] == 'send_goods_timeout') ||
+            ($tmallOrder['order_status'] == 'FINISH' && $tmallOrder['order_end_reason'] == 'buyer_cancel_order')
+        ) {
+            $state = '327c070c-75c5-11e5-7a40-e8970013993b'; //Отменен
+            $update = true;
+        } else if ($tmallOrder['order_status'] == 'FINISH') {
+            $state = '327c04c9-75c5-11e5-7a40-e89700139939'; //Завершен
+            $update = true;
+        }
+
+        if ($update) {
+            $postdata = '{
+            "state": {
+                "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/metadata/states/$state",
+                    "type": "state",
+                    "mediaType": "application/json"
+                }
+            },
+            "description": "' . $oldDescription . $order_end_reason . '"}';
+            var_dump($postdata);
+
+
+        $res = curlMSFinish('робот_next@техтрэнд', $postdata, $order['id']);
+        var_dump($res);
+        die();
+        }
+
     }
-
-    return $orderList;
 }
 
 
-$formed = array();
-$final = array();
-
-// add shop value
-foreach (LOGINS as $credential) {
-    $formed = formMasterList($credential);
-    $final[$credential['login']] = $formed;
+function getToken($url, $data)
+{
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+    $res = curl_exec($ch);
+    $result = json_decode($res, true);
+    curl_close($ch);
+    return $result['token'];
 }
-/*send to MS*/
+
+function getData($urlProduct, $data, $token)
+{
+    $headers = array(
+        'Content-Type: application/x-www-form-urlencoded',
+        sprintf('Authorization: Bearer %s', $token)
+    );
+
+    $data_string = http_build_query($data);
+
+    $ch = curl_init($urlProduct);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+    curl_setopt($ch, CURLOPT_URL, $urlProduct . '/?' . $data_string);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    $res = curl_exec($ch);
+    $result = json_decode($res, true);
+    curl_close($ch);
+
+    return $result;
+}
 
 function curlGetOrderMS($link = false, $data = false, $username = false)
 {
@@ -174,69 +208,33 @@ function curlGetOrderMS($link = false, $data = false, $username = false)
 }
 
 
-function recursive_array_search($needle, $haystack)
+/*ALIEX*/
+
+
+function findorderbyid($post_data, $sessionKey, $appkey, $secret)
 {
-    foreach ((array)$haystack as $key => $value) {
-        if ($needle === $value) {
-            return array($key);
-        } else if (is_array($value) && $subkey = recursive_array_search($needle, $value)) {
-            array_unshift($subkey, $key);
-            return $subkey;
-        }
-    }
-}
 
-function getOrderFromMS($reason, $order)
-{
-    $link = MS_PATH . "/entity/customerorder/?filter=name=" . $order;
-    $res = curlGetOrderMS($link, false, MS_USERNAME);
+    $c = new TopClient;
+    $c->format = "json";
+    $c->appkey = $appkey;
+    $c->secretKey = $secret;
+    $req = new AliexpressSolutionOrderInfoGetRequest;
+    $param1 = new OrderDetailQuery;
+    $param1->order_id = $post_data;
+    $req->setParam1(json_encode($param1));
+    $resp = $c->execute($req, $sessionKey);
 
-    var_dump($res);
-    die();
-    /*    if search result exists */
-    if ($res) {
-
-        $orderSearchResultArrays = json_decode($res, true);
-        if ($orderSearchResultArrays['rows']) {
-            $row = $orderSearchResultArrays['rows'][0];
-            /*get state of order in MS*/
-            preg_match(ID_REGEXP, $row['state']['meta']['href'], $matches);
-            $state_id = $matches[0];
-            /*if not equals Отменен или Возврат*/
-            if ($state_id != '327c070c-75c5-11e5-7a40-e8970013993b' && $state_id != '327c05fe-75c5-11e5-7a40-e8970013993a') {
-                $attributesArray = $row['attributes'];
-                if (isset($row['name'])) {
-                    $orderId = $row['name'];
-                    $orderLinkMS = $row['meta']['uuidHref'];
-                    if ($reason['order_status'] == 'IN_CANCEL' ||
-                        ($reason['order_status'] == 'FINISH' && $reason['end_reason'] == 'send_goods_timeout') ||
-                        ($reason['order_status'] == 'FINISH' && $reason['end_reason'] == 'buyer_cancel_order')
-                    ) {
-                        /*pass order id from MS to update to Canceled*/
-                        fillOrderTemplate($row['id'], 'cancel');
-                    }
-                }
-                /*look if has tracking number in MS*/
-                /*if (recursive_array_search('8a500683-10fc-11ea-0a80-0533000590c8', $res)) {
-                    $messageCancelUrgent = "ОТМЕНЕН заказ #[$orderId]($orderLinkMS)";
-                    telegram($messageCancelUrgent, '-278688533', 'Markdown');
-                }*/
-            }
-        }
-
-
-    }
-}
-
-//item is cancel reason,key is order id
-foreach ($final as $shop => $orders) {
-    foreach ($orders as $order => $details) {
-        getOrderFromMS($details, $order);
+    if (!isset($resp->result)) {
+        return false;
+    } else {
+        $result = $resp->result->data;
+        $res = (array)$result;
     }
 
+    return $res;
 }
 
-//var_dump($final);
+
 
 
 

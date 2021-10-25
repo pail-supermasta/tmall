@@ -46,6 +46,41 @@ function curlMSCancel($username = false, $post, $order)
     }
 
 }
+function curlMSFinish($username = false, $post, $order)
+{
+
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_URL, MS_LINK . "/$order");
+    curl_setopt($curl, CURLOPT_USERPWD, $username . ':' . MS_PASSWORD);
+    curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 30);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
+    curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PUT');
+    $headers = array();
+    $headers[] = 'Content-Type: application/json';
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    $result = curl_exec($curl);
+    var_dump($result);
+    $curl_errno = curl_errno($curl);
+    curl_close($curl);
+
+    if ($curl_errno == 0) {
+        $result = json_decode($result, true);
+
+        if (isset($result['name'])) {
+            $orderId = $result['name'];
+            $orderLinkMS = $result['meta']['uuidHref'];
+
+            $newOrderTeleGMsg = "ЗАВЕРШЕН заказ #[$orderId]($orderLinkMS)";
+            telegram($newOrderTeleGMsg, '-278688533', 'Markdown');
+        };
+
+        return true;
+    } else {
+        return $curl_errno;
+    }
+
+}
 
 function curlMSPaid($username = false, $post, $order)
 {
