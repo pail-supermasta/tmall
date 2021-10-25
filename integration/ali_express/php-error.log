@@ -1,0 +1,83 @@
+[25-Oct-2021 09:59:02 UTC] PHP Notice:  Undefined offset: 0 in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 79
+[25-Oct-2021 10:02:01 UTC] PHP Fatal error:  Uncaught Error: Class 'Avaks\MS\Orders' not found in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php:83
+Stack trace:
+#0 {main}
+  thrown in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 83
+[25-Oct-2021 10:02:45 UTC] PHP Fatal error:  Uncaught Error: Class 'Avaks\MS\Orders' not found in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php:84
+Stack trace:
+#0 {main}
+  thrown in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 84
+[25-Oct-2021 10:05:30 UTC] PHP Fatal error:  Uncaught MongoDB\Driver\Exception\ConnectionTimeoutException: No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'mongo-arbiter.backendserver.ru:27017'] in C:\Users\User\Documents\tmall\integration\vendor\mongodb\mongodb\src\functions.php:431
+Stack trace:
+#0 C:\Users\User\Documents\tmall\integration\vendor\mongodb\mongodb\src\functions.php(431): MongoDB\Driver\Manager->selectServer(Object(MongoDB\Driver\ReadPreference))
+#1 C:\Users\User\Documents\tmall\integration\vendor\mongodb\mongodb\src\Collection.php(651): MongoDB\select_server(Object(MongoDB\Driver\Manager), Array)
+#2 C:\Users\User\Documents\tmall\integration\src\MS\Orders.php(88): MongoDB\Collection->find(Array)
+#3 C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php(78): Avaks\MS\Orders->getWaitPayment()
+#4 {main}
+  thrown in C:\Users\User\Documents\tmall\integration\vendor\mongodb\mongodb\src\functions.php on line 431
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:30:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 59
+[25-Oct-2021 10:42:05 UTC] PHP Notice:  Undefined variable: sessionKey in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 75
+[25-Oct-2021 10:47:20 UTC] PHP Warning:  Illegal string offset 'order_end_reason' in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 77
+[25-Oct-2021 11:38:12 UTC] PHP Notice:  Undefined index: end_reason in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 85
+[25-Oct-2021 11:38:12 UTC] PHP Notice:  Undefined index: end_reason in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 86
+[25-Oct-2021 11:49:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function curlGetOrderMS() in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php:64
+Stack trace:
+#0 {main}
+  thrown in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 64
+[25-Oct-2021 11:53:44 UTC] PHP Notice:  Undefined variable: rows in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 68
+[25-Oct-2021 11:53:44 UTC] PHP Notice:  Undefined index:  in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 68
+[25-Oct-2021 11:53:44 UTC] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 68
+[25-Oct-2021 11:54:14 UTC] PHP Notice:  Undefined variable: rows in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 69
+[25-Oct-2021 11:54:14 UTC] PHP Notice:  Undefined index:  in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 69
+[25-Oct-2021 11:54:14 UTC] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 69
+[25-Oct-2021 11:54:33 UTC] PHP Notice:  Undefined variable: rows in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 68
+[25-Oct-2021 11:54:33 UTC] PHP Notice:  String offset cast occurred in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 68
+[25-Oct-2021 11:54:33 UTC] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 68
+[25-Oct-2021 11:55:20 UTC] PHP Notice:  Undefined variable: rows in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 68
+[25-Oct-2021 11:55:20 UTC] PHP Notice:  String offset cast occurred in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 68
+[25-Oct-2021 11:55:20 UTC] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 68
+[25-Oct-2021 11:55:54 UTC] PHP Warning:  Illegal string offset 'rows' in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 68
+[25-Oct-2021 11:55:54 UTC] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 68
+[25-Oct-2021 12:09:53 UTC] PHP Notice:  Array to string conversion in C:\Users\User\Documents\tmall\integration\moi_sklad\ms_change_order_dynamic.php on line 54
+[25-Oct-2021 12:11:39 UTC] PHP Notice:  Undefined index: _id in C:\Users\User\Documents\tmall\integration\ali_express\ali_order_list_wait_payment.php on line 120

@@ -101,6 +101,10 @@ function userDataValidation($address, $order)
 
 }
 
+function clearTabs($raw){
+    return preg_replace('/\s+/', ' ', $raw);
+}
+
 // Parse raw response from ALI for order details
 // Create array of order fields
 function destructResponse(array $shortener, $order, $shop)
@@ -112,6 +116,7 @@ function destructResponse(array $shortener, $order, $shop)
     $country = $address['country'] == 'RU' ? 'РФ' : $address['country'];
     $address2 = isset($address['address2']) ? $address['address2'] : '';
     $fullAddress = $address['zip'] . ", " . $country . ", " . $address['province'] . ", " . $address['city'] . ", " . $address['detail_address'] . ", " . $address2;
+    $fullAddress = clearTabs($fullAddress);
 
     /*  validate address information    */
     $err = userDataValidation($address, $order);

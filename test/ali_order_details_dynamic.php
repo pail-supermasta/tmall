@@ -29,7 +29,7 @@ function findorderbyid($post_data, $sessionKey)
 
 
 require_once '../integration/ali_express/taobao/TopSdk.php';
-define('APPKEY', '27862248');
-define('SECRET', 'ca6916e55a087b3561b5077fc8b83ee6');
-$shorten = findorderbyid('5005631522366196','50002301b00s17916ea4eTrdXcBvgrz2lkiuhxGTUEjWmoPbPQvsmvYZfkFlqTKVgPr');
+define('APPKEY', '32817975');
+define('SECRET', 'fc3e140009f59832442d5c195c807fc0');
+$shorten = findorderbyid('5013319238135280','50002301029r4LfaZzIzGMtdxRiWieuBmz1cGhQJ41a449a01ITXlFanTOWxJBdCZLQ5');
 var_dump($shorten);
