@@ -131,14 +131,13 @@ class Orders
         $filter = [
             '_agent' => '1b33fbc1-5539-11e9-9ff4-315000060bc8',
             '_state' => ['$in' => [
-//                'ecf45f89-f518-11e6-7a69-9711000ff0c4',
-//                '327c02b4-75c5-11e5-7a40-e89700139937',
-                '8beb227b-6088-11e7-7a6c-d2a9003b81a3',
-                '8beb25ab-6088-11e7-7a6c-d2a9003b81a4'
+//                '8beb227b-6088-11e7-7a6c-d2a9003b81a3',//комплектуется
+                '8beb25ab-6088-11e7-7a6c-d2a9003b81a4' // на выдаче
             ]],
             'applicable' => true,
             '_attributes.#Логистика: агент' => 'Cainiao',
             '_attributes.Логистика: Трек' => ['$exists' => true],
+//            'description' => ['$regex' => 'give_me_list']
             'description' => ['$not' => ['$regex' => 'handover_sheet_passed']]
         ];
 

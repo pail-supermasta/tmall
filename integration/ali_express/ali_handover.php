@@ -20,7 +20,7 @@ define('SECRET', '1021396785b2eaa1497b7a58dddf19b3');*/
 
 /*ALIEX*/
 
-function getLogisticAddresses($sessionKey,$appkey,$secret)
+function getLogisticAddresses($sessionKey, $appkey, $secret)
 {
     $c = new TopClient;
     $c->format = "json";
@@ -34,7 +34,7 @@ function getLogisticAddresses($sessionKey,$appkey,$secret)
 
 }
 
-function logisticsSellershipmentfortop($serviceName, $order, $logisticsNo, $sessionKey,$appkey,$secret)
+function logisticsSellershipmentfortop($serviceName, $order, $logisticsNo, $sessionKey, $appkey, $secret)
 {
     $c = new TopClient;
     $c->format = 'json';
@@ -57,7 +57,7 @@ function buildShopOrders($orderOnLoad, $shopsOrders)
 
     $shopsOrders['orders'][] = $orderOnLoad;
     if (count($shopsOrders['orders']) > 0 && !isset($shopsOrders['sender'])) {
-        $getLogisticAddressesRes = getLogisticAddresses($shopsOrders['sessionKey'],$shopsOrders['appkey'],$shopsOrders['secret']);
+        $getLogisticAddressesRes = getLogisticAddresses($shopsOrders['sessionKey'], $shopsOrders['appkey'], $shopsOrders['secret']);
         $shopsOrders['sender'] = $getLogisticAddressesRes->sender_seller_address_list->senderselleraddresslist[0]->address_id ?? -1;
         $shopsOrders['pickup'] = $getLogisticAddressesRes->pickup_seller_address_list->pickupselleraddresslist[0]->address_id ?? -1;
         $shopsOrders['refund'] = $getLogisticAddressesRes->refund_seller_address_list->refundselleraddresslist[0]->address_id ?? -1;
@@ -96,7 +96,7 @@ function createHandoverList($refund, $pickup, $order_code_list, $sessionKey, $ap
     return $resp;
 }
 
-function printHandoverList($sessionKey,$appkey,$secret, $handoverContentId)
+function printHandoverList($sessionKey, $appkey, $secret, $handoverContentId)
 {
 
     /*1 - наклейка на контейнер*/
@@ -119,7 +119,7 @@ function printHandoverList($sessionKey,$appkey,$secret, $handoverContentId)
     return $resp;
 }
 
-function printHandoverSticker($sessionKey,$appkey,$secret, $handoverContentId)
+function printHandoverSticker($sessionKey, $appkey, $secret, $handoverContentId)
 {
 
     /*1 - наклейка на контейнер*/
@@ -201,31 +201,32 @@ foreach ($shopsOrders as $key => $shopOrders) {
             );
 
 
-            $externalCode = "LP".$matches[0][0];
+            $externalCode = "LP" . $matches[0][0];
             foreach ($shopOrders['orders'] as $index => $shopOrder) {
                 if ($shopOrder['externalCode'] === $externalCode) {
                     echo $shopOrder['name'];
-                    telegramReception("ТМОЛ. Для заказа ".$shopOrder['name'] ." уже есть лист передачи. Переведите его в статус Доставляется и перейдите по [ссылке](http://tmall-service.a3w.ru/integration/ali_express/ali_handover.php)", '-385044014','Markdown',true);
+                    telegramReception("ТМОЛ. Для заказа " . $shopOrder['name'] . " уже есть лист передачи. Переведите его в статус Доставляется и перейдите по [ссылке](http://tmall-service.a3w.ru/integration/ali_express/ali_handover.php)", '-385044014', 'Markdown', true);
 
                     break;
                 }
             }
 
             continue;
-        } else {
+        }
+        else {
 
             $handoverContentId = $createHandoverListResp->result->data->handover_content_id;
 
             /*8.1. Получение листа передачи */
 
-            $printHandoverListResp = printHandoverList($shopOrders['sessionKey'],$shopOrders['appkey'],$shopOrders['secret'], $handoverContentId);
+            $printHandoverListResp = printHandoverList($shopOrders['sessionKey'], $shopOrders['appkey'], $shopOrders['secret'], $handoverContentId);
             echo 'лист передачи' . PHP_EOL;
             if (!isset($printHandoverListResp->result->data)) {
                 sleep(15);
-                $printHandoverListResp = printHandoverList($shopOrders['sessionKey'],$shopOrders['appkey'],$shopOrders['secret'], $handoverContentId);
+                $printHandoverListResp = printHandoverList($shopOrders['sessionKey'], $shopOrders['appkey'], $shopOrders['secret'], $handoverContentId);
                 if (!isset($printHandoverListResp->result->data)) {
                     sleep(15);
-                    $printHandoverListResp = printHandoverList($shopOrders['sessionKey'],$shopOrders['appkey'],$shopOrders['secret'], $handoverContentId);
+                    $printHandoverListResp = printHandoverList($shopOrders['sessionKey'], $shopOrders['appkey'], $shopOrders['secret'], $handoverContentId);
                     if (!isset($printHandoverListResp->result->data)) {
                         telegram("ОШИБКА!! получения листа передачи $key", '-320614744', 'Markdown');
                         die();
@@ -242,14 +243,14 @@ foreach ($shopsOrders as $key => $shopOrders) {
 
             /*8.2. Получение этикетки контейнера (паллеты)*/
 
-            $printHandoverStickerResp = printHandoverSticker($shopOrders['sessionKey'],$shopOrders['appkey'],$shopOrders['secret'], $handoverContentId);
+            $printHandoverStickerResp = printHandoverSticker($shopOrders['sessionKey'], $shopOrders['appkey'], $shopOrders['secret'], $handoverContentId);
             echo 'этикетка контейнера' . PHP_EOL;
             if (!isset($printHandoverStickerResp->result->data)) {
                 sleep(15);
-                $printHandoverStickerResp = printHandoverSticker($shopOrders['sessionKey'],$shopOrders['appkey'],$shopOrders['secret'], $handoverContentId);
+                $printHandoverStickerResp = printHandoverSticker($shopOrders['sessionKey'], $shopOrders['appkey'], $shopOrders['secret'], $handoverContentId);
                 if (!isset($printHandoverStickerResp->result->data)) {
                     sleep(15);
-                    $printHandoverStickerResp = printHandoverSticker($shopOrders['sessionKey'],$shopOrders['appkey'],$shopOrders['secret'], $handoverContentId);
+                    $printHandoverStickerResp = printHandoverSticker($shopOrders['sessionKey'], $shopOrders['appkey'], $shopOrders['secret'], $handoverContentId);
                     if (!isset($printHandoverStickerResp->result->data)) {
                         telegram("ОШИБКА!! получения этикетки контейнера $key", '-320614744', 'Markdown');
                         die();
@@ -284,18 +285,39 @@ foreach ($shopsOrders as $key => $shopOrders) {
                         $logistics_type = "AE_RU_MP_RUPOST_PH3_FR";
                         break;
                 }
-                $sellerShipmentForTopResp = logisticsSellershipmentfortop($logistics_type, $shopOrder['name'], $shopOrder['_attributes']['Логистика: Трек'], $shopOrders['sessionKey'],$shopOrders['appkey'],$shopOrders['secret']);
+                $sellerShipmentForTopResp = logisticsSellershipmentfortop($logistics_type, $shopOrder['name'], $shopOrder['_attributes']['Логистика: Трек'], $shopOrders['sessionKey'], $shopOrders['appkey'], $shopOrders['secret']);
 //                var_dump($sellerShipmentForTopResp);
-                if ($sellerShipmentForTopResp->result_success === false){
-                    $failedOrders .= $shopOrder['name'] . " " ;
+                if ($sellerShipmentForTopResp->result_success === false) {
+                    $failedOrders .= $shopOrder['name'] . " ";
                 }
             }
-            if (strlen($failedOrders)>1){
+            if (strlen($failedOrders) > 1) {
                 telegramReception("TMALL. Ошибки установки трек номеров для заказов $failedOrders", '-385044014');
             }
-
-
+            setHasListMakerForOrdersInMS($shopOrders['orders'], $handoverContentId, $failedOrders);
 
         }
     }
+}
+
+
+function setHasListMakerForOrdersInMS($shopOrders, $listNumber, $failedOrders)
+{
+
+    foreach ($shopOrders as $shopOrder) {
+        if (strpos($failedOrders, $shopOrder['name']) > 0) continue;
+        /*update comment*/
+        $oldDescription = $shopOrder['description'];
+        var_dump("setHasListMakerForOrdersInMS processing " . $shopOrder['name']);
+
+        $postdata = '{"description": "' . $oldDescription . $listNumber . '"}';
+        $orderMSInstance = new \Avaks\MS\OrderMS($shopOrder['id']);
+
+        $updateOrderResp = $orderMSInstance->updateOrder($postdata);
+        if (strpos($updateOrderResp, 'обработка-ошибок') > 0 || $updateOrderResp == '') {
+            telegram("setHasListMakerForOrdersInMS error found " . $shopOrder['name'], '-320614744');
+            error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $updateOrderResp . " " . $shopOrder['name'] . PHP_EOL, 3, "setHasListMakerForOrdersInMS.log");
+        }
+    }
+
 }

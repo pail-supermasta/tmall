@@ -46,6 +46,7 @@ define('LOGINS', array(
 require_once 'taobao/TopSdk.php';
 require_once realpath(dirname(__FILE__) . '/..') . '/vendor/autoload.php';
 require_once realpath(dirname(__FILE__) . '/..') . '/moi_sklad/ms_change_order_dynamic.php';
+require_once realpath(dirname(__FILE__) . '/..') . '/class/telegram.php';
 
 
 use Avaks\MS\Orders;
@@ -84,43 +85,33 @@ foreach ($ordersWaitPayment as $order) {
         }
         $tmallOrder = findorderbyid($order['name'], $sessionKey, $appkey, $secret);
 
-        var_dump($tmallOrder['order_end_reason']);
         $oldDescription = $order['description'];
         /*удалить двойные ковычки*/
         $oldDescription = str_replace('"', '', $oldDescription);
         /*удалить новую строку*/
         $oldDescription = preg_replace('/\s+/', ' ', trim($oldDescription));
         $order_end_reason = $tmallOrder['order_end_reason'] ? '\n Причина завершения заказа: ' . $tmallOrder['order_end_reason'] : '';
-        $update = false;
 
         if ($tmallOrder['order_status'] == 'IN_CANCEL' ||
             ($tmallOrder['order_status'] == 'FINISH' && $tmallOrder['order_end_reason'] == 'send_goods_timeout') ||
-            ($tmallOrder['order_status'] == 'FINISH' && $tmallOrder['order_end_reason'] == 'buyer_cancel_order')
+            ($tmallOrder['order_status'] == 'FINISH' && $tmallOrder['order_end_reason'] == 'buyer_cancel_order') ||
+            ($tmallOrder['order_status'] == 'FINISH' && $tmallOrder['order_end_reason'] == 'buyer_pay_timeout')
         ) {
             $state = '327c070c-75c5-11e5-7a40-e8970013993b'; //Отменен
-            $update = true;
-        } else if ($tmallOrder['order_status'] == 'FINISH') {
-            $state = '327c04c9-75c5-11e5-7a40-e89700139939'; //Завершен
-            $update = true;
-        }
-
-        if ($update) {
             $postdata = '{
             "state": {
                 "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/metadata/states/$state",
+                    "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/metadata/states/'.$state.'",
                     "type": "state",
                     "mediaType": "application/json"
                 }
             },
             "description": "' . $oldDescription . $order_end_reason . '"}';
-            var_dump($postdata);
 
-
-        $res = curlMSFinish('робот_next@техтрэнд', $postdata, $order['id']);
-        var_dump($res);
-        die();
+            $res = curlMSFinish('робот_next@техтрэнд', $postdata, $order['id']);
+            var_dump($order["name"] . "Результат обновления: $res");
         }
+
 
     }
 }
