@@ -149,6 +149,7 @@ $ordersOnLoad = $ordersMSInstance->getOrdersOnLoad();
 
 $shopsOrders = [];
 foreach ($ordersOnLoad as $orderOnLoad) {
+//    if (strpos($orderOnLoad['description'], '«Добавлен в акт') > 0) continue;
     switch (true) {
         case stripos($orderOnLoad['description'], "BESTGOODS (ID 5041091)") !== false :
             $shopName = 'BESTGOODS';
@@ -294,7 +295,7 @@ foreach ($shopsOrders as $key => $shopOrders) {
             if (strlen($failedOrders) > 1) {
                 telegramReception("TMALL. Ошибки установки трек номеров для заказов $failedOrders", '-385044014');
             }
-            setHasListMakerForOrdersInMS($shopOrders['orders'], $handoverContentId, $failedOrders);
+            setHasListMakerForOrdersInMS($shopOrders['orders'], " «Добавлен в акт $handoverContentId »", $failedOrders);
 
         }
     }

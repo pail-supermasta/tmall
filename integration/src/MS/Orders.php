@@ -128,17 +128,21 @@ class Orders
     public function getOrdersOnLoad()
     {
         $backendAPI = new BackendAPI();
+        $todayDay = strtotime(gmdate("Y-m-d"));
+        $offset = 7 * 24 * 60 * 60;
+        $weekAgo = date("Y-m-d H:i:s", $todayDay - $offset);
         $filter = [
             '_agent' => '1b33fbc1-5539-11e9-9ff4-315000060bc8',
+            'moment' => ['$gt' => $weekAgo],
             '_state' => ['$in' => [
-//                '8beb227b-6088-11e7-7a6c-d2a9003b81a3',//комплектуется
-                '8beb25ab-6088-11e7-7a6c-d2a9003b81a4' // на выдаче
+                '8beb227b-6088-11e7-7a6c-d2a9003b81a3',//комплектуется
+                '8beb25ab-6088-11e7-7a6c-d2a9003b81a4', // на выдаче
+                '327c03c6-75c5-11e5-7a40-e89700139938' // Доставляется
             ]],
             'applicable' => true,
             '_attributes.#Логистика: агент' => 'Cainiao',
             '_attributes.Логистика: Трек' => ['$exists' => true],
-//            'description' => ['$regex' => 'give_me_list']
-            'description' => ['$not' => ['$regex' => 'handover_sheet_passed']]
+            'description' => ['$not' => ['$regex' => 'Добавлен в акт']]
         ];
 
         $data['filter'] = json_encode($filter);

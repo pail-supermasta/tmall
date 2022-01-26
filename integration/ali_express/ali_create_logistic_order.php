@@ -340,6 +340,7 @@ $ordersMSInstance = new Orders();
 $ordersInWork = $ordersMSInstance->getOrdersInWork();
 // for each MS ->
 foreach ($ordersInWork as $orderInWork) {
+    if ($orderInWork['name'] == '' || $orderInWork['name'] == ' ' || $orderInWork['name'] == 'M' || $orderInWork['name'] == '7') continue;
 
     /*1. Получение sessionKey в зависимости от описания заказа*/
     $getOrderShopArr = getOrderShop($orderInWork['description']);
