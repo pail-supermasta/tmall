@@ -36,6 +36,11 @@ function getOrderShop($description)
             $appkey = '32817975';
             $secret = 'fc3e140009f59832442d5c195c807fc0';
             break;
+        case stripos($description, "novinkiooo (ID 4901001)") !== false :
+            $sessionKey = "50002500721djOAer7LBO3mQAZ5jVdhrE1730b9ebRsc7FeT4LrwHiIRmawEnCmZwzue";
+            $appkey = '32817975';
+            $secret = 'fc3e140009f59832442d5c195c807fc0';
+            break;
     }
     return [$sessionKey, $appkey, $secret];
 }

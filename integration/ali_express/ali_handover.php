@@ -166,6 +166,13 @@ foreach ($ordersOnLoad as $orderOnLoad) {
             $shopsOrders[$shopName] = buildShopOrders($orderOnLoad, $shopsOrders[$shopName]);
 
             break;
+        case stripos($orderOnLoad['description'], "novinkiooo (ID 4901001)") !== false :
+        $shopName = 'orion';
+            $shopsOrders[$shopName]['sessionKey'] = "50002500721djOAer7LBO3mQAZ5jVdhrE1730b9ebRsc7FeT4LrwHiIRmawEnCmZwzue";
+            $shopsOrders[$shopName]['appkey'] = "32817975";
+            $shopsOrders[$shopName]['secret'] = "fc3e140009f59832442d5c195c807fc0";
+            $shopsOrders[$shopName] = buildShopOrders($orderOnLoad, $shopsOrders[$shopName]);
+            break;
 
     }
 

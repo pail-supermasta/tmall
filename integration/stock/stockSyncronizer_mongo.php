@@ -39,7 +39,18 @@ define('LOGINS', array(
         'cnId' => '****', // get once
         'shopInfo'=> 'TMall ID (Orion)'
 
-    )
+    ),
+    array(
+         'appkey' => '32817975', //aliexpr app key orion
+         'secret' => 'fc3e140009f59832442d5c195c807fc0', //aliexpr app secret orion
+         'name' => 'novinkiooo',
+         'login' => 'novinkiooo@yandex.ru',
+         'field_id' => 'e8a40577-77b9-11e9-912f-f3d40003d45d',
+         'sessionKey' => '50002500721djOAer7LBO3mQAZ5jVdhrE1730b9ebRsc7FeT4LrwHiIRmawEnCmZwzue',
+         'cpCode' => 'OTQwTzB2T1U3N1Nza0Y3OVRKMHZyVWtPL0RFRjJHczBqUHBDRHBqK05LVXdBc1pJRkk0THo1YUVLR21PNE5IZQ==',
+         'cnId' => '4398985964371',
+         'shopInfo'=> 'TMall ID (novinkiooo)'
+    ),
 ));
 
 

@@ -82,6 +82,10 @@ function findOrderSessionKey($deliveringAliOrder)
     } elseif (preg_match('/orion/', $deliveringAliOrder['description'], $matches)) {
 
         $sessionKey = '50002201211qy8OzguEiR9T194d19ebvE7Girftw0dmHtGxmyX9d28OxEySXGK37wpOd';
+
+    } elseif (preg_match('/novinkiooo/', $deliveringAliOrder['description'], $matches)) {
+
+        $sessionKey = '50002500721djOAer7LBO3mQAZ5jVdhrE1730b9ebRsc7FeT4LrwHiIRmawEnCmZwzue';
     }
 
     return $sessionKey;
