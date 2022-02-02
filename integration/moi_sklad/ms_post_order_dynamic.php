@@ -130,6 +130,11 @@ function fillOrderTemplate(array $orderDetails)
             $organization = '20118958-cc01-11ea-0a80-019e0006076a';
             $organizationAccount = '20118e45-cc01-11ea-0a80-019e0006076b';
             break;
+        case "novinkiooo@yandex.ru":
+            $shopId = "novinkiooo (ID 4901001)";
+            $organization = 'b2c9e371-1b98-11e6-7a69-93a700176cab';
+            $organizationAccount = 'cecd7735-b55a-11ea-0a80-012b000c8066';
+            break;
     }
 
     $shop = $shopId . '\\n/*Складу - вложить гарантийный талон \\n/*Логистам - Отправить клиенту согласно заполненным полям';

@@ -38,6 +38,7 @@ function getProductByIDMongo($code)
         $item['id'] = $product['_id'];
         $item['minPrice'] = $product['minPrice']['value'];
         $item['salePrices'] = json_encode($product['salePrices']);
+        $item['code'] = $product['code'];
         return $item;
     } else {
         $bundle = $collection->bundle->findOne($filter);
@@ -45,6 +46,7 @@ function getProductByIDMongo($code)
             $item['id'] = $bundle['_id'];
             $item['minPrice'] = $bundle['minPrice']['value'];
             $item['salePrices'] = json_encode($bundle['salePrices']);
+            $item['code'] = $product['code'];
             return $item;
         } else {
             $service = $collection->service->findOne($filter);
@@ -52,6 +54,7 @@ function getProductByIDMongo($code)
                 $item['id'] = $service['_id'];
                 $item['minPrice'] = $service['minPrice']['value'];
                 $item['salePrices'] = json_encode($service['salePrices']);
+                $item['code'] = $product['code'];
                 return $item;
             } else {
                 return false;
@@ -452,7 +455,7 @@ function processOrders($files)
 
 
             foreach ($split as $order) {
-                if ($order) {
+                if (!empty($order)) {
                     /*  check if order id NOT exists in MS  */
 //                $link = MS_PATH . "/entity/customerorder/?search=" . $order;
                     $link = MS_PATH . "/entity/customerorder/?filter=name=" . $order;

@@ -49,7 +49,7 @@ define('LOGINS', array(
          'sessionKey' => '50002500721djOAer7LBO3mQAZ5jVdhrE1730b9ebRsc7FeT4LrwHiIRmawEnCmZwzue',
          'cpCode' => 'OTQwTzB2T1U3N1Nza0Y3OVRKMHZyVWtPL0RFRjJHczBqUHBDRHBqK05LVXdBc1pJRkk0THo1YUVLR21PNE5IZQ==',
          'cnId' => '4398985964371',
-         'shopInfo'=> 'TMall ID (novinkiooo)'
+         'shopInfo'=> 'TMall ID'
     ),
 ));
 
@@ -212,6 +212,7 @@ function updateStock($credential){
         $aliProduct = new Product($product['_attributes'][$shop], $product['code']);
 
         $response = $aliProduct->setStock($stockMS[$product['_id']]['available'], $credential);
+        var_export($product['code']);
         var_export($response);
     }
     $end = microtime(TRUE);
