@@ -47,7 +47,7 @@ function getOrderShop($description)
 
 /*ALIEX*/
 
-function getLogisticAddresses($sessionKey,$appkey,$secret)
+function getLogisticAddresses($sessionKey, $appkey, $secret)
 {
     $c = new TopClient;
     $c->format = "json";
@@ -61,7 +61,7 @@ function getLogisticAddresses($sessionKey,$appkey,$secret)
 
 }
 
-function findorderbyid($post_data, $sessionKey,$appkey,$secret)
+function findorderbyid($post_data, $sessionKey, $appkey, $secret)
 {
 
     $c = new TopClient;
@@ -84,7 +84,7 @@ function findorderbyid($post_data, $sessionKey,$appkey,$secret)
     return $res;
 }
 
-function getLogisticOrderInfo($order, $logistics_order_id,  $sessionKey,$appkey,$secret)
+function getLogisticOrderInfo($order, $logistics_order_id, $sessionKey, $appkey, $secret)
 {
 
     $c = new TopClient;
@@ -99,7 +99,7 @@ function getLogisticOrderInfo($order, $logistics_order_id,  $sessionKey,$appkey,
     return $resp;
 }
 
-function printInfo($internationallogistics_id, $sessionKey,$appkey,$secret)
+function printInfo($internationallogistics_id, $sessionKey, $appkey, $secret)
 {
     $c = new TopClient;
     $c->format = "json";
@@ -117,7 +117,7 @@ function printInfo($internationallogistics_id, $sessionKey,$appkey,$secret)
 
 
 /*CAINIAO*/
-function firstMile($address_id, $solution_code, $sessionKey,$appkey,$secret)
+function firstMile($address_id, $solution_code, $sessionKey, $appkey, $secret)
 {
 
     $c = new TopClient;
@@ -142,7 +142,7 @@ function firstMile($address_id, $solution_code, $sessionKey,$appkey,$secret)
     return $resp;
 }
 
-function cainiaoGlobalLogisticOrderCreate($findorderbyidRes, $sender, $pickup, $refund, $logistics_type, $warehouse_code, $order, $sessionKey,$appkey,$secret)
+function cainiaoGlobalLogisticOrderCreate($findorderbyidRes, $sender, $pickup, $refund, $logistics_type, $warehouse_code, $order, $sessionKey, $appkey, $secret)
 {
 
     $orderAli = json_decode($findorderbyidRes, true);
@@ -275,20 +275,24 @@ function setNewPositionPrice($findorderbyidRes, $order)
         $oldPosTot = $product["quantity"] * $product["price"] / 100;
         $newPosTot = $oldPosTot - $diff * ($oldPosTot / $orderMSSum);
         $newPrice = 100 * $newPosTot / $product["quantity"];
+        if (!empty($newPrice)) {
+            /*set new prices in MS*/
 
-        /*set new prices in MS*/
-
-        $postdata = '{
+            $postdata = '{
                   "price": ' . $newPrice . '
                 }';
 
 
-        $setNewPositionPriceResp = $orderMS->updatePositions($postdata, $product['id']);
-        /*check if no Errors from MS or check again otherwise send TG message*/
-        if (strpos($setNewPositionPriceResp, 'обработка-ошибок') > 0 || $setNewPositionPriceResp == '') {
-            telegram("setNewPositionPrice error found " . $order, '-320614744');
-            error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setNewPositionPriceResp . " " . $order . PHP_EOL, 3, "setNewPositionPriceResp.log");
+            $setNewPositionPriceResp = $orderMS->updatePositions($postdata, $product['id']);
+            /*check if no Errors from MS or check again otherwise send TG message*/
+            if (strpos($setNewPositionPriceResp, 'обработка-ошибок') > 0 || $setNewPositionPriceResp == '') {
+                telegram("setNewPositionPrice error found " . $order, '-320614744');
+                error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setNewPositionPriceResp . " " . $order . PHP_EOL, 3, "setNewPositionPriceResp.log");
+            }
+
         }
+
+
     }
 
     $productsAli = $findorderbyidRes['child_order_list']['global_aeop_tp_child_order_dto'];
@@ -355,13 +359,13 @@ foreach ($ordersInWork as $orderInWork) {
 
     /*1.0 Получение списка адресов продавца, сохранённых в системе ++*/
 
-    $getLogisticAddressesRes = getLogisticAddresses($sessionKey,$appkey,$secret);
+    $getLogisticAddressesRes = getLogisticAddresses($sessionKey, $appkey, $secret);
     $sender = $getLogisticAddressesRes->sender_seller_address_list->senderselleraddresslist[0]->address_id ?? -1;
     $pickup = $getLogisticAddressesRes->pickup_seller_address_list->pickupselleraddresslist[0]->address_id ?? -1;
     $refund = $getLogisticAddressesRes->refund_seller_address_list->refundselleraddresslist[0]->address_id ?? -1;
 
     /*1.1. Получение деталей заказа из АЕ ++*/
-    $findorderbyidRes = findorderbyid($orderInWork['name'], $sessionKey,$appkey,$secret);
+    $findorderbyidRes = findorderbyid($orderInWork['name'], $sessionKey, $appkey, $secret);
 
     /*2. Получение списка логистических решений, доступных для отгрузки заказа ++*/
 
@@ -382,12 +386,12 @@ foreach ($ordersInWork as $orderInWork) {
     /*3. Получение списка кодов ресурсов, доступных для адреса отгрузки
      и выбранного режима первой мили ++*/
 
-    $firstMileRes = firstMile($sender, $logistics_type, $sessionKey,$appkey,$secret);
+    $firstMileRes = firstMile($sender, $logistics_type, $sessionKey, $appkey, $secret);
     $warehouse_code = $firstMileRes->result->result->solution_service_res_list->solution_service_res_dto[0]->code;
 
     /*4. Создание логистического заказа ++ */
 
-    $cainiaoGlobalLogisticOrderCreate = cainiaoGlobalLogisticOrderCreate($findorderbyidRes, $sender, $pickup, $refund, $logistics_type, $warehouse_code, $orderInWork, $sessionKey,$appkey,$secret);
+    $cainiaoGlobalLogisticOrderCreate = cainiaoGlobalLogisticOrderCreate($findorderbyidRes, $sender, $pickup, $refund, $logistics_type, $warehouse_code, $orderInWork, $sessionKey, $appkey, $secret);
     if (!isset($cainiaoGlobalLogisticOrderCreate->result->logistics_order_id)) {
         var_dump('logistics_order_id undefined');
         var_dump($cainiaoGlobalLogisticOrderCreate);
@@ -403,17 +407,17 @@ foreach ($ordersInWork as $orderInWork) {
 
     /*5. Скачивание данных логистического заказа ++*/
 
-    $getLogisticOrderInfoRes = getLogisticOrderInfo($order, $logistics_order_id, $sessionKey,$appkey,$secret);
+    $getLogisticOrderInfoRes = getLogisticOrderInfo($order, $logistics_order_id, $sessionKey, $appkey, $secret);
     if (isset($getLogisticOrderInfoRes->result_list->result[0])) {
         $lp_number = $getLogisticOrderInfoRes->result_list->result[0]->lp_number;
 
         if (!isset($getLogisticOrderInfoRes->result_list->result[0]->internationallogistics_id)) {
             sleep(5);
-            $getLogisticOrderInfoRes = getLogisticOrderInfo($order, $logistics_order_id, $sessionKey,$appkey,$secret);
+            $getLogisticOrderInfoRes = getLogisticOrderInfo($order, $logistics_order_id, $sessionKey, $appkey, $secret);
 
             if (!isset($getLogisticOrderInfoRes->result_list->result[0]->internationallogistics_id)) {
                 sleep(5);
-                $getLogisticOrderInfoRes = getLogisticOrderInfo($order, $logistics_order_id, $sessionKey,$appkey,$secret);
+                $getLogisticOrderInfoRes = getLogisticOrderInfo($order, $logistics_order_id, $sessionKey, $appkey, $secret);
 
                 if (!isset($getLogisticOrderInfoRes->result_list->result[0]->internationallogistics_id)) {
                     telegram("ОШИБКА!! получения наклейки $order", '-320614744', 'Markdown');
@@ -426,11 +430,11 @@ foreach ($ordersInWork as $orderInWork) {
 
     /*6. Получение PDF для печати этикетки заказа ++*/
 
-    $printInfoResp = printInfo($internationallogistics_id, $sessionKey,$appkey,$secret);
+    $printInfoResp = printInfo($internationallogistics_id, $sessionKey, $appkey, $secret);
     echo 'наклейка' . PHP_EOL;
     if (!isset(json_decode($printInfoResp->result)->body)) {
         sleep(5);
-        $printInfoResp = printInfo($internationallogistics_id, $sessionKey,$appkey,$secret);
+        $printInfoResp = printInfo($internationallogistics_id, $sessionKey, $appkey, $secret);
         if (!isset(json_decode($printInfoResp->result)->body)) {
             telegram("ОШИБКА!! получения наклейки $order", '-320614744', 'Markdown');
             continue;

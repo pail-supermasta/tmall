@@ -47,7 +47,7 @@ class OrderMS
 
         $filter = [
             'name' => $this->name,
-            'deleted' => ['$exists' => false]
+            'applicable' => true
         ];
         $ordersCursor = $collection->customerorder->findOne($filter);
         $agent = $ordersCursor['_attributes']['#Логистика: агент'] ?? false;
