@@ -105,7 +105,6 @@ function formMasterList($credential)
     $req->setParamAeopOrderQuery(json_encode($param_aeop_order_query));
     $resp = $c->execute($req, $sessionKey);
     $res = json_encode((array)$resp);
-    var_dump($resp);
     return json_decode($res, true);
 //    'RISK_CONTROL', 'PAYMENT_PROCESSING'
 

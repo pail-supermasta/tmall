@@ -76,10 +76,10 @@ function userDataValidation($address, $order)
     /*AF3 отсутствует 3 обязательных ФИО*/
     $pieces = explode(" ", $address['contact_person']);
     $fioFail = count(array_filter($pieces));
-    if ($fioFail < 3) {
+    /*if ($fioFail < 3) {
         $message .= "\nФИО, ошибка в заказе #$order";
         $err .= ($fioFail > 0) ? '' : '$fioFail ';
-    }
+    }*/
 
     /*AF3 индекс не соответствует формату -  6 цифр где первые три цифры между 100 и 999*/
     $indexLen = strlen($address['zip']);

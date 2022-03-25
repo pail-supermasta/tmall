@@ -110,9 +110,9 @@ function fillOrderTemplate(array $orderDetails)
 
 
     /*city - Other now not processed by Cainiao, deliver with other shipper*/
-    if (strpos($orderDetails['fullAddress'], "Other") > 0) {
+    /*if (strpos($orderDetails['fullAddress'], "Other") > 0) {
         $logisticsProvider = '0 Нужна доставка';
-    }
+    }*/
 
 
     // указываем магазин в котором купили на ALI
