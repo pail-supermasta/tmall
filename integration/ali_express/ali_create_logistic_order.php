@@ -366,112 +366,138 @@ foreach ($ordersInWork as $orderInWork) {
 
     /*1.1. Получение деталей заказа из АЕ ++*/
     $findorderbyidRes = findorderbyid($orderInWork['name'], $sessionKey, $appkey, $secret);
+    $respDecoded = json_decode($findorderbyidRes, true);
 
-    /*2. Получение списка логистических решений, доступных для отгрузки заказа ++*/
 
-    $logistics_type = 'AE_RU_MP_COURIER_PH3';
-    switch ($findorderbyidRes) {
-        case strpos($findorderbyidRes, 'AE_RU_MP_PUDO_PH3') > 0:
-            $logistics_type = 'AE_RU_MP_PUDO_PH3';
-            break;
-        case strpos($findorderbyidRes, 'AE_RU_MP_OVERSIZE_PH3') > 0:
-            $logistics_type = 'AE_RU_MP_OVERSIZE_PH3';
-            break;
-        case strpos($findorderbyidRes, 'AE_RU_MP_RUPOST_PH3_FR') > 0:
-            $logistics_type = 'AE_RU_MP_RUPOST_PH3_FR';
-            break;
+    /*FBS Aliexpress*/
+    if ($respDecoded['order_status'] != 'WAIT_BUYER_ACCEPT_GOODS' && strpos($findorderbyidRes, 'MYMALL_') > 0 ) {
+        var_dump("orderInWork: " . $orderInWork['name'] . " order_status:" .  $respDecoded['order_status']);
     }
+    elseif ($respDecoded['order_status'] != 'WAIT_BUYER_ACCEPT_GOODS') {
+        /*2. Получение списка логистических решений, доступных для отгрузки заказа ++*/
+
+        $logistics_type = 'AE_RU_MP_COURIER_PH3';
+        switch ($findorderbyidRes) {
+            case strpos($findorderbyidRes, 'AE_RU_MP_PUDO_PH3') > 0:
+                $logistics_type = 'AE_RU_MP_PUDO_PH3';
+                break;
+            case strpos($findorderbyidRes, 'AE_RU_MP_OVERSIZE_PH3') > 0:
+                $logistics_type = 'AE_RU_MP_OVERSIZE_PH3';
+                break;
+            case strpos($findorderbyidRes, 'AE_RU_MP_RUPOST_PH3_FR') > 0:
+                $logistics_type = 'AE_RU_MP_RUPOST_PH3_FR';
+                break;
+        }
 
 
-    /*3. Получение списка кодов ресурсов, доступных для адреса отгрузки
-     и выбранного режима первой мили ++*/
+        /*3. Получение списка кодов ресурсов, доступных для адреса отгрузки
+         и выбранного режима первой мили ++*/
 
-    $firstMileRes = firstMile($sender, $logistics_type, $sessionKey, $appkey, $secret);
-    $warehouse_code = $firstMileRes->result->result->solution_service_res_list->solution_service_res_dto[0]->code;
+        $firstMileRes = firstMile($sender, $logistics_type, $sessionKey, $appkey, $secret);
+        $warehouse_code = $firstMileRes->result->result->solution_service_res_list->solution_service_res_dto[0]->code;
 
-    /*4. Создание логистического заказа ++ */
+        /*4. Создание логистического заказа ++ */
 
-    $cainiaoGlobalLogisticOrderCreate = cainiaoGlobalLogisticOrderCreate($findorderbyidRes, $sender, $pickup, $refund, $logistics_type, $warehouse_code, $orderInWork, $sessionKey, $appkey, $secret);
-    if (!isset($cainiaoGlobalLogisticOrderCreate->result->logistics_order_id)) {
-        var_dump('logistics_order_id undefined');
-        var_dump($cainiaoGlobalLogisticOrderCreate);
-        $message = "Ошибка создания логистического заказа " . $orderInWork['name'];
-        telegram($message, '-278688533');
-        continue;
-    }
-    $logistics_order_id = $cainiaoGlobalLogisticOrderCreate->result->logistics_order_id;
-    sleep(5);
-    var_dump($logistics_order_id);
+        $cainiaoGlobalLogisticOrderCreate = cainiaoGlobalLogisticOrderCreate($findorderbyidRes, $sender, $pickup, $refund, $logistics_type, $warehouse_code, $orderInWork, $sessionKey, $appkey, $secret);
+        if (!isset($cainiaoGlobalLogisticOrderCreate->result->logistics_order_id)) {
+            var_dump('logistics_order_id undefined');
+            var_dump($cainiaoGlobalLogisticOrderCreate);
+            $message = "Ошибка создания логистического заказа " . $orderInWork['name'];
+            telegram($message, '-278688533');
+            continue;
+        }
+        $logistics_order_id = $cainiaoGlobalLogisticOrderCreate->result->logistics_order_id;
+        sleep(5);
+        var_dump($logistics_order_id);
 //    $logistics_order_id = 20130226187;
-    $order = $orderInWork['name'];
+        $order = $orderInWork['name'];
 
-    /*5. Скачивание данных логистического заказа ++*/
+        /*5. Скачивание данных логистического заказа ++*/
 
-    $getLogisticOrderInfoRes = getLogisticOrderInfo($order, $logistics_order_id, $sessionKey, $appkey, $secret);
-    if (isset($getLogisticOrderInfoRes->result_list->result[0])) {
-        $lp_number = $getLogisticOrderInfoRes->result_list->result[0]->lp_number;
-
-        if (!isset($getLogisticOrderInfoRes->result_list->result[0]->internationallogistics_id)) {
-            sleep(5);
-            $getLogisticOrderInfoRes = getLogisticOrderInfo($order, $logistics_order_id, $sessionKey, $appkey, $secret);
+        $getLogisticOrderInfoRes = getLogisticOrderInfo($order, $logistics_order_id, $sessionKey, $appkey, $secret);
+        if (isset($getLogisticOrderInfoRes->result_list->result[0])) {
+            $lp_number = $getLogisticOrderInfoRes->result_list->result[0]->lp_number;
 
             if (!isset($getLogisticOrderInfoRes->result_list->result[0]->internationallogistics_id)) {
                 sleep(5);
                 $getLogisticOrderInfoRes = getLogisticOrderInfo($order, $logistics_order_id, $sessionKey, $appkey, $secret);
 
                 if (!isset($getLogisticOrderInfoRes->result_list->result[0]->internationallogistics_id)) {
-                    telegram("ОШИБКА!! получения наклейки $order", '-320614744', 'Markdown');
-                    continue;
+                    sleep(5);
+                    $getLogisticOrderInfoRes = getLogisticOrderInfo($order, $logistics_order_id, $sessionKey, $appkey, $secret);
+
+                    if (!isset($getLogisticOrderInfoRes->result_list->result[0]->internationallogistics_id)) {
+                        telegram("ОШИБКА!! получения наклейки $order", '-320614744', 'Markdown');
+                        continue;
+                    }
                 }
             }
+            $internationallogistics_id = $getLogisticOrderInfoRes->result_list->result[0]->internationallogistics_id;
         }
-        $internationallogistics_id = $getLogisticOrderInfoRes->result_list->result[0]->internationallogistics_id;
-    }
 
-    /*6. Получение PDF для печати этикетки заказа ++*/
+        /*6. Получение PDF для печати этикетки заказа ++*/
 
-    $printInfoResp = printInfo($internationallogistics_id, $sessionKey, $appkey, $secret);
-    echo 'наклейка' . PHP_EOL;
-    if (!isset(json_decode($printInfoResp->result)->body)) {
-        sleep(5);
         $printInfoResp = printInfo($internationallogistics_id, $sessionKey, $appkey, $secret);
+        echo 'наклейка' . PHP_EOL;
         if (!isset(json_decode($printInfoResp->result)->body)) {
-            telegram("ОШИБКА!! получения наклейки $order", '-320614744', 'Markdown');
-            continue;
+            sleep(5);
+            $printInfoResp = printInfo($internationallogistics_id, $sessionKey, $appkey, $secret);
+            if (!isset(json_decode($printInfoResp->result)->body)) {
+                telegram("ОШИБКА!! получения наклейки $order", '-320614744', 'Markdown');
+                continue;
+            }
+        }
+
+        $b64 = json_decode($printInfoResp->result)->body;
+
+        $bin = base64_decode($b64, true);
+
+        file_put_contents("/home/tmall-service/public_html/integration/ali_express/files/labels/$order.pdf", $bin);
+
+
+        /*ДОБАВИТЬ ТРЕК И LP В МС*/
+        /*ДОБАВИТЬ PDF для печати В МС*/
+        /*ОТГРУЗИТЬ В МС*/
+
+
+        $orderMSInstance = new OrderMS();
+        $orderMSInstance->id = $orderInWork['_id'];
+        $orderMSInstance->name = $order;
+        $orderMSInstance->logistics_type = $logistics_type;
+        $orderMSInstance->description = $orderInWork['description'];
+        $orderMSInstance->lpNumber = $lp_number;
+        $orderMSInstance->trackNum = $internationallogistics_id;
+        $setLogisticOrderResp = $orderMSInstance->setLogisticOrder();
+        var_dump($setLogisticOrderResp);
+        if (strpos($setLogisticOrderResp, 'обработка-ошибок') > 0 || $setLogisticOrderResp == '') {
+            telegram("setToPack error found $orderMSInstance->name", '-320614744');
+            error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setLogisticOrderResp . " " . $orderMSInstance->name . PHP_EOL, 3, "setToPack.log");
+        } else {
+            $message = "Заказ №$orderMSInstance->name - оформлен в Цайняо и отправлен в Отгрузку";
+            telegram($message, '-278688533');
+            /*set new position price*/
+            setNewPositionPrice($findorderbyidRes, $orderMSInstance->name);
+        }
+
+    }
+    elseif ($respDecoded['order_status'] == 'WAIT_BUYER_ACCEPT_GOODS' && strpos($findorderbyidRes, 'MYMALL_') > 0) {
+        $orderMSInstance = new OrderMS();
+        $orderMSInstance->id = $orderInWork['_id'];
+        $orderMSInstance->name = $orderInWork['name'];
+        $orderMSInstance->description = $orderInWork['description'];
+        $orderMSInstance->trackNum = $respDecoded['logistic_info_list']['global_aeop_tp_logistic_info_dto'][0]["logistics_no"];
+        $setLogisticOrderResp = $orderMSInstance->setTrackingNumFSBAliexpress();
+        var_dump($setLogisticOrderResp);
+        if (strpos($setLogisticOrderResp, 'обработка-ошибок') > 0 || $setLogisticOrderResp == '') {
+            telegram("setToPack error found $orderMSInstance->name", '-320614744');
+            error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setLogisticOrderResp . " " . $orderMSInstance->name . PHP_EOL, 3, "setToPack.log");
+        } else {
+            $message = "Заказ №$orderMSInstance->name - FBS Aliexpress отправлен в Отгрузку";
+            telegram($message, '-278688533');
+            /*set new position price*/
+            setNewPositionPrice($findorderbyidRes, $orderMSInstance->name);
         }
     }
-
-    $b64 = json_decode($printInfoResp->result)->body;
-
-    $bin = base64_decode($b64, true);
-
-    file_put_contents("/home/tmall-service/public_html/integration/ali_express/files/labels/$order.pdf", $bin);
-
-
-    /*ДОБАВИТЬ ТРЕК И LP В МС*/
-    /*ДОБАВИТЬ PDF для печати В МС*/
-    /*ОТГРУЗИТЬ В МС*/
-
-
-    $orderMSInstance = new OrderMS();
-    $orderMSInstance->id = $orderInWork['_id'];
-    $orderMSInstance->name = $order;
-    $orderMSInstance->logistics_type = $logistics_type;
-    $orderMSInstance->description = $orderInWork['description'];
-    $orderMSInstance->lpNumber = $lp_number;
-    $orderMSInstance->trackNum = $internationallogistics_id;
-    $setLogisticOrderResp = $orderMSInstance->setLogisticOrder();
-    var_dump($setLogisticOrderResp);
-    if (strpos($setLogisticOrderResp, 'обработка-ошибок') > 0 || $setLogisticOrderResp == '') {
-        telegram("setToPack error found $orderMSInstance->name", '-320614744');
-        error_log(date("Y-m-d H:i:s", strtotime(gmdate("Y-m-d H:i:s")) + 3 * 60 * 60) . $setLogisticOrderResp . " " . $orderMSInstance->name . PHP_EOL, 3, "setToPack.log");
-    } else {
-        $message = "Заказ №$orderMSInstance->name - оформлен в Цайняо и отправлен в Отгрузку";
-        telegram($message, '-278688533');
-        /*set new position price*/
-        setNewPositionPrice($findorderbyidRes, $orderMSInstance->name);
-    }
-
 
 }
 

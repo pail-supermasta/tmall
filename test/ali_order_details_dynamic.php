@@ -31,5 +31,5 @@ function findorderbyid($post_data, $sessionKey)
 require_once '../integration/ali_express/taobao/TopSdk.php';
 define('APPKEY', '32817975');
 define('SECRET', 'fc3e140009f59832442d5c195c807fc0');
-$shorten = findorderbyid('5013319238135280','50002301029r4LfaZzIzGMtdxRiWieuBmz1cGhQJ41a449a01ITXlFanTOWxJBdCZLQ5');
-var_dump($shorten);
+$shorten = findorderbyid('5019241171106742','50002500721djOAer7LBO3mQAZ5jVdhrE1730b9ebRsc7FeT4LrwHiIRmawEnCmZwzue');
+var_export($shorten);

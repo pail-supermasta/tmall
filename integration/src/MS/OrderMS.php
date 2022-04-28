@@ -204,4 +204,52 @@ class OrderMS
         return $res;
 
     }
+
+    public function setTrackingNumFSBAliexpress()
+    {
+
+        $oldDescription = $this->description;
+        /*удалить двойные ковычки*/
+        $oldDescription = str_replace('"', '', $oldDescription);
+        /*удалить новую строку*/
+        $oldDescription = preg_replace('/\s+/', ' ', trim($oldDescription));
+
+
+        $postdata['description'] = "$oldDescription ; Отгрузка со склада Алиэкспресс Ссылка для отслеживания https://global.cainiao.com/detail.htm?mailNoList=$this->trackNum  Добавлен в акт ";
+
+        // track num
+        $attributea['id'] = '8a500683-10fc-11ea-0a80-0533000590c8';
+        $attributea['value'] = "$this->trackNum";
+        $postdata['attributes'][] = $attributea;
+
+
+        // state отгрузить
+        $postdata['state'] = [
+            "meta" => [
+                "href" => "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/metadata/states/327c02b4-75c5-11e5-7a40-e89700139937",
+                "type" => "state",
+                "mediaType" => "application/json"
+            ]
+        ];
+
+        // store Склад Tmall КОММ АВ
+        $postdata['store'] = [
+            "meta" => [
+                "href" => "https://online.moysklad.ru/api/remap/1.2/entity/store/dcafb829-7f5c-11ec-0a80-0e14000b2d0e",
+                "metadataHref" => "https://online.moysklad.ru/api/remap/1.1/entity/store/metadata",
+                "type" => "store",
+                "mediaType" => "application/json",
+                "uuidHref" => "https://online.moysklad.ru/app/#warehouse/edit?id=dcafb829-7f5c-11ec-0a80-0e14000b2d0e"
+            ]
+        ];
+
+
+        $postdata = json_encode($postdata);
+
+
+        $res = CurlMoiSklad::curlMS('/entity/customerorder/' . $this->id, $postdata, 'put');
+
+        return $res;
+
+    }
 }
