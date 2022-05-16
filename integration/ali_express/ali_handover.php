@@ -199,7 +199,7 @@ foreach ($shopsOrders as $key => $shopOrders) {
             var_export($createHandoverListResp);
             $sub_msg = ((array)$createHandoverListResp)['sub_msg'];
             telegram("$key createHandoverList error found $order_code_list", '-320614744');
-            telegramReception("ТМОЛ. Ошибка создания листа передачи. ", '-385044014');
+            telegramReception("ТМОЛ. Ошибка создания листа передачи. ", '-1001633181187');
 
 
             preg_match_all(
@@ -213,7 +213,7 @@ foreach ($shopsOrders as $key => $shopOrders) {
             foreach ($shopOrders['orders'] as $index => $shopOrder) {
                 if ($shopOrder['externalCode'] === $externalCode) {
                     echo $shopOrder['name'];
-                    telegramReception("ТМОЛ. Для заказа " . $shopOrder['name'] . " уже есть лист передачи. Переведите его в статус Доставляется и перейдите по [ссылке](http://tmall-service.a3w.ru/integration/ali_express/ali_handover.php)", '-385044014', 'Markdown', true);
+                    telegramReception("ТМОЛ. Для заказа " . $shopOrder['name'] . " уже есть лист передачи. Переведите его в статус Доставляется и перейдите по [ссылке](http://tmall-service.a3w.ru/integration/ali_express/ali_handover.php)", '-1001633181187', 'Markdown', true);
 
                     break;
                 }
@@ -247,7 +247,7 @@ foreach ($shopsOrders as $key => $shopOrders) {
             $receptionLink = "https://tmall-service.a3w.ru/integration/ali_express/files/handover/$key" . "лист_передачи_$handoverContentId.pdf";
             $date = date('d-m-y');
             $ordersSent = sizeof($shopOrders['orders']);
-            telegramReception("TMALL Акт приема передачи $ordersSent отправлений $key [$date]($receptionLink)", '-385044014', 'Markdown');
+            telegramReception("TMALL Акт приема передачи $ordersSent отправлений $key [$date]($receptionLink)", '-1001633181187', 'Markdown');
 
             /*8.2. Получение этикетки контейнера (паллеты)*/
 
@@ -271,7 +271,7 @@ foreach ($shopsOrders as $key => $shopOrders) {
             $receptionLink = "https://tmall-service.a3w.ru/integration/ali_express/files/handover/$key" . "этикетка_контейнера_$handoverContentId.pdf";
             $date = date('d-m-y');
             $ordersSent = sizeof($shopOrders['orders']);
-            telegramReception("TMALL Этикетка контейнера $ordersSent отправлений $key [$date]($receptionLink)", '-385044014', 'Markdown');
+            telegramReception("TMALL Этикетка контейнера $ordersSent отправлений $key [$date]($receptionLink)", '-1001633181187', 'Markdown');
 
             $trackNumsUnset = 0;
             $failedOrders = "";
@@ -300,7 +300,7 @@ foreach ($shopsOrders as $key => $shopOrders) {
                 }
             }
             if (strlen($failedOrders) > 1) {
-                telegramReception("TMALL. Ошибки установки трек номеров для заказов $failedOrders", '-385044014');
+                telegramReception("TMALL. Ошибки установки трек номеров для заказов $failedOrders", '-1001633181187');
             }
             setHasListMakerForOrdersInMS($shopOrders['orders'], " «Добавлен в акт $handoverContentId »", $failedOrders);
 
